@@ -3,6 +3,7 @@ import radium from 'radium';
 import styles from '../styles/index.js';
 import Header from './header/index.js';
 import MapboxGL from './mapbox-gl/index.js';
+import Footer from './footer/index.js';
 
 export default radium(({ state }) => (
   <div style={{
@@ -12,5 +13,6 @@ export default radium(({ state }) => (
   }}>
     <Header state={state} />
     <MapboxGL state={state} />
+    <Footer state={state} />
   </div>
 ));

@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import 'fetch';
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { render } from 'react-dom';
 import store from './store/index.js';
 import Routes from './components/index.js';
 
@@ -17,14 +17,10 @@ store.subscribe(() => {
   renderRoutes({ state });
 });
 
+window.addEventListener('resize', () => {
+  const state = store.getState();
+  renderRoutes({ state });
+});
+
 const state = store.getState();
 renderRoutes({ state });
-
-// export function __reload() { // eslint-disable-line no-underscore-dangle
-//   const state = store.getState();
-//   renderRoutes({ state });
-// }
-//
-// export function __unload() { // eslint-disable-line no-underscore-dangle
-//   unmountComponentAtNode(document.getElementById('root'));
-// }

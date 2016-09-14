@@ -22,7 +22,7 @@ function addDistrictLayer(map) {
     paint: {
       'line-color': '#ffffff',
       'line-opacity': 0.8,
-      'line-width': 3,
+      'line-width': 5,
     },
     source: 'district-boundaries',
     type: 'line',
@@ -38,7 +38,7 @@ function addBlockLayer(map) {
     id: 'district-fill',
     paint: {
       'fill-color': '#808080',
-      'fill-opacity': 0.8,
+      'fill-opacity': 0.5,
     },
     source: 'block-boundaries',
     type: 'fill',

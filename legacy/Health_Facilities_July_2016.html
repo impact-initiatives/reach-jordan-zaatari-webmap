@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Za'atari Health Facilities</title>
+    <meta charset="utf-8" />
+    
+	<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="css/leaflet.label.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+
+    <script src="source_code/leaflet.js"></script>
+<!-- 	<script src="source_code/leaflet.label.js"></script>
+	<script type="text/javascript" src="build/deps.js"></script>
+	<script src="debug/leaflet-include.js"></script> -->
+    <script src="source_code/leaflet.groupedlayercontrol.js"></script>
+    <script type="text/javascript" src="geodata/blocks_may.js"></script>
+    <script type="text/javascript" src="geodata/districts.js"></script>
+    <script type="text/javascript" src="geodata/health_facilities_v4.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#about').tooltipster({
+                content: $('#content'),
+                    animation: 'fade',
+                    delay: 200,
+                    theme: 'tooltipster-default',
+                    touchDevices: false,
+                    maxWidth:600,
+                    trigger: 'hover'
+            });
+        });        
+        
+    </script>
+
+    <style>
+        body {
+            padding-top:35px;
+            padding-left:5px;
+            padding-right:5px;
+            padding-bottom:73px;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .info {
+            padding: 10px 10px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255, 255, 255. 0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777
+        }
+
+        .legend {
+            text-align: left;
+            line-height: 18px;
+            color: #555;
+        }
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+        a:link {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:visited {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        a:active {
+            color: white;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    // Set top bar
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand">JORDAN - Al Za'atari Refugee Camp Health Facilities</a>
+            </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a id="about" class="btn btn-primary btn-sm">About</a></li>
+
+                    </ul>
+                </div>
+        </div>
+     </nav>
+
+    // Set base bar
+        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <div class="container-fluid"> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#"> </a></li>
+                    <li style="top:2px"><img src="img/unhcr_logo.png" width="153" height="43" href="#" style="border-width:0px;"><li>      
+                </ul>
+				
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"> </a></li>
+                    <li style="top:3px"><img src="img/REACH_logo.png" width="196" height="45" href="http://www.reach-initiative.org/" style="border-width:0px;"><li>        
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body>
+
+    <div id="map"></div>
+	
+	
+	
+	
+
+    <div class="box" id="content" style="color:white">
+        <h4 style="margin-bottom:25px,margin-top:100px"><strong>About</strong></h4>
+        <h5> </h5>
+        <h5>This map was created in collaboration with UNHCR to provide humanitarian actors and medical professionals with a way to access information about the health services offered in Za'atari. All information correct as of July 2016. 
+        <h5>Health service information was collated by UNHCR, and spatial data was collected by REACH and UNHCR.</h5>
+ 
+</div>
+
+</div>
+
+    </body>
+
+    <script type="text/javascript">
+
+    // Set map view
+        var map = L.map('map', {rotate: true}).setView([32.29355, 36.32732], 15);
+        map.options.minZoom = 14
+        map.options.maxZoom = 18
+		
+        map.setMaxBounds
+        mapLink = 
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+    
+//--------------------Add layers button----------------------------------------------------
+
+    var baseMap =  new L.TileLayer('https://api.mapbox.com/styles/v1/reachjordan/ciqj1t3yf0004c5m9u1l5ypwp/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmVhY2hqb3JkYW4iLCJhIjoiY2luZnZqcnpoMDA5b3dkbTU3N3FwNDg2eiJ9.uPNAgOIg3ml7ZdmmfZjEdA', {
+
+            attribution: 'Tiles &copy; <a href="http://hot.openstreetmap.org/">Humanitarian OpenStreetMap Team</a>; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var basem = new L.TileLayer(baseMap);
+            
+//---------------------------Add Control-------------------------------------------------
+
+    // Control showing block name and NGO operator
+       var info = L.control();
+
+        info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+        };
+
+        info.update = function (props) {
+            this._div.innerHTML = '<h4>Health Facility Information</h4>' +  (props ?
+                '<b>' + props.Name + '</b><br />' + props.Name_ARB + '</b><br />' + '</b><br />' +  '<strong> Opening Hours: </strong>' + '</b><br />' + props.Health_Ope + '</b><br />' +  '</b><br />'  + '<strong> Health Services: </strong>' + '</b><br />' + props.Summary_St
+               : 'Hover over a facility to find out opening hours and services offered in camp facilities');
+        };
+        info.addTo(map);
+		
+
+//---------------------------------District Boundary ------------------------------------------
+
+    // Define style of districts 
+    function districts_style(feature) {
+            return {
+               weight: 3,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0,
+                fillColor: '#ffffff'
+           };
+        }
+
+    //Load geoJson, specify variable zat_districts that points to .js file of geoJson 
+    district_ngo = L.geoJson(zat_districts, {
+            style: districts_style,
+        }).addTo(map);
+
+//-----------------------------------Health Facilities---------------------------------------------
+
+    // Define colours according to the type of facility
+    function getColorHealth(d) {
+            return d == "Healthcare Facility"                     ? '#F84F40' :
+                   d == "Camp Facility with Health Services"      ? '#2167AB' :
+                   d == "Camp Facility"                           ? '#A6A7A8' :
+                                                                    '#A6A7A8';
+        }
+
+    // Define style of blocks
+    function health_style(feature) {
+            return {
+                weight: 1,
+                opacity: 1,
+                color: 'white',
+                dashArray: '1',
+                fillOpacity: 0.8,
+                fillColor: getColorHealth(feature.properties.Health_map)
+            };
+        }
+
+    //Highlight features
+    function highlightFeature(e) {
+           var layer = e.target;
+
+           layer.setStyle({
+               weight: 4,
+               color: '#DC3549',
+               dashnArray: '',
+               fillOpacity: 0.3
+           });
+
+           if (!L.Browser.ie && !L.Browser.opera) {
+               layer.bringToFront();
+           }
+
+           info.update(layer.feature.properties);
+       }
+
+       var health_ngo;
+
+       function resetHighlight(e) {
+           health_ngo.resetStyle(e.target);
+           info.update();
+       }
+
+       function zoomToFeature(e) {
+           map.fitBounds(e.target.getBounds());
+       }
+
+       function onEachFeature(feature, layer) {
+           layer.on({
+               mouseover: highlightFeature,
+               mouseout: resetHighlight,
+               click: zoomToFeature
+           });
+       }
+
+    // Load health facilities geoJson, specify variable that points to .js file of geoJson
+        health_ngo = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Health_map != "Camp Facility";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        }).addTo(map);
+
+    // Acute and chronic conditions
+        acute_chronic = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Acute_Cond == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // Dentist
+        dentist = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Dentist == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // ORT
+        ORT = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.ORT == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // Emergency
+        emergency = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Emergency == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // GBV
+        gbv = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.GBV == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // Malnutrition
+        malnutrition = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Malnutriti == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // Psychotherapy
+        psycho = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Psychother == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // Physiotherapist
+        physio = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Physiother == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // Reproductive health
+        repro_health = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Reproducti == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+    // Secondary health
+        secondary = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Secondary_ == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+    // Vaccination
+        vaccination = L.geoJson(health_facilities, {
+            filter: function(feature, layer) {
+                return feature.properties.Vaccinatio == "Yes";
+            },
+            style: health_style,
+            onEachFeature: onEachFeature
+        })
+
+
+
+//-----------------------------------Legend----------------------------------------------
+
+// Set legend
+var legend = L.control({position: 'bottomright'});
+
+        legend.onAdd = function (map) {
+
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = ["Healthcare Facility", "Camp Facility with Health Services", "Camp Facility"],
+                labels = [],
+                from, to;
+
+            for (var i = 0; i < grades.length; i++) {
+                from = grades[i];
+                to = grades[i + 1];
+
+                labels.push(
+                    '<i style="background:' + getColorHealth(from) + '"></i> ' +
+                    from);
+            }
+
+            div.innerHTML ='<b>Legend</b><br/>' +labels.join('<br>');
+            return div;
+        };
+
+        legend.addTo(map);
+
+//------------------------------------------Layers-------------------------------------------
+
+        // LAYER CONTROLS
+    var baseMaps = {
+            "Basemap":basem
+        };
+
+    var groupedOverlays = {
+        "Health Services": {
+                "All":health_ngo,
+                "Acute and Chronic Conditions":acute_chronic,
+                "Dentist":dentist,
+                "Oral Rehydration Therapy":ORT,
+                "Emergency":emergency,
+                "Gender-based Violence":gbv,
+                "Malnutrition":malnutrition,
+                "Psychotherapy":psycho,
+                "Physiotherapy":physio,
+                "Reproductive Care":repro_health,
+                "Secondary Health Services":secondary,
+                "Vaccination":vaccination
+            },               
+        };
+           
+    layersControl = L.control.groupedLayers(baseMaps, groupedOverlays, {collapsed:false, position:'topleft'});
+    map.addControl(layersControl);
+
+    // Add scale bar
+    L.control.scale({position:'bottomleft'}).addTo(map);
+	
+	//------------------------------------------rotate-------------------------------------------
+	// function rotate(ev) {
+	// 		map.setBearing(-21);
+	// 	}
+
+	// 	document.addEventListener('change', rotate);
+	// 	document.addEventListener('mousemove', rotate);
+
+    </script>
+
+</body>
+</html>

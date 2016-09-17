@@ -66,13 +66,3 @@ export default {
     pointer: { cursor: 'pointer' },
   },
 };
-
-export function getHeightTransitionStyle({ visible }) {
-  return {
-    maxHeight: visible ? document.body.scrollHeight : '0px',
-    opacity: visible ? 1 : 0,
-    overflow: 'hidden',
-    pointerEvents: visible ? 'initial' : 'none',
-    transitionDuration: '500ms',
-  };
-}

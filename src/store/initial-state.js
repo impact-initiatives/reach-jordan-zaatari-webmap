@@ -1,5 +1,8 @@
 export default () => ({
-  menuBar: {
+  sidebarLeft: {
+    open: false,
+  },
+  sidebarRight: {
     open: false,
   },
 });

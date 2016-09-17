@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import radium from 'radium';
 import styles from '../../styles/index.js';
 import initMap from '../../mapbox-gl/index.js';
+import { CONTAINER } from '../../constants/mapbox-gl.js';
 
 class MapboxGL extends Component {
 
@@ -11,7 +12,7 @@ class MapboxGL extends Component {
 
   render() {
     return (
-      <div id="map"
+      <div id={CONTAINER}
            style={{ ...styles.flex.item.space, width: '100%' }} />
     );
   }

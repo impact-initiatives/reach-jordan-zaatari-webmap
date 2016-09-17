@@ -25,6 +25,7 @@
     "dependencies": {
       "babel-polyfill": "npm:babel-polyfill@^6.13.0",
       "fetch": "github:github/fetch@^1.0.0",
+      "intl": "npm:intl@^1.2.4",
       "mapbox/mapbox-gl-js": "github:mapbox/mapbox-gl-js@^0.23.0",
       "radium": "npm:radium@^0.18.1",
       "react-dom": "npm:react-dom@^15.3.1",

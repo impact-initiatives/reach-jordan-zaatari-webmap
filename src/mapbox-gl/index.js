@@ -1,5 +1,6 @@
 import { BOUNDS, MAX_BOUNDS, ACCESS_TOKEN, CONTAINER, STYLE, BEARING,
-  } from '../constants/index.js';
+  } from '../constants/mapbox-gl.js';
+import { addDistrictBoundaries, addBlockBoundaries, addCampFacilities } from './layers.js';
 
 const { mapboxgl } = window;
 
@@ -12,59 +13,10 @@ function setOptions(map) {
   map.touchZoomRotate.disableRotation();
 }
 
-function addDistrictLayer(map) {
-  map.addSource('district-boundaries', {
-    data: '/reach/district-boundaries.geojson',
-    type: 'geojson',
-  });
-  map.addLayer({
-    id: 'district-line',
-    paint: {
-      'line-color': '#ffffff',
-      'line-opacity': 0.8,
-      'line-width': 5,
-    },
-    source: 'district-boundaries',
-    type: 'line',
-  });
-}
-
-function addBlockLayer(map) {
-  map.addSource('block-boundaries', {
-    data: '/reach/block-boundaries.geojson',
-    type: 'geojson',
-  });
-  map.addLayer({
-    id: 'district-fill',
-    paint: {
-      'fill-color': '#808080',
-      'fill-opacity': 0.5,
-    },
-    source: 'block-boundaries',
-    type: 'fill',
-  });
-}
-
-function addHealthFacilities(map) {
-  map.addSource('health-facilities', {
-    data: '/reach/health-facilities.geojson',
-    type: 'geojson',
-  });
-  map.addLayer({
-    id: 'health-facilities-fill',
-    paint: {
-      'fill-color': '#808080',
-      'fill-opacity': 0.8,
-    },
-    source: 'health-facilities',
-    type: 'fill',
-  });
-}
-
 function addLayers(map) {
-  addDistrictLayer(map);
-  addBlockLayer(map);
-  // addHealthFacilities(map);
+  addDistrictBoundaries(map);
+  addBlockBoundaries(map);
+  addCampFacilities(map);
 }
 
 export default function () {

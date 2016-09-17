@@ -1,3 +1,5 @@
+import { MAPBOX } from '../constants/resources.js';
+
 export const BOUNDS = [
   [36.311, 32.284],
   [36.346, 32.303],
@@ -13,8 +15,6 @@ export const ACCESS_TOKEN =
 
 export const CONTAINER = 'map';
 
-export const STYLE = 'mapbox://styles/mapbox/streets-v9';
-// export const STYLE = '/osm2vectortiles/styles/bright-v9.json';
-// export const STYLE = 'https://raw.githubusercontent.com/osm2vectortiles/mapbox-gl-styles/master/styles/bright-v9-cdn.json';
+export const STYLE = MAPBOX.STYLE.EMPTY;
 
 export const BEARING = 21;

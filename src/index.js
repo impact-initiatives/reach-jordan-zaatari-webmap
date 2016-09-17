@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 import 'fetch';
+import 'intl';
 import React from 'react';
 import { render } from 'react-dom';
 import store from './store/index.js';

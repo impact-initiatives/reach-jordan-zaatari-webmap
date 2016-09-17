@@ -1,6 +1,7 @@
 import React from 'react';
 import radium from 'radium';
 import store from '../../store/index.js';
+import { IMG } from '../../constants/resources.js';
 import styles from '../../styles/index.js';
 import colors from '../../styles/colors.js';
 
@@ -21,7 +22,7 @@ export default radium(({ state }) => (
     width: '100%',
   }}>
     <img alt="home"
-         src="../../../img/ic_home_white_24px.svg"
+         src={IMG.HOME_WHITE}
          style={{ cursor: 'pointer', padding: '12px' }} />
     <div>
       {'JORDAN - Al Za\'atari Refugee Camp Health Facilities'}
@@ -29,7 +30,7 @@ export default radium(({ state }) => (
     <div style={styles.flex.item.space} />
     <img alt="menu"
          onClick={onClickMenu}
-         src="../../../img/ic_menu_white_24px.svg"
+         src={IMG.MENU_WHITE}
          style={{ cursor: 'pointer', padding: '12px' }} />
   </div>
 ));

@@ -1,4 +1,5 @@
 import { REACH } from '../constants/resources.js';
+import { LIGHT_RED_100, MEDIUM_BLUE, DARK_GREY_50 } from '../constants/colors.js';
 
 export function addDistrictBoundaries(map) {
   map.addSource('district-boundaries', {
@@ -9,7 +10,6 @@ export function addDistrictBoundaries(map) {
     id: 'district-line',
     paint: {
       'line-color': '#ffffff',
-      'line-opacity': 1,
       'line-width': 3,
     },
     source: 'district-boundaries',
@@ -41,10 +41,27 @@ export function addCampFacilities(map) {
   map.addLayer({
     id: 'health-facilities-fill',
     paint: {
-      'fill-color': '#808080',
+      'fill-color': {
+        property: 'Health_Typ',
+        stops: [
+          ['Healthcare Facility', LIGHT_RED_100],
+          ['Camp Facility with Health Services', MEDIUM_BLUE],
+          ['Camp Facility', DARK_GREY_50],
+        ],
+        type: 'categorical',
+      },
       'fill-opacity': 0.8,
     },
     source: 'health-facilities',
     type: 'fill',
+  });
+  map.addLayer({
+    id: 'health-facilities-outline',
+    paint: {
+      'line-color': '#ffffff',
+      'line-width': 1,
+    },
+    source: 'health-facilities',
+    type: 'line',
   });
 }

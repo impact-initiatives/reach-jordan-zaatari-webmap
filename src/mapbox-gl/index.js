@@ -1,10 +1,17 @@
-import { BOUNDS, MAX_BOUNDS, ACCESS_TOKEN, CONTAINER, STYLE, BEARING,
-  } from '../constants/mapbox-gl.js';
+import store from '../store/index.js';
+import { BOUNDS, MAX_BOUNDS, CONTAINER, STYLE, BEARING } from '../constants/mapbox-gl.js';
 import { addDistrictBoundaries, addBlockBoundaries, addCampFacilities } from './layers.js';
 
 const { mapboxgl } = window;
 
-mapboxgl.accessToken = ACCESS_TOKEN;
+function closeSidebars() {
+  store.dispatch({ type: (prevState) => {
+    const state = JSON.parse(JSON.stringify(prevState));
+    state.sidebarLeft.open = false;
+    state.sidebarRight.open = false;
+    return state;
+  } });
+}
 
 function setOptions(map) {
   map.fitBounds(BOUNDS, { duration: 0 });
@@ -27,4 +34,6 @@ export default function () {
   });
   setOptions(map);
   map.on('style.load', () => addLayers(map));
+  map.on('mousedown', closeSidebars);
+  map.on('movestart', closeSidebars);
 }

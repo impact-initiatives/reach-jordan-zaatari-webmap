@@ -14,14 +14,15 @@ export default radium(({ state }) => (
     height: '100%',
     position: 'absolute',
     right: '0px',
-    width: document.body.clientWidth > DESKTOP_WIDTH_MIN ? '500px' : '100%',
+    width: document.body.clientWidth > DESKTOP_WIDTH_MIN ? '400px' : '100%',
     zIndex: 1,
   }}>
-    {filterItems.map(({ icon, name }, index) => (
-      <FilterItem key={index}
-                  icon={icon}
-                  index={index}
-                  name={name} />
+    {filterItems.map(({ icon, name, type }, index) => (
+      <FilterItem icon={icon}
+                  key={index}
+                  name={name}
+                  state={state}
+                  type={type} />
     ))}
   </div>
 ));

@@ -13,9 +13,9 @@ machine:
 dependencies:
   pre:
     - pip install awscli
+    - cp .jspm.config.js jspm.config.js
   post:
     - jspm install
-    - cp .jspm.config.js jspm.config.js
     - npm run build
     - cp ./src/index-dist.html ./dist/index.html
 deployment:

@@ -1,0 +1,31 @@
+general:
+  branches:
+    only:
+      - master
+      - staging
+      - develop
+test:
+  override:
+    - npm run lint
+machine:
+  node:
+    version: 6.6.0
+dependencies:
+  pre:
+    - pip install awscli
+  post:
+    - mkdir -p dist/esri3/
+    - npm run build
+deployment:
+  prod:
+    branch: master
+    commands:
+      - ./deploy.sh reach.maxmalynowsky.com
+  staging:
+    branch: staging
+    commands:
+      - ./deploy.sh reach-staging.maxmalynowsky.com
+  dev:
+    branch: develop
+    commands:
+      - ./deploy.sh reach-dev.maxmalynowsky.com

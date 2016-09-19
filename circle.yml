@@ -14,8 +14,9 @@ dependencies:
   pre:
     - pip install awscli
   post:
-    - mkdir -p dist/esri3/
+    - jspm install
     - npm run build
+    - cp ./src/index-dist.html ./dist/index.html
 deployment:
   prod:
     branch: master

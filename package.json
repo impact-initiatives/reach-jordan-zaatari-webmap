@@ -6,6 +6,9 @@
     "lint": "./node_modules/.bin/eslint ./src/",
     "serve": "browser-sync start --server --files='jspm.config.js' --no-open"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
     "mapbox-gl": "^0.23.0"
   },

@@ -3,6 +3,10 @@ const version = 'v1';
 const whiteListRegExp = /^\/browser-sync\/socket.io\/$/;
 
 const resources = [
+  '/index.html',
+  '/dist/index.js',
+  '/node_modules/mapbox-gl/dist/mapbox-gl.css',
+  '/node_modules/mapbox-gl/dist/mapbox-gl.js',
   '/resources/img/favicon.gif',
   '/resources/img/ic_home_white_24px.svg',
   '/resources/img/ic_menu_white_24px.svg',

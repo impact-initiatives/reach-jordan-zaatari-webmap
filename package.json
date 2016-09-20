@@ -1,5 +1,5 @@
 {
-  "name": "zaatari-wastewater-network",
+  "name": "jordan-zaatari-health-map",
   "scripts": {
     "bundle": "jspm bundle ./src/index.js ./dist/index-dev.js -wid",
     "build": "jspm build ./src/index.js ./dist/index.js --minify",
@@ -9,9 +9,6 @@
   "pre-commit": [
     "lint"
   ],
-  "dependencies": {
-    "mapbox-gl": "^0.24.0"
-  },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "browser-sync": "^2.16.0",
@@ -28,7 +25,6 @@
     "dependencies": {
       "fetch": "github:github/fetch@^1.0.0",
       "intl": "npm:intl@^1.2.4",
-      "mapbox/mapbox-gl-js": "github:mapbox/mapbox-gl-js@^0.23.0",
       "radium": "npm:radium@^0.18.1",
       "react-dom": "npm:react-dom@^15.3.1",
       "redux": "npm:redux@^3.6.0"
@@ -85,12 +81,12 @@
           "util": "@node/util"
         }
       },
-      "npm:inherits@2.0.1": {
+      "npm:inherits@2.0.3": {
         "ignore": [
           "test.js"
         ]
       },
-      "npm:lodash@4.15.0": {
+      "npm:lodash@4.16.0": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"

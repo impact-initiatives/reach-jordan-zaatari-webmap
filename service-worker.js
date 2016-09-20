@@ -10,6 +10,7 @@ self.addEventListener('install', (event) => {
         './jspm_packages/system.js',
         './dist/index.js',
         './dist/index-dev.js',
+        './resources/img/favicon.gif',
         './resources/img/ic_home_white_24px.svg',
         './resources/img/ic_menu_white_24px.svg',
         './resources/img/logo-reach.png',

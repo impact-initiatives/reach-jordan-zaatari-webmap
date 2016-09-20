@@ -11,8 +11,6 @@ dependencies:
   pre:
     - pip install awscli
     - cp .jspm.config.js jspm.config.js
-  override:
-    - npm install
   post:
     - jspm install
     - npm run build

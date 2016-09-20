@@ -12,6 +12,10 @@ function renderRoutes({ state }) {
   );
 }
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js');
+}
+
 store.subscribe(() => {
   const state = store.getState();
   renderRoutes({ state });

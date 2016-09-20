@@ -1,4 +1,4 @@
-import { MAPBOX } from '../constants/resources.js';
+import { MAPBOX } from './resources.js';
 
 export const BOUNDS = [
   [36.311, 32.284],

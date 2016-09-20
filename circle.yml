@@ -7,27 +7,25 @@ general:
 test:
   override:
     - npm run lint
-machine:
-  node:
-    version: 6.6.0
 dependencies:
   pre:
     - pip install awscli
     - cp .jspm.config.js jspm.config.js
+  override:
+    - npm install
   post:
     - jspm install
     - npm run build
-    - cp ./src/index-dist.html ./dist/index.html
 deployment:
   prod:
     branch: master
     commands:
-      - ./deploy.sh reach.maxmalynowsky.com
+      - ./deploy.sh jordan-zaatari-map.maxmalynowsky.com
   staging:
     branch: staging
     commands:
-      - ./deploy.sh reach-staging.maxmalynowsky.com
+      - ./deploy.sh jordan-zaatari-map.maxmalynowsky.com
   dev:
     branch: develop
     commands:
-      - ./deploy.sh reach-dev.maxmalynowsky.com
+      - ./deploy.sh jordan-zaatari-map.maxmalynowsky.com

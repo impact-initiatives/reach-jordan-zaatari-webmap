@@ -97,5 +97,8 @@
         "format": "cjs"
       }
     }
+  },
+  "dependencies": {
+    "mapbox-gl": "^0.24.0"
   }
 }

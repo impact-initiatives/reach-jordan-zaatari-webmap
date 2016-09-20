@@ -1,4 +1,4 @@
-const RESOURCES_URL = 'https://reach.maxmalynowsky.com/jordan-common';
+const RESOURCES_URL = '/resources';
 
 export const IMG = {
   HOME_WHITE: `${RESOURCES_URL}/img/ic_home_white_24px.svg`,

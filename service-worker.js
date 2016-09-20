@@ -30,7 +30,7 @@ function shouldHandleFetch(request) {
 }
 
 function addToCache(request, response) {
-  if (response.ok) {
+  if (response.ok && response.type === 'basic') {
     const copy = response.clone();
     caches.open(version).then((cache) => {
       cache.put(request, copy);

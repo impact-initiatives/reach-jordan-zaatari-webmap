@@ -26,15 +26,16 @@ self.addEventListener('install', (event) => {
 });
 
 function shouldHandleFetch(request) {
-  const pathname = new URL(request.url).pathname;
+  const url = new URL(request.url);
   return (
     request.method === 'GET' &&
-    !whiteListRegExp.test(pathname)
+    url.origin === self.location.origin &&
+    !whiteListRegExp.test(url.pathname)
   );
 }
 
 function addToCache(request, response) {
-  if (response.ok && response.type === 'basic') {
+  if (response.ok) {
     const copy = response.clone();
     caches.open(version).then((cache) => {
       cache.put(request, copy);

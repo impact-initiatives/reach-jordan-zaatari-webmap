@@ -13,7 +13,11 @@ class MapboxGL extends Component {
   render() {
     return (
       <div id={CONTAINER}
-           style={{ ...styles.flex.item.space, width: '100%' }} />
+           style={{
+             ...styles.flex.item.space,
+             width: '100%',
+             zIndex: '0',
+           }} />
     );
   }
 

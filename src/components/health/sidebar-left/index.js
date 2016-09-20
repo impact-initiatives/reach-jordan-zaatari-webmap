@@ -12,9 +12,8 @@ export default radium(({ state }) => (
     height: '100%',
     position: 'absolute',
     left: '0px',
-    width: document.body.clientWidth > DESKTOP_WIDTH_MIN ? '500px' : '100%',
-    zIndex: 1,
+    width: document.body.clientWidth > DESKTOP_WIDTH_MIN ? '400px' : '75%',
+    zIndex: '1',
   }}>
-    Width: {document.body.clientWidth > DESKTOP_WIDTH_MIN ? '500px' : '100%'}
   </div>
 ));

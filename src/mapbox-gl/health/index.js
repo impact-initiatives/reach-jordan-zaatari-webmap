@@ -1,6 +1,7 @@
 import store from '../../store/index.js';
 import { BOUNDS, MAX_BOUNDS, CONTAINER, STYLE, BEARING } from '../../constants/mapbox-gl.js';
 import { addDistrictBoundaries, addBlockBoundaries, addCampFacilities } from './layers.js';
+import initWatch from './geolocation.js';
 
 const { mapboxgl } = window;
 
@@ -21,6 +22,7 @@ function setOptions(map) {
 }
 
 function addLayers(map) {
+  initWatch(map);
   addDistrictBoundaries(map);
   addBlockBoundaries(map);
   addCampFacilities(map);

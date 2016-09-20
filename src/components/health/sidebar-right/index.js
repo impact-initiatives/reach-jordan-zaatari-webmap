@@ -14,8 +14,8 @@ export default radium(({ state }) => (
     height: '100%',
     position: 'absolute',
     right: '0px',
-    width: document.body.clientWidth > DESKTOP_WIDTH_MIN ? '400px' : '100%',
-    zIndex: 1,
+    width: document.body.clientWidth > DESKTOP_WIDTH_MIN ? '400px' : '75%',
+    zIndex: '1',
   }}>
     {filterItems.map(({ icon, name, type }, index) => (
       <FilterItem icon={icon}

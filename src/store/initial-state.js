@@ -5,6 +5,9 @@ export default () => ({
   sidebarRight: {
     open: false,
   },
+  geolocation: {
+    id: '',
+  },
   filters: {
     all: true,
     acute: false,

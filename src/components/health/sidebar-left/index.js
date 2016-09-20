@@ -6,7 +6,7 @@ import styles from '../../../styles/index.js';
 import { getWidthTransitionStyle } from '../../../styles/animations.js';
 
 function onClick() {
-  location.assign('https://reach.maxmalynowsky.com');
+  window.location.assign('https://reach.maxmalynowsky.com');
 }
 
 export default radium(({ state }) => (

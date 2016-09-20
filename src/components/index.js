@@ -7,6 +7,6 @@ export default radium(({ state }) => {
   if (/^#\/health/.test(hash)) {
     return <Health state={state} />;
   }
-  location.assign('#/health');
+  window.location.assign('#/health');
   return <Health state={state} />;
 });

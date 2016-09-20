@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import 'fetch';
 import 'intl';
 import React from 'react';

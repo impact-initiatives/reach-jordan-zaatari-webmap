@@ -1,6 +1,6 @@
 import React from 'react';
 import radium from 'radium';
-import { DESKTOP_WIDTH_MIN } from '../../../constants/browser.js';
+import { isMobile } from '../../../constants/browser.js';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
 import { DARK_GREY_100, WHITE } from '../../../constants/colors.js';
@@ -10,7 +10,7 @@ export default radium(() => (
     ...styles.flex.horizontal.centerY,
     backgroundColor: DARK_GREY_100,
     color: WHITE,
-    display: document.body.clientWidth > DESKTOP_WIDTH_MIN ? 'flex' : 'none',
+    display: isMobile() ? 'none' : 'flex',
     height: '52px',
     width: '100%',
   }}>

@@ -1,5 +1,5 @@
 import store from '../../store/index.js';
-import { WHITE, MEDIUM_BLUE } from '../../constants/colors.js';
+import { WHITE, ORANGE } from '../../constants/colors.js';
 
 const options = { enableHighAccuracy: true };
 
@@ -41,7 +41,7 @@ function success({ coords }) {
     map.addLayer({
       id: 'user-location-fill',
       paint: {
-        'circle-color': MEDIUM_BLUE,
+        'circle-color': ORANGE,
       },
       source: 'user-location',
       type: 'circle',

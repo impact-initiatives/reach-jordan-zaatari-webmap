@@ -19,6 +19,7 @@ function setOptions(map) {
   map.setBearing(BEARING);
   map.dragRotate.disable();
   map.touchZoomRotate.disableRotation();
+  map.addControl(new mapboxgl.Navigation());
 }
 
 function addLayers(map) {

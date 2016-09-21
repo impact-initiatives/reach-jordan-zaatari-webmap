@@ -12,6 +12,7 @@ const resources = [
   '/resources/img/ic_menu_white_24px.svg',
   '/resources/img/logo-reach.png',
   '/resources/img/logo-unhcr.png',
+  '/resources/mapbox/fonts/open-sans-regular/0-255.pbf',
   '/resources/mapbox/styles/empty-v9.json',
   '/resources/reach/block-boundaries.geojson',
   '/resources/reach/camp-facilities.geojson',
@@ -21,7 +22,7 @@ const resources = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(version)
-      .then(cache => cache.addAll(resources))
+      .then((cache) => cache.addAll(resources))
   );
 });
 
@@ -56,7 +57,7 @@ function fetchFromCache(event) {
 function onFetch(event) {
   event.respondWith(
     fetch(event.request)
-      .then(response => addToCache(event.request, response))
+      .then((response) => addToCache(event.request, response))
       .catch(() => fetchFromCache(event))
   );
 }

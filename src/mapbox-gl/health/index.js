@@ -1,6 +1,6 @@
 import store from '../../store/index.js';
 import { BOUNDS, MAX_BOUNDS, CONTAINER, STYLE, BEARING } from '../../constants/mapbox-gl.js';
-import { addDistrictBoundaries, addBlockBoundaries, addCampFacilities } from './layers.js';
+import addLayers from './layers.js';
 import initWatch from './geolocation.js';
 
 const { mapboxgl } = window;
@@ -22,11 +22,9 @@ function setOptions(map) {
   map.addControl(new mapboxgl.Navigation());
 }
 
-function addLayers(map) {
+function loadStyles(map) {
   initWatch(map);
-  addDistrictBoundaries(map);
-  addBlockBoundaries(map);
-  addCampFacilities(map);
+  addLayers(map);
 }
 
 export default function () {
@@ -36,7 +34,7 @@ export default function () {
     style: STYLE,
   });
   setOptions(map);
-  map.on('style.load', () => addLayers(map));
+  map.on('style.load', () => loadStyles(map));
   map.on('mousedown', closeSidebars);
   map.on('movestart', closeSidebars);
 }

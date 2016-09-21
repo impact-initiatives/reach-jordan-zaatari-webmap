@@ -28,7 +28,8 @@
       "intl": "npm:intl@^1.2.4",
       "radium": "npm:radium@^0.18.1",
       "react-dom": "npm:react-dom@^15.3.1",
-      "redux": "npm:redux@^3.6.0"
+      "redux": "npm:redux@^3.6.0",
+      "turf-center": "npm:turf-center@^3.0.12"
     },
     "devDependencies": {
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.8.0",

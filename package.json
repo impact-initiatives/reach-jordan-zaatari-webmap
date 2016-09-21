@@ -1,5 +1,5 @@
 {
-  "name": "jordan-zaatari-health-map",
+  "name": "jordan-zaatari-map",
   "scripts": {
     "bundle": "jspm bundle ./src/index.js ./dist/index-dev.js -wid",
     "build": "jspm build ./src/index.js ./dist/index.js --minify",

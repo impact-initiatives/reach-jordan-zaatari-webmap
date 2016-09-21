@@ -59,7 +59,6 @@ export function addCampFacilities(map) {
     id: 'health-facilities-outline',
     paint: {
       'line-color': '#ffffff',
-      'line-width': 1,
     },
     source: 'health-facilities',
     type: 'line',

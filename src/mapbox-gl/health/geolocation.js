@@ -1,5 +1,5 @@
 import store from '../../store/index.js';
-import { DARK_GREY_100 } from '../../constants/colors.js';
+import { WHITE, MEDIUM_BLUE } from '../../constants/colors.js';
 
 const options = { enableHighAccuracy: true };
 
@@ -16,9 +16,6 @@ function success({ coords }) {
   if (map.getSource('user-location')) {
     map.removeSource('user-location');
   }
-  if (map.getLayer('user-location-circle')) {
-    map.removeLayer('user-location-circle');
-  }
   map.addSource('user-location', {
     data: {
       type: 'Feature',
@@ -29,15 +26,27 @@ function success({ coords }) {
     },
     type: 'geojson',
   });
-  map.addLayer({
-    id: 'user-location-circle',
-    paint: {
-      'circle-color': DARK_GREY_100,
-      'circle-opacity': 0.75,
-    },
-    source: 'user-location',
-    type: 'circle',
-  });
+  if (!map.getLayer('user-location-outline')) {
+    map.addLayer({
+      id: 'user-location-outline',
+      paint: {
+        'circle-color': WHITE,
+        'circle-radius': 6,
+      },
+      source: 'user-location',
+      type: 'circle',
+    });
+  }
+  if (!map.getLayer('user-location-fill')) {
+    map.addLayer({
+      id: 'user-location-fill',
+      paint: {
+        'circle-color': MEDIUM_BLUE,
+      },
+      source: 'user-location',
+      type: 'circle',
+    });
+  }
 }
 
 function error() {}

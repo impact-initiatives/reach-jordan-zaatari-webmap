@@ -3,7 +3,7 @@
   "scripts": {
     "bundle": "jspm bundle ./src/index.js ./dist/index-dev.js -wid",
     "build": "jspm build ./src/index.js ./dist/index.js --minify",
-    "lint": "./node_modules/.bin/eslint ./src/",
+    "lint": "./node_modules/.bin/eslint ./src/ service-worker.js",
     "serve": "browser-sync start --server --files='jspm.config.js' --no-open"
   },
   "pre-commit": [

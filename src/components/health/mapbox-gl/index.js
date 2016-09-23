@@ -20,10 +20,7 @@ class MapboxGL extends Component {
              zIndex: '0',
            }}>
         <style>{`
-          .mapboxgl-popup {
-            max-width: 320px;
-            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-          }
+          .mapboxgl-popup { max-width: 320px; }
         `}</style>
         <style>
           {'.mapboxgl-ctrl-compass { display: none !important; }'}

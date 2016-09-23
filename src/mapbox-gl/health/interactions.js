@@ -7,7 +7,7 @@ export default function (map) {
     });
     if (features.length && features[0].properties.Summary_St !== 'null') {
       const feature = features[0];
-      new mapboxgl.Popup()
+      new mapboxgl.Popup({ closeButton: false })
         .setLngLat(map.unproject(e.point))
         .setHTML(`
           <p>${feature.properties.Name_EN} / ${feature.properties.Name_AR}</p>

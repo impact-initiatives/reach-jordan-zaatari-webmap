@@ -6,12 +6,9 @@ export const BOUNDS = [
 ];
 
 export const MAX_BOUNDS = [
-  [BOUNDS[0][0] - 0.010, BOUNDS[0][1] - 0.010],
-  [BOUNDS[1][0] + 0.010, BOUNDS[1][1] + 0.010],
+  [BOUNDS[0][0] - 0.014, BOUNDS[0][1] - 0.014],
+  [BOUNDS[1][0] + 0.014, BOUNDS[1][1] + 0.014],
 ];
-
-export const ACCESS_TOKEN =
-  'pk.eyJ1IjoicmVhY2hqb3JkYW4iLCJhIjoiY2luZnZqcnpoMDA5b3dkbTU3N3FwNDg2eiJ9.uPNAgOIg3ml7ZdmmfZjEdA';
 
 export const CONTAINER = 'map';
 

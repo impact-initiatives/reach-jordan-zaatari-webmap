@@ -8,8 +8,9 @@ const { mapboxgl } = window;
 function closeSidebars() {
   store.dispatch({ type: (prevState) => {
     const state = JSON.parse(JSON.stringify(prevState));
-    state.sidebarLeft.open = false;
-    state.sidebarRight.open = false;
+    state.sidebarHome.open = false;
+    state.sidebarLayers.open = false;
+    state.sidebarInfo.open = false;
     return state;
   } });
 }

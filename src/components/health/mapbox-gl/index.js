@@ -21,7 +21,7 @@ class MapboxGL extends Component {
            }}>
         <style>{`
           .mapboxgl-popup {
-            max-width: 400px;
+            max-width: 320px;
             font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
           }
         `}</style>

@@ -1,7 +1,7 @@
 export default [
   {
     icon: null,
-    name: 'Acute and Chronic Conditions',
+    name: 'Acute / Chronic Conditions',
     type: 'Acute_Cond',
   },
   {

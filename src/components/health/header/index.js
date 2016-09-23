@@ -45,7 +45,7 @@ export default radium(() => (
   }}>
     <img alt="home"
          onClick={onClickHome}
-         src={IMG.HOME_WHITE}
+         src={IMG.APPS_WHITE}
          style={{ cursor: 'pointer', padding: '12px' }} />
     <div>
       {'Al Za\'atari Refugee Camp - Health Facilities'}

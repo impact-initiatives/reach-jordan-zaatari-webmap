@@ -19,6 +19,12 @@ class MapboxGL extends Component {
              width: '100%',
              zIndex: '0',
            }}>
+        <style>{`
+          .mapboxgl-popup {
+            max-width: 400px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+          }
+        `}</style>
         <style>
           {'.mapboxgl-ctrl-compass { display: none !important; }'}
         </style>

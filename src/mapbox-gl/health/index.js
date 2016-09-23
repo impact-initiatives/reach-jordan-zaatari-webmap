@@ -2,6 +2,7 @@ import store from '../../store/index.js';
 import { BOUNDS, MAX_BOUNDS, CONTAINER, STYLE, BEARING } from '../../constants/mapbox-gl.js';
 import addLayers from './layers.js';
 import initWatch from './geolocation.js';
+import initInteractions from './interactions.js';
 
 const { mapboxgl } = window;
 
@@ -26,6 +27,7 @@ function setOptions(map) {
 function loadStyles(map) {
   initWatch(map);
   addLayers(map);
+  initInteractions(map);
 }
 
 export default function () {

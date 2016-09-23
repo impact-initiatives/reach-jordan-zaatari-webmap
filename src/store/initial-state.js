@@ -1,4 +1,10 @@
 export default () => ({
+  geoJson: {
+    campFacilities: {
+      layers: [],
+      source: {},
+    },
+  },
   sidebarHome: {
     open: false,
   },
@@ -13,16 +19,16 @@ export default () => ({
   },
   filters: {
     all: true,
-    acute: false,
-    dentist: false,
-    ort: false,
-    emergency: false,
-    gbv: false,
-    malnutrition: false,
-    psychotherapy: false,
-    physiotherapy: false,
-    reproductive: false,
-    secondary: false,
-    vaccination: false,
+    Acute_Cond: false,
+    Dentist: false,
+    ORT: false,
+    Emergency: false,
+    GBV: false,
+    Malnutriti: false,
+    Psychother: false,
+    Physiother: false,
+    Reproducti: false,
+    Secondary: false,
+    Vaccinatio: false,
   },
 });

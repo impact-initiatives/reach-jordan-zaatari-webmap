@@ -3,6 +3,7 @@ import { BOUNDS, MAX_BOUNDS, CONTAINER, STYLE, BEARING } from '../../constants/m
 import addLayers from './layers.js';
 import initWatch from './geolocation.js';
 import initInteractions from './interactions.js';
+import initHealthFacilities from './health-facilities.js';
 
 const { mapboxgl } = window;
 
@@ -28,6 +29,7 @@ function loadStyles(map) {
   initWatch(map);
   addLayers(map);
   initInteractions(map);
+  initHealthFacilities(map);
 }
 
 export default function () {

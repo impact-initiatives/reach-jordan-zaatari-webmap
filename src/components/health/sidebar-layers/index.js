@@ -28,7 +28,7 @@ export default radium(({ state }) => (
       fontWeight: '600',
       padding: '6px 24px',
     }}>
-      Filter
+      Services
     </div>
     {FILTER_ITEMS.map(({ icon, name, type }, index) => (
       <FilterItem icon={icon}

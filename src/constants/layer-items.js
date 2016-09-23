@@ -7,56 +7,56 @@ export default [
   {
     icon: null,
     name: 'Acute and Chronic Conditions',
-    type: 'acute',
+    type: 'Acute_Cond',
   },
   {
     icon: null,
     name: 'Dentist',
-    type: 'dentist',
+    type: 'Dentist',
   },
   {
     icon: null,
     name: 'Oral Rehydration Therapy',
-    type: 'ort',
+    type: 'ORT',
   },
   {
     icon: null,
     name: 'Emergency',
-    type: 'emergency',
+    type: 'Emergency',
   },
   {
     icon: null,
     name: 'Gender-based Violence',
-    type: 'gbv',
+    type: 'GBV',
   },
   {
     icon: null,
     name: 'Malnutrition',
-    type: 'malnutrition',
+    type: 'Malnutriti',
   },
   {
     icon: null,
     name: 'Psychotherapy',
-    type: 'psychotherapy',
+    type: 'Psychother',
   },
   {
     icon: null,
     name: 'Physiotherapy',
-    type: 'physiotherapy',
+    type: 'Physiother',
   },
   {
     icon: null,
     name: 'Reproductive Care',
-    type: 'reproductive',
+    type: 'Reproducti',
   },
   {
     icon: null,
     name: 'Secondary Health Services',
-    type: 'secondary',
+    type: 'Secondary',
   },
   {
     icon: null,
     name: 'Vaccination',
-    type: 'vaccination',
+    type: 'Vaccinatio',
   },
 ];

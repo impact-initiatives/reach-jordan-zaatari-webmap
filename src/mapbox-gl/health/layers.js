@@ -1,6 +1,6 @@
 import turfCenter from 'turf-center';
 import { REACH } from '../../constants/resources.js';
-import { LIGHT_RED_100, MEDIUM_BLUE, DARK_GREY_50, WHITE } from '../../constants/colors.js';
+import { WHITE } from '../../constants/colors.js';
 
 function addDistrictCenters(map) {
   fetch(REACH.DISTRICT_BOUNDARIES)
@@ -66,41 +66,8 @@ function addBlockBoundaries(map) {
   });
 }
 
-function addCampFacilities(map) {
-  map.addSource('health-facilities', {
-    data: REACH.CAMP_FACILITIES,
-    type: 'geojson',
-  });
-  map.addLayer({
-    id: 'health-facilities-fill',
-    paint: {
-      'fill-color': {
-        property: 'Health_Typ',
-        stops: [
-          ['Healthcare Facility', LIGHT_RED_100],
-          ['Camp Facility with Health Services', MEDIUM_BLUE],
-          ['Camp Facility', DARK_GREY_50],
-        ],
-        type: 'categorical',
-      },
-      'fill-opacity': 0.8,
-    },
-    source: 'health-facilities',
-    type: 'fill',
-  });
-  map.addLayer({
-    id: 'health-facilities-outline',
-    paint: {
-      'line-color': '#ffffff',
-    },
-    source: 'health-facilities',
-    type: 'line',
-  });
-}
-
 export default function (map) {
   addDistrictCenters(map);
   addDistrictBoundaries(map);
   addBlockBoundaries(map);
-  addCampFacilities(map);
 }

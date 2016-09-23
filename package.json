@@ -24,6 +24,7 @@
     "name": "app",
     "main": "index.js",
     "dependencies": {
+      "babel-polyfill": "npm:babel-polyfill@^6.13.0",
       "fetch": "github:github/fetch@^1.0.0",
       "intl": "npm:intl@^1.2.4",
       "radium": "npm:radium@^0.18.1",

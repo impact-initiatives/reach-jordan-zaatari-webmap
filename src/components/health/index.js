@@ -21,9 +21,9 @@ export default radium(({ state }) => (
       width: '100%',
     }}>
       <SidebarHome state={state} />
-      <MapboxGL state={state} />
       <SidebarInfo state={state} />
       <SidebarLayers state={state} />
+      <MapboxGL state={state} />
     </div>
     <Footer state={state} />
   </div>

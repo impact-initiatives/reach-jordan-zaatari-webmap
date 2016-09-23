@@ -21,4 +21,5 @@ export const LIGHT_BLUE = '#4db3cf';
 export const MEDIUM_BLUE = '#0067aa';
 export const BLUE_GREY = '#94a0a9';
 
+export const BLACK = '#000000';
 export const WHITE = '#ffffff';

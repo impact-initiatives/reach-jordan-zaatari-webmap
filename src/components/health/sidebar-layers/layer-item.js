@@ -1,7 +1,7 @@
 import React from 'react';
 import radium from 'radium';
 import store from '../../../store/index.js';
-import { DARK_GREY_100, DARK_GREY_50, LIGHT_BLUE, WHITE } from '../../../constants/colors.js';
+import { DARK_GREY_100, LIGHT_BLUE, WHITE } from '../../../constants/colors.js';
 import styles from '../../../styles/index.js';
 import getInitialState from '../../../store/initial-state.js';
 
@@ -28,10 +28,7 @@ function onClick({ target }) {
 
 export default radium(({ icon, name, state, type }) => (
   <div style={{ ...styles.flex.vertical.left }}>
-    <div style={{
-      backgroundColor: DARK_GREY_50,
-      height: '6px',
-    }} />
+    <div style={{ height: '6px' }} />
     <div data-type={type}
          onClick={onClick}
          style={{
@@ -44,7 +41,7 @@ export default radium(({ icon, name, state, type }) => (
       <div alt={type}
            data-type={type}
            src={icon}
-           style={{ padding: '12px' }} />
+           style={{ padding: '0px 12px' }} />
       <div data-type={type}>
         {name}
       </div>

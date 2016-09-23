@@ -1,6 +1,6 @@
 import React from 'react';
 import radium from 'radium';
-import { DARK_GREY_100, DARK_GREY_50, WHITE } from '../../../constants/colors.js';
+import { DARK_GREY_100 } from '../../../constants/colors.js';
 import styles from '../../../styles/index.js';
 
 function onClick({ target }) {
@@ -10,16 +10,12 @@ function onClick({ target }) {
 
 export default radium(({ icon, name, type }) => (
   <div style={{ ...styles.flex.vertical.left }}>
-    <div style={{
-      backgroundColor: DARK_GREY_50,
-      height: '6px',
-    }} />
+    <div style={{ height: '6px' }} />
     <div data-type={type}
          onClick={onClick}
          style={{
            ...styles.flex.horizontal.centerY,
            backgroundColor: DARK_GREY_100,
-           color: WHITE,
            cursor: 'pointer',
            height: '52px',
          }}>

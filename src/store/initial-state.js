@@ -1,8 +1,11 @@
 export default () => ({
-  sidebarLeft: {
+  sidebarHome: {
     open: false,
   },
-  sidebarRight: {
+  sidebarLayers: {
+    open: false,
+  },
+  sidebarInfo: {
     open: false,
   },
   geolocation: {

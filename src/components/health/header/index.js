@@ -8,17 +8,29 @@ import { DARK_GREY_100, WHITE } from '../../../constants/colors.js';
 function onClickHome() {
   store.dispatch({ type: (prevState) => {
     const state = JSON.parse(JSON.stringify(prevState));
-    state.sidebarLeft.open = !state.sidebarLeft.open;
-    state.sidebarRight.open = false;
+    state.sidebarHome.open = !state.sidebarHome.open;
+    state.sidebarInfo.open = false;
+    state.sidebarLayers.open = false;
     return state;
   } });
 }
 
-function onClickMenu() {
+function onClickInfo() {
   store.dispatch({ type: (prevState) => {
     const state = JSON.parse(JSON.stringify(prevState));
-    state.sidebarLeft.open = false;
-    state.sidebarRight.open = !state.sidebarRight.open;
+    state.sidebarHome.open = false;
+    state.sidebarInfo.open = !state.sidebarInfo.open;
+    state.sidebarLayers.open = false;
+    return state;
+  } });
+}
+
+function onClickLayers() {
+  store.dispatch({ type: (prevState) => {
+    const state = JSON.parse(JSON.stringify(prevState));
+    state.sidebarHome.open = false;
+    state.sidebarInfo.open = false;
+    state.sidebarLayers.open = !state.sidebarLayers.open;
     return state;
   } });
 }
@@ -36,12 +48,16 @@ export default radium(() => (
          src={IMG.HOME_WHITE}
          style={{ cursor: 'pointer', padding: '12px' }} />
     <div>
-      {'JORDAN - Al Za\'atari Refugee Camp Health Facilities'}
+      {'Al Za\'atari Refugee Camp - Health Facilities'}
     </div>
     <div style={styles.flex.item.space} />
-    <img alt="menu"
-         onClick={onClickMenu}
-         src={IMG.MENU_WHITE}
+    <img alt="info"
+         onClick={onClickInfo}
+         src={IMG.INFO_WHITE}
+         style={{ cursor: 'pointer', padding: '12px' }} />
+    <img alt="layers"
+         onClick={onClickLayers}
+         src={IMG.LAYERS_WHITE}
          style={{ cursor: 'pointer', padding: '12px' }} />
   </div>
 ));

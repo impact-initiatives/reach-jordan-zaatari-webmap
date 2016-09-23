@@ -18,7 +18,6 @@ export default () => ({
     id: '',
   },
   filters: {
-    all: true,
     Acute_Cond: false,
     Dentist: false,
     ORT: false,

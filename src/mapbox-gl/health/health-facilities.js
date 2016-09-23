@@ -6,12 +6,9 @@ function modifyCampFacilities(map) {
   const filter = [];
   const { filters } = store.getState();
   for (const [key, value] of Object.entries(filters)) {
-    if (key === 'all' && value) {
-      filter.push(['has', 'OBJECTID_1']);
-      break;
-    }
     if (value) filter.push(['==', key, 'Yes']);
   }
+  if (!filter.length) filter.push(['has', 'OBJECTID_1']);
   map.setFilter('health-facilities-fill', ['any', ...filter]);
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import radium from 'radium';
 import styles from '../../../../styles/index.js';
-import { LIGHT_RED_100, MEDIUM_BLUE, DARK_GREY_50 } from '../../../../constants/colors.js';
+import { LIGHT_RED_100, MEDIUM_BLUE } from '../../../../constants/colors.js';
 import LegendItem from './legend-item.js';
 
 export default radium(() => (
@@ -17,7 +17,5 @@ export default radium(() => (
                 name="Healthcare Facility" />
     <LegendItem color={MEDIUM_BLUE}
                 name="Camp Facility w/ Health Services" />
-    <LegendItem color={DARK_GREY_50}
-                name="Camp Facility" />
   </div>
 ));

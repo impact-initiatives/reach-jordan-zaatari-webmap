@@ -24,5 +24,11 @@ export default radium(({ state }) => (
     }}>
       {new IntlMessageFormat(MESSAGES.INFO.ACCURACY[state.lang], state.lang).format()}
     </div>
+    <div style={{
+      ...styles.flex.horizontal.centerY,
+      padding: '12px',
+    }}>
+      {new IntlMessageFormat(MESSAGES.INFO.OFFLINE[state.lang], state.lang).format()}
+    </div>
   </div>
 ));

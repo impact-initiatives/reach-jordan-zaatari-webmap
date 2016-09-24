@@ -30,6 +30,10 @@ export default {
       [ENGLISH]: 'Health service information was collated by UNHCR, and spatial data was collected by REACH and UNHCR.',
       [ARABIC]: 'وقد جمعت معلومات الخدمة الصحية من خلال UNHCR، وجمعت البيانات المكانية التي REACH وUNHCR.',
     },
+    OFFLINE: {
+      [ENGLISH]: 'Bookmark this site to use offline in supported browsers.',
+      [ARABIC]: 'المرجعية في هذا الموقع لاستخدامه حاليا في المستعرضات المعتمدة.',
+    },
   },
   LEGEND: {
     TITLE: {

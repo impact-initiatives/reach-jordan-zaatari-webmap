@@ -17,7 +17,7 @@ function closeSidebars() {
   } });
 }
 
-function setOptions(map) {
+function setOptions({ map }) {
   map.fitBounds(BOUNDS, { duration: 0 });
   map.setBearing(BEARING);
   map.dragRotate.disable();
@@ -25,11 +25,11 @@ function setOptions(map) {
   map.addControl(new mapboxgl.Navigation());
 }
 
-function loadStyles(map) {
-  initWatch(map);
-  addLayers(map);
-  initInteractions(map);
-  initHealthFacilities(map);
+function loadStyles({ map }) {
+  initWatch({ map });
+  addLayers({ map });
+  initInteractions({ map });
+  initHealthFacilities({ map });
 }
 
 export default function () {
@@ -38,8 +38,8 @@ export default function () {
     maxBounds: MAX_BOUNDS,
     style: STYLE,
   });
-  setOptions(map);
-  map.on('style.load', () => loadStyles(map));
+  setOptions({ map });
+  map.on('style.load', () => loadStyles({ map }));
   map.on('mousedown', closeSidebars);
   map.on('movestart', closeSidebars);
 }

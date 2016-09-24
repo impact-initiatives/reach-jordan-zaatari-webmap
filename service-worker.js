@@ -18,6 +18,7 @@ const resources = [
   '/resources/img/logo-reach.png',
   '/resources/img/logo-unhcr.png',
   '/resources/mapbox/fonts/open-sans-regular/0-255.pbf',
+  '/resources/mapbox/fonts/open-sans-regular/1536-1791.pbf',
   '/resources/mapbox/styles/empty-v9.json',
   '/resources/reach/block-boundaries.geojson',
   '/resources/reach/camp-facilities.geojson',

@@ -1,6 +1,6 @@
 const { mapboxgl } = window;
 
-export default function (map) {
+export default function ({ map }) {
   map.on('click', (e) => {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['health-facilities-fill'],

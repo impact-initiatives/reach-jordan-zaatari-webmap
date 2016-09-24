@@ -1,14 +1,17 @@
 import turfCenter from 'turf-center';
+// import store from '../../store/index.js';
 import { REACH } from '../../constants/resources.js';
 import { WHITE } from '../../constants/colors.js';
+import { ARABIC } from '../../constants/language.js';
 
-function addDistrictCenters(map) {
+function addDistrictCenters({ map }) {
   fetch(REACH.DISTRICT_BOUNDARIES)
     .then((response) => response.json())
     .then(({ features }) => {
       const points = features.map((feature) => {
         const center = turfCenter(feature);
-        center.properties.name = feature.properties.Name.split(' ')[1];
+        center.properties.nameEn = Number(feature.properties.Name.split(' ')[1]);
+        center.properties.nameAr = center.properties.nameEn.toLocaleString(ARABIC);
         return center;
       });
       map.addSource('district-points', {
@@ -21,7 +24,7 @@ function addDistrictCenters(map) {
       map.addLayer({
         id: 'district-points-text',
         layout: {
-          'text-field': '{name}',
+          'text-field': '{nameEn}',
           'text-font': ['open-sans-regular'],
         },
         paint: {
@@ -34,7 +37,7 @@ function addDistrictCenters(map) {
     });
 }
 
-function addDistrictBoundaries(map) {
+function addDistrictBoundaries({ map }) {
   map.addSource('district-boundaries', {
     data: REACH.DISTRICT_BOUNDARIES,
     type: 'geojson',
@@ -50,7 +53,7 @@ function addDistrictBoundaries(map) {
   });
 }
 
-function addBlockBoundaries(map) {
+function addBlockBoundaries({ map }) {
   map.addSource('block-boundaries', {
     data: REACH.BLOCK_BOUNDARIES,
     type: 'geojson',
@@ -66,8 +69,27 @@ function addBlockBoundaries(map) {
   });
 }
 
-export default function (map) {
-  addDistrictCenters(map);
-  addDistrictBoundaries(map);
-  addBlockBoundaries(map);
+// export function modifyDistrictCenters({ map }) {
+//   const state = store.getState();
+//   map.removeLayer('district-points-text');
+//   map.addLayer({
+//     id: 'district-points-text',
+//     layout: {
+//       'text-field': state.lang === ARABIC ? '{nameAr}' : '{nameEn}',
+//       'text-font': ['open-sans-regular'],
+//     },
+//     paint: {
+//       'text-halo-color': WHITE,
+//       'text-halo-width': 1.5,
+//     },
+//     source: 'district-points',
+//     type: 'symbol',
+//   });
+// }
+
+export default function ({ map }) {
+  addDistrictCenters({ map });
+  addDistrictBoundaries({ map });
+  addBlockBoundaries({ map });
+  // store.subscribe(() => modifyDistrictCenters({ map }));
 }

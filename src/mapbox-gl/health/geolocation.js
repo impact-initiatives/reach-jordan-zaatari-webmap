@@ -51,7 +51,7 @@ function success({ coords }) {
 
 function error() {}
 
-export default function (map) {
+export default function ({ map }) {
   const state = store.getState();
   if (state.geolocation.id) {
     navigator.geolocation.clearWatch(state.geolocation.id);

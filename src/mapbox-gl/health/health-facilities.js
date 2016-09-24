@@ -2,7 +2,7 @@ import store from '../../store/index.js';
 import { REACH } from '../../constants/resources.js';
 import { LIGHT_RED_100, MEDIUM_BLUE, DARK_GREY_50 } from '../../constants/colors.js';
 
-function modifyCampFacilities(map) {
+function modifyCampFacilities({ map }) {
   const filter = [];
   const { filters } = store.getState();
   for (const [key, value] of Object.entries(filters)) {
@@ -12,7 +12,7 @@ function modifyCampFacilities(map) {
   map.setFilter('health-facilities-fill', ['any', ...filter]);
 }
 
-function addCampFacilities(map) {
+function addCampFacilities({ map }) {
   map.addSource('health-facilities', {
     data: REACH.CAMP_FACILITIES,
     type: 'geojson',
@@ -51,10 +51,10 @@ function addCampFacilities(map) {
     source: 'health-facilities',
     type: 'line',
   });
-  modifyCampFacilities(map);
+  modifyCampFacilities({ map });
 }
 
-export default function (map) {
-  store.subscribe(() => modifyCampFacilities(map));
-  addCampFacilities(map);
+export default function ({ map }) {
+  store.subscribe(() => modifyCampFacilities({ map }));
+  addCampFacilities({ map });
 }

@@ -14,7 +14,7 @@ function onClick({ target }) {
 export default radium(({ icon, name, state, url }) => (
   <div style={{ ...styles.flex.vertical.left }}>
     <div style={{ height: '6px' }} />
-    <div data-type={url}
+    <div data-url={url}
          onClick={onClick}
          style={{
            ...styles.flex.horizontal.centerY,
@@ -23,10 +23,10 @@ export default radium(({ icon, name, state, url }) => (
            height: '52px',
          }}>
       <img alt={url}
-           data-type={url}
+           data-url={url}
            src={icon}
            style={{ padding: '12px' }} />
-      <div data-type={url}>
+      <div data-url={url}>
         {new IntlMessageFormat(MESSAGES[name][state.lang], state.lang).format()}
       </div>
     </div>

@@ -21,7 +21,7 @@ export default radium(({ state }) => (
     ...styles.flex.horizontal.centerY,
     padding: '12px',
   }}>
-    <div style={{ marginRight: '12px' }}>
+    <div>
       {new IntlMessageFormat(MESSAGES.INFO.LANGUAGE[state.lang], state.lang).format()}
     </div>
     <div data-language={ENGLISH}
@@ -29,7 +29,7 @@ export default radium(({ state }) => (
          style={{
            ...styles.button.small,
            color: state.lang === ENGLISH ? LIGHT_BLUE : WHITE,
-           marginRight: '12px',
+           margin: '0px 12px',
          }}>
       {new IntlMessageFormat(MESSAGES.INFO.ENGLISH[state.lang], state.lang).format()}
     </div>

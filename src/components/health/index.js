@@ -7,12 +7,14 @@ import SidebarHome from './sidebar-home/index.js';
 import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
 import MapboxGL from './mapbox-gl/index.js';
+import { ARABIC } from '../../constants/language.js';
 
 export default radium(({ state }) => (
-  <div style={{
-    ...styles.flex.vertical.normal,
-    fontFamily: styles.font.default,
-  }}>
+  <div dir={state.lang === ARABIC ? 'rtl' : 'ltr'}
+       style={{
+         ...styles.flex.vertical.normal,
+         fontFamily: styles.font.default,
+       }}>
     <Header state={state} />
     <div style={{
       ...styles.flex.vertical.left,

@@ -17,11 +17,12 @@ export default radium(({ state }) => (
     width: document.body.clientWidth > DESKTOP_WIDTH_MIN ? '400px' : '75%',
     zIndex: '1',
   }}>
-    {HOME_ITEMS.map(({ icon, name, type }, index) => (
+    {HOME_ITEMS.map(({ icon, name, url }, index) => (
       <HomeItem icon={icon}
                 key={index}
                 name={name}
-                type={type} />
+                state={state}
+                url={url} />
     ))}
   </div>
 ));

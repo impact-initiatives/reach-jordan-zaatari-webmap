@@ -1,6 +1,8 @@
 import 'babel-polyfill';
 import 'fetch';
 import 'intl';
+import 'intl/locale-data/jsonp/en-GB.js';
+import 'intl/locale-data/jsonp/ar-JO.js';
 import React from 'react';
 import { render } from 'react-dom';
 import store from './store/index.js';

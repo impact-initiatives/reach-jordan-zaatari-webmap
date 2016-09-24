@@ -1,5 +1,7 @@
 import React from 'react';
 import radium from 'radium';
+import IntlMessageFormat from 'intl-messageformat';
+import MESSAGES from '../../../messages/health.js';
 import store from '../../../store/index.js';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
@@ -35,7 +37,7 @@ function onClickLayers() {
   } });
 }
 
-export default radium(() => (
+export default radium(({ state }) => (
   <div style={{
     ...styles.flex.horizontal.centerY,
     backgroundColor: DARK_GREY_100,
@@ -45,10 +47,10 @@ export default radium(() => (
   }}>
     <img alt="home"
          onClick={onClickHome}
-         src={IMG.APPS_WHITE}
+         src={IMG.MENU_WHITE}
          style={{ cursor: 'pointer', padding: '12px' }} />
     <div>
-      {'Al Za\'atari Refugee Camp - Health Facilities'}
+      {new IntlMessageFormat(MESSAGES.TITLE[state.lang], state.lang).format()}
     </div>
     <div style={styles.flex.item.space} />
     <img alt="info"

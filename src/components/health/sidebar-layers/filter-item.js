@@ -1,5 +1,7 @@
 import React from 'react';
 import radium from 'radium';
+import IntlMessageFormat from 'intl-messageformat';
+import MESSAGES from '../../../messages/health.js';
 import store from '../../../store/index.js';
 import { DARK_GREY_100, LIGHT_BLUE, WHITE } from '../../../constants/colors.js';
 import styles from '../../../styles/index.js';
@@ -30,7 +32,7 @@ export default radium(({ icon, name, state, type }) => (
            src={icon}
            style={{ padding: '0px 12px' }} />
       <div data-type={type}>
-        {name}
+        {new IntlMessageFormat(MESSAGES.FILTER[name][state.lang], state.lang).format()}
       </div>
     </div>
   </div>

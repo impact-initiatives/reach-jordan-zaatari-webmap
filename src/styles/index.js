@@ -1,4 +1,13 @@
+import { DARK_GREY_100 } from '../constants/colors.js';
+
 export default {
+  button: {
+    small: {
+      backgroundColor: DARK_GREY_100,
+      cursor: 'pointer',
+      padding: '6px',
+    },
+  },
   font: {
     default: '"Helvetica Neue", Helvetica, Arial, sans-serif',
   },

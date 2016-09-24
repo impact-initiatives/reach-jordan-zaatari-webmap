@@ -1,3 +1,5 @@
+import { ENGLISH, ARABIC } from '../constants/language.js';
+
 export default () => ({
   geoJson: {
     campFacilities: {
@@ -5,6 +7,7 @@ export default () => ({
       source: {},
     },
   },
+  lang: navigator.language.includes('ar') ? ARABIC : ENGLISH,
   sidebarHome: {
     open: false,
   },

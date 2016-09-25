@@ -44,9 +44,13 @@ export default {
       [ENGLISH]: 'Healthcare Facility',
       [ARABIC]: 'مرافق الرعاية الصحية',
     },
-    CAMP: {
+    CAMP_HEALTH: {
       [ENGLISH]: 'Camp Facility w/ Health Services',
       [ARABIC]: 'مرفق المخيم مع الخدمات الصحية',
+    },
+    CAMP: {
+      [ENGLISH]: 'Camp Facility',
+      [ARABIC]: 'مخيم مرفق',
     },
   },
   FILTER: {

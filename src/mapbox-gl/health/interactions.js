@@ -10,9 +10,9 @@ export default function ({ map }) {
       new mapboxgl.Popup({ closeButton: false })
         .setLngLat(map.unproject(e.point))
         .setHTML(`
-          <p>${feature.properties.Name_EN} / ${feature.properties.Name_AR}</p>
-          <p>Hours: ${feature.properties.Health_Hrs}</p>
-          <p>Services: ${feature.properties.Summary_St}</p>
+          <p><b>${feature.properties.Name_EN} / ${feature.properties.Name_AR}</b></p>
+          <p><b>Hours:</b> ${feature.properties.Health_Hrs}</p>
+          <p><b>Services:</b> ${feature.properties.Summary_St}</p>
         `)
         .addTo(map);
     }

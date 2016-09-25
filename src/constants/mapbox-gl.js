@@ -6,8 +6,8 @@ export const BOUNDS = [
 ];
 
 export const MAX_BOUNDS = [
-  [BOUNDS[0][0] - 0.014, BOUNDS[0][1] - 0.014],
-  [BOUNDS[1][0] + 0.014, BOUNDS[1][1] + 0.014],
+  [BOUNDS[0][0] - 0.028, BOUNDS[0][1] - 0.028],
+  [BOUNDS[1][0] + 0.028, BOUNDS[1][1] + 0.028],
 ];
 
 export const CONTAINER = 'map';

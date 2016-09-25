@@ -10,8 +10,9 @@ function addDistrictCenters({ map }) {
     .then(({ features }) => {
       const points = features.map((feature) => {
         const center = turfCenter(feature);
-        center.properties.nameEn = Number(feature.properties.Name.split(' ')[1]);
-        center.properties.nameAr = center.properties.nameEn.toLocaleString(ARABIC);
+        center.properties.nameEn = `D${feature.properties.Name.split(' ')[1]}`;
+        center.properties.nameAr = Number(feature.properties.Name.split(' ')[1])
+          .toLocaleString(ARABIC);
         return center;
       });
       map.addSource('district-points', {

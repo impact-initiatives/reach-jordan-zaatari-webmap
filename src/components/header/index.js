@@ -1,11 +1,10 @@
 import React from 'react';
 import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
-import MESSAGES from '../../../messages/health.js';
-import store from '../../../store/index.js';
-import { IMG } from '../../../constants/resources.js';
-import styles from '../../../styles/index.js';
-import { DARK_GREY_100, WHITE } from '../../../constants/colors.js';
+import store from '../../store/index.js';
+import { IMG } from '../../constants/resources.js';
+import styles from '../../styles/index.js';
+import { DARK_GREY_100, WHITE } from '../../constants/colors.js';
 
 function onClickHome() {
   store.dispatch({ type: (prevState) => {
@@ -37,7 +36,7 @@ function onClickLayers() {
   } });
 }
 
-export default radium(({ state }) => (
+export default radium(({ state, MESSAGES }) => (
   <div style={{
     ...styles.flex.horizontal.centerY,
     backgroundColor: DARK_GREY_100,

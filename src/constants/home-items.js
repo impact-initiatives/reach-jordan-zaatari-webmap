@@ -8,6 +8,16 @@ export default [
   },
   {
     icon: IMG.LOCAL_HOSPITAL_WHITE,
+    name: 'DISTRICT',
+    url: '#/district',
+  },
+  {
+    icon: IMG.LOCAL_HOSPITAL_WHITE,
+    name: 'BLOCK',
+    url: '#/block',
+  },
+  {
+    icon: IMG.LOCAL_HOSPITAL_WHITE,
     name: 'HEALTH',
     url: '#/health',
   },

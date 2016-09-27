@@ -1,10 +1,10 @@
 import React from 'react';
 import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
-import MESSAGES from '../../../messages/home.js';
+import MESSAGES from '../../messages/home.js';
 
-import { DARK_GREY_100 } from '../../../constants/colors.js';
-import styles from '../../../styles/index.js';
+import { DARK_GREY_100 } from '../../constants/colors.js';
+import styles from '../../styles/index.js';
 
 function onClick({ target }) {
   const { url } = target.dataset;

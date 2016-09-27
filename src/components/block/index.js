@@ -8,7 +8,7 @@ import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
 import MapboxGL from './mapbox-gl/index.js';
 import { ARABIC } from '../../constants/language.js';
-import MESSAGES from '../../messages/health.js';
+import MESSAGES from '../../messages/block.js';
 
 export default radium(({ state }) => (
   <div dir={state.lang === ARABIC ? 'rtl' : 'ltr'}

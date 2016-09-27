@@ -1,11 +1,11 @@
 import React from 'react';
 import radium from 'radium';
-import { DESKTOP_WIDTH_MIN } from '../../../constants/browser.js';
-import { DARK_GREY_50, WHITE } from '../../../constants/colors.js';
-import { ARABIC } from '../../../constants/language.js';
-import { getWidthTransitionStyle } from '../../../styles/animations.js';
+import { DESKTOP_WIDTH_MIN } from '../../constants/browser.js';
+import { DARK_GREY_50, WHITE } from '../../constants/colors.js';
+import { ARABIC } from '../../constants/language.js';
+import { getWidthTransitionStyle } from '../../styles/animations.js';
 import HomeItem from './home-item.js';
-import HOME_ITEMS from '../../../constants/home-items.js';
+import HOME_ITEMS from '../../constants/home-items.js';
 
 export default radium(({ state }) => (
   <div style={{

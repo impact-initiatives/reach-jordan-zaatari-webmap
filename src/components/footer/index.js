@@ -1,9 +1,9 @@
 import React from 'react';
 import radium from 'radium';
-import { isMobile } from '../../../constants/browser.js';
-import { IMG } from '../../../constants/resources.js';
-import styles from '../../../styles/index.js';
-import { DARK_GREY_100, WHITE } from '../../../constants/colors.js';
+import { isMobile } from '../../constants/browser.js';
+import { IMG } from '../../constants/resources.js';
+import styles from '../../styles/index.js';
+import { DARK_GREY_100, WHITE } from '../../constants/colors.js';
 
 export default radium(() => (
   <div style={{

@@ -24,6 +24,11 @@ store.subscribe(() => {
   renderRoutes({ state });
 });
 
+window.addEventListener('hashchange', () => {
+  const state = store.getState();
+  renderRoutes({ state });
+});
+
 window.addEventListener('resize', () => {
   const state = store.getState();
   renderRoutes({ state });

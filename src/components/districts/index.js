@@ -1,13 +1,14 @@
 import React from 'react';
 import radium from 'radium';
 import styles from '../../styles/index.js';
-import Header from '../header/index.js';
-import Footer from '../footer/index.js';
-import SidebarHome from '../home/index.js';
+import Header from '../common/header/index.js';
+import Footer from '../common/footer/index.js';
+import SidebarHome from '../common/home/index.js';
 import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
 import MapboxGL from './mapbox-gl/index.js';
 import { ARABIC } from '../../constants/language.js';
+import { IMG } from '../../constants/resources.js';
 import MESSAGES from '../../messages/district.js';
 
 export default radium(({ state }) => (
@@ -29,6 +30,6 @@ export default radium(({ state }) => (
       <SidebarLayers state={state} />
       <MapboxGL state={state} />
     </div>
-    <Footer state={state} />
+    <Footer donorLogo={IMG.LOGO_UNHCR} />
   </div>
 ));

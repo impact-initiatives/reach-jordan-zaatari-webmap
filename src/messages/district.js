@@ -2,7 +2,7 @@ import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
   TITLE: {
-    [ENGLISH]: "Al Za'atari Refugee Camp - District Boundaries",
+    [ENGLISH]: "Al Za'atari Refugee Camp - Districts",
     [ARABIC]: 'آل مخيم الزعتري - المرافق الصحية', // update this
   },
   INFO: {
@@ -40,71 +40,17 @@ export default {
       [ENGLISH]: 'Legend',
       [ARABIC]: 'مفتاح الخريطة',
     },
-    HEALTHCARE: {
-      [ENGLISH]: 'Healthcare Facility',
-      [ARABIC]: 'مرافق الرعاية الصحية',
+    ACTED: {
+      [ENGLISH]: 'ACTED',
+      [ARABIC]: 'مرافق الرعاية الصحية', // update this
     },
-    CAMP_HEALTH: {
-      [ENGLISH]: 'Camp Facility w/ Health Services',
-      [ARABIC]: 'مرفق المخيم مع الخدمات الصحية',
+    JEN: {
+      [ENGLISH]: 'JEN',
+      [ARABIC]: 'مرفق المخيم مع الخدمات الصحية', // update this
     },
-    CAMP: {
-      [ENGLISH]: 'Camp Facility',
-      [ARABIC]: 'مخيم مرفق',
-    },
-  },
-  FILTER: {
-    TITLE: {
-      [ENGLISH]: 'Filter by Service',
-      [ARABIC]: 'تصفية حسب الخدمة',
-    },
-    RESET: {
-      [ENGLISH]: 'reset',
-      [ARABIC]: 'إعادة تعيين',
-    },
-    ACUTE_CHRONIC: {
-      [ENGLISH]: 'Acute / Chronic Conditions',
-      [ARABIC]: 'شروط الحادة والمزمنة',
-    },
-    DENTIST: {
-      [ENGLISH]: 'Dentist',
-      [ARABIC]: 'طبيبة الاسنان',
-    },
-    ORT: {
-      [ENGLISH]: 'Oral Rehydration Therapy',
-      [ARABIC]: 'العلاج الجفاف عن طريق الفم',
-    },
-    EMERGENCY: {
-      [ENGLISH]: 'Emergency',
-      [ARABIC]: 'حالة طوارئ',
-    },
-    GBV: {
-      [ENGLISH]: 'Gender-based Violence',
-      [ARABIC]: 'العنف القائم على نوع الجنس',
-    },
-    MALNUTRITION: {
-      [ENGLISH]: 'Malnutrition',
-      [ARABIC]: 'سوء التغذية',
-    },
-    PSYCHOTHERAPY: {
-      [ENGLISH]: 'Psychotherapy',
-      [ARABIC]: 'العلاج النفسي',
-    },
-    PHYSIOTHERAPY: {
-      [ENGLISH]: 'Physiotherapy',
-      [ARABIC]: 'العلاج الطبيعي',
-    },
-    REPRODUCTIVE: {
-      [ENGLISH]: 'Reproductive Care',
-      [ARABIC]: 'العناية الإنجابية',
-    },
-    SECONDARY: {
-      [ENGLISH]: 'Secondary Health Services',
-      [ARABIC]: 'الخدمات الصحية الثانوية',
-    },
-    VACCINATION: {
-      [ENGLISH]: 'Vaccination',
-      [ARABIC]: 'تلقيح',
+    OXFAM: {
+      [ENGLISH]: 'Oxfam',
+      [ARABIC]: 'مخيم مرفق', // update this
     },
   },
 };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import radium from 'radium';
 import styles from '../../../styles/index.js';
-import initMap from '../../../mapbox-gl/health/index.js';
+import initMap from '../../../mapbox-gl/maps/districts/index.js';
 import { CONTAINER } from '../../../constants/mapbox-gl.js';
 import { isMobile } from '../../../constants/browser.js';
 

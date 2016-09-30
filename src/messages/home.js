@@ -5,13 +5,13 @@ export default {
     [ENGLISH]: 'More from REACH',
     [ARABIC]: 'أكثر من REACH',
   },
-  DISTRICT: {
-    [ENGLISH]: 'District Boundaries',
-    [ARABIC]: 'District Boundaries',
+  DISTRICTS: {
+    [ENGLISH]: 'Districts',
+    [ARABIC]: 'Districts',
   },
-  BLOCK: {
-    [ENGLISH]: 'Block Boundaries',
-    [ARABIC]: 'Block Boundaries',
+  BLOCKS: {
+    [ENGLISH]: 'Blocks',
+    [ARABIC]: 'Blocks',
   },
   HEALTH: {
     [ENGLISH]: 'Health Facilities',

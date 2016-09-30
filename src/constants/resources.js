@@ -2,6 +2,7 @@ const RESOURCES_URL = '/resources';
 
 export const IMG = {
   APPS_WHITE: `${RESOURCES_URL}/img/ic_apps_white_24px.svg`,
+  CHECK_BOX_OUTLINE: `${RESOURCES_URL}/img/ic_check_box_outline_blank_white_24px.svg`,
   HOME_WHITE: `${RESOURCES_URL}/img/ic_home_white_24px.svg`,
   INFO_WHITE: `${RESOURCES_URL}/img/ic_info_white_24px.svg`,
   LAYERS_WHITE: `${RESOURCES_URL}/img/ic_layers_white_24px.svg`,

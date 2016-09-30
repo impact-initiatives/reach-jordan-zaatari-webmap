@@ -7,14 +7,14 @@ export default [
     url: 'http://www.reachresourcecentre.info/jordan/advanced-search/33+36',
   },
   {
-    icon: IMG.LOCAL_HOSPITAL_WHITE,
-    name: 'DISTRICT',
-    url: '#/district',
+    icon: IMG.CHECK_BOX_OUTLINE,
+    name: 'DISTRICTS',
+    url: '#/districts',
   },
   {
-    icon: IMG.LOCAL_HOSPITAL_WHITE,
-    name: 'BLOCK',
-    url: '#/block',
+    icon: IMG.APPS_WHITE,
+    name: 'BLOCKS',
+    url: '#/blocks',
   },
   {
     icon: IMG.LOCAL_HOSPITAL_WHITE,

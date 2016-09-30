@@ -17,4 +17,8 @@ export default {
     [ENGLISH]: 'Health Facilities',
     [ARABIC]: 'المرافق الصحية',
   },
+  WASTE_WATER: {
+    [ENGLISH]: 'Waste Water',
+    [ARABIC]: 'المرافق الصحية', // TODO: update
+  },
 };

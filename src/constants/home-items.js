@@ -21,4 +21,9 @@ export default [
     name: 'HEALTH',
     url: '#/health',
   },
+  {
+    icon: IMG.LOCAL_HOSPITAL_WHITE,
+    name: 'WASTE_WATER',
+    url: '#/waste-water',
+  },
 ];

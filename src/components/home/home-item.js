@@ -2,8 +2,7 @@ import React from 'react';
 import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../messages/home.js';
-
-import { DARK_GREY_100 } from '../../constants/colors.js';
+import { DARK_GREY_100, LIGHT_BLUE, WHITE } from '../../constants/colors.js';
 import styles from '../../styles/index.js';
 
 function onClick({ target }) {
@@ -26,7 +25,10 @@ export default radium(({ icon, name, state, url }) => (
            data-url={url}
            src={icon}
            style={{ padding: '12px' }} />
-      <div data-url={url}>
+      <div data-url={url}
+           style={{
+             color: location.hash.includes(url) ? LIGHT_BLUE : WHITE,
+           }}>
         {new IntlMessageFormat(MESSAGES[name][state.lang], state.lang).format()}
       </div>
     </div>

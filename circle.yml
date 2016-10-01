@@ -22,8 +22,8 @@ deployment:
   staging:
     branch: staging
     commands:
-      - ./deploy.sh jordan-zaatari-map.maxmalynowsky.com
+      - ./deploy.sh jordan-zaatari-map-staging.maxmalynowsky.com
   dev:
     branch: develop
     commands:
-      - ./deploy.sh jordan-zaatari-map.maxmalynowsky.com
+      - ./deploy.sh jordan-zaatari-map-dev.maxmalynowsky.com

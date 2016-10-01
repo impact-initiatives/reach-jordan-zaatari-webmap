@@ -40,8 +40,16 @@ export default {
       [ENGLISH]: 'Legend',
       [ARABIC]: 'مفتاح الخريطة',
     },
-    BLOCK: {
-      [ENGLISH]: 'Block Boundary',
+    EIGHT: {
+      [ENGLISH]: '8m³ Tank',
+      [ARABIC]: 'كتلة الحدود', // update this
+    },
+    FOUR: {
+      [ENGLISH]: '4m³ Tank',
+      [ARABIC]: 'كتلة الحدود', // update this
+    },
+    TWO: {
+      [ENGLISH]: '2m³ Tank',
       [ARABIC]: 'كتلة الحدود', // update this
     },
   },

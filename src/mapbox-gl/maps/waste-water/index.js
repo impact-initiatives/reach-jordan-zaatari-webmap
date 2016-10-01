@@ -4,6 +4,8 @@ import closeSidebars from '../../constructor/close-sidebars.js';
 import initGeolocation from '../../interactions/geolocation.js';
 import addDistrictLine from '../../layers/district-outline.js';
 import addBlockFill from '../../layers/block-fill.js';
+import addPipeLines from '../../layers/pipe-lines.js';
+import addSepticTanks from '../../layers/septic-tanks.js';
 
 const { mapboxgl } = window;
 
@@ -11,6 +13,8 @@ function loadStyles({ map }) {
   initGeolocation({ map });
   addDistrictLine({ map });
   addBlockFill({ map });
+  addPipeLines({ map });
+  addSepticTanks({ map });
 }
 
 export default function () {

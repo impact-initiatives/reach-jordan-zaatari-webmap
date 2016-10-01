@@ -22,7 +22,7 @@ export default [
     url: '#/health',
   },
   {
-    icon: IMG.LOCAL_HOSPITAL_WHITE,
+    icon: IMG.LOCAL_DRINK_WHITE,
     name: 'WASTE_WATER',
     url: '#/waste-water',
   },

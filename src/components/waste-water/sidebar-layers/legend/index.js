@@ -1,7 +1,7 @@
 import React from 'react';
 import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
-import MESSAGES from '../../../../messages/health.js';
+import MESSAGES from '../../../../messages/waste-water.js';
 import styles from '../../../../styles/index.js';
 import { LIGHT_RED_100, MEDIUM_BLUE, DARK_GREY_50 } from '../../../../constants/colors.js';
 import LegendItem from './legend-item.js';
@@ -17,12 +17,12 @@ export default radium(({ state }) => (
     </div>
     <LegendItem color={LIGHT_RED_100}
                 name={new IntlMessageFormat(
-                  MESSAGES.LEGEND.HEALTHCARE[state.lang], state.lang).format()} />
+                  MESSAGES.LEGEND.EIGHT[state.lang], state.lang).format()} />
     <LegendItem color={MEDIUM_BLUE}
                 name={new IntlMessageFormat(
-                  MESSAGES.LEGEND.CAMP_HEALTH[state.lang], state.lang).format()} />
+                  MESSAGES.LEGEND.FOUR[state.lang], state.lang).format()} />
     <LegendItem color={DARK_GREY_50}
                 name={new IntlMessageFormat(
-                  MESSAGES.LEGEND.CAMP[state.lang], state.lang).format()} />
+                  MESSAGES.LEGEND.TWO[state.lang], state.lang).format()} />
   </div>
 ));

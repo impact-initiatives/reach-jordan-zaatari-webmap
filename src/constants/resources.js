@@ -7,6 +7,7 @@ export const IMG = {
   INFO_WHITE: `${RESOURCES_URL}/img/ic_info_white_24px.svg`,
   LAYERS_WHITE: `${RESOURCES_URL}/img/ic_layers_white_24px.svg`,
   LOCAL_HOSPITAL_WHITE: `${RESOURCES_URL}/img/ic_local_hospital_white_24px.svg`,
+  LOCAL_DRINK_WHITE: `${RESOURCES_URL}/img/ic_local_drink_white_24px.svg`,
   MENU_WHITE: `${RESOURCES_URL}/img/ic_menu_white_24px.svg`,
   OPEN_IN_NEW_WHITE: `${RESOURCES_URL}/img/ic_open_in_new_white_24px.svg`,
   LOGO_REACH: `${RESOURCES_URL}/img/logo-reach.png`,
@@ -23,4 +24,7 @@ export const REACH = {
   DISTRICT_BOUNDARIES: `${RESOURCES_URL}/reach/district-boundaries.geojson`,
   BLOCK_BOUNDARIES: `${RESOURCES_URL}/reach/block-boundaries.geojson`,
   CAMP_FACILITIES: `${RESOURCES_URL}/reach/camp-facilities.geojson`,
+  PIPES: `${RESOURCES_URL}/reach/pipes.geojson`,
+  SEPTIC_TANKS: `${RESOURCES_URL}/reach/septic-tanks.geojson`,
+  TIME_SERIES: `${RESOURCES_URL}/reach/time-series.geojson`,
 };

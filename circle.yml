@@ -18,12 +18,12 @@ deployment:
   prod:
     branch: master
     commands:
-      - ./deploy.sh jordan-zaatari-map.maxmalynowsky.com
+      - ./deploy.sh master
   staging:
     branch: staging
     commands:
-      - ./deploy.sh jordan-zaatari-map-staging.maxmalynowsky.com
+      - ./deploy.sh staging
   dev:
     branch: develop
     commands:
-      - ./deploy.sh jordan-zaatari-map-dev.maxmalynowsky.com
+      - ./deploy.sh develop

@@ -1,6 +1,17 @@
 #! /bin/bash
 
-BUCKET=$1
+BRANCH=$1
+
+if [ $BRANCH = "master" ]; then
+  BUCKET=$BUCKET_MASTER
+  DISTRIBUTION=$DISTRIBUTION_MASTER
+elif [ $BRANCH = "staging" ]; then
+  BUCKET=$BUCKET_STAGING
+  DISTRIBUTION=$DISTRIBUTION_STAGING
+elif [ $BRANCH = "develop" ]; then
+  BUCKET=$BUCKET_DEV
+  DISTRIBUTION=$DISTRIBUTION_DEV
+fi
 
 aws s3 rm s3://$BUCKET --recursive
 
@@ -12,5 +23,5 @@ aws s3 cp --recursive resources/ s3://$BUCKET/resources
 
 aws configure set preview.cloudfront true
 aws cloudfront create-invalidation \
-  --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID \
+  --distribution-id $DISTRIBUTION \
   --paths "/*"

@@ -5,7 +5,7 @@ import FILTERS from '../../constants/filters/waste-water.js';
 
 const SOURCE_ID = 'pipes';
 const LAYER_ID = 'pipes-line';
-const FILTER_PROP = 'OBJECTID';
+const FILTER_PROP = 'Entity';
 
 function modifyLayer({ map }) {
   if (store.getState().filters.wasteWater[FILTERS.PIPES]) {

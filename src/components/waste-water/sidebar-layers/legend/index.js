@@ -5,6 +5,7 @@ import MESSAGES from '../../../../translations/waste-water.js';
 import styles from '../../../../styles/index.js';
 import COLORS from '../../../../constants/colors.js';
 import LegendItem from './legend-item.js';
+import LegendItemLine from './legend-item-line.js';
 
 export default radium(({ state }) => (
   <div style={{ ...styles.flex.vertical.left }}>
@@ -27,5 +28,8 @@ export default radium(({ state }) => (
     <LegendItem color={COLORS.DARK_GREY_100}
                 name={new IntlMessageFormat(
                   MESSAGES.LEGEND.STEEL_TANKS[state.lang], state.lang).format()} />
+    <LegendItemLine color={COLORS.DARK_GREY_100}
+                    name={new IntlMessageFormat(
+                          MESSAGES.LEGEND.PIPES[state.lang], state.lang).format()} />
   </div>
 ));

@@ -1,7 +1,6 @@
 import store from '../../store/index.js';
 import { REACH } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
-import FILTERS from '../../constants/filters/waste-water.js';
 
 const SOURCE_ID = 'septic-tanks';
 const LAYER_ID_FEATURE = 'septic-tanks-feature';
@@ -9,20 +8,17 @@ const LAYER_ID_LABEL = 'septic-tanks-label';
 const FILTER_PROP = 'Volume';
 
 function modifyLayer({ map }) {
-  if (store.getState().filters.wasteWater[FILTERS.SEPTIC_TANKS]) {
-    map.setFilter(LAYER_ID_FEATURE, ['has', FILTER_PROP]);
-    map.setFilter(LAYER_ID_LABEL, ['has', FILTER_PROP]);
-  } else {
-    const filters = store.getState().filters.wasteWater;
-    const filtersActive = Object.values(filters).includes(true);
-    if (filtersActive) {
-      map.setFilter(LAYER_ID_FEATURE, ['!has', FILTER_PROP]);
-      map.setFilter(LAYER_ID_LABEL, ['!has', FILTER_PROP]);
-    } else {
-      map.setFilter(LAYER_ID_FEATURE, ['has', FILTER_PROP]);
-      map.setFilter(LAYER_ID_LABEL, ['has', FILTER_PROP]);
-    }
+  const filter = [];
+  const filters = store.getState().filters.wasteWater;
+  for (const [key, value] of Object.entries(filters)) {
+    if (key.includes('8') && value) filter.push(['==', FILTER_PROP, 8]);
+    else if (key.includes('4') && value) filter.push(['==', FILTER_PROP, 4]);
+    else if (key.includes('2') && value) filter.push(['==', FILTER_PROP, 2]);
+    else if (value) filter.push(['!has', FILTER_PROP]);
   }
+  if (!filter.length) filter.push(['has', FILTER_PROP]);
+  map.setFilter(LAYER_ID_FEATURE, ['any', ...filter]);
+  map.setFilter(LAYER_ID_LABEL, ['any', ...filter]);
 }
 
 function addLayer({ map }) {

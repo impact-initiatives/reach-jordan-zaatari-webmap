@@ -56,6 +56,10 @@ export default {
       [ENGLISH]: 'Steel Tank',
       [ARABIC]: 'Steel Tank', // TODO: update this
     },
+    PIPES: {
+      [ENGLISH]: 'Pipe',
+      [ARABIC]: 'Pipe', // TODO: update this
+    },
   },
   FILTER: {
     TITLE: {
@@ -66,13 +70,21 @@ export default {
       [ENGLISH]: 'reset',
       [ARABIC]: 'إعادة تعيين',
     },
+    SEPTIC_TANKS_8M3: {
+      [ENGLISH]: '8m³ Septic Tanks',
+      [ARABIC]: '8m³ Septic Tanks', // TODO: update this
+    },
+    SEPTIC_TANKS_4M3: {
+      [ENGLISH]: '4m³ Septic Tanks',
+      [ARABIC]: '4m³ Septic Tanks', // TODO: update this
+    },
+    SEPTIC_TANKS_2M3: {
+      [ENGLISH]: '2m³ Septic Tanks',
+      [ARABIC]: '2m³ Septic Tanks', // TODO: update this
+    },
     STEEL_TANKS: {
       [ENGLISH]: 'Steel Tanks',
       [ARABIC]: 'Steel Tanks', // TODO: update this
-    },
-    SEPTIC_TANKS: {
-      [ENGLISH]: 'Septic Tanks',
-      [ARABIC]: 'Septic Tanks', // TODO: update this
     },
     PIPES: {
       [ENGLISH]: 'Pipes',

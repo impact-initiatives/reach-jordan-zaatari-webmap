@@ -1,12 +1,12 @@
 import store from '../../store/index.js';
 import { REACH } from '../../constants/resources.js';
-import { LIGHT_RED_100, MEDIUM_BLUE, DARK_GREY_50, WHITE } from '../../constants/colors.js';
+import COLORS from '../../constants/colors.js';
 
 const { mapboxgl } = window;
 
-function modifyCampFacilities({ map }) {
+function modifyLayer({ map }) {
   const filter = [];
-  const { filters } = store.getState();
+  const filters = store.getState().filters.health;
   for (const [key, value] of Object.entries(filters)) {
     if (value) filter.push(['==', key, 'Yes']);
   }
@@ -41,15 +41,17 @@ function addPopup({ map }) {
   });
 }
 
-function addCampFacilities({ map }) {
-  map.addSource('camp-facilities', {
-    data: REACH.CAMP_FACILITIES,
-    type: 'geojson',
-  });
+function addLayer({ map }) {
+  if (!map.getSource('camp-facilities')) {
+    map.addSource('camp-facilities', {
+      data: REACH.CAMP_FACILITIES,
+      type: 'geojson',
+    });
+  }
   map.addLayer({
     id: 'health-facilities-base',
     paint: {
-      'fill-color': DARK_GREY_50,
+      'fill-color': COLORS.DARK_GREY_50,
       'fill-opacity': 0.8,
     },
     source: 'camp-facilities',
@@ -61,9 +63,9 @@ function addCampFacilities({ map }) {
       'fill-color': {
         property: 'Health_Typ',
         stops: [
-          ['Healthcare Facility', LIGHT_RED_100],
-          ['Camp Facility with Health Services', MEDIUM_BLUE],
-          ['Camp Facility', DARK_GREY_50],
+          ['Healthcare Facility', COLORS.LIGHT_RED_100],
+          ['Camp Facility with Health Services', COLORS.MEDIUM_BLUE],
+          ['Camp Facility', COLORS.DARK_GREY_50],
         ],
         type: 'categorical',
       },
@@ -75,16 +77,16 @@ function addCampFacilities({ map }) {
   map.addLayer({
     id: 'health-facilities-outline',
     paint: {
-      'line-color': WHITE,
+      'line-color': COLORS.WHITE,
     },
     source: 'camp-facilities',
     type: 'line',
   });
-  modifyCampFacilities({ map });
+  modifyLayer({ map });
 }
 
 export default function ({ map }) {
-  store.subscribe(() => modifyCampFacilities({ map }));
-  addCampFacilities({ map });
+  store.subscribe(() => modifyLayer({ map }));
+  addLayer({ map });
   addPopup({ map });
 }

@@ -4,8 +4,10 @@ import closeSidebars from '../../constructor/close-sidebars.js';
 import initGeolocation from '../../interactions/geolocation.js';
 import addDistrictLine from '../../layers/district-outline.js';
 import addBlockFill from '../../layers/block-fill.js';
+import addCampFacilitiesBackground from '../../layers/camp-facilities-background.js';
 import addPipeLines from '../../layers/pipe-lines.js';
-import addSepticTanks from '../../layers/septic-tanks.js';
+import addSepticTankSize from '../../layers/septic-tank-size.js';
+import addSteelTankFill from '../../layers/steel-tank-fill.js';
 
 const { mapboxgl } = window;
 
@@ -13,8 +15,10 @@ function loadStyles({ map }) {
   initGeolocation({ map });
   addDistrictLine({ map });
   addBlockFill({ map });
+  addCampFacilitiesBackground({ map });
   addPipeLines({ map });
-  addSepticTanks({ map });
+  addSteelTankFill({ map });
+  addSepticTankSize({ map });
 }
 
 export default function () {

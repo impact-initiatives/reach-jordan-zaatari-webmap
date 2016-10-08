@@ -2,8 +2,8 @@ import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
   TITLE: {
-    [ENGLISH]: "Al Za'atari Refugee Camp - Waste Water",
-    [ARABIC]: 'آل مخيم الزعتري - المرافق الصحية', // update this
+    [ENGLISH]: "Za'atari - District Management",
+    [ARABIC]: 'آل مخيم الزعتري - المرافق الصحية', // TODO: update this
   },
   INFO: {
     LANGUAGE: {
@@ -37,20 +37,20 @@ export default {
   },
   LEGEND: {
     TITLE: {
-      [ENGLISH]: 'Legend',
-      [ARABIC]: 'مفتاح الخريطة',
+      [ENGLISH]: 'District Focal Points',
+      [ARABIC]: 'مفتاح الخريطة', // TODO: update,
     },
-    EIGHT: {
-      [ENGLISH]: '8m³ Tank',
-      [ARABIC]: 'كتلة الحدود', // update this
+    ACTED: {
+      [ENGLISH]: 'ACTED',
+      [ARABIC]: 'مرافق الرعاية الصحية', // TODO: update this
     },
-    FOUR: {
-      [ENGLISH]: '4m³ Tank',
-      [ARABIC]: 'كتلة الحدود', // update this
+    JEN: {
+      [ENGLISH]: 'JEN',
+      [ARABIC]: 'مرفق المخيم مع الخدمات الصحية', // TODO: update this
     },
-    TWO: {
-      [ENGLISH]: '2m³ Tank',
-      [ARABIC]: 'كتلة الحدود', // update this
+    OXFAM: {
+      [ENGLISH]: 'Oxfam',
+      [ARABIC]: 'مخيم مرفق', // TODO: update this
     },
   },
 };

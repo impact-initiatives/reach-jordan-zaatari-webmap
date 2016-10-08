@@ -1,5 +1,5 @@
 import { REACH } from '../../constants/resources.js';
-import { WHITE } from '../../constants/colors.js';
+import COLORS from '../../constants/colors.js';
 
 export default function ({ map }) {
   if (!map.getSource('district-boundaries')) {
@@ -11,7 +11,7 @@ export default function ({ map }) {
   map.addLayer({
     id: 'district-line',
     paint: {
-      'line-color': WHITE,
+      'line-color': COLORS.WHITE,
       'line-width': 3,
     },
     source: 'district-boundaries',

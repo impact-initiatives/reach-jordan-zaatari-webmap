@@ -2,8 +2,8 @@ import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
   TITLE: {
-    [ENGLISH]: "Al Za'atari Refugee Camp - Districts",
-    [ARABIC]: 'آل مخيم الزعتري - المرافق الصحية', // update this
+    [ENGLISH]: "Za'atari - Waste Water Network",
+    [ARABIC]: "Za'atari - Waste Water Network", // update this
   },
   INFO: {
     LANGUAGE: {
@@ -40,17 +40,43 @@ export default {
       [ENGLISH]: 'Legend',
       [ARABIC]: 'مفتاح الخريطة',
     },
-    ACTED: {
-      [ENGLISH]: 'ACTED',
-      [ARABIC]: 'مرافق الرعاية الصحية', // update this
+    EIGHT: {
+      [ENGLISH]: '8m³ Septic Tank',
+      [ARABIC]: '8m³ Septic Tank', // TODO: update this
     },
-    JEN: {
-      [ENGLISH]: 'JEN',
-      [ARABIC]: 'مرفق المخيم مع الخدمات الصحية', // update this
+    FOUR: {
+      [ENGLISH]: '4m³ Septic Tank',
+      [ARABIC]: '4m³ Septic Tank', // TODO: update this
     },
-    OXFAM: {
-      [ENGLISH]: 'Oxfam',
-      [ARABIC]: 'مخيم مرفق', // update this
+    TWO: {
+      [ENGLISH]: '2m³ Septic Tank',
+      [ARABIC]: '2m³ Septic Tank', // TODO: update this
+    },
+    STEEL_TANKS: {
+      [ENGLISH]: 'Steel Tank',
+      [ARABIC]: 'Steel Tank', // TODO: update this
+    },
+  },
+  FILTER: {
+    TITLE: {
+      [ENGLISH]: 'Filter by Infrastructure',
+      [ARABIC]: 'Filter by Infrastructure', // TODO: update this
+    },
+    RESET: {
+      [ENGLISH]: 'reset',
+      [ARABIC]: 'إعادة تعيين',
+    },
+    STEEL_TANKS: {
+      [ENGLISH]: 'Steel Tanks',
+      [ARABIC]: 'Steel Tanks', // TODO: update this
+    },
+    SEPTIC_TANKS: {
+      [ENGLISH]: 'Septic Tanks',
+      [ARABIC]: 'Septic Tanks', // TODO: update this
+    },
+    PIPES: {
+      [ENGLISH]: 'Pipes',
+      [ARABIC]: 'Pipes', // TODO: update this
     },
   },
 };

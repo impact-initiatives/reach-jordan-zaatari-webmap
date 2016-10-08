@@ -1,7 +1,7 @@
 import React from 'react';
 import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
-import MESSAGES from '../../../messages/health.js';
+import MESSAGES from '../../../translations/health.js';
 import styles from '../../../styles/index.js';
 
 export default radium(({ state }) => (

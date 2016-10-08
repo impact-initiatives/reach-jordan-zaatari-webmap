@@ -3,12 +3,12 @@ import { REACH } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
 import FILTERS from '../../constants/filters/waste-water.js';
 
-const SOURCE_ID = 'pipes';
-const LAYER_ID = 'pipes-line';
-const FILTER_PROP = 'OBJECTID';
+const SOURCE_ID = 'steel-tanks';
+const LAYER_ID = 'steel-tanks-circle';
+const FILTER_PROP = 'Layer';
 
 function modifyLayer({ map }) {
-  if (store.getState().filters.wasteWater[FILTERS.PIPES]) {
+  if (store.getState().filters.wasteWater[FILTERS.STEEL_TANKS]) {
     map.setFilter(LAYER_ID, ['has', FILTER_PROP]);
   } else {
     const filters = store.getState().filters.wasteWater;
@@ -24,18 +24,19 @@ function modifyLayer({ map }) {
 function addLayer({ map }) {
   if (!map.getSource(SOURCE_ID)) {
     map.addSource(SOURCE_ID, {
-      data: REACH.PIPES,
+      data: REACH.STEEL_TANKS,
       type: 'geojson',
     });
   }
   map.addLayer({
     id: LAYER_ID,
     paint: {
-      'line-color': COLORS.DARK_GREY_50,
-      'line-width': 1,
+      'circle-color': COLORS.DARK_GREY_100,
+      'circle-radius': 7.5,
+      'circle-opacity': 0.8,
     },
     source: SOURCE_ID,
-    type: 'line',
+    type: 'circle',
   });
   modifyLayer({ map });
 }

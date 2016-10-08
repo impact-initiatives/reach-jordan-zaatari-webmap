@@ -2,7 +2,7 @@ import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
   TITLE: {
-    [ENGLISH]: "Al Za'atari Refugee Camp - Blocks",
+    [ENGLISH]: "Za'atari - Block Boundaries",
     [ARABIC]: 'آل مخيم الزعتري - المرافق الصحية', // update this
   },
   INFO: {

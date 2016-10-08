@@ -1,9 +1,9 @@
 import React from 'react';
 import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
-import MESSAGES from '../../../messages/health.js';
+import MESSAGES from '../../../translations/health.js';
 import store from '../../../store/index.js';
-import { WHITE, LIGHT_BLUE } from '../../../constants/colors.js';
+import COLORS from '../../../constants/colors.js';
 import { ENGLISH, ARABIC } from '../../../constants/language.js';
 import styles from '../../../styles/index.js';
 
@@ -28,7 +28,7 @@ export default radium(({ state }) => (
          onClick={onClickLanguage}
          style={{
            ...styles.button.small,
-           color: state.lang === ENGLISH ? LIGHT_BLUE : WHITE,
+           color: state.lang === ENGLISH ? COLORS.LIGHT_BLUE : COLORS.WHITE,
            margin: '0px 12px',
          }}>
       {new IntlMessageFormat(MESSAGES.INFO.ENGLISH[state.lang], state.lang).format()}
@@ -37,7 +37,7 @@ export default radium(({ state }) => (
          onClick={onClickLanguage}
          style={{
            ...styles.button.small,
-           color: state.lang === ARABIC ? LIGHT_BLUE : WHITE,
+           color: state.lang === ARABIC ? COLORS.LIGHT_BLUE : COLORS.WHITE,
          }}>
       {new IntlMessageFormat(MESSAGES.INFO.ARABIC[state.lang], state.lang).format()}
     </div>

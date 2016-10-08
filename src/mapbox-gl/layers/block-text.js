@@ -1,6 +1,6 @@
 import turfCenter from 'turf-center';
 import { REACH } from '../../constants/resources.js';
-import { WHITE } from '../../constants/colors.js';
+import COLORS from '../../constants/colors.js';
 
 export default function ({ map }) {
   fetch(REACH.BLOCK_BOUNDARIES)
@@ -12,13 +12,15 @@ export default function ({ map }) {
         center.properties.nameAr = feature.properties.Name_Ar;
         return center;
       });
-      map.addSource('district-points', {
-        data: {
-          type: 'FeatureCollection',
-          features: points,
-        },
-        type: 'geojson',
-      });
+      if (!map.getSource('district-points')) {
+        map.addSource('district-points', {
+          data: {
+            type: 'FeatureCollection',
+            features: points,
+          },
+          type: 'geojson',
+        });
+      }
       map.addLayer({
         id: 'district-points-text',
         layout: {
@@ -26,7 +28,7 @@ export default function ({ map }) {
           'text-font': ['open-sans-regular'],
         },
         paint: {
-          'text-halo-color': WHITE,
+          'text-halo-color': COLORS.WHITE,
           'text-halo-width': 1.5,
         },
         source: 'district-points',

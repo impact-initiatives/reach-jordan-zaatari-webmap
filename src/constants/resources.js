@@ -11,7 +11,8 @@ export const IMG = {
   MENU_WHITE: `${RESOURCES_URL}/img/ic_menu_white_24px.svg`,
   OPEN_IN_NEW_WHITE: `${RESOURCES_URL}/img/ic_open_in_new_white_24px.svg`,
   LOGO_REACH: `${RESOURCES_URL}/img/logo-reach.png`,
-  LOGO_UNHCR: `${RESOURCES_URL}/img/logo-unhcr.png`,
+  LOGO_UNHCR: `${RESOURCES_URL}/img/logo-unhcr.svg`,
+  LOGO_UNICEF: `${RESOURCES_URL}/img/logo-unicef.svg`,
 };
 
 export const MAPBOX = {
@@ -26,5 +27,5 @@ export const REACH = {
   CAMP_FACILITIES: `${RESOURCES_URL}/reach/camp-facilities.geojson`,
   PIPES: `${RESOURCES_URL}/reach/pipes.geojson`,
   SEPTIC_TANKS: `${RESOURCES_URL}/reach/septic-tanks.geojson`,
-  TIME_SERIES: `${RESOURCES_URL}/reach/time-series.geojson`,
+  STEEL_TANKS: `${RESOURCES_URL}/reach/steel-tanks.geojson`,
 };

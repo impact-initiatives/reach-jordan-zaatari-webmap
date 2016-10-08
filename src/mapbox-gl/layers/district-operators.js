@@ -1,5 +1,5 @@
 import { REACH } from '../../constants/resources.js';
-import { MEDIUM_BLUE, LIGHT_RED_100, GREEN, WHITE } from '../../constants/colors.js';
+import COLORS from '../../constants/colors.js';
 
 function addDistrictBoundaries({ map }) {
   if (!map.getSource('district-boundaries')) {
@@ -14,9 +14,9 @@ function addDistrictBoundaries({ map }) {
       'fill-color': {
         property: 'NGO_Operat',
         stops: [
-          ['ACTED', MEDIUM_BLUE],
-          ['JEN', LIGHT_RED_100],
-          ['Oxfam', GREEN],
+          ['ACTED', COLORS.BLUE_GREY],
+          ['JEN', COLORS.YELLOW],
+          ['Oxfam', COLORS.GREEN],
         ],
         type: 'categorical',
       },
@@ -28,7 +28,7 @@ function addDistrictBoundaries({ map }) {
   map.addLayer({
     id: 'district-line',
     paint: {
-      'line-color': WHITE,
+      'line-color': COLORS.WHITE,
       'line-width': 3,
     },
     source: 'district-boundaries',

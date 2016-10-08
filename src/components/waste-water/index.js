@@ -9,7 +9,7 @@ import SidebarInfo from './sidebar-info/index.js';
 import MapboxGL from './mapbox-gl/index.js';
 import { ARABIC } from '../../constants/language.js';
 import { IMG } from '../../constants/resources.js';
-import MESSAGES from '../../messages/waste-water.js';
+import MESSAGES from '../../translations/waste-water.js';
 
 export default radium(({ state }) => (
   <div dir={state.lang === ARABIC ? 'rtl' : 'ltr'}
@@ -30,6 +30,6 @@ export default radium(({ state }) => (
       <SidebarLayers state={state} />
       <MapboxGL state={state} />
     </div>
-    <Footer donorLogo={IMG.LOGO_UNHCR} />
+    <Footer donorLogo={IMG.LOGO_UNICEF} />
   </div>
 ));

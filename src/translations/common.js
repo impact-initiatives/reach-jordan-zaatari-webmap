@@ -6,12 +6,16 @@ export default {
     [ARABIC]: 'أكثر من REACH',
   },
   DISTRICTS: {
-    [ENGLISH]: 'Districts',
-    [ARABIC]: 'Districts',
+    [ENGLISH]: 'District Management',
+    [ARABIC]: 'District Management',
+  },
+  DISTRICTS_WASTE_WATER: {
+    [ENGLISH]: 'Districts (Waste Water)',
+    [ARABIC]: 'Districts (Waste Water)',
   },
   BLOCKS: {
-    [ENGLISH]: 'Blocks',
-    [ARABIC]: 'Blocks',
+    [ENGLISH]: 'Block Boundaries',
+    [ARABIC]: 'Block Boundaries',
   },
   HEALTH: {
     [ENGLISH]: 'Health Facilities',

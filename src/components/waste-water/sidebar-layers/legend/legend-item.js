@@ -1,7 +1,7 @@
 import React from 'react';
 import radium from 'radium';
 import styles from '../../../../styles/index.js';
-import { WHITE } from '../../../../constants/colors.js';
+import COLORS from '../../../../constants/colors.js';
 
 export default radium(({ name, color }) => (
   <div style={{
@@ -11,7 +11,7 @@ export default radium(({ name, color }) => (
     <div style={{ padding: '12px 24px' }}>
       <div style={{
         backgroundColor: color,
-        border: `1px solid ${WHITE}`,
+        border: `1px solid ${COLORS.WHITE}`,
         height: '18px',
         width: '27px',
       }} />

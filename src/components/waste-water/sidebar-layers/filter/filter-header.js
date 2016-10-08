@@ -1,15 +1,15 @@
 import React from 'react';
 import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
-import MESSAGES from '../../../messages/health.js';
-import store from '../../../store/index.js';
-import styles from '../../../styles/index.js';
-import getInitialState from '../../../store/initial-state.js';
+import MESSAGES from '../../../../translations/waste-water.js';
+import store from '../../../../store/index.js';
+import styles from '../../../../styles/index.js';
+import getInitialState from '../../../../store/initial-state.js';
 
 function onReset() {
   store.dispatch({ type: (prevState) => {
     const state = JSON.parse(JSON.stringify(prevState));
-    state.filters = getInitialState().filters;
+    state.filters.wasteWater = getInitialState().filters.wasteWater;
     return state;
   } });
 }

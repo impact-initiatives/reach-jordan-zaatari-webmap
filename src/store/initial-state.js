@@ -21,16 +21,7 @@ export default () => ({
     id: '',
   },
   filters: {
-    Acute_Cond: false,
-    Dentist: false,
-    ORT: false,
-    Emergency: false,
-    GBV: false,
-    Malnutriti: false,
-    Psychother: false,
-    Physiother: false,
-    Reproducti: false,
-    Secondary: false,
-    Vaccinatio: false,
+    health: {},
+    wasteWater: {},
   },
 });

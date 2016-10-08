@@ -1,9 +1,9 @@
-import { DARK_GREY_100 } from '../constants/colors.js';
+import COLORS from '../constants/colors.js';
 
 export default {
   button: {
     small: {
-      backgroundColor: DARK_GREY_100,
+      backgroundColor: COLORS.DARK_GREY_100,
       cursor: 'pointer',
       padding: '6px',
     },
@@ -73,5 +73,12 @@ export default {
     default: { cursor: 'default' },
     disabled: { cursor: 'not-allowed' },
     pointer: { cursor: 'pointer' },
+  },
+  sidebar: {
+    separator: {
+      backgroundColor: COLORS.DARK_GREY_100,
+      margin: '12px 0px',
+      padding: '3px 0px',
+    },
   },
 };

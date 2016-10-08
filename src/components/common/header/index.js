@@ -4,7 +4,7 @@ import IntlMessageFormat from 'intl-messageformat';
 import store from '../../../store/index.js';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
-import { DARK_GREY_100, WHITE } from '../../../constants/colors.js';
+import COLORS from '../../../constants/colors.js';
 
 function onClickHome() {
   store.dispatch({ type: (prevState) => {
@@ -39,8 +39,8 @@ function onClickLayers() {
 export default radium(({ state, MESSAGES }) => (
   <div style={{
     ...styles.flex.horizontal.centerY,
-    backgroundColor: DARK_GREY_100,
-    color: WHITE,
+    backgroundColor: COLORS.DARK_GREY_100,
+    color: COLORS.WHITE,
     height: '52px',
     width: '100%',
   }}>

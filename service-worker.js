@@ -5,6 +5,7 @@ const whiteListRegExp = /^\/browser-sync\/socket.io\/$/;
 const resources = [
   '/index.html',
   '/dist/index.js',
+  '/node_modules/normalize.css/normalize.css',
   '/node_modules/mapbox-gl/dist/mapbox-gl.css',
   '/node_modules/mapbox-gl/dist/mapbox-gl.js',
   '/node_modules/mapbox-gl/dist/svg/mapboxgl-ctrl-compass.svg',

@@ -3,7 +3,6 @@ import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../../../translations/waste-water.js';
 import store from '../../../../store/index.js';
-import COLORS from '../../../../constants/colors.js';
 import styles from '../../../../styles/index.js';
 
 function onChange({ target }) {
@@ -23,8 +22,6 @@ export default radium(({ state }) => (
              new IntlMessageFormat(MESSAGES.SEARCH.SEARCH_BAR[state.lang], state.lang).format()}
            style={{
              ...styles.flex.horizontal.centerY,
-             color: COLORS.DARK_GREY_100,
-             cursor: 'pointer',
              height: '24px',
              margin: '0px 12px 0px 24px',
            }}

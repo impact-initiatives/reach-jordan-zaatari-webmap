@@ -1,6 +1,7 @@
 import store from '../../store/index.js';
 import { REACH } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
+import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
 
 const SOURCE_ID = 'septic-tanks';
 const LAYER_ID_FEATURE = 'septic-tanks-feature';
@@ -53,7 +54,7 @@ function addLayer({ map }) {
       'text-font': ['open-sans-regular'],
       'text-offset': [0.25, -0.25],
     },
-    minzoom: 16,
+    minzoom: LABEL_ZOOM_BREAK,
     paint: {
       'text-halo-color': COLORS.WHITE,
       'text-halo-width': 1.5,

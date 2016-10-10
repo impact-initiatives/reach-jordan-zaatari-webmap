@@ -1,19 +1,23 @@
 import turfCenter from 'turf-center';
 import { REACH } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
-import { LABEL_ZOOM_BREAK, MAX_ZOOM } from '../../constants/mapbox-gl.js';
+import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
 
-export default function ({ map, maxzoom }) {
-  fetch(REACH.DISTRICT_BOUNDARIES)
+const SOURCE_ID = 'camp-facility-points';
+const LAYER_ID = 'camp-facility-points-text';
+
+export default function ({ map }) {
+  fetch(REACH.CAMP_FACILITIES)
     .then((response) => response.json())
     .then(({ features }) => {
       const points = features.map((feature) => {
         const center = turfCenter(feature);
-        center.properties.name = `D${feature.properties.Name.split(' ')[1]}`;
+        center.properties.nameEn = feature.properties.Name_EN;
+        center.properties.nameAr = feature.properties.Name_AR;
         return center;
       });
-      if (!map.getSource('district-points')) {
-        map.addSource('district-points', {
+      if (!map.getSource(SOURCE_ID)) {
+        map.addSource(SOURCE_ID, {
           data: {
             type: 'FeatureCollection',
             features: points,
@@ -22,17 +26,17 @@ export default function ({ map, maxzoom }) {
         });
       }
       map.addLayer({
-        id: 'district-points-text',
+        id: LAYER_ID,
         layout: {
-          'text-field': '{name}',
+          'text-field': '{nameEn}',
           'text-font': ['open-sans-regular'],
         },
-        maxzoom: maxzoom ? LABEL_ZOOM_BREAK : MAX_ZOOM,
+        minzoom: LABEL_ZOOM_BREAK,
         paint: {
           'text-halo-color': COLORS.WHITE,
           'text-halo-width': 1.5,
         },
-        source: 'district-points',
+        source: SOURCE_ID,
         type: 'symbol',
       });
     });

@@ -61,6 +61,20 @@ export default {
       [ARABIC]: 'Pipe', // TODO: update this
     },
   },
+  SEARCH: {
+    TITLE: {
+      [ENGLISH]: 'Find Tank',
+      [ARABIC]: 'Find Tank', // TODO: update this
+    },
+    RESET: {
+      [ENGLISH]: 'reset',
+      [ARABIC]: 'إعادة تعيين',
+    },
+    SEARCH_BAR: {
+      [ENGLISH]: 'Enter Household Address',
+      [ARABIC]: 'Enter Household Address', // TODO: update this
+    },
+  },
   FILTER: {
     TITLE: {
       [ENGLISH]: 'Filter by Infrastructure',

@@ -32,7 +32,7 @@ function addLayer({ map }) {
     id: LAYER_ID,
     paint: {
       'circle-color': COLORS.DARK_GREY_100,
-      'circle-radius': 7.5,
+      'circle-radius': 6.5,
       'circle-opacity': 0.8,
     },
     source: SOURCE_ID,

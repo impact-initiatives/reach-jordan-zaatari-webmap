@@ -24,4 +24,7 @@ export default () => ({
     health: {},
     wasteWater: {},
   },
+  search: {
+    wasteWater: '',
+  },
 });

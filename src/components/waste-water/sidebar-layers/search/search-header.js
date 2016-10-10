@@ -9,7 +9,7 @@ import getInitialState from '../../../../store/initial-state.js';
 function onReset() {
   store.dispatch({ type: (prevState) => {
     const state = JSON.parse(JSON.stringify(prevState));
-    state.filters.wasteWater = getInitialState().filters.wasteWater;
+    state.search.wasteWater = getInitialState().search.wasteWater;
     return state;
   } });
 }
@@ -20,7 +20,7 @@ export default radium(({ state }) => (
       fontWeight: '600',
       padding: '6px 24px',
     }}>
-      {new IntlMessageFormat(MESSAGES.FILTER.TITLE[state.lang], state.lang).format()}
+      {new IntlMessageFormat(MESSAGES.SEARCH.TITLE[state.lang], state.lang).format()}
     </div>
     <div style={styles.flex.item.space} />
     <div onClick={onReset}
@@ -28,7 +28,7 @@ export default radium(({ state }) => (
            ...styles.button.small,
            marginRight: '12px',
          }}>
-      {new IntlMessageFormat(MESSAGES.FILTER.RESET[state.lang], state.lang).format()}
+      {new IntlMessageFormat(MESSAGES.SEARCH.RESET[state.lang], state.lang).format()}
     </div>
   </div>
 ));

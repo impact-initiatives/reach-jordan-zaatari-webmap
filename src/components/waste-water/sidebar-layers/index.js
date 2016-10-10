@@ -3,6 +3,7 @@ import radium from 'radium';
 import styles from '../../../styles/index.js';
 import { getSidebarRightStyle } from '../../../styles/animations.js';
 import Legend from './legend/index.js';
+import Search from './search/index.js';
 import Filter from './filter/index.js';
 
 export default radium(({ state }) => (
@@ -11,6 +12,8 @@ export default radium(({ state }) => (
     visible: state.sidebarLayers.open,
   })}>
     <Legend state={state} />
+    <div style={styles.sidebar.separator} />
+    <Search state={state} />
     <div style={styles.sidebar.separator} />
     <Filter state={state} />
   </div>

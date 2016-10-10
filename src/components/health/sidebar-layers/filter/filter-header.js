@@ -22,8 +22,12 @@ export default radium(({ state }) => (
     }}>
       {new IntlMessageFormat(MESSAGES.FILTER.TITLE[state.lang], state.lang).format()}
     </div>
+    <div style={styles.flex.item.space} />
     <div onClick={onReset}
-         style={styles.button.small}>
+         style={{
+           ...styles.button.small,
+           marginRight: '12px',
+         }}>
       {new IntlMessageFormat(MESSAGES.FILTER.RESET[state.lang], state.lang).format()}
     </div>
   </div>

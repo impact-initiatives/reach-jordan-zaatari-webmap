@@ -3,10 +3,45 @@ import { REACH } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
 import { LABEL_ZOOM_BREAK, NUM_HOUSEHOLDS } from '../../constants/mapbox-gl.js';
 
+const { mapboxgl } = window;
+
 const SOURCE_ID = 'septic-tanks';
 const LAYER_ID_FEATURE = 'septic-tanks-feature';
 const LAYER_ID_LABEL = 'septic-tanks-label';
 const FILTER_PROP = 'Volume';
+
+function addPopup({ map }) {
+  map.on('click', (e) => {
+    const features = map.queryRenderedFeatures(e.point, {
+      layers: [LAYER_ID_FEATURE],
+    });
+    if (features.length && features[0].properties[FILTER_PROP] !== 'null') {
+      const feature = features[0];
+      const popupText = ['<div><b>Connected Households</b></div>'];
+      for (let i = 0; i < NUM_HOUSEHOLDS; i += 1) {
+        const prop = `HH${i + 1}`;
+        const household = feature.properties[prop];
+        if (household !== 'null') {
+          popupText.push(`<div>${household}</div>`);
+        } else {
+          break;
+        }
+      }
+      new mapboxgl.Popup({ closeButton: false })
+        .setLngLat(map.unproject(e.point))
+        .setHTML(popupText.join(''))
+        .addTo(map);
+    }
+  });
+  map.on('mousemove', (e) => {
+    const features = map.queryRenderedFeatures(e.point, {
+      layers: [LAYER_ID_FEATURE],
+    });
+    const canvas = map.getCanvas();
+    canvas.style.cursor = (
+      features.length && features[0].properties[FILTER_PROP] !== 'null') ? 'pointer' : '';
+  });
+}
 
 function filterByType({ map, state }) {
   const filter = [];
@@ -87,4 +122,5 @@ function addLayer({ map }) {
 export default function ({ map }) {
   store.subscribe(() => modifyLayer({ map }));
   addLayer({ map });
+  addPopup({ map });
 }

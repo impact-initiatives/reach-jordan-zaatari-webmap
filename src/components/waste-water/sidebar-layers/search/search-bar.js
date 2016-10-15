@@ -14,10 +14,21 @@ function onChange({ target }) {
   } });
 }
 
+function onKeyUp({ keyCode }) {
+  if (keyCode === 13) {
+    store.dispatch({ type: (prevState) => {
+      const state = JSON.parse(JSON.stringify(prevState));
+      state.sidebarLayers.open = false;
+      return state;
+    } });
+  }
+}
+
 export default radium(({ state }) => (
   <div style={{ ...styles.flex.vertical.left }}>
     <div style={{ height: '6px' }} />
     <input onChange={onChange}
+           onKeyUp={onKeyUp}
            placeholder={
              new IntlMessageFormat(MESSAGES.SEARCH.SEARCH_BAR[state.lang], state.lang).format()}
            style={{

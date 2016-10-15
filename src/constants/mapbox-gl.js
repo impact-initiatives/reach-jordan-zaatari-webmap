@@ -26,3 +26,5 @@ export const LABEL_ZOOM_BREAK = 16;
 
 export const MIN_ZOOM = 0;
 export const MAX_ZOOM = 22;
+
+export const NUM_HOUSEHOLDS = 17;

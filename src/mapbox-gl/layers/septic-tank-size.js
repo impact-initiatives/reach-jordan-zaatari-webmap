@@ -1,16 +1,16 @@
 import store from '../../store/index.js';
 import { REACH } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
-import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
+import { LABEL_ZOOM_BREAK, NUM_HOUSEHOLDS } from '../../constants/mapbox-gl.js';
 
 const SOURCE_ID = 'septic-tanks';
 const LAYER_ID_FEATURE = 'septic-tanks-feature';
 const LAYER_ID_LABEL = 'septic-tanks-label';
 const FILTER_PROP = 'Volume';
 
-function modifyLayer({ map }) {
+function filterByType({ map, state }) {
   const filter = [];
-  const filters = store.getState().filters.wasteWater;
+  const filters = state.filters.wasteWater;
   for (const [key, value] of Object.entries(filters)) {
     if (key.includes('8') && value) filter.push(['==', FILTER_PROP, 8]);
     else if (key.includes('4') && value) filter.push(['==', FILTER_PROP, 4]);
@@ -20,6 +20,25 @@ function modifyLayer({ map }) {
   if (!filter.length) filter.push(['has', FILTER_PROP]);
   map.setFilter(LAYER_ID_FEATURE, ['any', ...filter]);
   map.setFilter(LAYER_ID_LABEL, ['any', ...filter]);
+}
+
+function filterBySearch({ map, state }) {
+  const filter = [];
+  const search = state.search.wasteWater;
+  for (let i = 0; i < NUM_HOUSEHOLDS; i += 1) {
+    filter.push(['==', `HH${i + 1}`, search]);
+  }
+  map.setFilter(LAYER_ID_FEATURE, ['any', ...filter]);
+  map.setFilter(LAYER_ID_LABEL, ['any', ...filter]);
+}
+
+function modifyLayer({ map }) {
+  const state = store.getState();
+  if (state.search.wasteWater) {
+    filterBySearch({ map, state });
+  } else {
+    filterByType({ map, state });
+  }
 }
 
 function addLayer({ map }) {
@@ -50,7 +69,7 @@ function addLayer({ map }) {
     id: LAYER_ID_LABEL,
     layout: {
       'text-anchor': 'bottom-left',
-      'text-field': '{Name}',
+      'text-field': '{New_Name}',
       'text-font': ['open-sans-regular'],
       'text-offset': [0.25, -0.25],
     },

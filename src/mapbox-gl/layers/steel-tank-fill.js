@@ -8,12 +8,14 @@ const LAYER_ID = 'steel-tanks-circle';
 const FILTER_PROP = 'Layer';
 
 function modifyLayer({ map }) {
-  if (store.getState().filters.wasteWater[FILTERS.STEEL_TANKS]) {
+  const state = store.getState();
+  if (state.filters.wasteWater[FILTERS.STEEL_TANKS]) {
     map.setFilter(LAYER_ID, ['has', FILTER_PROP]);
   } else {
-    const filters = store.getState().filters.wasteWater;
+    const filters = state.filters.wasteWater;
     const filtersActive = Object.values(filters).includes(true);
-    if (filtersActive) {
+    const searchActive = state.search.wasteWater;
+    if (filtersActive || searchActive) {
       map.setFilter(LAYER_ID, ['!has', FILTER_PROP]);
     } else {
       map.setFilter(LAYER_ID, ['has', FILTER_PROP]);

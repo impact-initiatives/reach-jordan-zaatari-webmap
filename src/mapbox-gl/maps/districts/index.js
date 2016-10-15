@@ -19,6 +19,6 @@ export default function () {
   const map = new mapboxgl.Map(OPTIONS);
   addOptions({ map });
   map.on('mousedown', closeSidebars);
-  map.on('movestart', closeSidebars);
+  map.on('zoomstart', closeSidebars);
   map.on('style.load', () => loadStyles({ map }));
 }

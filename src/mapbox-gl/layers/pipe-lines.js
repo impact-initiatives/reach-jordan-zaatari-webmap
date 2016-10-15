@@ -8,12 +8,14 @@ const LAYER_ID = 'pipes-line';
 const FILTER_PROP = 'Entity';
 
 function modifyLayer({ map }) {
-  if (store.getState().filters.wasteWater[FILTERS.PIPES]) {
+  const state = store.getState();
+  if (state.filters.wasteWater[FILTERS.PIPES]) {
     map.setFilter(LAYER_ID, ['has', FILTER_PROP]);
   } else {
-    const filters = store.getState().filters.wasteWater;
+    const filters = state.filters.wasteWater;
     const filtersActive = Object.values(filters).includes(true);
-    if (filtersActive) {
+    const searchActive = state.search.wasteWater;
+    if (filtersActive || searchActive) {
       map.setFilter(LAYER_ID, ['!has', FILTER_PROP]);
     } else {
       map.setFilter(LAYER_ID, ['has', FILTER_PROP]);

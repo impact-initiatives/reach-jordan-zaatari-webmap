@@ -62,13 +62,6 @@
       "zlib": "github:jspm/nodelibs-zlib@^0.2.0-alpha"
     },
     "overrides": {
-      "npm:babel-runtime@5.8.38": {
-        "main": false,
-        "dependencies": {},
-        "optionalDependencies": {
-          "core-js": "^1.2.0"
-        }
-      },
       "npm:browserify-zlib@0.1.4": {
         "dependencies": {
           "readable-stream": "^2.0.2",
@@ -97,7 +90,7 @@
           "test.js"
         ]
       },
-      "npm:lodash@4.16.2": {
+      "npm:lodash@4.16.4": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"

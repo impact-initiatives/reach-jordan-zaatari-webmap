@@ -14,8 +14,9 @@ function onChange({ target }) {
   } });
 }
 
-function onKeyUp({ keyCode }) {
+function onKeyUp({ keyCode, target }) {
   if (keyCode === 13) {
+    target.blur();
     store.dispatch({ type: (prevState) => {
       const state = JSON.parse(JSON.stringify(prevState));
       state.sidebarLayers.open = false;

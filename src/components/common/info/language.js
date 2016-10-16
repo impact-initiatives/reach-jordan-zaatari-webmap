@@ -1,7 +1,7 @@
 import React from 'react';
 import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
-import MESSAGES from '../../../translations/health.js';
+import MESSAGES from '../../../translations/common.js';
 import store from '../../../store/index.js';
 import COLORS from '../../../constants/colors.js';
 import { ENGLISH, ARABIC } from '../../../constants/language.js';

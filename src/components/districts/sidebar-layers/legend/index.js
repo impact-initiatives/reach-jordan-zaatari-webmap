@@ -15,7 +15,7 @@ export default radium(({ state }) => (
     }}>
       {new IntlMessageFormat(MESSAGES.LEGEND.TITLE[state.lang], state.lang).format()}
     </div>
-    <LegendItem color={COLORS.BLUE_GREY}
+    <LegendItem color={COLORS.MEDIUM_BLUE}
                 name={new IntlMessageFormat(
                   MESSAGES.LEGEND.ACTED[state.lang], state.lang).format()} />
     <LegendItem color={COLORS.YELLOW}

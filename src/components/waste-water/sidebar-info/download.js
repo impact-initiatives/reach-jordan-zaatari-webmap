@@ -30,7 +30,7 @@ export default radium(({ state }) => (
     </div>
     <div onClick={onClickDistrict}
          style={styles.button.small}>
-      {new IntlMessageFormat(MESSAGES.DOWNLOAD.DISTRICT[state.lang], state.lang).format()}
+      {new IntlMessageFormat(MESSAGES.DOWNLOAD.DISTRICTS[state.lang], state.lang).format()}
     </div>
   </div>
 ));

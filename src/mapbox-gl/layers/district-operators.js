@@ -14,7 +14,7 @@ function addDistrictBoundaries({ map }) {
       'fill-color': {
         property: 'NGO_Operat',
         stops: [
-          ['ACTED', COLORS.BLUE_GREY],
+          ['ACTED', COLORS.MEDIUM_BLUE],
           ['JEN', COLORS.YELLOW],
           ['Oxfam', COLORS.GREEN],
         ],

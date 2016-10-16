@@ -3,11 +3,11 @@ import { ENGLISH, ARABIC } from '../constants/language.js';
 export default {
   TITLE_SHORT: {
     [ENGLISH]: "Za'atari - Waste Water Network",
-    [ARABIC]: "Za'atari - Waste Water Network", // TODO: update this
+    [ARABIC]: "Za'atari - Waste Water Network",
   },
   TITLE_LONG: {
     [ENGLISH]: "Al Za'atari Refugee Camp - Waste Water Network",
-    [ARABIC]: "Al Za'atari Refugee Camp - Waste Water Network", // TODO: update this
+    [ARABIC]: "Al Za'atari Refugee Camp - Waste Water Network",
   },
   DOWNLOAD: {
     HEADER: {
@@ -18,9 +18,9 @@ export default {
       [ENGLISH]: 'Camp',
       [ARABIC]: 'Camp',
     },
-    DISTRICT: {
-      [ENGLISH]: 'District',
-      [ARABIC]: 'District', // TODO: update this
+    DISTRICTS: {
+      [ENGLISH]: 'Districts',
+      [ARABIC]: 'Districts',
     },
   },
   INFO: [
@@ -40,29 +40,29 @@ export default {
     },
     EIGHT: {
       [ENGLISH]: '8m³ Septic Tank',
-      [ARABIC]: '8m³ Septic Tank', // TODO: update this
+      [ARABIC]: '8m³ Septic Tank',
     },
     FOUR: {
       [ENGLISH]: '4m³ Septic Tank',
-      [ARABIC]: '4m³ Septic Tank', // TODO: update this
+      [ARABIC]: '4m³ Septic Tank',
     },
     TWO: {
       [ENGLISH]: '2m³ Septic Tank',
-      [ARABIC]: '2m³ Septic Tank', // TODO: update this
+      [ARABIC]: '2m³ Septic Tank',
     },
     STEEL_TANKS: {
       [ENGLISH]: 'Steel Tank',
-      [ARABIC]: 'Steel Tank', // TODO: update this
+      [ARABIC]: 'Steel Tank',
     },
     PIPES: {
       [ENGLISH]: 'Pipe',
-      [ARABIC]: 'Pipe', // TODO: update this
+      [ARABIC]: 'Pipe',
     },
   },
   SEARCH: {
     TITLE: {
-      [ENGLISH]: 'Find Tank',
-      [ARABIC]: 'Find Tank', // TODO: update this
+      [ENGLISH]: 'Filter by Household',
+      [ARABIC]: 'Filter by Household',
     },
     RESET: {
       [ENGLISH]: 'reset',
@@ -70,13 +70,13 @@ export default {
     },
     SEARCH_BAR: {
       [ENGLISH]: 'Enter Household Address',
-      [ARABIC]: 'Enter Household Address', // TODO: update this
+      [ARABIC]: 'Enter Household Address',
     },
   },
   FILTER: {
     TITLE: {
       [ENGLISH]: 'Filter by Infrastructure',
-      [ARABIC]: 'Filter by Infrastructure', // TODO: update this
+      [ARABIC]: 'Filter by Infrastructure',
     },
     RESET: {
       [ENGLISH]: 'reset',
@@ -84,23 +84,23 @@ export default {
     },
     SEPTIC_TANKS_8M3: {
       [ENGLISH]: '8m³ Septic Tanks',
-      [ARABIC]: '8m³ Septic Tanks', // TODO: update this
+      [ARABIC]: '8m³ Septic Tanks',
     },
     SEPTIC_TANKS_4M3: {
       [ENGLISH]: '4m³ Septic Tanks',
-      [ARABIC]: '4m³ Septic Tanks', // TODO: update this
+      [ARABIC]: '4m³ Septic Tanks',
     },
     SEPTIC_TANKS_2M3: {
       [ENGLISH]: '2m³ Septic Tanks',
-      [ARABIC]: '2m³ Septic Tanks', // TODO: update this
+      [ARABIC]: '2m³ Septic Tanks',
     },
     STEEL_TANKS: {
       [ENGLISH]: 'Steel Tanks',
-      [ARABIC]: 'Steel Tanks', // TODO: update this
+      [ARABIC]: 'Steel Tanks',
     },
     PIPES: {
       [ENGLISH]: 'Pipes',
-      [ARABIC]: 'Pipes', // TODO: update this
+      [ARABIC]: 'Pipes',
     },
   },
 };

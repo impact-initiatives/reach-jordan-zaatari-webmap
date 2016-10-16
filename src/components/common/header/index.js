@@ -4,6 +4,7 @@ import IntlMessageFormat from 'intl-messageformat';
 import store from '../../../store/index.js';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
+import { isMobile } from '../../../constants/browser.js';
 import COLORS from '../../../constants/colors.js';
 
 function onClickHome() {
@@ -41,7 +42,7 @@ export default radium(({ state, MESSAGES }) => (
     ...styles.flex.horizontal.centerY,
     backgroundColor: COLORS.DARK_GREY_100,
     color: COLORS.WHITE,
-    height: '52px',
+    height: '48px',
     width: '100%',
   }}>
     <img alt="home"
@@ -49,7 +50,11 @@ export default radium(({ state, MESSAGES }) => (
          src={IMG.MENU_WHITE}
          style={{ cursor: 'pointer', padding: '12px' }} />
     <div>
-      {new IntlMessageFormat(MESSAGES.TITLE[state.lang], state.lang).format()}
+      {isMobile() ? (
+        new IntlMessageFormat(MESSAGES.TITLE_SHORT[state.lang], state.lang).format()
+      ) : (
+        new IntlMessageFormat(MESSAGES.TITLE_LONG[state.lang], state.lang).format()
+      )}
     </div>
     <div style={styles.flex.item.space} />
     <img alt="info"

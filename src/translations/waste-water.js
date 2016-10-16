@@ -1,9 +1,13 @@
 import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
-  TITLE: {
+  TITLE_SHORT: {
     [ENGLISH]: "Za'atari - Waste Water Network",
-    [ARABIC]: "Za'atari - Waste Water Network", // update this
+    [ARABIC]: "Za'atari - Waste Water Network", // TODO: update this
+  },
+  TITLE_LONG: {
+    [ENGLISH]: "Al Za'atari Refugee Camp - Waste Water Network",
+    [ARABIC]: "Al Za'atari Refugee Camp - Waste Water Network", // TODO: update this
   },
   INFO: {
     LANGUAGE: {

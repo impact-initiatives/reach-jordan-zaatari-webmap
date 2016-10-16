@@ -1,9 +1,13 @@
 import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
-  TITLE: {
-    [ENGLISH]: "Za'atari - District Management",
-    [ARABIC]: 'آل مخيم الزعتري - المرافق الصحية', // TODO: update this
+  TITLE_SHORT: {
+    [ENGLISH]: "Za'atari - District Boundaries",
+    [ARABIC]: "Za'atari - District Boundaries", // TODO: update this
+  },
+  TITLE_LONG: {
+    [ENGLISH]: "Al Za'atari Refugee Camp - District Boundaries",
+    [ARABIC]: "Al Za'atari Refugee Camp - District Boundaries", // TODO: update this
   },
   INFO: {
     LANGUAGE: {

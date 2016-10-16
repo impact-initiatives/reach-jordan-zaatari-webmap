@@ -11,15 +11,15 @@ export default radium(({ donorLogo }) => (
     backgroundColor: COLORS.DARK_GREY_100,
     color: COLORS.WHITE,
     display: isMobile() ? 'none' : 'flex',
-    height: '52px',
+    height: '48px',
     width: '100%',
   }}>
-    <img alt="unhcr-logo"
+    <img alt="donor-logo"
          src={donorLogo}
-         style={{ cursor: 'pointer', height: '40px', padding: '12px' }} />
+         style={{ height: '36px', padding: '12px' }} />
     <div style={styles.flex.item.space} />
     <img alt="reach-logo"
          src={IMG.LOGO_REACH}
-         style={{ cursor: 'pointer', height: '40px', padding: '12px' }} />
+         style={{ height: '48px', padding: '12px' }} />
   </div>
 ));

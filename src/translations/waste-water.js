@@ -25,11 +25,11 @@ export default {
   },
   INFO: [
     {
-      [ENGLISH]: "This map was created in collaboration with UNICEF to provide humanitarian actors and with a way to access information about the wastewater services provided in Za'atari.",
-      [ARABIC]: 'تم إنشاء هذه الخريطة بالتعاون مع اليونيسيف لتوفير الجهات الفاعلة الإنسانية ووسيلة للوصول إلى المعلومات حول خدمات الصرف الصحي المقدمة في الزعتري.',
+      [ENGLISH]: "This map was created in collaboration with UNICEF to provide humanitarian actors with a way to access information about the wastewater services provided in Za'atari.",
+      [ARABIC]: 'تم إنشاء هذه الخريطة بالتعاون مع اليونيسيف لتوفير الجهات الفاعلة الإنسانية وسيلة للوصول إلى المعلومات حول خدمات الصرف الصحي المقدمة في الزعتري.',
     },
     {
-      [ENGLISH]: 'Tank and pipe information collated by ACTED, JEN, and Oxfam. Spatial data collected by REACH and UNICEF.',
+      [ENGLISH]: 'Tank and pipe information collected by ACTED, JEN, and Oxfam. Spatial data collated by REACH and UNICEF.',
       [ARABIC]: 'خزان وأنابيب المعلومات التي جمعتها ACTED، JEN، ومنظمة أوكسفام. البيانات المكانية التي تم جمعها من قبل REACH واليونيسيف.',
     },
   ],

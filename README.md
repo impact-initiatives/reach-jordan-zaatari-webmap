@@ -3,7 +3,7 @@
 Install global NPM pacages
 
 ```
-npm install -g http-server jspm
+npm install -g jspm
 ```
 
 Install local NPM Packages
@@ -25,11 +25,10 @@ Run each line in a new terminal tab
 
 ```
 npm run bundle
-npm run watch
 npm run serve
 ```
 
-Open the site at `127.0.0.1:8080/src`
+Open the site at `127.0.0.1:3000`
 
 # Resources
 

@@ -3,11 +3,11 @@ import { ENGLISH, ARABIC } from '../constants/language.js';
 export default {
   TITLE_SHORT: {
     [ENGLISH]: "Za'atari - Health Facilities",
-    [ARABIC]: "Za'atari - Health Facilities",
+    [ARABIC]: 'مخيم الزعتري - المرافق الصحية',
   },
   TITLE_LONG: {
     [ENGLISH]: "Al Za'atari Refugee Camp - Health Facilities",
-    [ARABIC]: "Al Za'atari Refugee Camp - Health Facilities",
+    [ARABIC]: 'مخيم الزعتري للاجئين - المرافق الصحية',
   },
   INFO: [
     {
@@ -16,7 +16,7 @@ export default {
     },
     {
       [ENGLISH]: 'Health service information was collated by UNHCR, and spatial data was collected by REACH and UNHCR.',
-      [ARABIC]: 'وقد جمعت معلومات الخدمة الصحية من خلال UNHCR، وجمعت البيانات المكانية التي REACH وUNHCR.',
+      [ARABIC]: 'وقد جمعت معلومات الخدمة الصحية من قبل المفوضية، وجمعت البيانات المكانية التي REACH والمفوضية.',
     },
   ],
   LEGEND: {

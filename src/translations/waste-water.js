@@ -3,34 +3,34 @@ import { ENGLISH, ARABIC } from '../constants/language.js';
 export default {
   TITLE_SHORT: {
     [ENGLISH]: "Za'atari - Waste Water Network",
-    [ARABIC]: "Za'atari - Waste Water Network",
+    [ARABIC]: 'مخيم الزعتري - مياه الصرف الصحي',
   },
   TITLE_LONG: {
     [ENGLISH]: "Al Za'atari Refugee Camp - Waste Water Network",
-    [ARABIC]: "Al Za'atari Refugee Camp - Waste Water Network",
+    [ARABIC]: 'مخيم الزعتري للاجئين - مياه الصرف الصحي',
   },
   DOWNLOAD: {
     HEADER: {
       [ENGLISH]: 'PDF Maps',
-      [ARABIC]: 'PDF Maps',
+      [ARABIC]: 'خرائط PDF',
     },
     CAMP: {
       [ENGLISH]: 'Camp',
-      [ARABIC]: 'Camp',
+      [ARABIC]: 'مخيم',
     },
     DISTRICTS: {
       [ENGLISH]: 'Districts',
-      [ARABIC]: 'Districts',
+      [ARABIC]: 'المناطق',
     },
   },
   INFO: [
     {
       [ENGLISH]: "This map was created in collaboration with UNICEF to provide humanitarian actors and with a way to access information about the wastewater services provided in Za'atari.",
-      [ARABIC]: "This map was created in collaboration with UNICEF to provide humanitarian actors and with a way to access information about the wastewater services provided in Za'atari.",
+      [ARABIC]: 'تم إنشاء هذه الخريطة بالتعاون مع اليونيسيف لتوفير الجهات الفاعلة الإنسانية ووسيلة للوصول إلى المعلومات حول خدمات الصرف الصحي المقدمة في الزعتري.',
     },
     {
       [ENGLISH]: 'Tank and pipe information collated by ACTED, JEN, and Oxfam. Spatial data collected by REACH and UNICEF.',
-      [ARABIC]: 'Tank and pipe information collated by ACTED, JEN, and Oxfam. Spatial data collected by REACH and UNICEF.',
+      [ARABIC]: 'خزان وأنابيب المعلومات التي جمعتها ACTED، JEN، ومنظمة أوكسفام. البيانات المكانية التي تم جمعها من قبل REACH واليونيسيف.',
     },
   ],
   LEGEND: {
@@ -40,29 +40,29 @@ export default {
     },
     EIGHT: {
       [ENGLISH]: '8m³ Septic Tank',
-      [ARABIC]: '8m³ Septic Tank',
+      [ARABIC]: '8m³ التفسخ تانك',
     },
     FOUR: {
       [ENGLISH]: '4m³ Septic Tank',
-      [ARABIC]: '4m³ Septic Tank',
+      [ARABIC]: '4m³ التفسخ تانك',
     },
     TWO: {
       [ENGLISH]: '2m³ Septic Tank',
-      [ARABIC]: '2m³ Septic Tank',
+      [ARABIC]: '2m³ التفسخ تانك',
     },
     STEEL_TANKS: {
       [ENGLISH]: 'Steel Tank',
-      [ARABIC]: 'Steel Tank',
+      [ARABIC]: 'خزان الفولاذ',
     },
     PIPES: {
       [ENGLISH]: 'Pipe',
-      [ARABIC]: 'Pipe',
+      [ARABIC]: 'أنبوب',
     },
   },
   SEARCH: {
     TITLE: {
       [ENGLISH]: 'Filter by Household',
-      [ARABIC]: 'Filter by Household',
+      [ARABIC]: 'تصفية حسب المنزلية',
     },
     RESET: {
       [ENGLISH]: 'reset',
@@ -70,13 +70,13 @@ export default {
     },
     SEARCH_BAR: {
       [ENGLISH]: 'Enter Household Address',
-      [ARABIC]: 'Enter Household Address',
+      [ARABIC]: 'أدخل عنوان المنزلية',
     },
   },
   FILTER: {
     TITLE: {
       [ENGLISH]: 'Filter by Infrastructure',
-      [ARABIC]: 'Filter by Infrastructure',
+      [ARABIC]: 'تصفية حسب البنية التحتية',
     },
     RESET: {
       [ENGLISH]: 'reset',
@@ -84,23 +84,23 @@ export default {
     },
     SEPTIC_TANKS_8M3: {
       [ENGLISH]: '8m³ Septic Tanks',
-      [ARABIC]: '8m³ Septic Tanks',
+      [ARABIC]: 'الدبابات 8m³ التفسخ',
     },
     SEPTIC_TANKS_4M3: {
       [ENGLISH]: '4m³ Septic Tanks',
-      [ARABIC]: '4m³ Septic Tanks',
+      [ARABIC]: 'الدبابات 4m³ التفسخ',
     },
     SEPTIC_TANKS_2M3: {
       [ENGLISH]: '2m³ Septic Tanks',
-      [ARABIC]: '2m³ Septic Tanks',
+      [ARABIC]: 'الدبابات 2m³ التفسخ',
     },
     STEEL_TANKS: {
       [ENGLISH]: 'Steel Tanks',
-      [ARABIC]: 'Steel Tanks',
+      [ARABIC]: 'خزانات الصلب',
     },
     PIPES: {
       [ENGLISH]: 'Pipes',
-      [ARABIC]: 'Pipes',
+      [ARABIC]: 'أنابيب',
     },
   },
 };

@@ -5,7 +5,7 @@
     "mapbox:autocomposite": true,
     "mapbox:type": "template"
   },
-  "glyphs": "/resources/mapbox/fonts/{fontstack}/{range}.pbf",
+  "glyphs": "./resources/mapbox/fonts/{fontstack}/{range}.pbf",
   "sources": {},
   "layers": [
     {

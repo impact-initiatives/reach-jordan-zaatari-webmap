@@ -1,4 +1,4 @@
-const RESOURCES_URL = '/resources';
+const RESOURCES_URL = './resources';
 
 export const IMG = {
   APPS_WHITE: `${RESOURCES_URL}/img/ic_apps_white_24px.svg`,

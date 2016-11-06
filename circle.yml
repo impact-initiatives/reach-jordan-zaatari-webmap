@@ -13,7 +13,7 @@ dependencies:
     - cp .jspm.config.js jspm.config.js
   post:
     - jspm install
-    - npm run build
+    - npm run deploy
 deployment:
   prod:
     branch: master

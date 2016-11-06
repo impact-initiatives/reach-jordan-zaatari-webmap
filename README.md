@@ -29,9 +29,3 @@ npm run serve
 ```
 
 Open the site at `127.0.0.1:3000`
-
-# Resources
-
-- https://github.com/klokantech/mapbox-gl-js-offline-example
-- https://github.com/klokantech/vector-tiles-sample
-- https://github.com/mapbox/mbutil

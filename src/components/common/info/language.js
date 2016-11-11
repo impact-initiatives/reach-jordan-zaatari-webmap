@@ -9,11 +9,10 @@ import styles from '../../../styles/index.js';
 
 function onClickLanguage({ target }) {
   const { language } = target.dataset;
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.lang = language;
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    lang: language,
+  }) });
 }
 
 export default radium(({ state }) => (

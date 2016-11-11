@@ -1,0 +1,14 @@
+{
+  "short_name": "REACH Za'atari Maps",
+  "name": "REACH Za'atari Maps",
+  "icons": [
+    {
+      "src": "./resources/img/logo-reach.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}

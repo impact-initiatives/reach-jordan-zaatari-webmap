@@ -8,11 +8,16 @@ import styles from '../../../../styles/index.js';
 
 function onClick({ target }) {
   const { type } = target.dataset;
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.filters.wasteWater[type] = !state.filters.wasteWater[type];
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    filters: {
+      ...state.filters,
+      wasteWater: {
+        ...state.filters.wasteWater,
+        [type]: !state.filters.wasteWater[type],
+      },
+    },
+  }) });
 }
 
 export default radium(({ icon, name, state, type }) => (

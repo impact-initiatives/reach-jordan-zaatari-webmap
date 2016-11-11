@@ -1,5 +1,4 @@
 import React from 'react';
-import radium from 'radium';
 import IntlMessageFormat from 'intl-messageformat';
 import store from '../../../store/index.js';
 import { IMG } from '../../../constants/resources.js';
@@ -8,36 +7,60 @@ import { isMobile } from '../../../constants/browser.js';
 import COLORS from '../../../constants/colors.js';
 
 function onClickHome() {
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.sidebarHome.open = !state.sidebarHome.open;
-    state.sidebarInfo.open = false;
-    state.sidebarLayers.open = false;
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    sidebarHome: {
+      ...state.sidebarHome,
+      open: !state.sidebarHome.open,
+    },
+    sidebarLayers: {
+      ...state.sidebarLayers,
+      open: false,
+    },
+    sidebarInfo: {
+      ...state.sidebarInfo,
+      open: false,
+    },
+  }) });
 }
 
 function onClickInfo() {
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.sidebarHome.open = false;
-    state.sidebarInfo.open = !state.sidebarInfo.open;
-    state.sidebarLayers.open = false;
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    sidebarHome: {
+      ...state.sidebarHome,
+      open: false,
+    },
+    sidebarLayers: {
+      ...state.sidebarLayers,
+      open: false,
+    },
+    sidebarInfo: {
+      ...state.sidebarInfo,
+      open: !state.sidebarInfo.open,
+    },
+  }) });
 }
 
 function onClickLayers() {
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.sidebarHome.open = false;
-    state.sidebarInfo.open = false;
-    state.sidebarLayers.open = !state.sidebarLayers.open;
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    sidebarHome: {
+      ...state.sidebarHome,
+      open: false,
+    },
+    sidebarLayers: {
+      ...state.sidebarLayers,
+      open: !state.sidebarLayers.open,
+    },
+    sidebarInfo: {
+      ...state.sidebarInfo,
+      open: false,
+    },
+  }) });
 }
 
-export default radium(({ state, MESSAGES }) => (
+export default ({ state, MESSAGES }) => (
   <div style={{
     ...styles.flex.horizontal.centerY,
     backgroundColor: COLORS.DARK_GREY_100,
@@ -66,4 +89,4 @@ export default radium(({ state, MESSAGES }) => (
          src={IMG.LAYERS_WHITE}
          style={{ cursor: 'pointer', padding: '12px' }} />
   </div>
-));
+);

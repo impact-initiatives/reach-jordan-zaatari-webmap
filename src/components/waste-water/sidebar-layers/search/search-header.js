@@ -7,11 +7,13 @@ import styles from '../../../../styles/index.js';
 import getInitialState from '../../../../store/initial-state.js';
 
 function onReset() {
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.search.wasteWater = getInitialState().search.wasteWater;
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    search: {
+      ...state.search,
+      wasteWater: getInitialState().search.wasteWater,
+    },
+  }) });
 }
 
 export default radium(({ state }) => (

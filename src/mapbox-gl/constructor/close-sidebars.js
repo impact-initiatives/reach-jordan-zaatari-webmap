@@ -1,11 +1,19 @@
 import store from '../../store/index.js';
 
 export default function () {
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.sidebarHome.open = false;
-    state.sidebarLayers.open = false;
-    state.sidebarInfo.open = false;
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    sidebarHome: {
+      ...state.sidebarHome,
+      open: false,
+    },
+    sidebarLayers: {
+      ...state.sidebarLayers,
+      open: false,
+    },
+    sidebarInfo: {
+      ...state.sidebarInfo,
+      open: false,
+    },
+  }) });
 }

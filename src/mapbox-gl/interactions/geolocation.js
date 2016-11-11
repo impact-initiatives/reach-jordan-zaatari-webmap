@@ -4,11 +4,13 @@ import COLORS from '../../constants/colors.js';
 const options = { enableHighAccuracy: true };
 
 function addWatch(id) {
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.geolocation.id = id;
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    geolocation: {
+      ...state.geolocation,
+      id,
+    },
+  }) });
 }
 
 function success({ coords }) {

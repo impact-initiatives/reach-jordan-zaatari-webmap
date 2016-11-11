@@ -7,21 +7,25 @@ import styles from '../../../../styles/index.js';
 
 function onChange({ target }) {
   const { value } = target;
-  store.dispatch({ type: (prevState) => {
-    const state = JSON.parse(JSON.stringify(prevState));
-    state.search.wasteWater = value;
-    return state;
-  } });
+  store.dispatch({ type: (state) => ({
+    ...state,
+    search: {
+      ...state.search,
+      wasteWater: value,
+    },
+  }) });
 }
 
 function onKeyUp({ keyCode, target }) {
   if (keyCode === 13) {
     target.blur();
-    store.dispatch({ type: (prevState) => {
-      const state = JSON.parse(JSON.stringify(prevState));
-      state.sidebarLayers.open = false;
-      return state;
-    } });
+    store.dispatch({ type: (state) => ({
+      ...state,
+      sidebarLayers: {
+        ...state.sidebarLayers,
+        open: false,
+      },
+    }) });
   }
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "REACH Za'atari Maps",
-  "short_name": "Za'atari Maps",
-  "start_url": "./",
+  "short_name": "Zaatari Maps",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [{

@@ -1,84 +1,31 @@
-import COLORS from '../constants/colors.js';
+import button from './button.js';
+import color from './color.js';
+import filter from './filter.js';
+import flex from './flex.js';
+import font from './font.js';
+import hiddenOn from './hidden-on.js';
+import home from './home.js';
+import inline from './inline.js';
+import legend from './legend.js';
+import link from './link.js';
+import search from './search.js';
+import separator from './separator.js';
+import sidebar from './sidebar.js';
+import toolbar from './toolbar.js';
 
 export default {
-  button: {
-    small: {
-      backgroundColor: COLORS.DARK_GREY_100,
-      cursor: 'pointer',
-      padding: '6px',
-    },
-  },
-  font: {
-    default: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-  },
-  flex: {
-    horizontal: {
-      centerX: {
-        display: 'flex',
-        justifyContent: 'center',
-      },
-      centerY: {
-        alignItems: 'center',
-        display: 'flex',
-      },
-      baseline: {
-        alignItems: 'baseline',
-        display: 'flex',
-      },
-      right: {
-        display: 'flex',
-        justifyContent: 'flex-end',
-      },
-      spaceAround: {
-        display: 'flex',
-        justifyContent: 'space-around',
-      },
-      spaceBetween: {
-        display: 'flex',
-        justifyContent: 'space-between',
-      },
-    },
-    item: {
-      divider: {
-        borderBottom: '2px solid #e0e0e0',
-        flex: '1 1 auto',
-        margin: '0px 6px',
-      },
-      space: {
-        flex: '1 1 auto',
-      },
-      fixed: {
-        flex: '1 1 0',
-      },
-    },
-    vertical: {
-      normal: {
-        display: 'flex',
-        flexFlow: 'column nowrap',
-        height: '100%',
-      },
-      center: {
-        alignItems: 'center',
-        display: 'flex',
-        flexFlow: 'column nowrap',
-      },
-      left: {
-        display: 'flex',
-        flexFlow: 'column nowrap',
-      },
-    },
-  },
-  link: {
-    active: { color: '#288fb2' },
-    default: { cursor: 'default' },
-    disabled: { cursor: 'not-allowed' },
-    pointer: { cursor: 'pointer' },
-  },
-  sidebar: {
-    separator: {
-      backgroundColor: COLORS.DARK_GREY_100,
-      margin: '12px 0px',
-      padding: '3px 0px',
-    },
-  },
+  button,
+  color,
+  filter,
+  flex,
+  font,
+  hiddenOn,
+  home,
+  inline,
+  legend,
+  link,
+  search,
+  separator,
+  sidebar,
+  toolbar,
 };

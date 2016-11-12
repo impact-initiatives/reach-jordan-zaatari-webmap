@@ -1,14 +1,16 @@
 import React from 'react';
-import radium from 'radium';
-import { getSidebarLeftStyle } from '../../../styles/animations.js';
+import { css } from 'aphrodisiac';
+import styles from '../../../styles/index.js';
+import { ARABIC } from '../../../constants/language';
 import { IMG } from '../../../constants/resources.js';
 import HomeItem from './home-item.js';
 
-export default radium(({ state }) => (
-  <div style={getSidebarLeftStyle({
-    lang: state.lang,
-    visible: state.sidebarHome.open,
-  })}>
+export default ({ state }) => (
+  <div className={css(
+         styles.sidebar.option.default,
+         state.lang === ARABIC ? styles.sidebar.left.arabic : styles.sidebar.left.english,
+         state.sidebarHome.open ? styles.sidebar.option.open : styles.sidebar.option.closed,
+       )}>
     <HomeItem icon={IMG.HOME_WHITE}
               name="MORE"
               state={state}
@@ -30,4 +32,4 @@ export default radium(({ state }) => (
               state={state}
               url="#/waste-water" />
   </div>
-));
+);

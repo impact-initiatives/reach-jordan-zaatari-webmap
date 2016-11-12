@@ -1,17 +1,19 @@
 import React from 'react';
-import radium from 'radium';
-import { getSidebarRightStyle } from '../../../styles/animations.js';
+import { css } from 'aphrodisiac';
+import styles from '../../../styles/index.js';
+import { ARABIC } from '../../../constants/language';
 import MESSAGES from '../../../translations/blocks.js';
 import Language from '../../common/info/language.js';
 import About from '../../common/info/about.js';
 
-export default radium(({ state }) => (
-  <div style={getSidebarRightStyle({
-    lang: state.lang,
-    visible: state.sidebarInfo.open,
-  })}>
+export default ({ state }) => (
+  <div className={css(
+         styles.sidebar.option.default,
+         state.lang === ARABIC ? styles.sidebar.right.arabic : styles.sidebar.right.english,
+         state.sidebarInfo.open ? styles.sidebar.option.open : styles.sidebar.option.closed,
+       )}>
     <Language state={state} />
     <About messages={MESSAGES.INFO}
            state={state} />
   </div>
-));
+);

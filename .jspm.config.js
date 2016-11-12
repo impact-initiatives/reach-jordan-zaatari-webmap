@@ -17,7 +17,7 @@ SystemJS.config({
               "babel-plugin-transform-react-jsx"
             ],
             "presets": [
-              "babel-preset-stage-1"
+              "babel-preset-stage-3"
             ]
           },
           "loader": "plugin-babel"

@@ -1,19 +1,15 @@
 import React from 'react';
-import radium from 'radium';
+import { css } from 'aphrodisiac';
 import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../../../translations/waste-water.js';
 import styles from '../../../../styles/index.js';
 import COLORS from '../../../../constants/colors.js';
-import LegendItem from './legend-item.js';
-import LegendItemLine from './legend-item-line.js';
+import LegendItem from '../../../common/legend/legend-item.js';
+import LegendItemLine from '../../../common/legend/legend-item-line.js';
 
-export default radium(({ state }) => (
-  <div style={{ ...styles.flex.vertical.left }}>
-    <div style={{ height: '6px' }} />
-    <div style={{
-      fontWeight: '600',
-      padding: '6px 24px',
-    }}>
+export default ({ state }) => (
+  <div className={css(styles.flex.vertical.left)}>
+    <div className={css(styles.legend.title)}>
       {new IntlMessageFormat(MESSAGES.LEGEND.TITLE[state.lang], state.lang).format()}
     </div>
     <LegendItem color={COLORS.MEDIUM_BLUE}
@@ -32,4 +28,4 @@ export default radium(({ state }) => (
                     name={new IntlMessageFormat(
                           MESSAGES.LEGEND.PIPES[state.lang], state.lang).format()} />
   </div>
-));
+);

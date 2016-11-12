@@ -1,5 +1,5 @@
 import React from 'react';
-import radium from 'radium';
+import { css } from 'aphrodisiac';
 import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../../../translations/waste-water.js';
 import store from '../../../../store/index.js';
@@ -29,18 +29,17 @@ function onKeyUp({ keyCode, target }) {
   }
 }
 
-export default radium(({ state }) => (
-  <div style={{ ...styles.flex.vertical.left }}>
-    <div style={{ height: '6px' }} />
-    <input onChange={onChange}
+export default ({ state }) => (
+  <div className={css(styles.flex.vertical.left)}>
+    <div className={css(styles.inline.height6)} />
+    <input className={css(
+             styles.flex.horizontal.centerY,
+             styles.search.bar,
+           )}
+           onChange={onChange}
            onKeyUp={onKeyUp}
            placeholder={
              new IntlMessageFormat(MESSAGES.SEARCH.SEARCH_BAR[state.lang], state.lang).format()}
-           style={{
-             ...styles.flex.horizontal.centerY,
-             height: '24px',
-             margin: '0px 12px 0px 24px',
-           }}
            value={state.search.wasteWater} />
   </div>
-));
+);

@@ -1,10 +1,9 @@
 import React from 'react';
+import { css } from 'aphrodisiac';
 import IntlMessageFormat from 'intl-messageformat';
 import store from '../../../store/index.js';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
-import { isMobile } from '../../../constants/browser.js';
-import COLORS from '../../../constants/colors.js';
 
 function onClickHome() {
   store.dispatch({ type: (state) => ({
@@ -61,32 +60,28 @@ function onClickLayers() {
 }
 
 export default ({ state, MESSAGES }) => (
-  <div style={{
-    ...styles.flex.horizontal.centerY,
-    backgroundColor: COLORS.DARK_GREY_100,
-    color: COLORS.WHITE,
-    height: '48px',
-    width: '100%',
-  }}>
+  <div className={css(
+    styles.flex.horizontal.centerY,
+    styles.toolbar.default,
+  )}>
     <img alt="home"
+         className={css(styles.toolbar.img)}
          onClick={onClickHome}
-         src={IMG.MENU_WHITE}
-         style={{ cursor: 'pointer', padding: '12px' }} />
-    <div>
-      {isMobile() ? (
-        new IntlMessageFormat(MESSAGES.TITLE_SHORT[state.lang], state.lang).format()
-      ) : (
-        new IntlMessageFormat(MESSAGES.TITLE_LONG[state.lang], state.lang).format()
-      )}
+         src={IMG.MENU_WHITE} />
+    <div className={css(styles.hiddenOn.desktop)}>
+      {new IntlMessageFormat(MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
     </div>
-    <div style={styles.flex.item.space} />
+    <div className={css(styles.hiddenOn.mobile)}>
+      {new IntlMessageFormat(MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
+    </div>
+    <div className={css(styles.flex.item.space)} />
     <img alt="info"
+         className={css(styles.toolbar.img)}
          onClick={onClickInfo}
-         src={IMG.INFO_WHITE}
-         style={{ cursor: 'pointer', padding: '12px' }} />
+         src={IMG.INFO_WHITE} />
     <img alt="layers"
+         className={css(styles.toolbar.img)}
          onClick={onClickLayers}
-         src={IMG.LAYERS_WHITE}
-         style={{ cursor: 'pointer', padding: '12px' }} />
+         src={IMG.LAYERS_WHITE} />
   </div>
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import radium from 'radium';
+import { css } from 'aphrodisiac';
 import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../../../translations/waste-water.js';
 import store from '../../../../store/index.js';
@@ -16,21 +16,18 @@ function onReset() {
   }) });
 }
 
-export default radium(({ state }) => (
-  <div style={styles.flex.horizontal.centerY}>
-    <div style={{
-      fontWeight: '600',
-      padding: '6px 24px',
-    }}>
+export default ({ state }) => (
+  <div className={css(styles.flex.horizontal.centerY)}>
+    <div className={css(styles.search.title)}>
       {new IntlMessageFormat(MESSAGES.SEARCH.TITLE[state.lang], state.lang).format()}
     </div>
-    <div style={styles.flex.item.space} />
-    <div onClick={onReset}
-         style={{
-           ...styles.button.small,
-           marginRight: '12px',
-         }}>
+    <div className={css(styles.flex.item.space)} />
+    <div className={css(
+           styles.button.small,
+           styles.inline.marginRight12,
+         )}
+         onClick={onReset}>
       {new IntlMessageFormat(MESSAGES.SEARCH.RESET[state.lang], state.lang).format()}
     </div>
   </div>
-));
+);

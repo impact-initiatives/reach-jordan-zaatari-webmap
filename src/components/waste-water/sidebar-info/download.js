@@ -1,5 +1,5 @@
 import React from 'react';
-import radium from 'radium';
+import { css } from 'aphrodisiac';
 import IntlMessageFormat from 'intl-messageformat';
 import styles from '../../../styles/index.js';
 import MESSAGES from '../../../translations/waste-water.js';
@@ -13,24 +13,24 @@ function onClickDistrict() {
   location.assign(REACH.WWN_DISTRICT);
 }
 
-export default radium(({ state }) => (
-  <div style={{
-    ...styles.flex.horizontal.centerY,
-    padding: '12px',
-  }}>
+export default ({ state }) => (
+  <div className={css(
+         styles.flex.horizontal.centerY,
+         styles.inline.padding12,
+       )}>
     <div>
       {new IntlMessageFormat(MESSAGES.DOWNLOAD.HEADER[state.lang], state.lang).format()}
     </div>
-    <div onClick={onClickCamp}
-         style={{
-           ...styles.button.small,
-           margin: '0px 12px',
-         }}>
+    <div className={css(
+           styles.button.small,
+           styles.inline.margin0x12,
+         )}
+         onClick={onClickCamp}>
       {new IntlMessageFormat(MESSAGES.DOWNLOAD.CAMP[state.lang], state.lang).format()}
     </div>
-    <div onClick={onClickDistrict}
-         style={styles.button.small}>
+    <div className={css(styles.button.small)}
+         onClick={onClickDistrict}>
       {new IntlMessageFormat(MESSAGES.DOWNLOAD.DISTRICTS[state.lang], state.lang).format()}
     </div>
   </div>
-));
+);

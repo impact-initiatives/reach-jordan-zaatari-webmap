@@ -1,20 +1,21 @@
 import React from 'react';
-import radium from 'radium';
+import { css } from 'aphrodisiac';
 import styles from '../../../styles/index.js';
-import { getSidebarRightStyle } from '../../../styles/animations.js';
+import { ARABIC } from '../../../constants/language';
 import Legend from './legend/index.js';
 import Search from './search/index.js';
 import Filter from './filter/index.js';
 
-export default radium(({ state }) => (
-  <div style={getSidebarRightStyle({
-    lang: state.lang,
-    visible: state.sidebarLayers.open,
-  })}>
+export default ({ state }) => (
+  <div className={css(
+         styles.sidebar.option.default,
+         state.lang === ARABIC ? styles.sidebar.right.arabic : styles.sidebar.right.english,
+         state.sidebarLayers.open ? styles.sidebar.option.open : styles.sidebar.option.closed,
+       )}>
     <Legend state={state} />
-    <div style={styles.sidebar.separator} />
+    <div className={css(styles.separator.default)} />
     <Search state={state} />
-    <div style={styles.sidebar.separator} />
+    <div className={css(styles.separator.default)} />
     <Filter state={state} />
   </div>
-));
+);

@@ -4,3 +4,4 @@ npm-debug.log
 deploy/
 dist/
 jspm.config.js
+yarn.lock

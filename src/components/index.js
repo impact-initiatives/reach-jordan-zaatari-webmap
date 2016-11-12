@@ -18,6 +18,6 @@ export default ({ state }) => {
   if (hash === '#/waste-water') {
     return <WasteWater state={state} />;
   }
-  window.location.assign('#/districts');
+  location.href = '#/districts';
   return <Health state={state} />;
 };

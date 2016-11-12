@@ -17,6 +17,11 @@ function renderRoutes({ state }) {
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js');
+} else {
+  const { pathname } = location;
+  const path = pathname.substring(0, pathname.lastIndexOf('/'));
+  const newLocation = `${path}/offline.html`;
+  if (pathname !== newLocation) location.href = `${newLocation}${location.hash}`;
 }
 
 store.subscribe(() => {

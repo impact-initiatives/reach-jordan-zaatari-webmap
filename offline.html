@@ -1,16 +1,15 @@
 <!doctype html>
-<html>
+<html manifest='./offline.appcache'>
 <head>
   <title>REACH Za'atari Maps</title>
   <meta charset="utf-8">
   <meta http-equiv="cleartype" content="on">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="author" content="reach">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="reach">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <link rel="manifest" href="./manifest.json">
-  <link rel="icon" href="./resources/icons/reach-48.png">
+  <link rel="icon" href="./resources/img/favicon.gif">
   <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
   <link rel="stylesheet" href="./node_modules/mapbox-gl/dist/mapbox-gl.css">
   <style>html, body, #root { height: 100%; margin: 0; overflow: hidden; }</style>
@@ -18,8 +17,6 @@
 <body>
   <div id="root"></div>
   <script src="./node_modules/mapbox-gl/dist/mapbox-gl.js"></script>
-  <script src="./jspm_packages/system.js"></script>
-  <script src="./jspm.config.js"></script>
-  <script>System.import('./src/index.js');</script>
+  <script src="./dist/index.js"></script>
 </body>
 </html>

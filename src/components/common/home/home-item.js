@@ -6,7 +6,7 @@ import styles from '../../../styles/index.js';
 
 function onClick({ target }) {
   const { url } = target.dataset;
-  location.assign(url);
+  location.href = url;
 }
 
 export default ({ icon, name, state, url }) => (

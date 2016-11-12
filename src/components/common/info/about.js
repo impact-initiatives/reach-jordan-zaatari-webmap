@@ -16,19 +16,6 @@ export default ({ messages, state }) => (
       {new IntlMessageFormat(MESSAGES.INFO.CURRENCY[state.lang], state.lang).format()}
     </div>
     <div className={css(styles.inline.padding12)}>
-      {navigator.serviceWorker ? (
-        new IntlMessageFormat(MESSAGES.INFO.OFFLINE_SUCCESS[state.lang], state.lang).format()
-      ) : (
-        <div>
-          {new IntlMessageFormat(MESSAGES.INFO.OFFLINE_FAIL[state.lang], state.lang).format()}
-          <a className={css(styles.color.link)}
-             href="http://caniuse.com/serviceworker">
-            caniuse.com/serviceworker
-          </a>
-        </div>
-      )}
-    </div>
-    <div className={css(styles.inline.padding12)}>
       {new IntlMessageFormat(MESSAGES.INFO.CONTACT[state.lang], state.lang).format()}
       <a className={css(styles.color.link)}
          href="mailto:jordan.mapping@reach-initiative.org">

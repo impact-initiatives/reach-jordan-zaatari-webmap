@@ -20,7 +20,7 @@ if ('serviceWorker' in navigator) {
 } else {
   const { pathname } = location;
   const path = pathname.substring(0, pathname.lastIndexOf('/'));
-  const newLocation = `${path}/offline.html`;
+  const newLocation = `${path}/legacy.html`;
   if (pathname !== newLocation) location.href = `${newLocation}${location.hash}`;
 }
 

@@ -38,14 +38,6 @@ export default {
       [ENGLISH]: 'Information current as of October 2016.',
       [ARABIC]: 'المعلومات الحالية اعتبارا من أكتوبر 2016.',
     },
-    OFFLINE_SUCCESS: {
-      [ENGLISH]: 'Your browser supports using this site offline! Bookmark for easy access without internet.',
-      [ARABIC]: 'متصفح يدعم استخدام هذا الموقع حاليا! المرجعية ليسهل الوصول إليها من دون الإنترنت.',
-    },
-    OFFLINE_FAIL: {
-      [ENGLISH]: "Your browser doesn't support using this site offline. Please use a compatible application for access without internet: ",
-      [ARABIC]: 'متصفحك لا يدعم استخدام هذا الموقع حاليا. يرجى استخدام التطبيق متوافق للوصول دون الإنترنت: ',
-    },
     CONTACT: {
       [ENGLISH]: 'To report updates or request new features, please contact: ',
       [ARABIC]: 'للإبلاغ عن تحديثات أو طلب الميزات الجديدة، يرجى الاتصال ب: ',

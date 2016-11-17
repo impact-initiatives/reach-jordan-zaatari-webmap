@@ -10,7 +10,7 @@ export const IMG = {
   LOCAL_DRINK_WHITE: `${RESOURCES_URL}/img/ic_local_drink_white_24px.svg`,
   MENU_WHITE: `${RESOURCES_URL}/img/ic_menu_white_24px.svg`,
   OPEN_IN_NEW_WHITE: `${RESOURCES_URL}/img/ic_open_in_new_white_24px.svg`,
-  LOGO_REACH: `${RESOURCES_URL}/img/logo-reach.png`,
+  LOGO_REACH: `${RESOURCES_URL}/img/logo-reach.svg`,
   LOGO_UNHCR: `${RESOURCES_URL}/img/logo-unhcr.svg`,
   LOGO_UNICEF: `${RESOURCES_URL}/img/logo-unicef.svg`,
 };

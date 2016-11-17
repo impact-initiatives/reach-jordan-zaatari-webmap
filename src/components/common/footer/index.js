@@ -18,7 +18,7 @@ export default ({ donorLogo }) => (
       <div className={css(styles.flex.item.space)} />
       <img alt="reach-logo"
            className={css(
-             styles.inline.height48,
+             styles.inline.height28,
              styles.inline.padding12,
            )}
            src={IMG.LOGO_REACH} />

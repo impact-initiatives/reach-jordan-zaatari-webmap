@@ -1,4 +1,4 @@
-import turfCenter from 'turf-center';
+import turfCenter from '@turf/center';
 import { REACH } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
 import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';

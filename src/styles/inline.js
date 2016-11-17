@@ -4,6 +4,9 @@ export default StyleSheet.create({
   height6: {
     height: '6px',
   },
+  height28: {
+    height: '28px',
+  },
   height36: {
     height: '36px',
   },

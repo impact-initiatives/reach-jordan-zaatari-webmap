@@ -4,15 +4,10 @@ general:
       - master
       - staging
       - develop
-test:
-  override:
-    - npm run lint
 dependencies:
   pre:
     - pip install awscli
-    - cp .jspm.config.js jspm.config.js
   post:
-    - jspm install
     - npm run deploy
 deployment:
   prod:

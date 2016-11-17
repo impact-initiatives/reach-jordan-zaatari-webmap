@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import 'fetch';
+import 'whatwg-fetch';
 import 'intl';
 import 'intl/locale-data/jsonp/en-GB.js';
 import 'intl/locale-data/jsonp/ar-JO.js';
@@ -8,9 +8,9 @@ import { render } from 'react-dom';
 import store from './store/index.js';
 import Routes from './components/index.js';
 
-function renderRoutes({ state }) {
+function refresh() {
   render(
-    <Routes state={state} />,
+    <Routes state={store.getState()} />,
     document.getElementById('root')
   );
 }
@@ -24,20 +24,11 @@ if ('serviceWorker' in navigator) {
   if (pathname !== newLocation) location.href = `${newLocation}${location.hash}`;
 }
 
-store.subscribe(() => {
-  const state = store.getState();
-  renderRoutes({ state });
-});
+store.subscribe(refresh);
 
-window.addEventListener('hashchange', () => {
-  const state = store.getState();
-  renderRoutes({ state });
-});
+window.addEventListener('hashchange', refresh);
+window.addEventListener('resize', refresh);
 
-window.addEventListener('resize', () => {
-  const state = store.getState();
-  renderRoutes({ state });
-});
+if (module.hot) module.hot.accept('./components/index.js', refresh);
 
-const state = store.getState();
-renderRoutes({ state });
+refresh();

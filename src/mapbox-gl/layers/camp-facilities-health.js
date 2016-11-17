@@ -5,13 +5,12 @@ import COLORS from '../../constants/colors.js';
 const { mapboxgl } = window;
 
 function modifyLayer({ map }) {
-  const filter = [];
-  const filters = store.getState().filters.health;
-  for (const [key, value] of Object.entries(filters)) {
-    if (value) filter.push(['==', key, 'Yes']);
-  }
-  if (!filter.length) filter.push(['has', 'OBJECTID_1']);
-  map.setFilter('health-facilities-fill', ['any', ...filter]);
+  const storeFilter = store.getState().filters.health;
+  const mapFilter = Object.entries(storeFilter)
+    .filter(([, value]) => value)
+    .map(([key]) => (['==', key, 'Yes']));
+  if (!mapFilter.length) mapFilter.push(['has', 'OBJECTID_1']);
+  map.setFilter('health-facilities-fill', ['any', ...mapFilter]);
 }
 
 function addPopup({ map }) {

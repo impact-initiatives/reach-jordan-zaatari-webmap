@@ -7,5 +7,5 @@ export default function ({ map }) {
   map.setBearing(BEARING);
   map.dragRotate.disable();
   map.touchZoomRotate.disableRotation();
-  map.addControl(new mapboxgl.Navigation());
+  map.addControl(new mapboxgl.NavigationControl());
 }

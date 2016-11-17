@@ -23,6 +23,7 @@ export default {
 };
 
 export const LABEL_ZOOM_BREAK = 16;
+export const PIPES_ZOOM_BREAK = 15;
 
 export const MIN_ZOOM = 0;
 export const MAX_ZOOM = 22;

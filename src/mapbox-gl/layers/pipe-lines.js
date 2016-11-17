@@ -2,6 +2,7 @@ import store from '../../store/index.js';
 import { REACH } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
 import FILTERS from '../../constants/filters/waste-water.js';
+import { PIPES_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
 
 const SOURCE_ID = 'pipes';
 const LAYER_ID = 'pipes-line';
@@ -32,6 +33,7 @@ function addLayer({ map }) {
   }
   map.addLayer({
     id: LAYER_ID,
+    minzoom: PIPES_ZOOM_BREAK,
     paint: {
       'line-color': COLORS.DARK_GREY_50,
       'line-width': 1,

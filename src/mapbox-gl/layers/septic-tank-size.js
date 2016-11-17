@@ -44,17 +44,18 @@ function addPopup({ map }) {
 }
 
 function filterByType({ map, state }) {
-  const filter = [];
-  const filters = state.filters.wasteWater;
-  for (const [key, value] of Object.entries(filters)) {
-    if (key.includes('8') && value) filter.push(['==', FILTER_PROP, 8]);
-    else if (key.includes('4') && value) filter.push(['==', FILTER_PROP, 4]);
-    else if (key.includes('2') && value) filter.push(['==', FILTER_PROP, 2]);
-    else if (value) filter.push(['!has', FILTER_PROP]);
-  }
-  if (!filter.length) filter.push(['has', FILTER_PROP]);
-  map.setFilter(LAYER_ID_FEATURE, ['any', ...filter]);
-  map.setFilter(LAYER_ID_LABEL, ['any', ...filter]);
+  const storeFilter = state.filters.wasteWater;
+  const mapFilter = Object.entries(storeFilter)
+    .filter(([, value]) => value)
+    .map(([key]) => {
+      if (key.includes('8')) return ['==', FILTER_PROP, 8];
+      else if (key.includes('4')) return ['==', FILTER_PROP, 4];
+      else if (key.includes('2')) return ['==', FILTER_PROP, 2];
+      return ['!has', FILTER_PROP];
+    });
+  if (!mapFilter.length) mapFilter.push(['has', FILTER_PROP]);
+  map.setFilter(LAYER_ID_FEATURE, ['any', ...mapFilter]);
+  map.setFilter(LAYER_ID_LABEL, ['any', ...mapFilter]);
 }
 
 function filterBySearch({ map, state }) {

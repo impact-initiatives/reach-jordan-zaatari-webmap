@@ -11,7 +11,7 @@ import Routes from './components/index.js';
 function refresh() {
   render(
     <Routes state={store.getState()} />,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
 }
 

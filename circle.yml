@@ -4,6 +4,9 @@ general:
       - master
       - staging
       - develop
+machine:
+  node:
+    version: 7.1.0
 dependencies:
   pre:
     - pip install awscli

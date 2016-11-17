@@ -10,9 +10,6 @@ machine:
 dependencies:
   pre:
     - pip install awscli
-    - npm install -g yarn
-  override:
-    - yarn
   post:
     - npm run deploy
 deployment:

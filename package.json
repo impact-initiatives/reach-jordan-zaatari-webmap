@@ -7,7 +7,7 @@
     "build": "webpack -p",
     "deploy": "npm run build && ./deploy-dist.sh && npm run appcache && npm run sw-precache",
     "sw-precache": "node ./node_modules/sw-precache/cli.js --root=deploy --maximumFileSizeToCacheInBytes=10485760",
-    "start": "webpack-dev-server --content-base ./ --hot --inline",
+    "start": "webpack-dev-server --content-base ./ --hot --inline --host 0.0.0.0",
     "test": "./node_modules/.bin/eslint ./src/"
   },
   "devDependencies": {

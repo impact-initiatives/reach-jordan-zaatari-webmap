@@ -4,6 +4,7 @@ import IntlMessageFormat from 'intl-messageformat';
 import store from '../../../store/index.js';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
+import COMMON_MESSAGES from '../../../translations/common.js';
 
 function onClickHome() {
   store.dispatch({ type: (state) => ({
@@ -69,10 +70,22 @@ export default ({ state, MESSAGES }) => (
          onClick={onClickHome}
          src={IMG.MENU_WHITE} />
     <div className={css(styles.hiddenOn.desktop)}>
-      {new IntlMessageFormat(MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
+      <div>
+        {new IntlMessageFormat(COMMON_MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
+      </div>
+      <div>&nbsp;-&nbsp;</div>
+      <div>
+        {new IntlMessageFormat(MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
+      </div>
     </div>
     <div className={css(styles.hiddenOn.mobile)}>
-      {new IntlMessageFormat(MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
+      <div>
+        {new IntlMessageFormat(COMMON_MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
+      </div>
+      <div>&nbsp;-&nbsp;</div>
+      <div>
+        {new IntlMessageFormat(MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
+      </div>
     </div>
     <div className={css(styles.flex.item.space)} />
     <img alt="info"

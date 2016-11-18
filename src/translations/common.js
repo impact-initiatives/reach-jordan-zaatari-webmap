@@ -1,6 +1,14 @@
 import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
+  TITLE_LONG: {
+    [ENGLISH]: "Al Za'atari Refugee Camp",
+    [ARABIC]: 'مخيم الزعتري للاجئين',
+  },
+  TITLE_SHORT: {
+    [ENGLISH]: "Za'atari",
+    [ARABIC]: 'مخيم الزعتري',
+  },
   MORE: {
     [ENGLISH]: 'More from REACH',
     [ARABIC]: 'أكثر من REACH',

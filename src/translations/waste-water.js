@@ -1,13 +1,13 @@
 import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
-  TITLE_SHORT: {
-    [ENGLISH]: "Za'atari - Waste Water Network",
-    [ARABIC]: 'مخيم الزعتري - مياه الصرف الصحي',
-  },
   TITLE_LONG: {
-    [ENGLISH]: "Al Za'atari Refugee Camp - Waste Water Network",
-    [ARABIC]: 'مخيم الزعتري للاجئين - مياه الصرف الصحي',
+    [ENGLISH]: 'Waste Water Network',
+    [ARABIC]: 'مياه الصرف الصحي',
+  },
+  TITLE_SHORT: {
+    [ENGLISH]: 'Waste Water',
+    [ARABIC]: 'مياه الصرف الصحي',
   },
   DOWNLOAD: {
     HEADER: {

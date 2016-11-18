@@ -1,13 +1,13 @@
 import { ENGLISH, ARABIC } from '../constants/language.js';
 
 export default {
-  TITLE_SHORT: {
-    [ENGLISH]: "Za'atari - Health Facilities",
-    [ARABIC]: 'مخيم الزعتري - المرافق الصحية',
-  },
   TITLE_LONG: {
-    [ENGLISH]: "Al Za'atari Refugee Camp - Health Facilities",
-    [ARABIC]: 'مخيم الزعتري للاجئين - المرافق الصحية',
+    [ENGLISH]: 'Health Facilities',
+    [ARABIC]: 'المرافق الصحية',
+  },
+  TITLE_SHORT: {
+    [ENGLISH]: 'Health',
+    [ARABIC]: 'المرافق الصحية',
   },
   INFO: [
     {

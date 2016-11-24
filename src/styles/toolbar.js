@@ -5,7 +5,7 @@ export default StyleSheet.create({
   default: {
     backgroundColor: COLORS.DARK_GREY_100,
     color: COLORS.WHITE,
-    height: '48px',
+    minHeight: '48px',
     width: '100%',
   },
   img: {

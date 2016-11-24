@@ -69,23 +69,18 @@ export default ({ state, MESSAGES }) => (
          className={css(styles.toolbar.img)}
          onClick={onClickHome}
          src={IMG.MENU_WHITE} />
-    <div className={css(styles.hiddenOn.desktop)}>
-      <div>
-        {new IntlMessageFormat(COMMON_MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
-      </div>
-      <div>&nbsp;-&nbsp;</div>
-      <div>
-        {new IntlMessageFormat(MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
-      </div>
+    <div style={{ display: styles.display.desktop() }}>
+      {new IntlMessageFormat(COMMON_MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
     </div>
-    <div className={css(styles.hiddenOn.mobile)}>
-      <div>
-        {new IntlMessageFormat(COMMON_MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
-      </div>
-      <div>&nbsp;-&nbsp;</div>
-      <div>
-        {new IntlMessageFormat(MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
-      </div>
+    <div style={{ display: styles.display.mobile() }}>
+      {new IntlMessageFormat(COMMON_MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
+    </div>
+    <div>&nbsp;-&nbsp;</div>
+    <div style={{ display: styles.display.desktop() }}>
+      {new IntlMessageFormat(MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
+    </div>
+    <div style={{ display: styles.display.mobile() }}>
+      {new IntlMessageFormat(MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
     </div>
     <div className={css(styles.flex.item.space)} />
     <img alt="info"

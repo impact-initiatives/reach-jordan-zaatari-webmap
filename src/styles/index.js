@@ -1,9 +1,9 @@
 import button from './button.js';
 import color from './color.js';
+import display from './display.js';
 import filter from './filter.js';
 import flex from './flex.js';
 import font from './font.js';
-import hiddenOn from './hidden-on.js';
 import home from './home.js';
 import inline from './inline.js';
 import legend from './legend.js';
@@ -16,10 +16,10 @@ import toolbar from './toolbar.js';
 export default {
   button,
   color,
+  display,
   filter,
   flex,
   font,
-  hiddenOn,
   home,
   inline,
   legend,

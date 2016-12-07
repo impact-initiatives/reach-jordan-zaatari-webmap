@@ -11,15 +11,15 @@ export default {
   },
   MORE: {
     [ENGLISH]: 'More from REACH',
-    [ARABIC]: 'أكثر من REACH',
+    [ARABIC]: ' المزيد من ريتش',
   },
   DISTRICTS: {
     [ENGLISH]: 'District Boundaries',
-    [ARABIC]: 'حدود منطقة',
+    [ARABIC]: 'حدود القطاع',
   },
   BLOCKS: {
     [ENGLISH]: 'Block Boundaries',
-    [ARABIC]: 'الحدود كتلة',
+    [ARABIC]: 'حدود المربع السكني',
   },
   HEALTH: {
     [ENGLISH]: 'Health Facilities',
@@ -27,12 +27,12 @@ export default {
   },
   WASTE_WATER: {
     [ENGLISH]: 'Waste Water',
-    [ARABIC]: 'مياه الصرف الصحي',
+    [ARABIC]: 'المياه العادمة',
   },
   INFO: {
     LANGUAGE: {
       [ENGLISH]: 'Language',
-      [ARABIC]: 'لغة',
+      [ARABIC]: 'اللغة ',
     },
     ENGLISH: {
       [ENGLISH]: 'English',
@@ -44,11 +44,11 @@ export default {
     },
     CURRENCY: {
       [ENGLISH]: 'Information current as of October 2016.',
-      [ARABIC]: 'المعلومات الحالية اعتبارا من أكتوبر 2016.',
+      [ARABIC]: ' المعلومات الحالية عن شهر تشرين الثاني',
     },
     CONTACT: {
       [ENGLISH]: 'To report updates or request new features, please contact: ',
-      [ARABIC]: 'للإبلاغ عن تحديثات أو طلب الميزات الجديدة، يرجى الاتصال ب: ',
+      [ARABIC]: 'للإبلاغ عن أي تحديث أو طلب مزايا جديدة يرجى الإتصال :',
     },
   },
 };

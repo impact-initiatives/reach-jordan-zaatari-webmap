@@ -9,16 +9,13 @@ export default {
     [ENGLISH]: 'Health',
     [ARABIC]: 'المرافق الصحية',
   },
-  INFO: [
-    {
-      [ENGLISH]: "This map was created in collaboration with UNHCR to provide humanitarian actors and medical professionals with a way to access information about the health services offered in Za'atari.",
-      [ARABIC]: 'تم إنشاء هذه الخريطة بالتعاون مع المفوضية لتوفير الجهات الفاعلة الإنسانية والمهن الطبية وسيلة للوصول إلى معلومات عن الخدمات الصحية المقدمة في الزعتري.',
-    },
-    {
-      [ENGLISH]: 'Health service information was collated by UNHCR, and spatial data was collected by REACH and UNHCR.',
-      [ARABIC]: 'وقد جمعت معلومات الخدمة الصحية من قبل المفوضية، وجمعت البيانات المكانية التي REACH والمفوضية.',
-    },
-  ],
+  INFO: [{
+    [ENGLISH]: "This map was created in collaboration with UNHCR to provide humanitarian actors and medical professionals with a way to access information about the health services offered in Za'atari.",
+    [ARABIC]: 'تم إنشاء هذه الخريطة بالتعاون مع المفوضية السامية  لتزويد المنظمات الإنسانية والجهات العاملة والمهن الطبية بوسيلة للوصول إلى معلومات عن الخدمات الصحية المقدمة في مخيم الزعتري',
+  }, {
+    [ENGLISH]: 'Health service information was collated by UNHCR, and spatial data was collected by REACH and UNHCR.',
+    [ARABIC]: 'تم جمع معلومات الخدمات الصحية من قبل المفوضية السامية، وتم جمع البيانات الجغرافية من قبل ريتش والمفوضية',
+  }],
   LEGEND: {
     TITLE: {
       [ENGLISH]: 'Legend',
@@ -34,13 +31,13 @@ export default {
     },
     CAMP: {
       [ENGLISH]: 'Camp Facility',
-      [ARABIC]: 'مخيم مرفق',
+      [ARABIC]: 'المرافق الخدمية في المخيم',
     },
   },
   FILTER: {
     TITLE: {
       [ENGLISH]: 'Filter by Service',
-      [ARABIC]: 'تصفية حسب الخدمة',
+      [ARABIC]: 'فرز حسب نوع الخدمة',
     },
     RESET: {
       [ENGLISH]: 'reset',
@@ -48,15 +45,15 @@ export default {
     },
     ACUTE_CHRONIC: {
       [ENGLISH]: 'Acute / Chronic Conditions',
-      [ARABIC]: 'شروط الحادة والمزمنة',
+      [ARABIC]: 'الحالات المزمنة والشديدة',
     },
     DENTIST: {
       [ENGLISH]: 'Dentist',
-      [ARABIC]: 'طبيبة الاسنان',
+      [ARABIC]: 'طبيب الأسنان',
     },
     ORT: {
       [ENGLISH]: 'Oral Rehydration Therapy',
-      [ARABIC]: 'العلاج الجفاف عن طريق الفم',
+      [ARABIC]: 'علاج الجفاف بالفم',
     },
     EMERGENCY: {
       [ENGLISH]: 'Emergency',
@@ -88,7 +85,7 @@ export default {
     },
     VACCINATION: {
       [ENGLISH]: 'Vaccination',
-      [ARABIC]: 'تلقيح',
+      [ARABIC]: 'التلقيح والمطاعيم',
     },
   },
 };

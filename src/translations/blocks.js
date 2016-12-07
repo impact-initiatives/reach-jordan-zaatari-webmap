@@ -3,18 +3,16 @@ import { ENGLISH, ARABIC } from '../constants/language.js';
 export default {
   TITLE_LONG: {
     [ENGLISH]: 'Block Boundaries',
-    [ARABIC]: 'الحدود كتلة',
+    [ARABIC]: 'حدود المربع السكني',
   },
   TITLE_SHORT: {
     [ENGLISH]: 'Blocks',
-    [ARABIC]: 'الحدود كتلة',
+    [ARABIC]: 'المربعات السكنية',
   },
-  INFO: [
-    {
-      [ENGLISH]: "This map displays block boundaries and their identifications that serve as basis for addresses in Za'atari.",
-      [ARABIC]: 'تعرض هذه الخريطة الحدود كتلة والتعرف على أن تخدم كأساس لعناوين في الزعتري.',
-    },
-  ],
+  INFO: [{
+    [ENGLISH]: "This map displays block boundaries and their identifications that serve as basis for addresses in Za'atari.",
+    [ARABIC]: 'تعرض هذه الخارطة حدود المربعات السكنية والقطاعات لتخدم كأساس للعناوين في مخيم الزعتري',
+  }],
   LEGEND: {
     TITLE: {
       [ENGLISH]: 'Legend',
@@ -22,7 +20,7 @@ export default {
     },
     BLOCK: {
       [ENGLISH]: 'Block Boundary',
-      [ARABIC]: 'كتلة الحدود',
+      [ARABIC]: 'حدود المربعات السكنية',
     },
   },
 };

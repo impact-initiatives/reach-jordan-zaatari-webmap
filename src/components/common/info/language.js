@@ -1,6 +1,4 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
-import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../../translations/common.js';
 import store from '../../../store/index.js';
 import { ENGLISH, ARABIC } from '../../../constants/language.js';
@@ -15,29 +13,26 @@ function onClickLanguage({ target }) {
 }
 
 export default ({ state }) => (
-  <div className={css(
-         styles.flex.horizontal.centerY,
-         styles.inline.padding12,
-       )}>
+  <div className={`${styles.flex.horizontalCenterY} ${styles.inline.padding12}`}>
     <div>
-      {new IntlMessageFormat(MESSAGES.INFO.LANGUAGE[state.lang], state.lang).format()}
+      {MESSAGES.INFO.LANGUAGE[state.lang]}
     </div>
-    <div className={css(
-           styles.button.small,
-           state.lang === ENGLISH ? styles.color.lightBlue : styles.color.white,
-           styles.inline.margin0x12,
-         )}
-         data-language={ENGLISH}
-         onClick={onClickLanguage}>
-      {new IntlMessageFormat(MESSAGES.INFO.ENGLISH[state.lang], state.lang).format()}
+    <div className={[
+      styles.component.buttonSmall,
+      state.lang === ENGLISH ? styles.inline.colorLightBlue : styles.inline.colorWhite,
+      styles.inline.margin0x12,
+    ].join(' ')}
+    data-language={ENGLISH}
+    onClick={onClickLanguage}>
+      {MESSAGES.INFO.ENGLISH[state.lang]}
     </div>
-    <div className={css(
-           styles.button.small,
-           state.lang === ARABIC ? styles.color.lightBlue : styles.color.white,
-         )}
-         data-language={ARABIC}
-         onClick={onClickLanguage}>
-      {new IntlMessageFormat(MESSAGES.INFO.ARABIC[state.lang], state.lang).format()}
+    <div className={[
+      styles.component.buttonSmall,
+      state.lang === ARABIC ? styles.inline.colorLightBlue : styles.inline.colorWhite,
+    ].join(' ')}
+    data-language={ARABIC}
+    onClick={onClickLanguage}>
+      {MESSAGES.INFO.ARABIC[state.lang]}
     </div>
   </div>
 );

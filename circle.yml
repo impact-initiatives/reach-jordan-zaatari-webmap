@@ -6,25 +6,22 @@ general:
       - develop
 machine:
   node:
-    version: 6.9.1
+    version: 7.2.0
 dependencies:
   pre:
     - pip install awscli
-    - npm install -g yarn
-  override:
-    - yarn
   post:
-    - npm run deploy
+    - ./build.sh
 deployment:
   prod:
     branch: master
     commands:
-      - ./deploy.sh master
+      - ./circle.sh master
   staging:
     branch: staging
     commands:
-      - ./deploy.sh staging
+      - ./circle.sh staging
   dev:
     branch: develop
     commands:
-      - ./deploy.sh develop
+      - ./circle.sh develop

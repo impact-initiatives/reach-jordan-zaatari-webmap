@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
 import styles from '../../../styles/index.js';
 import { ARABIC } from '../../../constants/language';
 import Legend from './legend/index.js';
@@ -7,15 +6,15 @@ import Search from './search/index.js';
 import Filter from './filter/index.js';
 
 export default ({ state }) => (
-  <div className={css(
-         styles.sidebar.option.default,
-         state.lang === ARABIC ? styles.sidebar.right.arabic : styles.sidebar.right.english,
-         state.sidebarLayers.open ? styles.sidebar.option.open : styles.sidebar.option.closed,
-       )}>
+  <div className={[
+    styles.menu.sidebarDefault,
+    state.lang === ARABIC ? styles.menu.sidebarRightArabic : styles.menu.sidebarRightEnglish,
+    state.sidebarLayers.open ? styles.menu.sidebarOpen : styles.menu.sidebarClosed,
+  ].join(' ')}>
     <Legend state={state} />
-    <div className={css(styles.separator.default)} />
+    <div className={styles.component.separator} />
     <Search state={state} />
-    <div className={css(styles.separator.default)} />
+    <div className={styles.component.separator} />
     <Filter state={state} />
   </div>
 );

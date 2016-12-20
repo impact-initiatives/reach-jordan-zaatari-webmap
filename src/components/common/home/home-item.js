@@ -1,6 +1,4 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
-import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../../translations/common.js';
 import styles from '../../../styles/index.js';
 
@@ -10,22 +8,18 @@ function onClick({ target }) {
 }
 
 export default ({ icon, name, state, url }) => (
-  <div className={css(styles.flex.vertical.left)}>
-    <div className={css(
-           styles.flex.horizontal.centerY,
-           styles.home.item,
-         )}
+  <div className={styles.flex.verticalLeftStretch}>
+    <div className={`${styles.flex.horizontalCenterY} ${styles.component.homeItem}`}
          data-url={url}
          onClick={onClick}>
       <img alt={url}
-           className={css(styles.inline.padding12)}
+           className={styles.inline.padding12}
            data-url={url}
            src={icon} />
-      <div className={css(
-             location.hash.split('?')[0] === url ? styles.color.lightBlue : styles.color.white,
-           )}
+      <div className={location.hash.split('?')[0] === url ? styles.inline.colorLightBlue :
+        styles.inline.colorWhite}
            data-url={url}>
-        {new IntlMessageFormat(MESSAGES[name][state.lang], state.lang).format()}
+        {MESSAGES[name][state.lang]}
       </div>
     </div>
   </div>

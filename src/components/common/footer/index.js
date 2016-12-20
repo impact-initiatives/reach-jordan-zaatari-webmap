@@ -1,26 +1,19 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
 
 export default ({ donorLogo }) => (
-  <div className={css(
-         styles.flex.horizontal.centerY,
-         styles.toolbar.default,
-       )}
-       style={{ display: styles.display.desktop() }}>
+  <div className={[
+    styles.flex.horizontalCenterY,
+    styles.menu.toolbarDefault,
+    styles.media.hiddenMobile,
+  ].join(' ')}>
     <img alt="donor-logo"
-       className={css(
-         styles.inline.height36,
-         styles.inline.padding12,
-       )}
+       className={styles.menu.toolbarLogo}
        src={donorLogo} />
-    <div className={css(styles.flex.item.space)} />
+    <div className={styles.flex.itemSpace} />
     <img alt="reach-logo"
-         className={css(
-           styles.inline.height28,
-           styles.inline.padding12,
-         )}
+         className={styles.menu.toolbarLogo}
          src={IMG.LOGO_REACH} />
   </div>
 );

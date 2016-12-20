@@ -1,0 +1,71 @@
+@import './constants.css';
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.home-item {
+  background-color: var(--dark-grey-100);
+  cursor: pointer;
+  height: 52px;
+  margin-top: 6px;
+}
+
+.sidebar-default {
+  align-items: stretch;
+  background-color: var(--dark-grey-50);
+  color: var(--white);
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  transition-duration: 250ms;
+  width: 75%;
+  z-index: 1;
+}
+
+.sidebar-inner {
+  padding: 12px;
+}
+
+.sidebar-open {
+  max-width: 400px;
+  pointer-events: initial;
+}
+
+.sidebar-closed {
+  max-width: 0;
+  pointer-events: none;
+}
+
+.sidebar-left-english,
+.sidebar-right-arabic {
+  left: 0;
+}
+
+.sidebar-right-english,
+.sidebar-left-arabic {
+  right: 0;
+}
+
+.toolbar-default {
+  background-color: var(--dark-grey-100);
+  color: var(--white);
+  min-height: 48px;
+}
+
+.toolbar-image {
+  cursor: pointer;
+  padding: 12px;
+}
+
+.toolbar-logo {
+  height: 28px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

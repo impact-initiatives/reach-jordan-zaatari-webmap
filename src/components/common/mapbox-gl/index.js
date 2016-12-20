@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { css } from 'aphrodisiac';
 import styles from '../../../styles/index.js';
 import { CONTAINER } from '../../../constants/mapbox-gl.js';
 
@@ -9,11 +8,7 @@ export default class extends Component {
   }
   render() {
     return (
-      <div className={css(
-             styles.flex.item.space,
-             styles.inline.width100,
-             styles.inline.zIndex0,
-           )}
+      <div className={styles.component.map}
            id={CONTAINER}>
         <style>{`
           .mapboxgl-popup { max-width: 320px; }

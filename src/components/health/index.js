@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
 import styles from '../../styles/index.js';
 import Header from '../common/header/index.js';
 import Footer from '../common/footer/index.js';
@@ -13,19 +12,11 @@ import MESSAGES from '../../translations/health.js';
 import initMap from '../../mapbox-gl/maps/health/index.js';
 
 export default ({ state }) => (
-  <div className={css(
-         styles.flex.vertical.normal,
-         styles.font.default,
-       )}
+  <div className={`${styles.flex.verticalNormal} ${styles.inline.fontDefault}`}
        dir={state.lang === ARABIC ? 'rtl' : 'ltr'}>
     <Header MESSAGES={MESSAGES}
             state={state} />
-    <div className={css(
-           styles.flex.vertical.left,
-           styles.flex.item.space,
-           styles.inline.positionRelative,
-           styles.inline.width100,
-         )}>
+    <div className={styles.menu.content}>
       <SidebarHome state={state} />
       <SidebarInfo state={state} />
       <SidebarLayers state={state} />

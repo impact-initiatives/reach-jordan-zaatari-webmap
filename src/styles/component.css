@@ -1,0 +1,59 @@
+@import './constants.css';
+
+.button-small {
+  background-color: var(--dark-grey-100);
+  cursor: pointer;
+  padding: 6px;
+}
+
+.button-small-white {
+  background-color: var(--dark-grey-100);
+  color: var(--white);
+  cursor: pointer;
+  padding: 6px;
+}
+
+.button-disabled {
+  background-color: #808080;
+}
+
+.title {
+  font-weight: 600;
+  padding: 6px 24px;
+}
+
+.home-item {
+  background-color: var(--dark-grey-100);
+  cursor: pointer;
+  height: 52px;
+  margin-top: 6px;
+}
+
+.map {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.legend-item {
+  border: 1px solid var(--white);
+  height: 18px;
+  width: 27px;
+}
+
+.legend-item-line {
+  border: 1px solid var(--white);
+  height: 2px;
+  width: 27px;
+}
+
+.legend-title {
+  font-weight: 600;
+  margin-top: 6px;
+  padding: 6px 24px;
+}
+
+.separator {
+  background-color: var(--dark-grey-100);
+  margin: 12px 0;
+  padding: 3px 0;
+}

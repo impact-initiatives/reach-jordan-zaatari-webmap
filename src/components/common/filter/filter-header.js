@@ -1,20 +1,15 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
-import IntlMessageFormat from 'intl-messageformat';
 import styles from '../../../styles/index.js';
 
 export default ({ MESSAGES, onReset, state }) => (
-  <div className={css(styles.flex.horizontal.centerY)}>
-    <div className={css(styles.filter.title)}>
-      {new IntlMessageFormat(MESSAGES.FILTER.TITLE[state.lang], state.lang).format()}
+  <div className={styles.flex.horizontalCenterY}>
+    <div className={styles.component.title}>
+      {MESSAGES.FILTER.TITLE[state.lang]}
     </div>
-    <div className={css(styles.flex.item.space)} />
-    <div className={css(
-           styles.button.small,
-           styles.inline.marginRight12,
-         )}
+    <div className={styles.flex.itemSpace} />
+    <div className={`${styles.component.buttonSmall} ${styles.inline.marginRight12}`}
          onClick={onReset}>
-      {new IntlMessageFormat(MESSAGES.FILTER.RESET[state.lang], state.lang).format()}
+      {MESSAGES.FILTER.RESET[state.lang]}
     </div>
   </div>
 );

@@ -1,6 +1,6 @@
 {
   "env": {
-    "browser": true,
+    "browser": true
   },
   "extends": "airbnb",
   "parser": "babel-eslint",
@@ -8,6 +8,7 @@
     "arrow-parens": ["error", "always"],
     "jsx-a11y/no-static-element-interactions": "off",
     "import/extensions": "off",
+    "no-use-before-define": ["error", { "functions": false }],
     "react/jsx-closing-bracket-location": ["error", {
       "nonEmpty": "after-props",
       "selfClosing": "after-props"
@@ -22,6 +23,6 @@
       "ignoreCase": false,
       "callbacksLast": false
     }],
-    "react/prop-types": "off",
+    "react/prop-types": "off"
   }
 }

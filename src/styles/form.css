@@ -1,0 +1,31 @@
+.background {
+  border-radius: 25px;
+  padding: 24px;
+}
+
+.date-picker {
+  margin: 24px 0;
+}
+
+.title {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.input-div {
+  align-items: stretch;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 12px;
+}
+
+.search-title {
+  font-weight: 600;
+  padding: 6px 24px;
+}
+
+.search-bar {
+  height: 24px;
+  margin: 0 12px 0 24px;
+  width: 90%;
+}

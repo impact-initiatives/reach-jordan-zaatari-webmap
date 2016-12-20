@@ -1,6 +1,4 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
-import IntlMessageFormat from 'intl-messageformat';
 import styles from '../../../styles/index.js';
 import MESSAGES from '../../../translations/waste-water.js';
 import REACH from '../../../constants/reach.js';
@@ -14,23 +12,17 @@ function onClickDistrict() {
 }
 
 export default ({ state }) => (
-  <div className={css(
-         styles.flex.horizontal.centerY,
-         styles.inline.padding12,
-       )}>
+  <div className={`${styles.flex.horizontalCenterY} ${styles.inline.padding12}`}>
     <div>
-      {new IntlMessageFormat(MESSAGES.DOWNLOAD.HEADER[state.lang], state.lang).format()}
+      {MESSAGES.DOWNLOAD.HEADER[state.lang]}
     </div>
-    <div className={css(
-           styles.button.small,
-           styles.inline.margin0x12,
-         )}
+    <div className={`${styles.component.buttonSmall} ${styles.inline.margin0x12}`}
          onClick={onClickCamp}>
-      {new IntlMessageFormat(MESSAGES.DOWNLOAD.CAMP[state.lang], state.lang).format()}
+      {MESSAGES.DOWNLOAD.CAMP[state.lang]}
     </div>
-    <div className={css(styles.button.small)}
+    <div className={styles.component.buttonSmall}
          onClick={onClickDistrict}>
-      {new IntlMessageFormat(MESSAGES.DOWNLOAD.DISTRICTS[state.lang], state.lang).format()}
+      {MESSAGES.DOWNLOAD.DISTRICTS[state.lang]}
     </div>
   </div>
 );

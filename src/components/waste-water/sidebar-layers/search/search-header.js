@@ -1,6 +1,4 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
-import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../../../translations/waste-water.js';
 import store from '../../../../store/index.js';
 import styles from '../../../../styles/index.js';
@@ -17,17 +15,14 @@ function onReset() {
 }
 
 export default ({ state }) => (
-  <div className={css(styles.flex.horizontal.centerY)}>
-    <div className={css(styles.search.title)}>
-      {new IntlMessageFormat(MESSAGES.SEARCH.TITLE[state.lang], state.lang).format()}
+  <div className={styles.flex.horizontalBaseline}>
+    <div className={styles.form.searchTitle}>
+      {MESSAGES.SEARCH.TITLE[state.lang]}
     </div>
-    <div className={css(styles.flex.item.space)} />
-    <div className={css(
-           styles.button.small,
-           styles.inline.marginRight12,
-         )}
+    <div className={styles.flex.itemSpace} />
+    <div className={`${styles.component.buttonSmall} ${styles.inline.marginRight12}`}
          onClick={onReset}>
-      {new IntlMessageFormat(MESSAGES.SEARCH.RESET[state.lang], state.lang).format()}
+      {MESSAGES.SEARCH.RESET[state.lang]}
     </div>
   </div>
 );

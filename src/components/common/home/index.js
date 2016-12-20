@@ -1,16 +1,15 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
 import styles from '../../../styles/index.js';
 import { ARABIC } from '../../../constants/language';
 import { IMG } from '../../../constants/resources.js';
 import HomeItem from './home-item.js';
 
 export default ({ state }) => (
-  <div className={css(
-         styles.sidebar.option.default,
-         state.lang === ARABIC ? styles.sidebar.left.arabic : styles.sidebar.left.english,
-         state.sidebarHome.open ? styles.sidebar.option.open : styles.sidebar.option.closed,
-       )}>
+  <div className={[
+    styles.menu.sidebarDefault,
+    state.lang === ARABIC ? styles.menu.sidebarLeftArabic : styles.menu.sidebarLeftEnglish,
+    state.sidebarHome.open ? styles.menu.sidebarOpen : styles.menu.sidebarClosed,
+  ].join(' ')}>
     <HomeItem icon={IMG.HOME_WHITE}
               name="MORE"
               state={state}

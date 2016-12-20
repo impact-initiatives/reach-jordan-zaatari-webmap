@@ -1,6 +1,4 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
-import IntlMessageFormat from 'intl-messageformat';
 import store from '../../../store/index.js';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
@@ -61,34 +59,31 @@ function onClickLayers() {
 }
 
 export default ({ state, MESSAGES }) => (
-  <div className={css(
-    styles.flex.horizontal.centerY,
-    styles.toolbar.default,
-  )}>
+  <div className={`${styles.flex.horizontalCenterY} ${styles.menu.toolbarDefault}`}>
     <img alt="home"
-         className={css(styles.toolbar.img)}
+         className={styles.menu.toolbarImage}
          onClick={onClickHome}
          src={IMG.MENU_WHITE} />
-    <div style={{ display: styles.display.desktop() }}>
-      {new IntlMessageFormat(COMMON_MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
+    <div className={styles.media.hiddenMobile}>
+      {COMMON_MESSAGES.TITLE_LONG[state.lang]}
     </div>
-    <div style={{ display: styles.display.mobile() }}>
-      {new IntlMessageFormat(COMMON_MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
+    <div className={styles.media.hiddenDesktop}>
+      {COMMON_MESSAGES.TITLE_SHORT[state.lang]}
     </div>
     <div>&nbsp;-&nbsp;</div>
-    <div style={{ display: styles.display.desktop() }}>
-      {new IntlMessageFormat(MESSAGES.TITLE_LONG[state.lang], state.lang).format()}
+    <div className={styles.media.hiddenMobile}>
+      {MESSAGES.TITLE_LONG[state.lang]}
     </div>
-    <div style={{ display: styles.display.mobile() }}>
-      {new IntlMessageFormat(MESSAGES.TITLE_SHORT[state.lang], state.lang).format()}
+    <div className={styles.media.hiddenDesktop}>
+      {MESSAGES.TITLE_SHORT[state.lang]}
     </div>
-    <div className={css(styles.flex.item.space)} />
+    <div className={styles.flex.itemSpace} />
     <img alt="info"
-         className={css(styles.toolbar.img)}
+         className={styles.menu.toolbarImage}
          onClick={onClickInfo}
          src={IMG.INFO_WHITE} />
     <img alt="layers"
-         className={css(styles.toolbar.img)}
+         className={styles.menu.toolbarImage}
          onClick={onClickLayers}
          src={IMG.LAYERS_WHITE} />
   </div>

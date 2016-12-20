@@ -1,31 +1,92 @@
-import button from './button.js';
-import color from './color.js';
-import display from './display.js';
-import filter from './filter.js';
-import flex from './flex.js';
-import font from './font.js';
-import home from './home.js';
-import inline from './inline.js';
-import legend from './legend.js';
-import link from './link.js';
-import search from './search.js';
-import separator from './separator.js';
-import sidebar from './sidebar.js';
-import toolbar from './toolbar.js';
+/* eslint dot-notation: "off" */
+import component from './component.css';
+import flex from './flex.css';
+import form from './form.css';
+import inline from './inline.css';
+import media from './media.css';
+import menu from './menu.css';
 
 export default {
-  button,
-  color,
-  display,
-  filter,
-  flex,
-  font,
-  home,
-  inline,
-  legend,
-  link,
-  search,
-  separator,
-  sidebar,
-  toolbar,
+  component: {
+    buttonSmall: component['button-small'],
+    buttonSmallWhite: component['button-small-white'],
+    buttonDisabled: component['button-disabled'],
+    homeItem: component['home-item'],
+    legendItem: component['legend-item'],
+    legendItemLine: component['legend-item-line'],
+    legendTitle: component['legend-title'],
+    map: component['map'],
+    title: component['title'],
+    separator: component['separator'],
+  },
+  flex: {
+    horizontalCenterX: flex['horizontal-center-x'],
+    horizontalCenterY: flex['horizontal-center-y'],
+    horizontalBaseline: flex['horizontal-baseline'],
+    horizontalRight: flex['horizontal-right'],
+    horizontalSpaceAround: flex['horizontal-space-around'],
+    horizontalSpaceBetween: flex['horizontal-space-between'],
+    verticalNormal: flex['vertical-normal'],
+    verticalCenter: flex['vertical-center'],
+    verticalLeft: flex['vertical-left'],
+    verticalLeftStretch: flex['vertical-left-stretch'],
+    itemDivider: flex['item-divider'],
+    itemFixed: flex['item-fixed'],
+    itemSpace: flex['item-space'],
+    itemSpaceOverflow: flex['item-space-overflow'],
+  },
+  form: {
+    background: form['background'],
+    datePicker: form['date-picker'],
+    title: form['title'],
+    inputDiv: form['input-div'],
+    searchBar: form['search-bar'],
+    searchTitle: form['search-title'],
+  },
+  inline: {
+    colorLightBlue: inline['color-light-blue'],
+    colorWhite: inline['color-white'],
+    colorLink: inline['color-link'],
+    cursorPointer: inline['cursor-pointer'],
+    fontDefault: inline['font-default'],
+    height6: inline['height-6'],
+    height28: inline['height-28'],
+    height36: inline['height-36'],
+    height42: inline['height-42'],
+    height48: inline['height-48'],
+    margin0x12: inline['margin-0x12'],
+    marginBottom12: inline['margin-bottom-12'],
+    margiBottomRight12n: inline['margin-bottom-right-12'],
+    marginRight12: inline['margin-right-12'],
+    marginTop24: inline['margin-top-24'],
+    margin24: inline['margin-24'],
+    maxWidth550: inline['max-width-550'],
+    maxWidth768: inline['max-width-768'],
+    overflowHidden: inline['overflow-hidden'],
+    padding0x12: inline['padding-0x12'],
+    padding12: inline['padding-12'],
+    padding12x24: inline['padding-12x24'],
+    positionRelative: inline['position-relative'],
+    width100: inline['width-100'],
+    zIndex0: inline['z-index-0'],
+  },
+  media: {
+    hiddenDesktop: media['hidden-desktop'],
+    hiddenMobile: media['hidden-mobile'],
+  },
+  menu: {
+    content: menu['content'],
+    homeItem: menu['home-item'],
+    sidebarDefault: menu['sidebar-default'],
+    sidebarInner: menu['sidebar-inner'],
+    sidebarOpen: menu['sidebar-open'],
+    sidebarClosed: menu['sidebar-closed'],
+    sidebarLeftEnglish: menu['sidebar-left-english'],
+    sidebarRightArabic: menu['sidebar-right-arabic'],
+    sidebarRightEnglish: menu['sidebar-right-english'],
+    sidebarLeftArabic: menu['sidebar-left-arabic'],
+    toolbarDefault: menu['toolbar-default'],
+    toolbarImage: menu['toolbar-image'],
+    toolbarLogo: menu['toolbar-logo'],
+  },
 };

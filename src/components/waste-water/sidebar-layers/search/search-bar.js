@@ -1,6 +1,4 @@
 import React from 'react';
-import { css } from 'aphrodisiac';
-import IntlMessageFormat from 'intl-messageformat';
 import MESSAGES from '../../../../translations/waste-water.js';
 import store from '../../../../store/index.js';
 import styles from '../../../../styles/index.js';
@@ -30,16 +28,12 @@ function onKeyUp({ keyCode, target }) {
 }
 
 export default ({ state }) => (
-  <div className={css(styles.flex.vertical.left)}>
-    <div className={css(styles.inline.height6)} />
-    <input className={css(
-             styles.flex.horizontal.centerY,
-             styles.search.bar,
-           )}
+  <div className={styles.flex.verticalLeft}>
+    <div className={styles.inline.height6} />
+    <input className={styles.form.searchBar}
            onChange={onChange}
            onKeyUp={onKeyUp}
-           placeholder={
-             new IntlMessageFormat(MESSAGES.SEARCH.SEARCH_BAR[state.lang], state.lang).format()}
+           placeholder={MESSAGES.SEARCH.SEARCH_BAR[state.lang]}
            value={state.search.wasteWater} />
   </div>
 );

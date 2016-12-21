@@ -35,6 +35,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: './[name].js',
   },
+  performance: { hints: DEBUG ? false : 'warning' },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ names: PACKAGE_NAMES }),
     new HtmlWebpackPlugin({ template: './index.html' }),

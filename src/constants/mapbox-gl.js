@@ -17,6 +17,7 @@ export const STYLE = MAPBOX.STYLE.EMPTY;
 export const BEARING = 21;
 
 export default {
+  attributionControl: false,
   container: CONTAINER,
   maxBounds: MAX_BOUNDS,
   style: STYLE,

@@ -5,7 +5,7 @@
     "test": "./node_modules/.bin/eslint ./src/ && ./node_modules/.bin/stylelint ./src/**/*.css"
   },
   "devDependencies": {
-    "appcache-manifest": "^1.0.4",
+    "appcache-manifest": "^2.0.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
@@ -22,7 +22,7 @@
     "html-webpack-plugin": "^2.24.1",
     "mapbox-gl": "^0.29.0",
     "normalize.css": "^5.0.0",
-    "postcss": "^5.2.6",
+    "postcss": "^5.2.8",
     "postcss-cssnext": "^2.9.0",
     "postcss-import": "^9.0.0",
     "postcss-loader": "^1.2.1",

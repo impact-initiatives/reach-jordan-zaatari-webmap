@@ -63,7 +63,7 @@ export default ({ state, MESSAGES }) => (
     <img alt="home"
          className={styles.menu.toolbarImage}
          onClick={onClickHome}
-         src={IMG.MENU_WHITE} />
+         src={IMG.MENU} />
     <div className={styles.media.hiddenMobile}>
       {COMMON_MESSAGES.TITLE_LONG[state.lang]}
     </div>
@@ -81,10 +81,10 @@ export default ({ state, MESSAGES }) => (
     <img alt="info"
          className={styles.menu.toolbarImage}
          onClick={onClickInfo}
-         src={IMG.INFO_WHITE} />
+         src={IMG.INFO} />
     <img alt="layers"
          className={styles.menu.toolbarImage}
          onClick={onClickLayers}
-         src={IMG.LAYERS_WHITE} />
+         src={IMG.LAYERS} />
   </div>
 );

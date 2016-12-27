@@ -5,7 +5,7 @@ import FILTERS from '../../constants/filters/waste-water.js';
 
 const SOURCE_ID = 'steel-tanks';
 const LAYER_ID = 'steel-tanks-circle';
-const FILTER_PROP = 'Layer';
+const FILTER_PROP = 'OBJECTID';
 
 function modifyLayer({ map }) {
   const state = store.getState();

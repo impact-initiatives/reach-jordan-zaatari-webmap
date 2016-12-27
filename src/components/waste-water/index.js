@@ -22,6 +22,6 @@ export default ({ state }) => (
       <SidebarLayers state={state} />
       <MapboxGL initMap={initMap} />
     </div>
-    <Footer donorLogo={IMG.LOGO_UNHCR} />
+    <Footer donorLogo={IMG.LOGO_UNICEF} />
   </div>
 );

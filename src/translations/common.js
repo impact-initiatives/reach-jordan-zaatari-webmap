@@ -29,6 +29,10 @@ export default {
     [ENGLISH]: 'Waste Water',
     [ARABIC]: 'المياه العادمة',
   },
+  FLOOD: {
+    [ENGLISH]: 'Flood',
+    [ARABIC]: 'Flood',
+  },
   INFO: {
     LANGUAGE: {
       [ENGLISH]: 'Language',

@@ -1,5 +1,4 @@
 import React from 'react';
-import MESSAGES from '../../../translations/common.js';
 import styles from '../../../styles/index.js';
 
 function onClick({ target }) {
@@ -7,7 +6,7 @@ function onClick({ target }) {
   location.href = url;
 }
 
-export default ({ icon, name, state, url }) => (
+export default ({ icon, name, url }) => (
   <div className={styles.flex.verticalLeftStretch}>
     <div className={`${styles.flex.horizontalCenterY} ${styles.component.homeItem}`}
          data-url={url}
@@ -19,7 +18,7 @@ export default ({ icon, name, state, url }) => (
       <div className={location.hash.split('?')[0] === url ? styles.inline.colorLightBlue :
         styles.inline.colorWhite}
            data-url={url}>
-        {MESSAGES[name][state.lang]}
+        {name}
       </div>
     </div>
   </div>

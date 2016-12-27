@@ -15,7 +15,7 @@ fi
 
 aws s3 rm s3://$BUCKET --recursive
 
-aws s3 cp --recursive ./deploy/ s3://$BUCKET/
+aws s3 cp --recursive ./dist/ s3://$BUCKET/
 
 aws configure set preview.cloudfront true
 aws cloudfront create-invalidation \

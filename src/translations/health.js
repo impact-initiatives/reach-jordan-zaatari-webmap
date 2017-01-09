@@ -88,4 +88,14 @@ export default {
       [ARABIC]: 'التلقيح والمطاعيم',
     },
   },
+  popup: {
+    hours: {
+      [ENGLISH]: 'Hours',
+      [ARABIC]: 'ساعات', // not verified
+    },
+    services: {
+      [ENGLISH]: 'Services',
+      [ARABIC]: 'خدمات', // not verified
+    },
+  },
 };

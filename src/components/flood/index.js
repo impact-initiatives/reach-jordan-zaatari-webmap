@@ -8,8 +8,8 @@ import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
 import { ARABIC } from '../../constants/language.js';
 import { IMG } from '../../constants/resources.js';
-import MESSAGES from '../../translations/health.js';
-import initMap from '../../mapbox-gl/maps/health/index.js';
+import MESSAGES from '../../translations/flood.js';
+import initMap from '../../mapbox-gl/maps/flood.js';
 
 export default function flood({ state }) {
   return (

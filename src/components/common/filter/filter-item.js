@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
 
-export default ({ icon, MESSAGES, name, onClick, route, state, type }) => (
-  <div className={styles.flexVerticalLeft}>
+export default ({ name, onClick, route, state, type }) => (
+  <div className={styles.flex.verticalNormal}>
     <div className={[
       styles.flex.horizontalCenterY,
       styles.component.homeItem,
@@ -10,12 +10,9 @@ export default ({ icon, MESSAGES, name, onClick, route, state, type }) => (
     ].join(' ')}
     data-type={type}
     onClick={onClick}>
-      <div alt={type}
-           className={styles.inline.margin0x12}
-           data-type={type}
-           src={icon} />
+      <div className={styles.inline.margin0x12} />
       <div data-type={type}>
-        {MESSAGES.FILTER[name][state.lang]}
+        {name}
       </div>
     </div>
   </div>

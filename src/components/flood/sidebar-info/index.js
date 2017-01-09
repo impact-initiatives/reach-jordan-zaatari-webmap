@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
 import { ARABIC } from '../../../constants/language';
-import MESSAGES from '../../../translations/health.js';
+import MESSAGES from '../../../translations/flood.js';
 import Language from '../../common/info/language.js';
 import About from '../../common/info/about.js';
 

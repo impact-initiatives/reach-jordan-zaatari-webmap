@@ -1,41 +1,40 @@
-import { REACH } from '../../constants/resources.js';
-import COLORS from '../../constants/colors.js';
+import { reach } from '../../constants/resources.js';
+import colors from '../../constants/colors.js';
+import utils from '../utils/index.js';
+import layer from '../../constants/layers/district-operators.js';
 
-function addDistrictBoundaries({ map }) {
-  if (!map.getSource('district-boundaries')) {
-    map.addSource('district-boundaries', {
-      data: REACH.DISTRICT_BOUNDARIES,
-      type: 'geojson',
-    });
-  }
-  map.addLayer({
-    id: 'district-boundaries-fill',
+function fetchLayer({ map }) {
+  fetch(reach.DISTRICT_BOUNDARIES)
+    .then((response) => response.json())
+    .then(({ features }) => addLayer({ features, map }));
+}
+
+function addLayer({ features, map }) {
+  utils.addSourceToMap({ features, map, sourceId: layer.SOURCE_ID });
+  map.addLayer(getLayer());
+}
+
+function getLayer() {
+  return {
+    id: layer.LAYER_ID,
     paint: {
       'fill-color': {
-        property: 'NGO_Operat',
+        property: layer.PROP_NGO,
         stops: [
-          ['ACTED', COLORS.MEDIUM_BLUE],
-          ['JEN', COLORS.YELLOW],
-          ['Oxfam', COLORS.GREEN],
+          [layer.VALUE_ACTED, colors.MEDIUM_BLUE],
+          [layer.VALUE_JEN, colors.YELLOW],
+          [layer.VALUE_OXFAM, colors.GREEN],
         ],
         type: 'categorical',
       },
       'fill-opacity': 0.8,
+      'fill-outline-color': colors.WHITE,
     },
-    source: 'district-boundaries',
+    source: layer.SOURCE_ID,
     type: 'fill',
-  });
-  map.addLayer({
-    id: 'district-line',
-    paint: {
-      'line-color': COLORS.WHITE,
-      'line-width': 3,
-    },
-    source: 'district-boundaries',
-    type: 'line',
-  });
+  };
 }
 
-export default function ({ map }) {
-  addDistrictBoundaries({ map });
+export default function districtOperators({ map }) {
+  fetchLayer({ map });
 }

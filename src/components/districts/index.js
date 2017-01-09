@@ -9,7 +9,7 @@ import SidebarInfo from './sidebar-info/index.js';
 import { ARABIC } from '../../constants/language.js';
 import { IMG } from '../../constants/resources.js';
 import MESSAGES from '../../translations/districts.js';
-import initMap from '../../mapbox-gl/maps/districts/index.js';
+import initMap from '../../mapbox-gl/maps/districts.js';
 
 export default ({ state }) => (
   <div className={`${styles.flex.verticalNormal} ${styles.inline.fontDefault}`}

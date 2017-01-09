@@ -22,11 +22,15 @@ export const MAPBOX = {
   },
 };
 
-export const REACH = {
+export const reach = {
   DISTRICT_BOUNDARIES: `${RESOURCES_URL}/reach/DistrictBoundaries_2016_12.geojson`,
   BLOCK_BOUNDARIES: `${RESOURCES_URL}/reach/BlockBoundaries_2016_12.geojson`,
-  CAMP_FACILITIES: `${RESOURCES_URL}/reach/CampFacilities_2016_11.geojson`,
+  CAMP_FACILITIES: `${RESOURCES_URL}/reach/CampFacilities_2017_01.geojson`,
+  FLOOD_POINTS: `${RESOURCES_URL}/reach/FloodPoints_2016_12.geojson`,
+  FLOOD_POINTS_UNICEF: `${RESOURCES_URL}/reach/FloodPoints_UNICEF_2016_12.geojson`,
+  FLOOD_LINES: `${RESOURCES_URL}/reach/FloodLines_2016_12.geojson`,
+  FLOOD_WATER_PATH: `${RESOURCES_URL}/reach/FloodWaterPath_2015_11.geojson`,
   PIPES: `${RESOURCES_URL}/reach/Pipes_2016_10.geojson`,
-  SEPTIC_TANKS: `${RESOURCES_URL}/reach/SepticTanks_2016_10.geojson`,
+  SEPTIC_TANKS: `${RESOURCES_URL}/reach/SepticTanks_2017_01.geojson`,
   STEEL_TANKS: `${RESOURCES_URL}/reach/SteelTanks_2016_11.geojson`,
 };

@@ -1,71 +1,104 @@
 import store from '../../store/index.js';
-import { REACH } from '../../constants/resources.js';
-import COLORS from '../../constants/colors.js';
-import { LABEL_ZOOM_BREAK, NUM_HOUSEHOLDS } from '../../constants/mapbox-gl.js';
+import { reach } from '../../constants/resources.js';
+import colors from '../../constants/colors.js';
+import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
+import utils from '../utils/index.js';
+import layer from '../../constants/layers/septic-tank-size.js';
 
 const { mapboxgl } = window;
 
-const SOURCE_ID = 'septic-tanks';
-const LAYER_ID_FEATURE = 'septic-tanks-feature';
-const LAYER_ID_LABEL = 'septic-tanks-label';
-const FILTER_PROP = 'Volume';
+function fetchLayer({ map }) {
+  fetch(reach.SEPTIC_TANKS)
+    .then((response) => response.json())
+    .then(({ features }) => addLayer({ features, map }));
+}
+
+function addLayer({ features, map }) {
+  const featuresMapped = features.map(modifyFeatures);
+  utils.addSourceToMap({ features: featuresMapped, map, sourceId: layer.SOURCE_ID });
+  map.addLayer(getLayerFeature());
+  map.addLayer(getLayerLabel());
+  addPopup({ map });
+  modifyLayer({ map });
+}
+
+function modifyFeatures(feature) {
+  const houses = (feature.properties[layer.PROP_HOUSE] || '').split(',');
+  return {
+    ...feature,
+    properties: {
+      ...feature.properties,
+      ...houses,
+    },
+  };
+}
+
+function getLayerFeature() {
+  return {
+    id: layer.LAYER_ID_FEATURE,
+    paint: {
+      'circle-color': {
+        property: layer.PROP_VOLUME,
+        stops: [
+          [2, colors.LIGHT_RED_100],
+          [4, colors.GREEN],
+          [8, colors.MEDIUM_BLUE],
+        ],
+        type: 'categorical',
+      },
+      'circle-opacity': 0.8,
+    },
+    source: layer.SOURCE_ID,
+    type: 'circle',
+  };
+}
+
+function getLayerLabel() {
+  return {
+    id: layer.LAYER_ID_LABEL,
+    layout: {
+      'text-anchor': 'bottom-left',
+      'text-field': `{${layer.PROP_NAME}}`,
+      'text-font': ['open-sans-regular'],
+      'text-offset': [0.25, -0.25],
+    },
+    minzoom: LABEL_ZOOM_BREAK,
+    paint: {
+      'text-halo-color': colors.WHITE,
+      'text-halo-width': 1.5,
+    },
+    source: layer.SOURCE_ID,
+    type: 'symbol',
+  };
+}
 
 function addPopup({ map }) {
-  map.on('click', (e) => {
-    const features = map.queryRenderedFeatures(e.point, {
-      layers: [LAYER_ID_FEATURE],
-    });
-    if (features.length && features[0].properties[FILTER_PROP] !== 'null') {
-      const feature = features[0];
-      const popupText = ['<div><b>Connected Households</b></div>'];
-      for (let i = 0; i < NUM_HOUSEHOLDS; i += 1) {
-        const prop = `HH${i + 1}`;
-        const household = feature.properties[prop];
-        if (household !== 'null') {
-          popupText.push(`<div>${household}</div>`);
-        } else {
-          break;
-        }
-      }
-      new mapboxgl.Popup({ closeButton: false })
-        .setLngLat(map.unproject(e.point))
-        .setHTML(popupText.join(''))
-        .addTo(map);
-    }
-  });
-  map.on('mousemove', (e) => {
-    const features = map.queryRenderedFeatures(e.point, {
-      layers: [LAYER_ID_FEATURE],
-    });
-    const canvas = map.getCanvas();
-    canvas.style.cursor = (
-      features.length && features[0].properties[FILTER_PROP] !== 'null') ? 'pointer' : '';
-  });
+  map.on('click', ({ point }) => onClick({ point, map }));
+  map.on('mousemove', ({ point }) => onMouseMove({ point, map }));
 }
 
-function filterByType({ map, state }) {
-  const storeFilter = state.filters.wasteWater;
-  const mapFilter = Object.entries(storeFilter)
-    .filter(([, value]) => value)
-    .map(([key]) => {
-      if (key.includes('8')) return ['==', FILTER_PROP, 8];
-      else if (key.includes('4')) return ['==', FILTER_PROP, 4];
-      else if (key.includes('2')) return ['==', FILTER_PROP, 2];
-      return ['!has', FILTER_PROP];
-    });
-  if (!mapFilter.length) mapFilter.push(['has', FILTER_PROP]);
-  map.setFilter(LAYER_ID_FEATURE, ['any', ...mapFilter]);
-  map.setFilter(LAYER_ID_LABEL, ['any', ...mapFilter]);
-}
-
-function filterBySearch({ map, state }) {
-  const filter = [];
-  const search = state.search.wasteWater;
-  for (let i = 0; i < NUM_HOUSEHOLDS; i += 1) {
-    filter.push(['==', `HH${i + 1}`, search]);
+function onClick({ point, map }) {
+  const features = map.queryRenderedFeatures(point, { layers: [layer.LAYER_ID_FEATURE] });
+  if (features.length && features[0].properties[layer.PROP_VOLUME] !== 'null') {
+    const feature = features[0];
+    const header = '<div><b>Connected Households</b></div>';
+    const households = feature.properties[layer.PROP_HOUSE]
+      .split(',')
+      .filter((house) => house)
+      .map((house) => `<div>${house}</div>`);
+    const popupText = [header, ...households].join('');
+    new mapboxgl.Popup({ closeButton: false })
+      .setLngLat(map.unproject(point))
+      .setHTML(popupText)
+      .addTo(map);
   }
-  map.setFilter(LAYER_ID_FEATURE, ['any', ...filter]);
-  map.setFilter(LAYER_ID_LABEL, ['any', ...filter]);
+}
+
+function onMouseMove({ point, map }) {
+  const features = map.queryRenderedFeatures(point, { layers: [layer.LAYER_ID_FEATURE] });
+  const canvas = map.getCanvas();
+  canvas.style.cursor = (
+    features.length && features[0].properties[layer.PROP_VOLUME] !== 'null') ? 'pointer' : '';
 }
 
 function modifyLayer({ map }) {
@@ -77,51 +110,32 @@ function modifyLayer({ map }) {
   }
 }
 
-function addLayer({ map }) {
-  if (!map.getSource(SOURCE_ID)) {
-    map.addSource(SOURCE_ID, {
-      data: REACH.SEPTIC_TANKS,
-      type: 'geojson',
-    });
+function filterBySearch({ map, state }) {
+  const filter = [];
+  const search = state.search.wasteWater;
+  for (let i = 0; i < layer.NUM_HOUSES; i += 1) {
+    filter.push(['==', String(i), search]);
   }
-  map.addLayer({
-    id: LAYER_ID_FEATURE,
-    paint: {
-      'circle-color': {
-        property: 'Volume',
-        stops: [
-          [2, COLORS.LIGHT_RED_100],
-          [4, COLORS.GREEN],
-          [8, COLORS.MEDIUM_BLUE],
-        ],
-        type: 'categorical',
-      },
-      'circle-opacity': 0.8,
-    },
-    source: SOURCE_ID,
-    type: 'circle',
-  });
-  map.addLayer({
-    id: LAYER_ID_LABEL,
-    layout: {
-      'text-anchor': 'bottom-left',
-      'text-field': '{New_Name}',
-      'text-font': ['open-sans-regular'],
-      'text-offset': [0.25, -0.25],
-    },
-    minzoom: LABEL_ZOOM_BREAK,
-    paint: {
-      'text-halo-color': COLORS.WHITE,
-      'text-halo-width': 1.5,
-    },
-    source: SOURCE_ID,
-    type: 'symbol',
-  });
-  modifyLayer({ map });
+  map.setFilter(layer.LAYER_ID_FEATURE, ['any', ...filter]);
+  map.setFilter(layer.LAYER_ID_LABEL, ['any', ...filter]);
 }
 
-export default function ({ map }) {
+function filterByType({ map, state }) {
+  const storeFilter = state.filters.wasteWater;
+  const mapFilter = Object.entries(storeFilter)
+    .filter(([, value]) => value)
+    .map(([key]) => {
+      if (key.includes('8')) return ['==', layer.PROP_VOLUME, 8];
+      else if (key.includes('4')) return ['==', layer.PROP_VOLUME, 4];
+      else if (key.includes('2')) return ['==', layer.PROP_VOLUME, 2];
+      return ['!has', layer.PROP_VOLUME];
+    });
+  if (!mapFilter.length) mapFilter.push(['has', layer.PROP_VOLUME]);
+  map.setFilter(layer.LAYER_ID_FEATURE, ['any', ...mapFilter]);
+  map.setFilter(layer.LAYER_ID_LABEL, ['any', ...mapFilter]);
+}
+
+export default function septicTankSize({ map }) {
   store.subscribe(() => modifyLayer({ map }));
-  addLayer({ map });
-  addPopup({ map });
+  fetchLayer({ map });
 }

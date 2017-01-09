@@ -1,33 +1,32 @@
-import { REACH } from '../../constants/resources.js';
-import COLORS from '../../constants/colors.js';
+import { reach } from '../../constants/resources.js';
+import colors from '../../constants/colors.js';
+import utils from '../utils/index.js';
+import layer from '../../constants/layers/camp-facilities-background.js';
 
-const SOURCE_ID_FEATURE = 'camp-facilities';
-const LAYER_ID_FEATURE = 'camp-facilities-background';
-const LAYER_ID_FEATURE_OUTLINE = 'camp-facilities-background-outline';
+function fetchLayer({ map }) {
+  fetch(reach.CAMP_FACILITIES)
+    .then((response) => response.json())
+    .then(({ features }) => addLayer({ features, map }));
+}
 
-export default function ({ map }) {
-  if (!map.getSource(SOURCE_ID_FEATURE)) {
-    map.addSource(SOURCE_ID_FEATURE, {
-      data: REACH.CAMP_FACILITIES,
-      type: 'geojson',
-    });
-  }
-  map.addLayer({
-    id: LAYER_ID_FEATURE,
+function addLayer({ features, map }) {
+  utils.addSourceToMap({ features, map, sourceId: layer.SOURCE_ID });
+  map.addLayer(getLayer());
+}
+
+function getLayer() {
+  return {
+    id: layer.LAYER_ID,
     paint: {
-      'fill-color': COLORS.DARK_GREY_30,
+      'fill-color': colors.DARK_GREY_30,
       'fill-opacity': 0.9,
+      'fill-outline-color': colors.WHITE,
     },
-    source: SOURCE_ID_FEATURE,
+    source: layer.SOURCE_ID,
     type: 'fill',
-  });
-  map.addLayer({
-    id: LAYER_ID_FEATURE_OUTLINE,
-    paint: {
-      'line-color': COLORS.LIGHT_GREY_100,
-      'line-opacity': 0.9,
-    },
-    source: SOURCE_ID_FEATURE,
-    type: 'line',
-  });
+  };
+}
+
+export default function campFacilitiesBackground({ map }) {
+  fetchLayer({ map });
 }

@@ -1,20 +1,31 @@
-import { REACH } from '../../constants/resources.js';
-import COLORS from '../../constants/colors.js';
+import { reach } from '../../constants/resources.js';
+import colors from '../../constants/colors.js';
+import utils from '../utils/index.js';
+import layer from '../../constants/layers/block-fill.js';
 
-export default function ({ map }) {
-  if (!map.getSource('block-boundaries')) {
-    map.addSource('block-boundaries', {
-      data: REACH.BLOCK_BOUNDARIES,
-      type: 'geojson',
-    });
-  }
-  map.addLayer({
-    id: 'district-fill',
+function fetchLayer({ map }) {
+  fetch(reach.BLOCK_BOUNDARIES)
+    .then((response) => response.json())
+    .then(({ features }) => addLayer({ features, map }));
+}
+
+function addLayer({ features, map }) {
+  utils.addSourceToMap({ features, map, sourceId: layer.SOURCE_ID });
+  map.addLayer(getLayerOptions());
+}
+
+function getLayerOptions() {
+  return {
+    id: layer.LAYER_ID,
     paint: {
-      'fill-color': COLORS.DARK_GREY_50,
+      'fill-color': colors.DARK_GREY_50,
       'fill-opacity': 0.25,
     },
-    source: 'block-boundaries',
+    source: layer.SOURCE_ID,
     type: 'fill',
-  });
+  };
+}
+
+export default function blockFill({ map }) {
+  fetchLayer({ map });
 }

@@ -1,91 +1,117 @@
 import store from '../../store/index.js';
-import { REACH } from '../../constants/resources.js';
-import COLORS from '../../constants/colors.js';
+import { reach } from '../../constants/resources.js';
+import colors from '../../constants/colors.js';
+import utils from '../utils/index.js';
+import messages from '../../translations/health.js';
+import layer from '../../constants/layers/camp-facilities-health.js';
 
 const { mapboxgl } = window;
 
-function modifyLayer({ map }) {
-  const storeFilter = store.getState().filters.health;
-  const mapFilter = Object.entries(storeFilter)
-    .filter(([, value]) => value)
-    .map(([key]) => (['==', key, 'Yes']));
-  if (!mapFilter.length) mapFilter.push(['has', 'OBJECTID_1']);
-  map.setFilter('health-facilities-fill', ['any', ...mapFilter]);
+function fetchLayer({ map }) {
+  fetch(reach.CAMP_FACILITIES)
+    .then((response) => response.json())
+    .then(({ features }) => addLayer({ features, map }));
 }
 
-function addPopup({ map }) {
-  map.on('click', (e) => {
-    const features = map.queryRenderedFeatures(e.point, {
-      layers: ['health-facilities-fill'],
-    });
-    if (features.length && features[0].properties.Summary_St !== 'null') {
-      const feature = features[0];
-      new mapboxgl.Popup({ closeButton: false })
-        .setLngLat(map.unproject(e.point))
-        .setHTML(`
-          <p><b>${feature.properties.Name_EN} / ${feature.properties.Name_AR}</b></p>
-          <p><b>Hours:</b> ${feature.properties.Health_Hrs}</p>
-          <p><b>Services:</b> ${feature.properties.Summary_St}</p>
-        `)
-        .addTo(map);
-    }
-  });
-  map.on('mousemove', (e) => {
-    const features = map.queryRenderedFeatures(e.point, {
-      layers: ['health-facilities-fill'],
-    });
-    const canvas = map.getCanvas();
-    canvas.style.cursor = (
-      features.length && features[0].properties.Summary_St !== 'null') ? 'pointer' : '';
-  });
+function addLayer({ features, map }) {
+  utils.addSourceToMap({ features, map, sourceId: layer.SOURCE_ID });
+  map.addLayer(getLayerBase());
+  map.addLayer(getLayerFill());
+  modifyLayer({ map });
+  addPopup({ map });
 }
 
-function addLayer({ map }) {
-  if (!map.getSource('camp-facilities')) {
-    map.addSource('camp-facilities', {
-      data: REACH.CAMP_FACILITIES,
-      type: 'geojson',
-    });
-  }
-  map.addLayer({
-    id: 'health-facilities-base',
+function getLayerBase() {
+  return {
+    id: layer.LAYER_ID_BASE,
     paint: {
-      'fill-color': COLORS.DARK_GREY_50,
-      'fill-opacity': 0.8,
+      'fill-color': colors.DARK_GREY_50,
+      'fill-opacity': 0.9,
+      'fill-outline-color': colors.WHITE,
     },
-    source: 'camp-facilities',
+    source: layer.SOURCE_ID,
     type: 'fill',
-  });
-  map.addLayer({
-    id: 'health-facilities-fill',
+  };
+}
+
+function getLayerFill() {
+  return {
+    id: layer.LAYER_ID_FILL,
     paint: {
       'fill-color': {
-        property: 'Health_Typ',
+        property: layer.PROP_TYPE,
         stops: [
-          ['Healthcare Facility', COLORS.LIGHT_RED_100],
-          ['Camp Facility with Health Services', COLORS.MEDIUM_BLUE],
-          ['Camp Facility', COLORS.DARK_GREY_50],
+          [layer.VALUE_CAMP_HEALTH, colors.MEDIUM_BLUE],
+          [layer.VALUE_HEALTH, colors.LIGHT_RED_100],
+          [layer.VALUE_CAMP, colors.DARK_GREY_50],
         ],
         type: 'categorical',
       },
-      'fill-opacity': 0.8,
+      'fill-opacity': 0.9,
+      'fill-outline-color': colors.WHITE,
     },
-    source: 'camp-facilities',
+    source: layer.SOURCE_ID,
     type: 'fill',
+  };
+}
+
+function modifyLayer({ map }) {
+  const storeFilter = store.getState().filters.health;
+  modifyLayerType({ equal: '==', has: 'has', map, storeFilter, layerId: layer.LAYER_ID_FILL });
+  modifyLayerType({ equal: '!=', has: '!has', map, storeFilter, layerId: layer.LAYER_ID_BASE });
+}
+
+function modifyLayerType({ equal, has, map, storeFilter, layerId }) {
+  const mapFilter = Object.entries(storeFilter)
+    .filter(([, value]) => value)
+    .map(([key]) => ([equal, key, layer.VALUE_TRUE]));
+  if (!mapFilter.length) mapFilter.push([has, layer.PROP_TYPE]);
+  map.setFilter(layerId, ['any', ...mapFilter]);
+}
+
+function addPopup({ map }) {
+  map.on('click', ({ point }) => onClick({ map, point }));
+  map.on('mousemove', ({ point }) => onMouseMove({ map, point }));
+}
+
+function onClick({ map, point }) {
+  const { lang } = store.getState();
+  const features = map.queryRenderedFeatures(point, { layers: [layer.LAYER_ID_FILL] });
+  if (features.length && features[0].properties[layer.PROP_SERVICES_EN] !== 'null') {
+    const feature = features[0];
+    new mapboxgl.Popup({ closeButton: false })
+      .setLngLat(map.unproject(point))
+      .setHTML(getPopupHtml({ feature, lang }))
+      .addTo(map);
+  }
+}
+
+function getPopupHtml({ feature, lang }) {
+  return `
+    <p>
+      <b>${feature.properties[layer.propName[lang]]}</b>
+    </p>
+    <p>
+      <div><b>${messages.popup.hours[lang]}</b></div>
+      <div>${feature.properties[layer.propHours[lang]]}</div>
+    </p>
+    <p>
+      <div><b>${messages.popup.services[lang]}</b></div>
+      <div>${feature.properties[layer.propServices[lang]]}</div>
+    </p>
+  `;
+}
+
+function onMouseMove({ map, point }) {
+  const features = map.queryRenderedFeatures(point, {
+    layers: [layer.LAYER_ID_FILL],
   });
-  map.addLayer({
-    id: 'health-facilities-outline',
-    paint: {
-      'line-color': COLORS.WHITE,
-    },
-    source: 'camp-facilities',
-    type: 'line',
-  });
-  modifyLayer({ map });
+  const canvas = map.getCanvas();
+  canvas.style.cursor = (
+    features.length && features[0].properties[layer.PROP_SERVICES_EN] !== 'null') ? 'pointer' : '';
 }
 
 export default function ({ map }) {
   store.subscribe(() => modifyLayer({ map }));
-  addLayer({ map });
-  addPopup({ map });
+  fetchLayer({ map });
 }

@@ -1,43 +1,51 @@
 import turfCenter from '@turf/center';
-import { REACH } from '../../constants/resources.js';
-import COLORS from '../../constants/colors.js';
+// import store from '../../store/index.js';
+import { reach } from '../../constants/resources.js';
+import colors from '../../constants/colors.js';
 import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
+import utils from '../utils/index.js';
+import layer from '../../constants/layers/camp-facilities-text.js';
+import { ARABIC, ENGLISH } from '../../constants/language.js';
 
-const SOURCE_ID = 'camp-facility-points';
-const LAYER_ID = 'camp-facility-points-text';
-
-export default function ({ map }) {
-  fetch(REACH.CAMP_FACILITIES)
+function fetchLayer({ map }) {
+  fetch(reach.CAMP_FACILITIES)
     .then((response) => response.json())
-    .then(({ features }) => {
-      const points = features.map((feature) => {
-        const center = turfCenter(feature);
-        center.properties.nameEn = feature.properties.Name_EN;
-        center.properties.nameAr = feature.properties.Name_AR;
-        return center;
-      });
-      if (!map.getSource(SOURCE_ID)) {
-        map.addSource(SOURCE_ID, {
-          data: {
-            type: 'FeatureCollection',
-            features: points,
-          },
-          type: 'geojson',
-        });
-      }
-      map.addLayer({
-        id: LAYER_ID,
-        layout: {
-          'text-field': '{nameEn}',
-          'text-font': ['open-sans-regular'],
-        },
-        minzoom: LABEL_ZOOM_BREAK,
-        paint: {
-          'text-halo-color': COLORS.WHITE,
-          'text-halo-width': 1.5,
-        },
-        source: SOURCE_ID,
-        type: 'symbol',
-      });
-    });
+    .then(({ features }) => addLayer({ features, map }));
+}
+
+function addLayer({ features, map }) {
+  const points = features.map(modifyFeatures);
+  utils.addSourceToMap({ features: points, map, sourceId: layer.SOURCE_ID });
+  map.addLayer(getLayerOptions());
+}
+
+function modifyFeatures(feature) {
+  const center = turfCenter(feature);
+  const propNameEn = layer.propName[ENGLISH];
+  const propNameAr = layer.propName[ARABIC];
+  center.properties[propNameEn] = feature.properties[propNameEn];
+  center.properties[propNameAr] = feature.properties[propNameAr];
+  return center;
+}
+
+function getLayerOptions() {
+  // const { lang } = store.getState();
+  return {
+    id: layer.LAYER_ID,
+    layout: {
+      'text-field': `{${layer.propName[ENGLISH]}}`,
+      'text-font': ['open-sans-regular'],
+    },
+    minzoom: LABEL_ZOOM_BREAK,
+    paint: {
+      'text-halo-color': colors.WHITE,
+      'text-halo-width': 1.5,
+    },
+    source: layer.SOURCE_ID,
+    type: 'symbol',
+  };
+}
+
+export default function campFacilitiesText({ map }) {
+  fetchLayer({ map });
 }

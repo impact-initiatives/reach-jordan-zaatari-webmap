@@ -16,13 +16,6 @@ export const STYLE = MAPBOX.STYLE.EMPTY;
 
 export const BEARING = 21;
 
-export default {
-  attributionControl: false,
-  container: CONTAINER,
-  maxBounds: MAX_BOUNDS,
-  style: STYLE,
-};
-
 export const LABEL_ZOOM_BREAK = 16;
 export const PIPES_ZOOM_BREAK = 15;
 

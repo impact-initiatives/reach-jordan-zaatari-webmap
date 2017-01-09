@@ -4,9 +4,9 @@ import MESSAGES from '../../../translations/common.js';
 
 export default ({ messages, state }) => (
   <div>
-    {messages.map((message, index) => (
+    {messages.map((message) => (
       <div className={styles.inline.padding12}
-           key={index}>
+           key={message[state.lang]}>
         {message[state.lang]}
       </div>
     ))}

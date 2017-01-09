@@ -1,41 +1,49 @@
 import turfCenter from '@turf/center';
-import { REACH } from '../../constants/resources.js';
+// import store from '../../store/index.js';
+import { reach } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
+import utils from '../utils/index.js';
+import layer from '../../constants/layers/block-text.js';
+import { ARABIC, ENGLISH } from '../../constants/language.js';
 
-const SOURCE_ID = 'block-points';
-const LAYER_ID = 'block-points-text';
-
-export default function ({ map }) {
-  fetch(REACH.BLOCK_BOUNDARIES)
+function fetchLayer({ map }) {
+  fetch(reach.BLOCK_BOUNDARIES)
     .then((response) => response.json())
-    .then(({ features }) => {
-      const points = features.map((feature) => {
-        const center = turfCenter(feature);
-        center.properties.nameEn = feature.properties.Block_Code;
-        center.properties.nameAr = feature.properties.Name_Ar;
-        return center;
-      });
-      if (!map.getSource(SOURCE_ID)) {
-        map.addSource(SOURCE_ID, {
-          data: {
-            type: 'FeatureCollection',
-            features: points,
-          },
-          type: 'geojson',
-        });
-      }
-      map.addLayer({
-        id: LAYER_ID,
-        layout: {
-          'text-field': '{nameEn}',
-          'text-font': ['open-sans-regular'],
-        },
-        paint: {
-          'text-halo-color': COLORS.WHITE,
-          'text-halo-width': 1.5,
-        },
-        source: SOURCE_ID,
-        type: 'symbol',
-      });
-    });
+    .then(({ features }) => addLayer({ features, map }));
+}
+
+function addLayer({ features, map }) {
+  const points = features.map(modifyFeatures);
+  utils.addSourceToMap({ features: points, map, sourceId: layer.SOURCE_ID });
+  map.addLayer(getLayerOptions());
+}
+
+function modifyFeatures(feature) {
+  const center = turfCenter(feature);
+  const propNameEn = layer.propName[ENGLISH];
+  const propNameAr = layer.propName[ARABIC];
+  center.properties[propNameEn] = feature.properties[propNameEn];
+  center.properties[propNameAr] = feature.properties[propNameAr];
+  return center;
+}
+
+function getLayerOptions() {
+  // const { lang } = store.getState();
+  return {
+    id: layer.LAYER_ID,
+    layout: {
+      'text-field': `{${layer.propName[ENGLISH]}}`,
+      'text-font': ['open-sans-regular'],
+    },
+    paint: {
+      'text-halo-color': COLORS.WHITE,
+      'text-halo-width': 1.5,
+    },
+    source: layer.SOURCE_ID,
+    type: 'symbol',
+  };
+}
+
+export default function blockText({ map }) {
+  fetchLayer({ map });
 }

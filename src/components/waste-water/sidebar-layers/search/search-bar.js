@@ -1,5 +1,5 @@
 import React from 'react';
-import MESSAGES from '../../../../translations/waste-water.js';
+import messages from '../../../../translations/waste-water.js';
 import store from '../../../../store/index.js';
 import styles from '../../../../styles/index.js';
 
@@ -33,7 +33,7 @@ export default ({ state }) => (
     <input className={styles.form.searchBar}
            onChange={onChange}
            onKeyUp={onKeyUp}
-           placeholder={MESSAGES.SEARCH.SEARCH_BAR[state.lang]}
+           placeholder={messages.search.searchBar[state.lang]}
            value={state.search.wasteWater} />
   </div>
 );

@@ -2,7 +2,7 @@ import React from 'react';
 import store from '../../../../store/index.js';
 import getInitialState from '../../../../store/initial-state.js';
 import FILTERS from '../../../../constants/filters/flood.js';
-import MESSAGES from '../../../../translations/flood.js';
+import messages from '../../../../translations/flood.js';
 import FilterHeader from '../../../common/filter/filter-header.js';
 import FilterItem from '../../../common/filter/filter-item.js';
 
@@ -32,38 +32,38 @@ function onClick({ target }) {
 
 export default ({ state }) => (
   <div>
-    <FilterHeader MESSAGES={MESSAGES}
+    <FilterHeader messages={messages}
                   onReset={onReset}
                   state={state} />
-    <FilterItem name={MESSAGES.FILTER.CONTINGENCY_TANK[state.lang]}
+    <FilterItem name={messages.filter.contingenctTank[state.lang]}
                 onClick={onClick}
                 route="flood"
                 state={state}
-                type={FILTERS.CONTINGENCY_TANK} />
-    <FilterItem name={MESSAGES.FILTER.FACILITY[state.lang]}
+                type={FILTERS.contingenctTank} />
+    <FilterItem name={messages.filter.facility[state.lang]}
                 onClick={onClick}
                 route="flood"
                 state={state}
-                type={FILTERS.FACILITY} />
-    <FilterItem name={MESSAGES.FILTER.FLOOD[state.lang]}
+                type={FILTERS.facility} />
+    <FilterItem name={messages.filter.flood[state.lang]}
                 onClick={onClick}
                 route="flood"
                 state={state}
-                type={FILTERS.FLOOD} />
-    <FilterItem name={MESSAGES.FILTER.FLOOD_LIGHT[state.lang]}
+                type={FILTERS.flood} />
+    <FilterItem name={messages.filter.floodLight[state.lang]}
                 onClick={onClick}
                 route="flood"
                 state={state}
-                type={FILTERS.FLOOD_LIGHT} />
-    <FilterItem name={MESSAGES.FILTER.SHELTER[state.lang]}
+                type={FILTERS.floodLight} />
+    <FilterItem name={messages.filter.shelter[state.lang]}
                 onClick={onClick}
                 route="flood"
                 state={state}
-                type={FILTERS.SHELTER} />
-    <FilterItem name={MESSAGES.FILTER.SHELTER_LIGHT[state.lang]}
+                type={FILTERS.shelter} />
+    <FilterItem name={messages.filter.shelterLight[state.lang]}
                 onClick={onClick}
                 route="flood"
                 state={state}
-                type={FILTERS.SHELTER_LIGHT} />
+                type={FILTERS.shelterLight} />
   </div>
 );

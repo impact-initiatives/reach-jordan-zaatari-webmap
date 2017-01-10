@@ -7,7 +7,7 @@ import utils from '../utils/index.js';
 import layer from '../../constants/layers/pipes-lines.js';
 
 function fetchLayer({ map }) {
-  fetch(reach.PIPES)
+  fetch(reach.pipes)
     .then((response) => response.json())
     .then(({ features }) => addLayer({ features, map }));
 }
@@ -33,7 +33,7 @@ function getLayer() {
 
 function modifyLayer({ map }) {
   const state = store.getState();
-  if (state.filters.wasteWater[wasteWaterFilters.PIPES]) {
+  if (state.filters.wasteWater[wasteWaterFilters.pipes]) {
     map.setFilter(layer.LAYER_ID, ['has', layer.PROP_ID]);
   } else {
     const filters = state.filters.wasteWater;

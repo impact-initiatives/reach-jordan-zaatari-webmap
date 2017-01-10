@@ -7,7 +7,7 @@ import layer from '../../constants/layers/steel-tank-fill.js';
 import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
 
 function fetchLayer({ map }) {
-  fetch(reach.STEEL_TANKS)
+  fetch(reach.steelTanks)
     .then((response) => response.json())
     .then(({ features }) => addLayer({ features, map }));
 }
@@ -64,7 +64,7 @@ function getLayerLabel() {
 
 function modifyLayer({ map }) {
   const state = store.getState();
-  if (state.filters.wasteWater[wasteWaterFilters.STEEL_TANKS]) {
+  if (state.filters.wasteWater[wasteWaterFilters.steelTanks]) {
     map.setFilter(layer.LAYER_ID_FEATURE, ['has', layer.PROP_ID]);
   } else {
     const filters = state.filters.wasteWater;

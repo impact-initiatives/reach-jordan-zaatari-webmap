@@ -2,7 +2,7 @@ import React from 'react';
 import store from '../../../../store/index.js';
 import getInitialState from '../../../../store/initial-state.js';
 import FILTERS from '../../../../constants/filters/waste-water.js';
-import MESSAGES from '../../../../translations/waste-water.js';
+import messages from '../../../../translations/waste-water.js';
 import FilterHeader from '../../../common/filter/filter-header.js';
 import FilterItem from '../../../common/filter/filter-item.js';
 
@@ -32,33 +32,33 @@ function onClick({ target }) {
 
 export default ({ state }) => (
   <div>
-    <FilterHeader MESSAGES={MESSAGES}
+    <FilterHeader messages={messages}
                   onReset={onReset}
                   state={state} />
-    <FilterItem name={MESSAGES.FILTER.SEPTIC_TANKS_8M3[state.lang]}
+    <FilterItem name={messages.filter.septicTanks8m3[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.SEPTIC_TANKS_8M3} />
-    <FilterItem name={MESSAGES.FILTER.SEPTIC_TANKS_4M3[state.lang]}
+                type={FILTERS.septicTanks8m3} />
+    <FilterItem name={messages.filter.septicTanks4m3[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.SEPTIC_TANKS_4M3} />
-    <FilterItem name={MESSAGES.FILTER.SEPTIC_TANKS_2M3[state.lang]}
+                type={FILTERS.septicTanks4m3} />
+    <FilterItem name={messages.filter.septicTanks2m3[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.SEPTIC_TANKS_2M3} />
-    <FilterItem name={MESSAGES.FILTER.STEEL_TANKS[state.lang]}
+                type={FILTERS.septicTanks2m3} />
+    <FilterItem name={messages.filter.steelTanks[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.STEEL_TANKS} />
-    <FilterItem name={MESSAGES.FILTER.PIPES[state.lang]}
+                type={FILTERS.steelTanks} />
+    <FilterItem name={messages.filter.pipes[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.PIPES} />
+                type={FILTERS.pipes} />
   </div>
 );

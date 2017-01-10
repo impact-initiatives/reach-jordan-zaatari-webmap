@@ -9,7 +9,7 @@ export default {
   FLOOD_POINTS: 'flood-points',
   FLOOD_POINTS_UNICEF: 'flood-points-unicef',
   FLOOD_WATER_PATH: 'flood-water-path',
-  PIPES: 'pipes',
+  pipes: 'pipes',
   SEPTIC_TANKS: 'septic-tanks',
-  STEEL_TANKS: 'steel-tanks',
+  steelTanks: 'steel-tanks',
 };

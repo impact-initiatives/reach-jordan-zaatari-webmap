@@ -5,7 +5,7 @@ export const IMG = {
   CHECK_BOX_OUTLINE: `${RESOURCES_URL}/icons/ic_check_box_outline_blank_white_24px.svg`,
   CLOUD: `${RESOURCES_URL}/icons/ic_cloud_white_24px.svg`,
   HOME: `${RESOURCES_URL}/icons/ic_home_white_24px.svg`,
-  INFO: `${RESOURCES_URL}/icons/ic_info_white_24px.svg`,
+  info: `${RESOURCES_URL}/icons/ic_info_white_24px.svg`,
   LAYERS: `${RESOURCES_URL}/icons/ic_layers_white_24px.svg`,
   LOCAL_HOSPITAL: `${RESOURCES_URL}/icons/ic_local_hospital_white_24px.svg`,
   LOCAL_DRINK: `${RESOURCES_URL}/icons/ic_local_drink_white_24px.svg`,

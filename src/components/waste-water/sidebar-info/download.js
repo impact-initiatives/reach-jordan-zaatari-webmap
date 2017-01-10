@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
-import MESSAGES from '../../../translations/waste-water.js';
+import messages from '../../../translations/waste-water.js';
 import REACH from '../../../constants/reach.js';
 
 function onClickCamp() {
@@ -14,15 +14,15 @@ function onClickDistrict() {
 export default ({ state }) => (
   <div className={`${styles.flex.horizontalCenterY} ${styles.inline.padding12}`}>
     <div>
-      {MESSAGES.DOWNLOAD.HEADER[state.lang]}
+      {messages.download.header[state.lang]}
     </div>
     <div className={`${styles.component.buttonSmall} ${styles.inline.margin0x12}`}
          onClick={onClickCamp}>
-      {MESSAGES.DOWNLOAD.CAMP[state.lang]}
+      {messages.download.camp[state.lang]}
     </div>
     <div className={styles.component.buttonSmall}
          onClick={onClickDistrict}>
-      {MESSAGES.DOWNLOAD.DISTRICTS[state.lang]}
+      {messages.download.districts[state.lang]}
     </div>
   </div>
 );

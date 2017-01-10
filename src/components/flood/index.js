@@ -8,14 +8,14 @@ import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
 import language from '../../constants/language.js';
 import { IMG } from '../../constants/resources.js';
-import MESSAGES from '../../translations/flood.js';
+import messages from '../../translations/flood.js';
 import initMap from '../../mapbox-gl/maps/flood.js';
 
 export default function flood({ state }) {
   return (
     <div className={`${styles.flex.verticalNormal} ${styles.inline.fontDefault}`}
          dir={state.lang === language.AR ? 'rtl' : 'ltr'}>
-      <Header MESSAGES={MESSAGES}
+      <Header messages={messages}
               state={state} />
       <div className={styles.menu.content}>
         <SidebarHome state={state} />

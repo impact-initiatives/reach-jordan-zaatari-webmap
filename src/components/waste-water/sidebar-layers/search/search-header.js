@@ -1,5 +1,5 @@
 import React from 'react';
-import MESSAGES from '../../../../translations/waste-water.js';
+import messages from '../../../../translations/waste-water.js';
 import store from '../../../../store/index.js';
 import styles from '../../../../styles/index.js';
 import getInitialState from '../../../../store/initial-state.js';
@@ -17,12 +17,12 @@ function onReset() {
 export default ({ state }) => (
   <div className={styles.flex.horizontalBaseline}>
     <div className={styles.form.searchTitle}>
-      {MESSAGES.SEARCH.TITLE[state.lang]}
+      {messages.search.title[state.lang]}
     </div>
     <div className={styles.flex.itemSpace} />
     <div className={`${styles.component.buttonSmall} ${styles.inline.marginRight12}`}
          onClick={onReset}>
-      {MESSAGES.SEARCH.RESET[state.lang]}
+      {messages.search.reset[state.lang]}
     </div>
   </div>
 );

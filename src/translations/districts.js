@@ -1,32 +1,32 @@
 import language from '../constants/language.js';
 
 export default {
-  TITLE_LONG: {
+  titleLong: {
     [language.EN]: 'District Boundaries',
     [language.AR]: 'حدود القطاعات',
   },
-  TITLE_SHORT: {
+  titleShort: {
     [language.EN]: 'Districts',
     [language.AR]: 'القطاعات',
   },
-  INFO: [{
+  info: [{
     [language.EN]: 'This map displays the key implementing partners for each district. They serve as the focal points for information in their area.',
     [language.AR]: 'تعرض هذه الخارطة المنظمات الرئيسية العاملة في كل منطقة . أنهم بمثابة نقطة اتصال للحصول على معلومات في منطقتهم',
   }],
-  LEGEND: {
-    TITLE: {
+  legend: {
+    title: {
       [language.EN]: 'Legend',
       [language.AR]: 'مفتاح الخريطة',
     },
-    ACTED: {
+    acted: {
       [language.EN]: 'ACTED',
       [language.AR]: 'منظمة أكتيد',
     },
-    JEN: {
+    jen: {
       [language.EN]: 'JEN',
       [language.AR]: 'منظمة جين',
     },
-    OXFAM: {
+    oxfam: {
       [language.EN]: 'Oxfam',
       [language.AR]: 'منظمة أوكسفام',
     },

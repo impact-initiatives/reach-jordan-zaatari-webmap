@@ -2,7 +2,7 @@ import React from 'react';
 import store from '../../../store/index.js';
 import { IMG } from '../../../constants/resources.js';
 import styles from '../../../styles/index.js';
-import COMMON_MESSAGES from '../../../translations/common.js';
+import commonMessages from '../../../translations/common.js';
 
 function onClickHome() {
   store.dispatch({ type: (state) => ({
@@ -58,30 +58,30 @@ function onClickLayers() {
   }) });
 }
 
-export default ({ state, MESSAGES }) => (
+export default ({ state, messages }) => (
   <div className={`${styles.flex.horizontalCenterY} ${styles.menu.toolbarDefault}`}>
     <img alt="home"
          className={styles.menu.toolbarImage}
          onClick={onClickHome}
          src={IMG.MENU} />
     <div className={styles.media.hiddenMobile}>
-      {COMMON_MESSAGES.TITLE_LONG[state.lang]}
+      {commonMessages.titleLong[state.lang]}
     </div>
     <div className={styles.media.hiddenDesktop}>
-      {COMMON_MESSAGES.TITLE_SHORT[state.lang]}
+      {commonMessages.titleShort[state.lang]}
     </div>
     <div>&nbsp;-&nbsp;</div>
     <div className={styles.media.hiddenMobile}>
-      {MESSAGES.TITLE_LONG[state.lang]}
+      {messages.titleLong[state.lang]}
     </div>
     <div className={styles.media.hiddenDesktop}>
-      {MESSAGES.TITLE_SHORT[state.lang]}
+      {messages.titleShort[state.lang]}
     </div>
     <div className={styles.flex.itemSpace} />
     <img alt="info"
          className={styles.menu.toolbarImage}
          onClick={onClickInfo}
-         src={IMG.INFO} />
+         src={IMG.info} />
     <img alt="layers"
          className={styles.menu.toolbarImage}
          onClick={onClickLayers}

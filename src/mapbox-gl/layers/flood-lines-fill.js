@@ -27,10 +27,10 @@ function getLayer() {
       'line-color': {
         property: layer.PROP_TYPE,
         stops: [
-          [floodTypes.NO_ACCESS, colors.LIGHT_RED_100],
-          [floodTypes.MUD, colors.ORANGE],
-          [floodTypes.FLOOD, colors.MEDIUM_BLUE],
-          [floodTypes.FLOOD_LIGHT, colors.LIGHT_BLUE],
+          [floodTypes.noAccess, colors.LIGHT_RED_100],
+          [floodTypes.mud, colors.ORANGE],
+          [floodTypes.flood, colors.MEDIUM_BLUE],
+          [floodTypes.floodLight, colors.LIGHT_BLUE],
         ],
         type: 'categorical',
       },

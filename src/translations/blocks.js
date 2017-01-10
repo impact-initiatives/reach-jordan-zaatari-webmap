@@ -1,24 +1,24 @@
 import language from '../constants/language.js';
 
 export default {
-  TITLE_LONG: {
+  titleLong: {
     [language.EN]: 'Block Boundaries',
     [language.AR]: 'حدود المربع السكني',
   },
-  TITLE_SHORT: {
+  titleShort: {
     [language.EN]: 'Blocks',
     [language.AR]: 'المربعات السكنية',
   },
-  INFO: [{
+  info: [{
     [language.EN]: "This map displays block boundaries and their identifications that serve as basis for addresses in Za'atari.",
     [language.AR]: 'تعرض هذه الخارطة حدود المربعات السكنية والقطاعات لتخدم كأساس للعناوين في مخيم الزعتري',
   }],
-  LEGEND: {
-    TITLE: {
+  legend: {
+    title: {
       [language.EN]: 'Legend',
       [language.AR]: 'مفتاح الخريطة',
     },
-    BLOCK: {
+    block: {
       [language.EN]: 'Block Boundary',
       [language.AR]: 'حدود المربعات السكنية',
     },

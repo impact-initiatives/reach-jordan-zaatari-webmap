@@ -2,7 +2,7 @@ import React from 'react';
 import store from '../../../../store/index.js';
 import getInitialState from '../../../../store/initial-state.js';
 import FILTERS from '../../../../constants/filters/health.js';
-import MESSAGES from '../../../../translations/health.js';
+import messages from '../../../../translations/health.js';
 import FilterHeader from '../../../common/filter/filter-header.js';
 import FilterItem from '../../../common/filter/filter-item.js';
 
@@ -32,63 +32,63 @@ function onClick({ target }) {
 
 export default ({ state }) => (
   <div>
-    <FilterHeader MESSAGES={MESSAGES}
+    <FilterHeader messages={messages}
                   onReset={onReset}
                   state={state} />
-    <FilterItem name={MESSAGES.FILTER.ACUTE_CHRONIC[state.lang]}
+    <FilterItem name={messages.filter.acuteChronic[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.ACUTE_CHRONIC} />
-    <FilterItem name={MESSAGES.FILTER.DENTIST[state.lang]}
+                type={FILTERS.acuteChronic} />
+    <FilterItem name={messages.filter.dentist[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.DENTIST} />
-    <FilterItem name={MESSAGES.FILTER.ORT[state.lang]}
+                type={FILTERS.dentist} />
+    <FilterItem name={messages.filter.ort[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.ORT} />
-    <FilterItem name={MESSAGES.FILTER.EMERGENCY[state.lang]}
+                type={FILTERS.ort} />
+    <FilterItem name={messages.filter.emergency[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.EMERGENCY} />
-    <FilterItem name={MESSAGES.FILTER.GBV[state.lang]}
+                type={FILTERS.emergency} />
+    <FilterItem name={messages.filter.gbv[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.GBV} />
-    <FilterItem name={MESSAGES.FILTER.MALNUTRITION[state.lang]}
+                type={FILTERS.gbv} />
+    <FilterItem name={messages.filter.malnutrition[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.MALNUTRITION} />
-    <FilterItem name={MESSAGES.FILTER.PSYCHOTHERAPY[state.lang]}
+                type={FILTERS.malnutrition} />
+    <FilterItem name={messages.filter.psychotherapy[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.PSYCHOTHERAPY} />
-    <FilterItem name={MESSAGES.FILTER.PHYSIOTHERAPY[state.lang]}
+                type={FILTERS.psychotherapy} />
+    <FilterItem name={messages.filter.physiotherapy[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.PHYSIOTHERAPY} />
-    <FilterItem name={MESSAGES.FILTER.REPRODUCTIVE[state.lang]}
+                type={FILTERS.physiotherapy} />
+    <FilterItem name={messages.filter.reproductive[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.REPRODUCTIVE} />
-    <FilterItem name={MESSAGES.FILTER.SECONDARY[state.lang]}
+                type={FILTERS.reproductive} />
+    <FilterItem name={messages.filter.secondary[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.SECONDARY} />
-    <FilterItem name={MESSAGES.FILTER.VACCINATION[state.lang]}
+                type={FILTERS.secondary} />
+    <FilterItem name={messages.filter.vaccination[state.lang]}
                 onClick={onClick}
                 route="health"
                 state={state}
-                type={FILTERS.VACCINATION} />
+                type={FILTERS.vaccination} />
   </div>
 );

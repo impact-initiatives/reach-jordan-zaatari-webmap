@@ -8,13 +8,13 @@ import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
 import language from '../../constants/language.js';
 import { IMG } from '../../constants/resources.js';
-import MESSAGES from '../../translations/districts.js';
+import messages from '../../translations/districts.js';
 import initMap from '../../mapbox-gl/maps/districts.js';
 
 export default ({ state }) => (
   <div className={`${styles.flex.verticalNormal} ${styles.inline.fontDefault}`}
        dir={state.lang === language.AR ? 'rtl' : 'ltr'}>
-    <Header MESSAGES={MESSAGES}
+    <Header messages={messages}
             state={state} />
     <div className={styles.menu.content}>
       <SidebarHome state={state} />

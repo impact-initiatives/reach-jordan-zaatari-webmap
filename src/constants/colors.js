@@ -1,4 +1,4 @@
-export default {
+const colors = {
   DARK_GREY_100: '#56585A',
   DARK_GREY_50: '#A8A9AD',
   DARK_GREY_30: '#C9CACC',
@@ -20,3 +20,5 @@ export default {
   BLACK: '#000000',
   WHITE: '#FFFFFF',
 };
+
+export default colors;

@@ -1,61 +1,58 @@
 import language from '../constants/language.js';
 
 export default {
-  TITLE_LONG: {
+  titleLong: {
     [language.EN]: "Al Za'atari Refugee Camp",
     [language.AR]: 'مخيم الزعتري للاجئين',
   },
-  TITLE_SHORT: {
+  titleShort: {
     [language.EN]: "Za'atari",
     [language.AR]: 'مخيم الزعتري',
   },
-  MORE: {
+  more: {
     [language.EN]: 'More from REACH',
     [language.AR]: ' المزيد من ريتش',
   },
-  DISTRICTS: {
+  districts: {
     [language.EN]: 'District Boundaries',
     [language.AR]: 'حدود القطاع',
   },
-  BLOCKS: {
+  blocks: {
     [language.EN]: 'Block Boundaries',
     [language.AR]: 'حدود المربع السكني',
   },
-  HEALTH: {
+  health: {
     [language.EN]: 'Health Facilities',
     [language.AR]: 'المرافق الصحية',
   },
-  WASTE_WATER: {
+  wasteWater: {
     [language.EN]: 'Waste Water',
     [language.AR]: 'المياه العادمة',
   },
-  FLOOD: {
+  flood: {
     [language.EN]: 'Flood',
     [language.AR]: 'Flood',
   },
-  INFO: {
-    LANGUAGE: {
+  info: {
+    language: {
       [language.EN]: 'Language',
       [language.AR]: 'اللغة ',
     },
-    ENGLISH: {
+    english: {
       [language.EN]: 'English',
       [language.AR]: 'English',
     },
-    ARABIC: {
+    arabic: {
       [language.EN]: 'العربية',
       [language.AR]: 'العربية',
     },
-    CURRENCY: {
+    currency: {
       [language.EN]: 'Information current as of October 2016.',
       [language.AR]: ' المعلومات الحالية عن شهر تشرين الثاني',
     },
-    CONTACT: {
+    contact: {
       [language.EN]: 'To report updates or request new features, please contact: ',
       [language.AR]: 'للإبلاغ عن أي تحديث أو طلب مزايا جديدة يرجى الإتصال :',
     },
-  },
-  FILTER: {
-
   },
 };

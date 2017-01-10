@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
 import language from '../../../constants/language';
-import MESSAGES from '../../../translations/waste-water.js';
+import messages from '../../../translations/waste-water.js';
 import Language from '../../common/info/language.js';
 import About from '../../common/info/about.js';
 import Download from './download.js';
@@ -14,7 +14,7 @@ export default ({ state }) => (
   ].join(' ')}>
     <Language state={state} />
     <Download state={state} />
-    <About messages={MESSAGES.INFO}
+    <About messages={messages.info}
            state={state} />
   </div>
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import MESSAGES from '../../../translations/common.js';
+import messages from '../../../translations/common.js';
 import store from '../../../store/index.js';
 import language from '../../../constants/language.js';
 import styles from '../../../styles/index.js';
@@ -15,7 +15,7 @@ function onClickLanguage({ target }) {
 export default ({ state }) => (
   <div className={`${styles.flex.horizontalCenterY} ${styles.inline.padding12}`}>
     <div>
-      {MESSAGES.INFO.LANGUAGE[state.lang]}
+      {messages.info.language[state.lang]}
     </div>
     <div className={[
       styles.component.buttonSmall,
@@ -24,7 +24,7 @@ export default ({ state }) => (
     ].join(' ')}
     data-lang={language.EN}
     onClick={onClickLanguage}>
-      {MESSAGES.INFO.ENGLISH[state.lang]}
+      {messages.info.english[state.lang]}
     </div>
     <div className={[
       styles.component.buttonSmall,
@@ -32,7 +32,7 @@ export default ({ state }) => (
     ].join(' ')}
     data-lang={language.AR}
     onClick={onClickLanguage}>
-      {MESSAGES.INFO.ARABIC[state.lang]}
+      {messages.info.arabic[state.lang]}
     </div>
   </div>
 );

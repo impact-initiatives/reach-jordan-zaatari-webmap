@@ -1,4 +1,4 @@
-import { ENGLISH, ARABIC } from '../constants/language.js';
+import language from '../constants/language.js';
 
 export default () => ({
   geoJson: {
@@ -7,7 +7,7 @@ export default () => ({
       source: {},
     },
   },
-  lang: navigator.language.includes('ar') ? ARABIC : ENGLISH,
+  lang: navigator.language.includes('ar') ? language.AR : language.EN,
   sidebarHome: {
     open: false,
   },

@@ -1,4 +1,4 @@
-import { ARABIC, ENGLISH } from '../language.js';
+import language from '../language.js';
 
 export default {
   SOURCE_ID: 'camp-facilities',
@@ -11,15 +11,15 @@ export default {
   VALUE_CAMP: 'Camp Facility',
   VALUE_TRUE: 'Y',
   propName: {
-    [ENGLISH]: 'NAME_EN',
-    [ARABIC]: 'NAME_AR',
+    [language.EN]: 'NAME_EN',
+    [language.AR]: 'NAME_AR',
   },
   propHours: {
-    [ENGLISH]: 'HOURS_EN',
-    [ARABIC]: 'HOURS_AR',
+    [language.EN]: 'HOURS_EN',
+    [language.AR]: 'HOURS_AR',
   },
   propServices: {
-    [ENGLISH]: 'HEALTH_EN',
-    [ARABIC]: 'HEALTH_AR',
+    [language.EN]: 'HEALTH_EN',
+    [language.AR]: 'HEALTH_AR',
   },
 };

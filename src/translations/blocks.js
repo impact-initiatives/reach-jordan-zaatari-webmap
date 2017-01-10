@@ -1,26 +1,26 @@
-import { ENGLISH, ARABIC } from '../constants/language.js';
+import language from '../constants/language.js';
 
 export default {
   TITLE_LONG: {
-    [ENGLISH]: 'Block Boundaries',
-    [ARABIC]: 'حدود المربع السكني',
+    [language.EN]: 'Block Boundaries',
+    [language.AR]: 'حدود المربع السكني',
   },
   TITLE_SHORT: {
-    [ENGLISH]: 'Blocks',
-    [ARABIC]: 'المربعات السكنية',
+    [language.EN]: 'Blocks',
+    [language.AR]: 'المربعات السكنية',
   },
   INFO: [{
-    [ENGLISH]: "This map displays block boundaries and their identifications that serve as basis for addresses in Za'atari.",
-    [ARABIC]: 'تعرض هذه الخارطة حدود المربعات السكنية والقطاعات لتخدم كأساس للعناوين في مخيم الزعتري',
+    [language.EN]: "This map displays block boundaries and their identifications that serve as basis for addresses in Za'atari.",
+    [language.AR]: 'تعرض هذه الخارطة حدود المربعات السكنية والقطاعات لتخدم كأساس للعناوين في مخيم الزعتري',
   }],
   LEGEND: {
     TITLE: {
-      [ENGLISH]: 'Legend',
-      [ARABIC]: 'مفتاح الخريطة',
+      [language.EN]: 'Legend',
+      [language.AR]: 'مفتاح الخريطة',
     },
     BLOCK: {
-      [ENGLISH]: 'Block Boundary',
-      [ARABIC]: 'حدود المربعات السكنية',
+      [language.EN]: 'Block Boundary',
+      [language.AR]: 'حدود المربعات السكنية',
     },
   },
 };

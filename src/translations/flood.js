@@ -1,99 +1,99 @@
-import { ENGLISH, ARABIC } from '../constants/language.js';
+import language from '../constants/language.js';
 
 export default {
   TITLE_LONG: {
-    [ENGLISH]: 'Flood Damage',
-    [ARABIC]: 'Flood Damage',
+    [language.EN]: 'Flood Damage',
+    [language.AR]: 'Flood Damage',
   },
   TITLE_SHORT: {
-    [ENGLISH]: 'Flood',
-    [ARABIC]: 'Flood',
+    [language.EN]: 'Flood',
+    [language.AR]: 'Flood',
   },
   INFO: [{
-    [ENGLISH]: "This map was created in collaboration with UNHCR to provide humanitarian actors and medical professionals with a way to access information about flood damage in Za'atari.",
-    [ARABIC]: "This map was created in collaboration with UNHCR to provide humanitarian actors and medical professionals with a way to access information about flood damage in Za'atari.",
+    [language.EN]: "This map was created in collaboration with UNHCR to provide humanitarian actors and medical professionals with a way to access information about flood damage in Za'atari.",
+    [language.AR]: "This map was created in collaboration with UNHCR to provide humanitarian actors and medical professionals with a way to access information about flood damage in Za'atari.",
   }, {
-    [ENGLISH]: 'Flood information was collated by UNICEF, ACTED, JEN, and OXFAM, and spatial data was collected by REACH and UNHCR.',
-    [ARABIC]: 'Flood information was collated by UNICEF, ACTED, JEN, and OXFAM, and spatial data was collected by REACH and UNHCR.',
+    [language.EN]: 'Flood information was collated by UNICEF, ACTED, JEN, and OXFAM, and spatial data was collected by REACH and UNHCR.',
+    [language.AR]: 'Flood information was collated by UNICEF, ACTED, JEN, and OXFAM, and spatial data was collected by REACH and UNHCR.',
   }],
   LEGEND: {
     POINTS: {
-      [ENGLISH]: 'Legend - Points',
-      [ARABIC]: 'Legend - Points',
+      [language.EN]: 'Legend - Points',
+      [language.AR]: 'Legend - Points',
     },
     LINES: {
-      [ENGLISH]: 'Legend - Lines',
-      [ARABIC]: 'Legend - Lines',
+      [language.EN]: 'Legend - Lines',
+      [language.AR]: 'Legend - Lines',
     },
     FLOOD: {
-      [ENGLISH]: 'Flooding',
-      [ARABIC]: 'Flooding',
+      [language.EN]: 'Flooding',
+      [language.AR]: 'Flooding',
     },
     FLOOD_LIGHT: {
-      [ENGLISH]: 'Light Flooding',
-      [ARABIC]: 'Light Flooding',
+      [language.EN]: 'Light Flooding',
+      [language.AR]: 'Light Flooding',
     },
     MUD: {
-      [ENGLISH]: 'Muddy',
-      [ARABIC]: 'Muddy',
+      [language.EN]: 'Muddy',
+      [language.AR]: 'Muddy',
     },
     NO_ACCESS: {
-      [ENGLISH]: 'No Access',
-      [ARABIC]: 'No Access',
+      [language.EN]: 'No Access',
+      [language.AR]: 'No Access',
     },
   },
   FILTER: {
     TITLE: {
-      [ENGLISH]: 'Filter by Service',
-      [ARABIC]: 'فرز حسب نوع الخدمة',
+      [language.EN]: 'Filter by Service',
+      [language.AR]: 'فرز حسب نوع الخدمة',
     },
     RESET: {
-      [ENGLISH]: 'reset',
-      [ARABIC]: 'إعادة تعيين',
+      [language.EN]: 'reset',
+      [language.AR]: 'إعادة تعيين',
     },
     CONTINGENCY_TANK: {
-      [ENGLISH]: 'Contingency Tank',
-      [ARABIC]: 'Contingency Tank',
+      [language.EN]: 'Contingency Tank',
+      [language.AR]: 'Contingency Tank',
     },
     FACILITY: {
-      [ENGLISH]: 'Damaged Camp Facility',
-      [ARABIC]: 'Damaged Camp Facility',
+      [language.EN]: 'Damaged Camp Facility',
+      [language.AR]: 'Damaged Camp Facility',
     },
     FLOOD: {
-      [ENGLISH]: 'Flooding',
-      [ARABIC]: 'Flooding',
+      [language.EN]: 'Flooding',
+      [language.AR]: 'Flooding',
     },
     FLOOD_LIGHT: {
-      [ENGLISH]: 'Light Flooding',
-      [ARABIC]: 'Light Flooding',
+      [language.EN]: 'Light Flooding',
+      [language.AR]: 'Light Flooding',
     },
     MUD: {
-      [ENGLISH]: 'Muddy',
-      [ARABIC]: 'Muddy',
+      [language.EN]: 'Muddy',
+      [language.AR]: 'Muddy',
     },
     NO_ACCESS: {
-      [ENGLISH]: 'No Access',
-      [ARABIC]: 'No Access',
+      [language.EN]: 'No Access',
+      [language.AR]: 'No Access',
     },
     PRC_FULL: {
-      [ENGLISH]: 'Septic Tank Full',
-      [ARABIC]: 'Septic Tank Full',
+      [language.EN]: 'Septic Tank Full',
+      [language.AR]: 'Septic Tank Full',
     },
     PRC_OVERFULL: {
-      [ENGLISH]: 'Septic Tank Overfull',
-      [ARABIC]: 'Septic Tank Overfull',
+      [language.EN]: 'Septic Tank Overfull',
+      [language.AR]: 'Septic Tank Overfull',
     },
     PRIVATE_TANK: {
-      [ENGLISH]: 'Private Tank',
-      [ARABIC]: 'Private Tank',
+      [language.EN]: 'Private Tank',
+      [language.AR]: 'Private Tank',
     },
     SHELTER: {
-      [ENGLISH]: 'Damaged Shelter',
-      [ARABIC]: 'Damaged Shelter',
+      [language.EN]: 'Damaged Shelter',
+      [language.AR]: 'Damaged Shelter',
     },
     SHELTER_LIGHT: {
-      [ENGLISH]: 'Lightly Damaged Shelter',
-      [ARABIC]: 'Lightly Damaged Shelter',
+      [language.EN]: 'Lightly Damaged Shelter',
+      [language.AR]: 'Lightly Damaged Shelter',
     },
   },
 };

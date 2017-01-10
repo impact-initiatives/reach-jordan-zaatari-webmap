@@ -6,7 +6,7 @@ import SidebarHome from '../common/home/index.js';
 import MapboxGL from '../common/mapbox-gl/index.js';
 import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
-import { ARABIC } from '../../constants/language.js';
+import language from '../../constants/language.js';
 import { IMG } from '../../constants/resources.js';
 import MESSAGES from '../../translations/flood.js';
 import initMap from '../../mapbox-gl/maps/flood.js';
@@ -14,7 +14,7 @@ import initMap from '../../mapbox-gl/maps/flood.js';
 export default function flood({ state }) {
   return (
     <div className={`${styles.flex.verticalNormal} ${styles.inline.fontDefault}`}
-         dir={state.lang === ARABIC ? 'rtl' : 'ltr'}>
+         dir={state.lang === language.AR ? 'rtl' : 'ltr'}>
       <Header MESSAGES={MESSAGES}
               state={state} />
       <div className={styles.menu.content}>

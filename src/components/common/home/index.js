@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
-import { ARABIC } from '../../../constants/language';
+import language from '../../../constants/language';
 import { IMG } from '../../../constants/resources.js';
 import MESSAGES from '../../../translations/common.js';
 import HomeItem from './home-item.js';
@@ -8,7 +8,7 @@ import HomeItem from './home-item.js';
 export default ({ state }) => (
   <div className={[
     styles.menu.sidebarDefault,
-    state.lang === ARABIC ? styles.menu.sidebarLeftArabic : styles.menu.sidebarLeftEnglish,
+    state.lang === language.AR ? styles.menu.sidebarLeftArabic : styles.menu.sidebarLeftEnglish,
     state.sidebarHome.open ? styles.menu.sidebarOpen : styles.menu.sidebarClosed,
   ].join(' ')}>
     <HomeItem icon={IMG.HOME}

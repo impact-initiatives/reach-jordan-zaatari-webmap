@@ -1,34 +1,34 @@
-import { ENGLISH, ARABIC } from '../constants/language.js';
+import language from '../constants/language.js';
 
 export default {
   TITLE_LONG: {
-    [ENGLISH]: 'District Boundaries',
-    [ARABIC]: 'حدود القطاعات',
+    [language.EN]: 'District Boundaries',
+    [language.AR]: 'حدود القطاعات',
   },
   TITLE_SHORT: {
-    [ENGLISH]: 'Districts',
-    [ARABIC]: 'القطاعات',
+    [language.EN]: 'Districts',
+    [language.AR]: 'القطاعات',
   },
   INFO: [{
-    [ENGLISH]: 'This map displays the key implementing partners for each district. They serve as the focal points for information in their area.',
-    [ARABIC]: 'تعرض هذه الخارطة المنظمات الرئيسية العاملة في كل منطقة . أنهم بمثابة نقطة اتصال للحصول على معلومات في منطقتهم',
+    [language.EN]: 'This map displays the key implementing partners for each district. They serve as the focal points for information in their area.',
+    [language.AR]: 'تعرض هذه الخارطة المنظمات الرئيسية العاملة في كل منطقة . أنهم بمثابة نقطة اتصال للحصول على معلومات في منطقتهم',
   }],
   LEGEND: {
     TITLE: {
-      [ENGLISH]: 'Legend',
-      [ARABIC]: 'مفتاح الخريطة',
+      [language.EN]: 'Legend',
+      [language.AR]: 'مفتاح الخريطة',
     },
     ACTED: {
-      [ENGLISH]: 'ACTED',
-      [ARABIC]: 'منظمة أكتيد',
+      [language.EN]: 'ACTED',
+      [language.AR]: 'منظمة أكتيد',
     },
     JEN: {
-      [ENGLISH]: 'JEN',
-      [ARABIC]: 'منظمة جين',
+      [language.EN]: 'JEN',
+      [language.AR]: 'منظمة جين',
     },
     OXFAM: {
-      [ENGLISH]: 'Oxfam',
-      [ARABIC]: 'منظمة أوكسفام',
+      [language.EN]: 'Oxfam',
+      [language.AR]: 'منظمة أوكسفام',
     },
   },
 };

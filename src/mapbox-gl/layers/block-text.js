@@ -4,7 +4,7 @@ import { reach } from '../../constants/resources.js';
 import COLORS from '../../constants/colors.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/block-text.js';
-import { ARABIC, ENGLISH } from '../../constants/language.js';
+import language from '../../constants/language.js';
 
 function fetchLayer({ map }) {
   fetch(reach.BLOCK_BOUNDARIES)
@@ -20,8 +20,8 @@ function addLayer({ features, map }) {
 
 function modifyFeatures(feature) {
   const center = turfCenter(feature);
-  const propNameEn = layer.propName[ENGLISH];
-  const propNameAr = layer.propName[ARABIC];
+  const propNameEn = layer.propName[language.EN];
+  const propNameAr = layer.propName[language.AR];
   center.properties[propNameEn] = feature.properties[propNameEn];
   center.properties[propNameAr] = feature.properties[propNameAr];
   return center;
@@ -32,7 +32,7 @@ function getLayerOptions() {
   return {
     id: layer.LAYER_ID,
     layout: {
-      'text-field': `{${layer.propName[ENGLISH]}}`,
+      'text-field': `{${layer.propName[language.EN]}}`,
       'text-font': ['open-sans-regular'],
     },
     paint: {

@@ -1,14 +1,14 @@
 import React from 'react';
 import MESSAGES from '../../../translations/common.js';
 import store from '../../../store/index.js';
-import { ENGLISH, ARABIC } from '../../../constants/language.js';
+import language from '../../../constants/language.js';
 import styles from '../../../styles/index.js';
 
 function onClickLanguage({ target }) {
-  const { language } = target.dataset;
+  const { lang } = target.dataset;
   store.dispatch({ type: (state) => ({
     ...state,
-    lang: language,
+    lang,
   }) });
 }
 
@@ -19,18 +19,18 @@ export default ({ state }) => (
     </div>
     <div className={[
       styles.component.buttonSmall,
-      state.lang === ENGLISH ? styles.inline.colorLightBlue : styles.inline.colorWhite,
+      state.lang === language.EN ? styles.inline.colorLightBlue : styles.inline.colorWhite,
       styles.inline.margin0x12,
     ].join(' ')}
-    data-language={ENGLISH}
+    data-lang={language.EN}
     onClick={onClickLanguage}>
       {MESSAGES.INFO.ENGLISH[state.lang]}
     </div>
     <div className={[
       styles.component.buttonSmall,
-      state.lang === ARABIC ? styles.inline.colorLightBlue : styles.inline.colorWhite,
+      state.lang === language.AR ? styles.inline.colorLightBlue : styles.inline.colorWhite,
     ].join(' ')}
-    data-language={ARABIC}
+    data-lang={language.AR}
     onClick={onClickLanguage}>
       {MESSAGES.INFO.ARABIC[state.lang]}
     </div>

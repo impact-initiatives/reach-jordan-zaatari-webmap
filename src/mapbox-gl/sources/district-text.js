@@ -1,10 +1,10 @@
 import turfCenter from '@turf/center';
 // import store from '../../store/index.js';
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import COLORS from '../../constants/colors.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/district-text.js';
-import { LABEL_ZOOM_BREAK, MAX_ZOOM } from '../../constants/mapbox-gl.js';
+import mapbox from '../../constants/mapbox.js';
 import language from '../../constants/language.js';
 
 function fetchLayer({ map, maxzoom }) {
@@ -36,7 +36,7 @@ function getLayerOptions({ maxzoom }) {
       'text-field': `{${layer.propName[language.EN]}}`,
       'text-font': ['open-sans-regular'],
     },
-    maxzoom: maxzoom ? LABEL_ZOOM_BREAK : MAX_ZOOM,
+    maxzoom: maxzoom ? mapbox.LABEL_ZOOM_BREAK : mapbox.MAX_ZOOM,
     paint: {
       'text-halo-color': COLORS.WHITE,
       'text-halo-width': 1.5,

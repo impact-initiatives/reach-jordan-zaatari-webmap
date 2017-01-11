@@ -1,4 +1,4 @@
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import utils from '../utils/index.js';
 import sources from '../../constants/sources.js';
 

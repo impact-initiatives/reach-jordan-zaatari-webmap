@@ -1,8 +1,8 @@
 // import store from '../../store/index.js';
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import colors from '../../constants/colors.js';
 import floodTypes from '../../constants/filters/flood.js';
-import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
+import mapbox from '../../constants/mapbox.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/flood-points-fill.js';
 
@@ -49,7 +49,7 @@ function getLayerFeature() {
       'circle-color': {
         property: layer.PROP_TYPE,
         stops: [
-          [floodTypes.contingenctTank, colors.YELLOW],
+          [floodTypes.contingencyTank, colors.YELLOW],
           [floodTypes.facility, colors.LIGHT_RED_100],
           [floodTypes.prcFull, colors.LIGHT_BLUE],
           [floodTypes.prcOverfull, colors.MEDIUM_BLUE],
@@ -76,7 +76,7 @@ function getLayerLabel() {
       'text-font': ['open-sans-regular'],
       'text-offset': [0.25, -0.25],
     },
-    minzoom: LABEL_ZOOM_BREAK,
+    minzoom: mapbox.LABEL_ZOOM_BREAK,
     paint: {
       'text-halo-color': colors.WHITE,
       'text-halo-width': 1.5,

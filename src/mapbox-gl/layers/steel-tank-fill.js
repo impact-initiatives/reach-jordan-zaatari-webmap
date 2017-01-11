@@ -1,13 +1,13 @@
 import store from '../../store/index.js';
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import colors from '../../constants/colors.js';
 import wasteWaterFilters from '../../constants/filters/waste-water.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/steel-tank-fill.js';
-import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
+import mapbox from '../../constants/mapbox.js';
 
 function fetchLayer({ map }) {
-  fetch(reach.steelTanks)
+  fetch(reach.STEEL_TANKS)
     .then((response) => response.json())
     .then(({ features }) => addLayer({ features, map }));
 }
@@ -52,7 +52,7 @@ function getLayerLabel() {
       'text-font': ['open-sans-regular'],
       'text-offset': [0.25, -0.25],
     },
-    minzoom: LABEL_ZOOM_BREAK,
+    minzoom: mapbox.LABEL_ZOOM_BREAK,
     paint: {
       'text-halo-color': colors.WHITE,
       'text-halo-width': 1.5,
@@ -64,7 +64,7 @@ function getLayerLabel() {
 
 function modifyLayer({ map }) {
   const state = store.getState();
-  if (state.filters.wasteWater[wasteWaterFilters.steelTanks]) {
+  if (state.filters.wasteWater[wasteWaterFilters.STEEL_TANKS]) {
     map.setFilter(layer.LAYER_ID_FEATURE, ['has', layer.PROP_ID]);
   } else {
     const filters = state.filters.wasteWater;

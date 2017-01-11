@@ -1,8 +1,8 @@
 import turfCenter from '@turf/center';
 // import store from '../../store/index.js';
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import colors from '../../constants/colors.js';
-import { LABEL_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
+import mapbox from '../../constants/mapbox.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/camp-facilities-text.js';
 import language from '../../constants/language.js';
@@ -36,7 +36,7 @@ function getLayerOptions() {
       'text-field': `{${layer.propName[language.EN]}}`,
       'text-font': ['open-sans-regular'],
     },
-    minzoom: LABEL_ZOOM_BREAK,
+    minzoom: mapbox.LABEL_ZOOM_BREAK,
     paint: {
       'text-halo-color': colors.WHITE,
       'text-halo-width': 1.5,

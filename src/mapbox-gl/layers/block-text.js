@@ -1,6 +1,6 @@
 import turfCenter from '@turf/center';
 // import store from '../../store/index.js';
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import COLORS from '../../constants/colors.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/block-text.js';

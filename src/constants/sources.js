@@ -1,4 +1,4 @@
-export default {
+const sources = {
   BLOCK_BOUNDARIES: 'block-boundaries',
   BLOCK_BOUNDARIES_POINT: 'block-boundaries-point',
   CAMP_FACILITIES: 'camp-facilities',
@@ -13,3 +13,5 @@ export default {
   SEPTIC_TANKS: 'septic-tanks',
   steelTanks: 'steel-tanks',
 };
+
+export default sources;

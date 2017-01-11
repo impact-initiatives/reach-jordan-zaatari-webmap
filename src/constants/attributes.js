@@ -1,6 +1,6 @@
 import language from './language.js';
 
-export default {
+const attributes = {
   blockBoundaries: {
     propName: {
       [language.EN]: 'BLOCK_CODE',
@@ -8,3 +8,5 @@ export default {
     },
   },
 };
+
+export default attributes;

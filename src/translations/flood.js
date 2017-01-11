@@ -51,7 +51,7 @@ export default {
       [language.EN]: 'reset',
       [language.AR]: 'إعادة تعيين',
     },
-    contingenctTank: {
+    contingencyTank: {
       [language.EN]: 'Contingency Tank',
       [language.AR]: 'Contingency Tank',
     },

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../../../styles/index.js';
-import { CONTAINER } from '../../../constants/mapbox-gl.js';
+import mapbox from '../../../constants/mapbox.js';
 
 export default class extends Component {
   componentDidMount() {
@@ -9,7 +9,7 @@ export default class extends Component {
   render() {
     return (
       <div className={styles.component.map}
-           id={CONTAINER}>
+           id={mapbox.CONTAINER}>
         <style>{`
           .mapboxgl-popup { max-width: 320px; }
           .mapboxgl-ctrl-compass { display: none !important; }

@@ -1,6 +1,6 @@
 import React from 'react';
 import store from '../../../store/index.js';
-import { IMG } from '../../../constants/resources.js';
+import img from '../../../constants/images.js';
 import styles from '../../../styles/index.js';
 import commonMessages from '../../../translations/common.js';
 
@@ -63,7 +63,7 @@ export default ({ state, messages }) => (
     <img alt="home"
          className={styles.menu.toolbarImage}
          onClick={onClickHome}
-         src={IMG.MENU} />
+         src={img.MENU} />
     <div className={styles.media.hiddenMobile}>
       {commonMessages.titleLong[state.lang]}
     </div>
@@ -81,10 +81,10 @@ export default ({ state, messages }) => (
     <img alt="info"
          className={styles.menu.toolbarImage}
          onClick={onClickInfo}
-         src={IMG.info} />
+         src={img.info} />
     <img alt="layers"
          className={styles.menu.toolbarImage}
          onClick={onClickLayers}
-         src={IMG.LAYERS} />
+         src={img.LAYERS} />
   </div>
 );

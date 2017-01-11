@@ -1,4 +1,4 @@
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import colors from '../../constants/colors.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/district-operators.js';

@@ -7,7 +7,7 @@ import MapboxGL from '../common/mapbox-gl/index.js';
 import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
 import language from '../../constants/language.js';
-import { IMG } from '../../constants/resources.js';
+import img from '../../constants/images.js';
 import messages from '../../translations/blocks.js';
 import initMap from '../../mapbox-gl/maps/blocks.js';
 
@@ -22,6 +22,6 @@ export default ({ state }) => (
       <SidebarLayers state={state} />
       <MapboxGL initMap={initMap} />
     </div>
-    <Footer donorLogo={IMG.LOGO_UNHCR} />
+    <Footer donorLogo={img.LOGO_UNHCR} />
   </div>
 );

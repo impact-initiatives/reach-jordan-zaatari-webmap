@@ -1,13 +1,13 @@
 import store from '../../store/index.js';
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import colors from '../../constants/colors.js';
 import wasteWaterFilters from '../../constants/filters/waste-water.js';
-import { PIPES_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
+import mapbox from '../../constants/mapbox.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/pipes-lines.js';
 
 function fetchLayer({ map }) {
-  fetch(reach.pipes)
+  fetch(reach.PIPES)
     .then((response) => response.json())
     .then(({ features }) => addLayer({ features, map }));
 }
@@ -21,7 +21,7 @@ function addLayer({ features, map }) {
 function getLayer() {
   return {
     id: layer.LAYER_ID,
-    minzoom: PIPES_ZOOM_BREAK,
+    minzoom: mapbox.PIPES_ZOOM_BREAK,
     paint: {
       'line-color': colors.DARK_GREY_50,
       'line-width': 1,
@@ -33,7 +33,7 @@ function getLayer() {
 
 function modifyLayer({ map }) {
   const state = store.getState();
-  if (state.filters.wasteWater[wasteWaterFilters.pipes]) {
+  if (state.filters.wasteWater[wasteWaterFilters.PIPES]) {
     map.setFilter(layer.LAYER_ID, ['has', layer.PROP_ID]);
   } else {
     const filters = state.filters.wasteWater;

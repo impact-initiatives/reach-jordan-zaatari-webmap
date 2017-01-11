@@ -1,5 +1,5 @@
 import React from 'react';
-import { IMG } from '../../../constants/resources.js';
+import img from '../../../constants/images.js';
 import styles from '../../../styles/index.js';
 
 export default ({ donorLogo }) => (
@@ -14,6 +14,6 @@ export default ({ donorLogo }) => (
     <div className={styles.flex.itemSpace} />
     <img alt="reach-logo"
          className={styles.menu.toolbarLogo}
-         src={IMG.LOGO_REACH} />
+         src={img.LOGO_REACH} />
   </div>
 );

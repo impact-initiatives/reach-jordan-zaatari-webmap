@@ -1,5 +1,5 @@
 import store from '../../store/index.js';
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import colors from '../../constants/colors.js';
 import utils from '../utils/index.js';
 import messages from '../../translations/health.js';

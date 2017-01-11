@@ -1,8 +1,8 @@
 import store from '../../store/index.js';
-import { reach } from '../../constants/resources.js';
+import reach from '../../constants/reach.js';
 import colors from '../../constants/colors.js';
 import wasteWaterFilters from '../../constants/filters/waste-water.js';
-import { PIPES_ZOOM_BREAK } from '../../constants/mapbox-gl.js';
+import mapbox from '../../constants/mapbox.js';
 import utils from '../utils/index.js';
 import layer from '../../constants/layers/pipes-lines.js';
 
@@ -21,7 +21,7 @@ function addLayer({ features, map }) {
 function getLayer() {
   return {
     id: layer.LAYER_ID,
-    minzoom: PIPES_ZOOM_BREAK,
+    minzoom: mapbox.PIPES_ZOOM_BREAK,
     paint: {
       'line-color': colors.DARK_GREY_50,
       'line-width': 1,

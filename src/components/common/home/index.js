@@ -26,8 +26,8 @@ export default ({ state }) => (
     <HomeItem icon={img.LOCAL_DRINK}
               name={messages.wasteWater[state.lang]}
               url="#/waste-water" />
-    <HomeItem icon={img.CLOUD}
+    {/* <HomeItem icon={img.CLOUD}
               name={messages.flood[state.lang]}
-              url="#/flood" />
+              url="#/flood" /> */}
   </div>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
-import language from '../../../constants/language';
+import language from '../../../constants/languages';
 import Filter from './filter/index.js';
 import Legend from './legend/index.js';
 

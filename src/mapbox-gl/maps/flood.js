@@ -1,29 +1,42 @@
 import utils from '../utils/index.js';
-import initGeolocation from '../layers/geolocation.js';
-import addDistrictOutline from '../layers/district-outline.js';
-import addDistrictText from '../layers/district-text.js';
-import addBlockFill from '../layers/block-fill.js';
-import addCampFacilitiesBackground from '../layers/camp-facilities-background.js';
-import addCampFacilitiesText from '../layers/camp-facilities-text.js';
-import addFloodPointsFill from '../layers/flood-points-fill.js';
-import addFloodLinesFill from '../layers/flood-lines-fill.js';
-import addFloodPointsUnicefFill from '../layers/flood-points-unicef-fill.js';
-import addFloodWaterPathFill from '../layers/flood-water-path-fill.js';
+import initGeolocation from '../interactions/geolocation.js';
+import layers from '../layers/index.js';
+import sources from '../sources/index.js';
 
-function loadStyles({ map }) {
-  addDistrictOutline({ map });
-  addDistrictText({ map, maxzoom: true });
-  addBlockFill({ map });
-  addCampFacilitiesBackground({ map });
-  addCampFacilitiesText({ map });
-  addFloodPointsUnicefFill({ map });
-  addFloodPointsFill({ map });
-  addFloodLinesFill({ map });
-  addFloodWaterPathFill({ map });
-  initGeolocation({ map });
-}
-
-export default function floodMap() {
+function floodMap() {
   const map = utils.createMap();
   map.on('style.load', () => loadStyles({ map }));
 }
+
+function loadStyles({ map }) {
+  initGeolocation({ map });
+  addSources({ map });
+}
+
+function addSources({ map }) {
+  Promise.all([
+    sources.blockBoundaries({ map }),
+    sources.campFacilities({ map }),
+    sources.campFacilitiesPoint({ map }),
+    sources.districtBoundaries({ map }),
+    sources.districtBoundariesPoint({ map }),
+    sources.floodLines({ map }),
+    sources.floodPoints({ map }),
+    sources.floodPointsUnicef({ map }),
+    sources.floodWaterPath({ map }),
+  ]).then(() => addLayers({ map }));
+}
+
+function addLayers({ map }) {
+  layers.districtBoundaries({ map });
+  layers.blockBoundaries({ map });
+  layers.campFacilities({ map });
+  layers.floodPoints({ map });
+  layers.floodPointsUnicef({ map });
+  layers.floodLines({ map });
+  layers.floodWaterPath({ map });
+  layers.campFacilitiesText({ map });
+  layers.districtBoundariesText({ map, maxzoom: true });
+}
+
+export default floodMap;

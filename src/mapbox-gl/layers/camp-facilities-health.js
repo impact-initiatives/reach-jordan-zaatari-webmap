@@ -1,20 +1,15 @@
 import store from '../../store/index.js';
-import reach from '../../constants/reach.js';
-import colors from '../../constants/colors.js';
-import utils from '../utils/index.js';
 import messages from '../../translations/health.js';
-import layer from '../../constants/layers/camp-facilities-health.js';
+import colors from '../../constants/colors.js';
+import layers from '../../constants/layers.js';
+import sources from '../../constants/sources.js';
+import keys from '../../constants/keys/camp-facilities.js';
+import values from '../../constants/values/camp-facilities.js';
 
 const { mapboxgl } = window;
 
-function fetchLayer({ map }) {
-  fetch(reach.CAMP_FACILITIES)
-    .then((response) => response.json())
-    .then(({ features }) => addLayer({ features, map }));
-}
-
-function addLayer({ features, map }) {
-  utils.addSourceToMap({ features, map, sourceId: layer.SOURCE_ID });
+function addLayer({ map }) {
+  store.subscribe(() => modifyLayer({ map }));
   map.addLayer(getLayerBase());
   map.addLayer(getLayerFill());
   modifyLayer({ map });
@@ -23,49 +18,61 @@ function addLayer({ features, map }) {
 
 function getLayerBase() {
   return {
-    id: layer.LAYER_ID_BASE,
+    id: layers.CAMP_FACILITIES_HEALTH_BASE,
     paint: {
       'fill-color': colors.DARK_GREY_50,
       'fill-opacity': 0.9,
       'fill-outline-color': colors.WHITE,
     },
-    source: layer.SOURCE_ID,
+    source: sources.CAMP_FACILITIES,
     type: 'fill',
   };
 }
 
 function getLayerFill() {
   return {
-    id: layer.LAYER_ID_FILL,
+    id: layers.CAMP_FACILITIES_HEALTH_FILL,
     paint: {
       'fill-color': {
-        property: layer.PROP_TYPE,
+        property: keys.HEALTH_TYPE,
         stops: [
-          [layer.VALUE_CAMP_HEALTH, colors.MEDIUM_BLUE],
-          [layer.VALUE_HEALTH, colors.LIGHT_RED_100],
-          [layer.VALUE_CAMP, colors.DARK_GREY_50],
+          [values.healthType.CAMP_FACILITY_WITH_HEALTH, colors.MEDIUM_BLUE],
+          [values.healthType.HEALTHCARE_FACILITY, colors.LIGHT_RED_100],
+          [values.healthType.CAMP_FACILITY, colors.DARK_GREY_50],
         ],
         type: 'categorical',
       },
       'fill-opacity': 0.9,
       'fill-outline-color': colors.WHITE,
     },
-    source: layer.SOURCE_ID,
+    source: sources.CAMP_FACILITIES,
     type: 'fill',
   };
 }
 
 function modifyLayer({ map }) {
   const storeFilter = store.getState().filters.health;
-  modifyLayerType({ equal: '==', has: 'has', map, storeFilter, layerId: layer.LAYER_ID_FILL });
-  modifyLayerType({ equal: '!=', has: '!has', map, storeFilter, layerId: layer.LAYER_ID_BASE });
+  modifyLayerType({
+    equal: '==',
+    has: 'has',
+    map,
+    storeFilter,
+    layerId: layers.CAMP_FACILITIES_HEALTH_FILL,
+  });
+  modifyLayerType({
+    equal: '!=',
+    has: '!has',
+    map,
+    storeFilter,
+    layerId: layers.CAMP_FACILITIES_HEALTH_BASE,
+  });
 }
 
 function modifyLayerType({ equal, has, map, storeFilter, layerId }) {
   const mapFilter = Object.entries(storeFilter)
     .filter(([, value]) => value)
-    .map(([key]) => ([equal, key, layer.VALUE_TRUE]));
-  if (!mapFilter.length) mapFilter.push([has, layer.PROP_TYPE]);
+    .map(([key]) => ([equal, key, values.filter.TRUE]));
+  if (!mapFilter.length) mapFilter.push([has, keys.HEALTH_TYPE]);
   map.setFilter(layerId, ['any', ...mapFilter]);
 }
 
@@ -76,8 +83,10 @@ function addPopup({ map }) {
 
 function onClick({ map, point }) {
   const { lang } = store.getState();
-  const features = map.queryRenderedFeatures(point, { layers: [layer.LAYER_ID_FILL] });
-  if (features.length && features[0].properties[layer.PROP_SERVICES_EN] !== 'null') {
+  const features = map.queryRenderedFeatures(point, {
+    layers: [layers.CAMP_FACILITIES_HEALTH_FILL],
+  });
+  if (features.length && features[0].properties[keys.HEALTH_SERVICES_EN] !== 'null') {
     const feature = features[0];
     new mapboxgl.Popup({ closeButton: false })
       .setLngLat(map.unproject(point))
@@ -89,29 +98,26 @@ function onClick({ map, point }) {
 function getPopupHtml({ feature, lang }) {
   return `
     <p>
-      <b>${feature.properties[layer.propName[lang]]}</b>
+      <b>${feature.properties[keys.name[lang]]}</b>
     </p>
     <p>
       <div><b>${messages.popup.hours[lang]}</b></div>
-      <div>${feature.properties[layer.propHours[lang]]}</div>
+      <div>${feature.properties[keys.hours[lang]]}</div>
     </p>
     <p>
       <div><b>${messages.popup.services[lang]}</b></div>
-      <div>${feature.properties[layer.propServices[lang]]}</div>
+      <div>${feature.properties[keys.healthServices[lang]]}</div>
     </p>
   `;
 }
 
 function onMouseMove({ map, point }) {
   const features = map.queryRenderedFeatures(point, {
-    layers: [layer.LAYER_ID_FILL],
+    layers: [layers.CAMP_FACILITIES_HEALTH_FILL],
   });
   const canvas = map.getCanvas();
   canvas.style.cursor = (
-    features.length && features[0].properties[layer.PROP_SERVICES_EN] !== 'null') ? 'pointer' : '';
+    features.length && features[0].properties[keys.HEALTH_SERVICES_EN] !== 'null') ? 'pointer' : '';
 }
 
-export default function ({ map }) {
-  store.subscribe(() => modifyLayer({ map }));
-  fetchLayer({ map });
-}
+export default addLayer;

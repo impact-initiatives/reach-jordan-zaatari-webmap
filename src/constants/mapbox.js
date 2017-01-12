@@ -18,6 +18,7 @@ const mapbox = {
   PIPES_ZOOM_BREAK: 15,
   MIN_ZOOM: 0,
   MAX_ZOOM: 22,
+  NUM_HOUSES: 20,
 };
 
 export default mapbox;

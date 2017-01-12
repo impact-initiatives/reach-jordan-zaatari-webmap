@@ -1,4 +1,4 @@
-const sources = {
+const sourceIds = {
   BLOCK_BOUNDARIES: 'block-boundaries',
   BLOCK_BOUNDARIES_POINT: 'block-boundaries-point',
   CAMP_FACILITIES: 'camp-facilities',
@@ -8,10 +8,11 @@ const sources = {
   FLOOD_LINES: 'flood-lines',
   FLOOD_POINTS: 'flood-points',
   FLOOD_POINTS_UNICEF: 'flood-points-unicef',
-  FLOOD_WATER_PATH: 'flood-water-path',
-  pipes: 'pipes',
+  FLOOD_WATER_PATH: 'flood-water-path-',
+  GEOLOCATION: 'geolocation',
+  PIPES: 'pipes',
   SEPTIC_TANKS: 'septic-tanks',
-  steelTanks: 'steel-tanks',
+  STEEL_TANKS: 'steel-tanks',
 };
 
-export default sources;
+export default sourceIds;

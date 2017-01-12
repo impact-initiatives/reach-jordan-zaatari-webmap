@@ -1,6 +1,6 @@
-import language from '../constants/language.js';
+import language from '../constants/languages.js';
 
-export default {
+const floodMessages = {
   titleLong: {
     [language.EN]: 'Flood Damage',
     [language.AR]: 'Flood Damage',
@@ -97,3 +97,5 @@ export default {
     },
   },
 };
+
+export default floodMessages;

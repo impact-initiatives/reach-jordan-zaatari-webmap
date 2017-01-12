@@ -1,4 +1,4 @@
-export default {
+const floodFilters = {
   CONTINGENCY_TANK: 'contingency_tank',
   FACILITY: 'facility',
   FLOOD: 'flood',
@@ -11,3 +11,5 @@ export default {
   SHELTER: 'shelter',
   SHELTER_LIGHT: 'shelter_light',
 };
+
+export default floodFilters;

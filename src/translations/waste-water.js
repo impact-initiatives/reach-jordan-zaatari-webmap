@@ -1,6 +1,6 @@
-import language from '../constants/language.js';
+import language from '../constants/languages.js';
 
-export default {
+const wasteWaterMessages = {
   titleLong: {
     [language.EN]: 'Waste Water Network',
     [language.AR]: 'شبكة الصرف الصحي',
@@ -101,3 +101,5 @@ export default {
     },
   },
 };
+
+export default wasteWaterMessages;

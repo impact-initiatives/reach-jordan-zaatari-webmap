@@ -1,7 +1,7 @@
 import React from 'react';
 import store from '../../../../store/index.js';
 import getInitialState from '../../../../store/initial-state.js';
-import FILTERS from '../../../../constants/filters/waste-water.js';
+import wasteWaterFilters from '../../../../constants/filters/waste-water.js';
 import messages from '../../../../translations/waste-water.js';
 import FilterHeader from '../../../common/filter/filter-header.js';
 import FilterItem from '../../../common/filter/filter-item.js';
@@ -39,26 +39,26 @@ export default ({ state }) => (
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.septicTanks8m3} />
+                type={wasteWaterFilters.SEPTIC_TANKS_8M3} />
     <FilterItem name={messages.filter.septicTanks4m3[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.septicTanks4m3} />
+                type={wasteWaterFilters.SEPTIC_TANKS_4M3} />
     <FilterItem name={messages.filter.septicTanks2m3[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.septicTanks2m3} />
+                type={wasteWaterFilters.SEPTIC_TANKS_2M3} />
     <FilterItem name={messages.filter.steelTanks[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.steelTanks} />
+                type={wasteWaterFilters.STEEL_TANKS} />
     <FilterItem name={messages.filter.pipes[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={FILTERS.pipes} />
+                type={wasteWaterFilters.PIPES} />
   </div>
 );

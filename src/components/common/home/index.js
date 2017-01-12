@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
-import language from '../../../constants/language';
+import language from '../../../constants/languages';
 import img from '../../../constants/images.js';
 import messages from '../../../translations/common.js';
 import HomeItem from './home-item.js';

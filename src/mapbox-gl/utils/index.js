@@ -45,18 +45,18 @@ function closeSidebars() {
 }
 
 function addSourceToMap({ features, map, sourceId }) {
-  if (!map.getSource(sourceId)) {
-    map.addSource(sourceId, {
-      data: {
-        type: 'FeatureCollection',
-        features,
-      },
-      type: 'geojson',
-    });
-  }
+  map.addSource(sourceId, {
+    data: {
+      type: 'FeatureCollection',
+      features,
+    },
+    type: 'geojson',
+  });
 }
 
-export default {
+const mapUtils = {
   addSourceToMap,
   createMap,
 };
+
+export default mapUtils;

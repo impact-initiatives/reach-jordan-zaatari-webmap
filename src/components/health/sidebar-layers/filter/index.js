@@ -1,10 +1,12 @@
 import React from 'react';
 import store from '../../../../store/index.js';
 import getInitialState from '../../../../store/initial-state.js';
-import FILTERS from '../../../../constants/filters/health.js';
+import filtersHealth from '../../../../constants/filters/health.js';
 import messages from '../../../../translations/health.js';
 import FilterHeader from '../../../common/filter/filter-header.js';
 import FilterItem from '../../../common/filter/filter-item.js';
+
+const ROUTE = 'health';
 
 function onReset() {
   store.dispatch({ type: (state) => ({
@@ -37,58 +39,58 @@ export default ({ state }) => (
                   state={state} />
     <FilterItem name={messages.filter.acuteChronic[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.acuteChronic} />
+                type={filtersHealth.ACUTE_CHRONIC} />
     <FilterItem name={messages.filter.dentist[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.dentist} />
+                type={filtersHealth.DENTIST} />
     <FilterItem name={messages.filter.ort[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.ort} />
+                type={filtersHealth.ORT} />
     <FilterItem name={messages.filter.emergency[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.emergency} />
+                type={filtersHealth.EMERGENCY} />
     <FilterItem name={messages.filter.gbv[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.gbv} />
+                type={filtersHealth.GBV} />
     <FilterItem name={messages.filter.malnutrition[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.malnutrition} />
+                type={filtersHealth.MALNUTRITION} />
     <FilterItem name={messages.filter.psychotherapy[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.psychotherapy} />
+                type={filtersHealth.PSYCHOTHERAPY} />
     <FilterItem name={messages.filter.physiotherapy[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.physiotherapy} />
+                type={filtersHealth.PHYSIOTHERAPY} />
     <FilterItem name={messages.filter.reproductive[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.reproductive} />
+                type={filtersHealth.REPRODUCTIVE} />
     <FilterItem name={messages.filter.secondary[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.secondary} />
+                type={filtersHealth.SECONDARY} />
     <FilterItem name={messages.filter.vaccination[state.lang]}
                 onClick={onClick}
-                route="health"
+                route={ROUTE}
                 state={state}
-                type={FILTERS.vaccination} />
+                type={filtersHealth.VACCINATION} />
   </div>
 );

@@ -1,6 +1,6 @@
-import language from '../constants/language.js';
+import language from '../constants/languages.js';
 
-export default {
+const districtMessages = {
   titleLong: {
     [language.EN]: 'District Boundaries',
     [language.AR]: 'حدود القطاعات',
@@ -32,3 +32,5 @@ export default {
     },
   },
 };
+
+export default districtMessages;

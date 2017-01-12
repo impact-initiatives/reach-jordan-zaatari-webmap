@@ -1,6 +1,6 @@
-import language from '../constants/language.js';
+import language from '../constants/languages.js';
 
-export default {
+const healthMessages = {
   titleLong: {
     [language.EN]: 'Health Facilities',
     [language.AR]: 'المرافق الصحية',
@@ -99,3 +99,5 @@ export default {
     },
   },
 };
+
+export default healthMessages;

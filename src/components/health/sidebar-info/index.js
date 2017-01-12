@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
-import language from '../../../constants/language';
+import language from '../../../constants/languages';
 import messages from '../../../translations/health.js';
 import Language from '../../common/info/language.js';
 import About from '../../common/info/about.js';

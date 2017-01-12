@@ -1,4 +1,4 @@
-export default {
+const filtersHealth = {
   ACUTE_CHRONIC: 'ACUTE_COND',
   DENTIST: 'DENTIST',
   ORT: 'ORT',
@@ -11,3 +11,5 @@ export default {
   SECONDARY: 'SECONDARY',
   VACCINATION: 'VACCINATIO',
 };
+
+export default filtersHealth;

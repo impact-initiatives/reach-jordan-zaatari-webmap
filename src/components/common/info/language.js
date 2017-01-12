@@ -1,7 +1,7 @@
 import React from 'react';
 import messages from '../../../translations/common.js';
 import store from '../../../store/index.js';
-import language from '../../../constants/language.js';
+import language from '../../../constants/languages.js';
 import styles from '../../../styles/index.js';
 
 function onClickLanguage({ target }) {

@@ -1,0 +1,25 @@
+const layerIds = {
+  BLOCK_BOUNDARIES: 'block-boundaries',
+  BLOCK_BOUNDARIES_TEXT: 'block-boundaries-text',
+  CAMP_FACILITIES: 'camp-facilities',
+  CAMP_FACILITIES_HEALTH_BASE: 'camp-facilities-health-base',
+  CAMP_FACILITIES_HEALTH_FILL: 'camp-facilities-health-fill',
+  CAMP_FACILITIES_TEXT: 'camp-facilities-text',
+  DISTRICT_BOUNDARIES: 'district-boundaries',
+  DISTRICT_BOUNDARIES_OPERATOR: 'district-boundaries-operator',
+  DISTRICT_BOUNDARIES_TEXT: 'district-boundaries-text',
+  FLOOD_LINES: 'flood-lines',
+  FLOOD_POINTS: 'flood-points',
+  FLOOD_POINTS_TEXT: 'flood-points-text',
+  FLOOD_POINTS_UNICEF: 'flood-points-unicef',
+  FLOOD_POINTS_UNICEF_TEXT: 'flood-points-unicef-text',
+  FLOOD_WATER_PATH: 'flood-water-path-',
+  GEOLOCATION: 'geolocation',
+  PIPES: 'pipes',
+  SEPTIC_TANKS: 'septic-tanks',
+  SEPTIC_TANKS_TEXT: 'septic-tanks-text',
+  STEEL_TANKS: 'steel-tanks',
+  STEEL_TANKS_TEXT: 'steel-tanks-text',
+};
+
+export default layerIds;

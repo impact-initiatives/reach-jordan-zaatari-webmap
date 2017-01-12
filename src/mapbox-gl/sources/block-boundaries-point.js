@@ -1,7 +1,6 @@
 import turfCenter from '@turf/center';
-import attributes from '../../constants/attributes.js';
+import keys from '../../constants/keys/block-boundaries.js';
 import reach from '../../constants/reach.js';
-import language from '../../constants/language.js';
 import sources from '../../constants/sources.js';
 import utils from '../utils/index.js';
 
@@ -16,10 +15,8 @@ function sourceBlockBoundariesPoint({ map }) {
 
 function modifyFeatures(feature) {
   const center = turfCenter(feature);
-  const propNameEn = attributes.blockBoundaries.propName[language.EN];
-  const propNameAr = attributes.blockBoundaries.propName[language.AR];
-  center.properties[propNameEn] = feature.properties[propNameEn];
-  center.properties[propNameAr] = feature.properties[propNameAr];
+  center.properties[keys.NAME_EN] = feature.properties[keys.NAME_EN];
+  center.properties[keys.NAME_AR] = feature.properties[keys.NAME_AR];
   return center;
 }
 

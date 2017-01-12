@@ -1,4 +1,4 @@
-import language from './language.js';
+import language from './languages.js';
 
 const attributes = {
   blockBoundaries: {

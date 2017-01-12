@@ -1,4 +1,4 @@
-import language from '../constants/language.js';
+import language from '../constants/languages.js';
 
 export default () => ({
   geoJson: {

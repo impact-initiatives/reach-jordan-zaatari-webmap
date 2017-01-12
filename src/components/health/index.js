@@ -6,7 +6,7 @@ import SidebarHome from '../common/home/index.js';
 import MapboxGL from '../common/mapbox-gl/index.js';
 import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
-import language from '../../constants/language.js';
+import language from '../../constants/languages.js';
 import img from '../../constants/images.js';
 import messages from '../../translations/health.js';
 import initMap from '../../mapbox-gl/maps/health.js';

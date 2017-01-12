@@ -1,39 +1,18 @@
-import turfCenter from '@turf/center';
-// import store from '../../store/index.js';
-import reach from '../../constants/reach.js';
 import colors from '../../constants/colors.js';
 import mapbox from '../../constants/mapbox.js';
-import utils from '../utils/index.js';
-import layer from '../../constants/layers/camp-facilities-text.js';
-import language from '../../constants/language.js';
+import layers from '../../constants/layers.js';
+import sources from '../../constants/sources.js';
+import keys from '../../constants/keys/camp-facilities.js';
 
-function fetchLayer({ map }) {
-  fetch(reach.CAMP_FACILITIES)
-    .then((response) => response.json())
-    .then(({ features }) => addLayer({ features, map }));
-}
-
-function addLayer({ features, map }) {
-  const points = features.map(modifyFeatures);
-  utils.addSourceToMap({ features: points, map, sourceId: layer.SOURCE_ID });
+function addLayer({ map }) {
   map.addLayer(getLayerOptions());
 }
 
-function modifyFeatures(feature) {
-  const center = turfCenter(feature);
-  const propNameEn = layer.propName[language.EN];
-  const propNameAr = layer.propName[language.AR];
-  center.properties[propNameEn] = feature.properties[propNameEn];
-  center.properties[propNameAr] = feature.properties[propNameAr];
-  return center;
-}
-
 function getLayerOptions() {
-  // const { lang } = store.getState();
   return {
-    id: layer.LAYER_ID,
+    id: layers.CAMP_FACILITIES_TEXT,
     layout: {
-      'text-field': `{${layer.propName[language.EN]}}`,
+      'text-field': `{${keys.NAME_EN}}`,
       'text-font': ['open-sans-regular'],
     },
     minzoom: mapbox.LABEL_ZOOM_BREAK,
@@ -41,11 +20,9 @@ function getLayerOptions() {
       'text-halo-color': colors.WHITE,
       'text-halo-width': 1.5,
     },
-    source: layer.SOURCE_ID,
+    source: sources.CAMP_FACILITIES_POINT,
     type: 'symbol',
   };
 }
 
-export default function campFacilitiesText({ map }) {
-  fetchLayer({ map });
-}
+export default addLayer;

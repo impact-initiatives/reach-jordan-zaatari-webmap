@@ -1,6 +1,6 @@
-import language from '../constants/language.js';
+import language from '../constants/languages.js';
 
-export default {
+const commonMessages = {
   titleLong: {
     [language.EN]: "Al Za'atari Refugee Camp",
     [language.AR]: 'مخيم الزعتري للاجئين',
@@ -56,3 +56,5 @@ export default {
     },
   },
 };
+
+export default commonMessages;

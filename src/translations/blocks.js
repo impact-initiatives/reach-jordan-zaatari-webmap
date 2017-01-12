@@ -1,6 +1,6 @@
-import language from '../constants/language.js';
+import language from '../constants/languages.js';
 
-export default {
+const blockMessages = {
   titleLong: {
     [language.EN]: 'Block Boundaries',
     [language.AR]: 'حدود المربع السكني',
@@ -24,3 +24,5 @@ export default {
     },
   },
 };
+
+export default blockMessages;

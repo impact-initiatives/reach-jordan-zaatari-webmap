@@ -4,8 +4,8 @@ import sources from '../../constants/sources.js';
 import values from '../../constants/values/flood-water-path.js';
 
 function addLayer({ map }) {
-  map.addLayer(getLayer({ width: values.gridCode.SMALL }));
-  map.addLayer(getLayer({ width: values.gridCode.LARGE }));
+  map.addLayer(getLayer({ width: values.gridCode.SMALL }), layers.CAMP_FACILITIES);
+  map.addLayer(getLayer({ width: values.gridCode.LARGE }), layers.CAMP_FACILITIES);
 }
 
 function getLayer({ width }) {

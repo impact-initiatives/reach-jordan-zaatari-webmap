@@ -14,17 +14,15 @@ function loadStyles({ map }) {
 }
 
 function addSources({ map }) {
-  Promise.all([
-    sources.districtBoundaries({ map }),
-    sources.blockBoundaries({ map }),
-    sources.blockBoundariesPoint({ map }),
-  ]).then(() => addLayers({ map }));
-}
+  const districtBoundaries = sources.districtBoundaries({ map });
+  const blockBoundaries = sources.blockBoundaries({ map });
 
-function addLayers({ map }) {
-  layers.districtBoundaries({ map });
-  layers.blockBoundaries({ map });
-  layers.blockBoundariesText({ map });
+  const set1 = [districtBoundaries];
+  const set2 = [...set1, blockBoundaries];
+
+  Promise.all(set1).then(() => layers.districtBoundaries({ map }));
+  Promise.all(set2).then(() => layers.blockBoundaries({ map }));
+  Promise.all(set2).then(() => layers.blockBoundariesText({ map, maxzoom: true }));
 }
 
 export default blockMap;

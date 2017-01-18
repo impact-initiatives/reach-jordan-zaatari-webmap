@@ -8,7 +8,7 @@ import keys from '../../constants/keys/pipes.js';
 
 function addLayer({ map }) {
   store.subscribe(() => modifyLayer({ map }));
-  map.addLayer(getLayer());
+  map.addLayer(getLayer(), layers.STEEL_TANKS);
   modifyLayer({ map });
 }
 

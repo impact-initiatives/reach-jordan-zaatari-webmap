@@ -14,15 +14,12 @@ function loadStyles({ map }) {
 }
 
 function addSources({ map }) {
-  Promise.all([
-    sources.districtBoundaries({ map }),
-    sources.districtBoundariesPoint({ map }),
-  ]).then(() => addLayers({ map }));
-}
+  const districtBoundaries = sources.districtBoundaries({ map });
 
-function addLayers({ map }) {
-  layers.districtBoundariesOperator({ map });
-  layers.districtBoundariesText({ map, maxzoom: true });
+  const set1 = [districtBoundaries];
+
+  Promise.all(set1).then(() => layers.districtBoundariesOperator({ map }));
+  Promise.all(set1).then(() => layers.districtBoundariesText({ map, maxzoom: true }));
 }
 
 export default districtMap;

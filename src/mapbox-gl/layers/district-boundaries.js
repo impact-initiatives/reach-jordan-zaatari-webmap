@@ -8,7 +8,7 @@ function addLayer({ map }) {
 
 function getLayer() {
   return {
-    id: layers.DISTRICT_BOUNDARIES_OPERATOR,
+    id: layers.DISTRICT_BOUNDARIES,
     paint: {
       'line-color': colors.WHITE,
       'line-width': 3,

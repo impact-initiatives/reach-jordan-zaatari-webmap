@@ -8,7 +8,7 @@ function addLayer({ map }) {
 
 function getLayer() {
   return {
-    id: layers.DISTRICT_BOUNDARIES,
+    id: layers.BLOCK_BOUNDARIES,
     paint: {
       'fill-color': colors.DARK_GREY_50,
       'fill-opacity': 0.25,

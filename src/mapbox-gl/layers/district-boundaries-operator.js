@@ -10,7 +10,7 @@ function addLayer({ map }) {
 
 function getLayer() {
   return {
-    id: layers.DISTRICT_BOUNDARIES,
+    id: layers.DISTRICT_BOUNDARIES_OPERATOR,
     paint: {
       'fill-color': {
         property: keys.NGO_OPERATORS,

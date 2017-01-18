@@ -3,7 +3,7 @@ import styles from '../../../styles/index.js';
 
 function onClick({ target }) {
   const { url } = target.dataset;
-  location.href = url;
+  location.assign(url);
 }
 
 export default ({ icon, name, url }) => (

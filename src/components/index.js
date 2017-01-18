@@ -22,6 +22,6 @@ export default ({ state }) => {
   if (hash === '#/flood') {
     return <Flood state={state} />;
   }
-  location.href = '#/districts';
+  location.assign('#/districts');
   return <Health state={state} />;
 };

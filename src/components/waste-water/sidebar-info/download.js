@@ -4,11 +4,11 @@ import messages from '../../../translations/waste-water.js';
 import REACH from '../../../constants/reach.js';
 
 function onClickCamp() {
-  location.href = REACH.WWN_CAMP;
+  location.assign(REACH.WWN_CAMP);
 }
 
 function onClickDistrict() {
-  location.href = REACH.WWN_DISTRICT;
+  location.assign(REACH.WWN_DISTRICT);
 }
 
 export default ({ state }) => (

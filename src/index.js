@@ -18,7 +18,7 @@ if ('serviceWorker' in navigator) {
   const { pathname } = location;
   const path = pathname.substring(0, pathname.lastIndexOf('/'));
   const newLocation = `${path}/legacy.html`;
-  if (pathname !== newLocation) location.href = `${newLocation}${location.hash}`;
+  if (pathname !== newLocation) location.assign(`${newLocation}${location.hash}`);
 }
 
 store.subscribe(refresh);

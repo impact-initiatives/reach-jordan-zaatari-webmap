@@ -3,7 +3,7 @@ import urls from './urls.js';
 const reach = {
   DISTRICT_BOUNDARIES: `${urls.RESOURCES}/reach/DistrictBoundaries_2016_12.geojson`,
   BLOCK_BOUNDARIES: `${urls.RESOURCES}/reach/BlockBoundaries_2016_12.geojson`,
-  CAMP_FACILITIES: `${urls.RESOURCES}/reach/CampFacilities_2017_01.geojson`,
+  CAMP_FACILITIES: `${urls.RESOURCES}/reach/CampFacilities_2017_02.geojson`,
   FLOOD_POINTS: `${urls.RESOURCES}/reach/FloodPoints_2016_12.geojson`,
   FLOOD_POINTS_UNICEF: `${urls.RESOURCES}/reach/FloodPoints_UNICEF_2016_12.geojson`,
   FLOOD_LINES: `${urls.RESOURCES}/reach/FloodLines_2016_12.geojson`,

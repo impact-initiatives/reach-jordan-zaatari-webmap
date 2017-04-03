@@ -16,9 +16,12 @@ const mapbox = {
   BEARING: 21,
   LABEL_ZOOM_BREAK: 16,
   PIPES_ZOOM_BREAK: 15,
+  HOUSEHOLD_ZOOM_BREAK: 18,
+  HOUSEHOLD_TEXT_ZOOM_BREAK: 19,
   MIN_ZOOM: 0,
   MAX_ZOOM: 22,
   NUM_HOUSES: 20,
+  RTL_TEXT_PLUGIN: './node_modules/@mapbox/mapbox-gl-rtl-text/mapbox-gl-rtl-text.js.min',
 };
 
 export default mapbox;

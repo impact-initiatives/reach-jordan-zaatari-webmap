@@ -47,8 +47,8 @@ const commonMessages = {
       [language.AR]: 'العربية',
     },
     currency: {
-      [language.EN]: 'Information current as of January 2017.',
-      [language.AR]: 'المعلومات الحالية اعتبارا من يناير 2017',
+      [language.EN]: 'Information current as of April 2017.',
+      [language.AR]: 'المعلومات الحالية اعتبارا من أبريل 2017',
     },
     contact: {
       [language.EN]: 'To report updates or request new features, please contact: ',

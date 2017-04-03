@@ -38,6 +38,8 @@
   },
   "dependencies": {
     "@turf/center": "^4.0.0",
+    "@turf/helpers": "^4.0.0",
+    "d3-dsv": "^1.0.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "redux": "^3.6.0",

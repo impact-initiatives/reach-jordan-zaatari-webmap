@@ -14,6 +14,8 @@ const layerIds = {
   FLOOD_POINTS_UNICEF: 'flood-points-unicef',
   FLOOD_POINTS_UNICEF_TEXT: 'flood-points-unicef-text',
   FLOOD_WATER_PATH: 'flood-water-path-',
+  HOUSEHOLDS: 'households',
+  HOUSEHOLDS_TEXT: 'households-text',
   GEOLOCATION: 'geolocation',
   PIPES: 'pipes',
   SEPTIC_TANKS: 'septic-tanks',

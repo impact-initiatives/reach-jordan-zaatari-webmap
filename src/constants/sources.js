@@ -11,7 +11,8 @@ const sourceIds = {
   FLOOD_WATER_PATH: 'flood-water-path-',
   HOUSEHOLDS: 'households',
   GEOLOCATION: 'geolocation',
-  PIPES: 'pipes',
+  PIPES_SEPTIC: 'pipes-septic',
+  PIPES_SOLID_FREE: 'pipes-solid-free',
   SEPTIC_TANKS: 'septic-tanks',
   STEEL_TANKS: 'steel-tanks',
 };

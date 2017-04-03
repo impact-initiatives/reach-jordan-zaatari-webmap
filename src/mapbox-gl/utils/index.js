@@ -75,15 +75,15 @@ function modifySteelLayer({ map, layerId }) {
 function modifyHouseholdsLayer({ map, layerId }) {
   const state = store.getState();
   if (state.filters.wasteWater[wasteWaterFilters.HOUSEHOLDS]) {
-    map.setFilter(layerId, ['has', columns.septicColumns.id.KEY]);
+    map.setFilter(layerId, ['has', columns.householdColumns.id.KEY]);
   } else {
     const filters = state.filters.wasteWater;
     const filtersActive = Object.values(filters).includes(true);
     const searchActive = state.search.wasteWater;
     if (filtersActive || searchActive) {
-      map.setFilter(layerId, ['!has', columns.septicColumns.id.KEY]);
+      map.setFilter(layerId, ['!has', columns.householdColumns.id.KEY]);
     } else {
-      map.setFilter(layerId, ['has', columns.septicColumns.id.KEY]);
+      map.setFilter(layerId, ['has', columns.householdColumns.id.KEY]);
     }
   }
 }

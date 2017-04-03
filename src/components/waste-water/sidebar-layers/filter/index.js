@@ -55,10 +55,15 @@ export default ({ state }) => (
                 route="wasteWater"
                 state={state}
                 type={wasteWaterFilters.STEEL_TANKS} />
-    <FilterItem name={messages.filter.pipes[state.lang]}
+    <FilterItem name={messages.filter.pipesSeptic[state.lang]}
                 onClick={onClick}
                 route="wasteWater"
                 state={state}
-                type={wasteWaterFilters.PIPES} />
+                type={wasteWaterFilters.PIPES_SEPTIC} />
+    <FilterItem name={messages.filter.pipesSolidFree[state.lang]}
+                onClick={onClick}
+                route="wasteWater"
+                state={state}
+                type={wasteWaterFilters.PIPES_SOLID_FREE} />
   </div>
 );

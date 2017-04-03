@@ -4,7 +4,8 @@ const wasteWaterFilters = {
   SEPTIC_TANKS_2M3: 'septicTanks2M3',
   HOUSEHOLDS: 'households',
   STEEL_TANKS: 'steelTanks',
-  PIPES: 'pipes',
+  PIPES_SEPTIC: 'pipesSeptic',
+  PIPES_SOLID_FREE: 'pipesSolidFree',
 };
 
 export default wasteWaterFilters;

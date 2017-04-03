@@ -1,14 +1,14 @@
 import reach from '../../constants/reach.js';
 import utils from '../utils/index.js';
 import sources from '../../constants/sources.js';
-import keys from '../../constants/keys/pipes.js';
+import keys from '../../constants/keys/pipes-septic.js';
 
 function sourcePipes({ map }) {
-  return fetch(reach.PIPES)
+  return fetch(reach.PIPES_SEPTIC)
     .then((response) => response.json())
     .then(({ features }) => {
       const newFeatures = features.map(modifyFeatures);
-      utils.addSourceToMap({ features: newFeatures, map, sourceId: sources.PIPES });
+      utils.addSourceToMap({ features: newFeatures, map, sourceId: sources.PIPES_SEPTIC });
     });
 }
 

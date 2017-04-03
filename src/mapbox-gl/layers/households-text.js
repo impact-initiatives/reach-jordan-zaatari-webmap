@@ -13,7 +13,7 @@ function householdsText({ map }) {
 }
 
 function modifyLayer({ map }) {
-  utils.modifyHouseholdsLayer({ map, layerId: layers.HOUSEHOLDS });
+  utils.modifyHouseholdsLayer({ map, layerId: layers.HOUSEHOLDS_TEXT });
 }
 
 function getLayer() {

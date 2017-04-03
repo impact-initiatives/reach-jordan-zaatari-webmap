@@ -51,7 +51,7 @@ const wasteWaterMessages = {
       [language.EN]: 'Steel Tank',
       [language.AR]: 'خزان الفولاذ',
     },
-    pipes: {
+    pipesSeptic: {
       [language.EN]: 'Pipe',
       [language.AR]: 'أنبوب',
     },
@@ -95,9 +95,13 @@ const wasteWaterMessages = {
       [language.EN]: 'Steel Tanks',
       [language.AR]: 'خزانات الصلب',
     },
-    pipes: {
-      [language.EN]: 'Pipes',
-      [language.AR]: 'أنابيب',
+    pipesSeptic: {
+      [language.EN]: 'Septic Pipes',
+      [language.AR]: 'خزان صرف صحي أنابيب',
+    },
+    pipesSolidFree: {
+      [language.EN]: 'Solid Free Pipes',
+      [language.AR]: 'خزانات الصلب أنابيب',
     },
   },
 };

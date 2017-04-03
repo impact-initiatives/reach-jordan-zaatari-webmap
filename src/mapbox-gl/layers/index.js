@@ -12,7 +12,8 @@ import floodPointsUnicef from './flood-points-unicef.js';
 import floodWaterPath from './flood-water-path.js';
 import households from './households.js';
 import householdsText from './households-text.js';
-import pipes from './pipes.js';
+import pipesSeptic from './pipes-septic.js';
+import pipesSolidFree from './pipes-solid-free.js';
 import septicTanks from './septic-tanks.js';
 import septicTanksText from './septic-tanks-text.js';
 import steelTanks from './steel-tanks.js';
@@ -33,7 +34,8 @@ const layersIndex = {
   floodWaterPath,
   households,
   householdsText,
-  pipes,
+  pipesSeptic,
+  pipesSolidFree,
   septicTanks,
   septicTanksText,
   steelTanks,

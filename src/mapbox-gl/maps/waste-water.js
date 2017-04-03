@@ -17,7 +17,8 @@ function addSources({ map }) {
   const districtBoundaries = sources.districtBoundaries({ map });
   const blockBoundaries = sources.blockBoundaries({ map });
   const campFacilities = sources.campFacilities({ map });
-  const pipes = sources.pipes({ map });
+  const pipesSeptic = sources.pipesSeptic({ map });
+  const pipesSolidFree = sources.pipesSolidFree({ map });
   const septicTanks = sources.septicTanks({ map });
   const steelTanks = sources.steelTanks({ map });
   const households = sources.households({ map });
@@ -28,7 +29,8 @@ function addSources({ map }) {
   const set4 = [...set3, steelTanks];
   const set5 = [...set4, septicTanks];
   const set6 = [...set5, households];
-  const set7 = [...set6, pipes];
+  const set7 = [...set6, pipesSolidFree];
+  const set8 = [...set6, pipesSeptic];
 
   Promise.all(set1).then(() => layers.districtBoundaries({ map }));
   Promise.all(set2).then(() => layers.blockBoundaries({ map }));
@@ -36,12 +38,13 @@ function addSources({ map }) {
   Promise.all(set4).then(() => layers.steelTanks({ map }));
   Promise.all(set5).then(() => layers.septicTanks({ map }));
   Promise.all(set6).then(() => layers.households({ map }));
-  Promise.all(set6).then(() => layers.householdsText({ map }));
-  Promise.all(set6).then(() => layers.campFacilitiesText({ map }));
-  Promise.all(set6).then(() => layers.steelTanksText({ map }));
-  Promise.all(set6).then(() => layers.septicTanksText({ map }));
-  Promise.all(set6).then(() => layers.districtBoundariesText({ map, maxzoom: true }));
-  Promise.all(set7).then(() => layers.pipes({ map }));
+  Promise.all(set7).then(() => layers.pipesSolidFree({ map }));
+  Promise.all(set7).then(() => layers.householdsText({ map }));
+  Promise.all(set7).then(() => layers.campFacilitiesText({ map }));
+  Promise.all(set7).then(() => layers.steelTanksText({ map }));
+  Promise.all(set7).then(() => layers.septicTanksText({ map }));
+  Promise.all(set7).then(() => layers.districtBoundariesText({ map, maxzoom: true }));
+  Promise.all(set8).then(() => layers.pipesSeptic({ map }));
 }
 
 export default wasteWaterMap;

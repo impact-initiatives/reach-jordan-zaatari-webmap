@@ -6,7 +6,7 @@ import floodLines from './flood-lines.js';
 import floodPoints from './flood-points.js';
 import floodPointsUnicef from './flood-points-unicef.js';
 import floodWaterPath from './flood-water-path.js';
-import pipes from './pipes.js';
+import pipes from './pipes-septic.js';
 import septicTanks from './septic-tanks.js';
 import steelTanks from './steel-tanks.js';
 

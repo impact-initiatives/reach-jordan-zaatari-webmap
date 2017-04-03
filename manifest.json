@@ -1,5 +1,5 @@
 {
-  "name": "REACH Zaatari Maps",
+  "NAME": "REACH Zaatari Maps",
   "short_name": "Zaatari Maps",
   "start_url": "./",
   "display": "standalone",

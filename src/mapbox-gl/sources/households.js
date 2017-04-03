@@ -1,12 +1,12 @@
 import { csvParseRows } from 'd3-dsv';
 import turfHelpers from '@turf/helpers';
-import * as columns from '../../constants/columns/steel.js';
+import * as columns from '../../constants/columns/household.js';
 import reach from '../../constants/reach.js';
 import utils from '../utils/index.js';
 import sources from '../../constants/sources.js';
 
-function sourceSteelTanks({ map }) {
-  return fetch(reach.STEEL_TANKS)
+function sourceHouseholds({ map }) {
+  return fetch(reach.HOUSEHOLDS)
     .then((response) => response.text())
     .then((csv) => {
       const [, ...data] = csvParseRows(csv);
@@ -16,7 +16,7 @@ function sourceSteelTanks({ map }) {
 }
 
 function addSource({ features, map }) {
-  utils.addSourceToMap({ features, map, sourceId: sources.STEEL_TANKS });
+  utils.addSourceToMap({ features, map, sourceId: sources.HOUSEHOLDS });
 }
 
 function csvToPoints(row) {
@@ -28,4 +28,4 @@ function csvToPoints(row) {
   });
 }
 
-export default sourceSteelTanks;
+export default sourceHouseholds;

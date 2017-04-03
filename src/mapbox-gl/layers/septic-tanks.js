@@ -2,8 +2,7 @@ import store from '../../store/index.js';
 import colors from '../../constants/colors.js';
 import layers from '../../constants/layers.js';
 import sources from '../../constants/sources.js';
-import keys from '../../constants/keys/septic-tanks.js';
-import values from '../../constants/values/septic-tanks.js';
+import * as columns from '../../constants/columns/septic.js';
 import utils from '../utils/index.js';
 
 const { mapboxgl } = window;
@@ -24,11 +23,11 @@ function getLayer() {
     id: layers.SEPTIC_TANKS,
     paint: {
       'circle-color': {
-        property: keys.VOLUME,
+        property: columns.volume.KEY,
         stops: [
-          [values.volume.TWO, colors.LIGHT_RED_100],
-          [values.volume.FOUR, colors.GREEN],
-          [values.volume.EIGHT, colors.MEDIUM_BLUE],
+          [columns.volume.VALUES.TWO, colors.LIGHT_RED_100],
+          [columns.volume.VALUES.FOUR, colors.GREEN],
+          [columns.volume.VALUES.EIGHT, colors.MEDIUM_BLUE],
         ],
         type: 'categorical',
       },
@@ -46,14 +45,23 @@ function addPopup({ map }) {
 
 function onClick({ point, map }) {
   const features = map.queryRenderedFeatures(point, { layers: [layers.SEPTIC_TANKS] });
-  if (features.length && features[0].properties[keys.VOLUME] !== 'null') {
+  if (features.length && features[0].properties[columns.volume.KEY] !== 'null') {
     const feature = features[0];
-    const header = '<div><b>Connected Households</b></div>';
-    const households = feature.properties[keys.HOUSES]
-      .split(',')
-      .filter((house) => house)
+    const steelTank = `<div>${feature.properties[columns.steelId.KEY] || 'N/A'}</div>`;
+    const ventilation1 = feature.properties[columns.ventilation1.KEY];
+    const ventilation2 = feature.properties[columns.ventilation2.KEY];
+    const ventilationArray = [ventilation1, ventilation2].filter(Boolean).join(', ') || 'N/A';
+    const ventilationText = `<div>${ventilationArray}</div>`;
+    const households = feature.properties[columns.houses.KEY].split(',')
       .map((house) => `<div>${house}</div>`);
-    const popupText = [header, ...households].join('');
+    const popupText = [
+      '<div><b>Ventilation Pipe Length (cm)</b></div>',
+      ventilationText,
+      '<div><b>Connected Steel Tank</b></div>',
+      steelTank,
+      '<div><b>Connected Households</b></div>',
+      ...households,
+    ].join('');
     new mapboxgl.Popup({ closeButton: false })
       .setLngLat(map.unproject(point))
       .setHTML(popupText)
@@ -65,7 +73,7 @@ function onMouseMove({ point, map }) {
   const features = map.queryRenderedFeatures(point, { layers: [layers.SEPTIC_TANKS] });
   const canvas = map.getCanvas();
   canvas.style.cursor = (
-    features.length && features[0].properties[keys.VOLUME] !== 'null') ? 'pointer' : '';
+    features.length && features[0].properties[columns.volume.KEY] !== 'null') ? 'pointer' : '';
 }
 
 export default septicTankSize;

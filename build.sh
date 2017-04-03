@@ -5,12 +5,14 @@ rm -rf ./dist/
 webpack -p
 
 mkdir -p ./dist/node_modules/mapbox-gl/
+mkdir -p ./dist/node_modules/@mapbox/mapbox-gl-rtl-text/
 mkdir -p ./dist/node_modules/normalize.css/
 
 cp ./manifest.json ./dist/manifest.json
 cp -a ./resources/. ./dist/resources/
 cp -a ./node_modules/normalize.css/. ./dist/node_modules/normalize.css/
 cp -a ./node_modules/mapbox-gl/dist/. ./dist/node_modules/mapbox-gl/dist/
+cp -a ./node_modules/@mapbox/mapbox-gl-rtl-text/mapbox-gl-rtl-text.js.min ./dist/node_modules/@mapbox/mapbox-gl-rtl-text/mapbox-gl-rtl-text.js.min
 
 appcache-manifest \
   ./dist/*.* \

@@ -1,9 +1,11 @@
-import 'babel-polyfill';
 import 'whatwg-fetch';
 import React from 'react';
 import { render } from 'react-dom';
 import store from './store/index.js';
 import Routes from './components/index.js';
+import constants from './constants/mapbox.js';
+
+const { mapboxgl } = window;
 
 function refresh() {
   render(
@@ -20,6 +22,8 @@ if ('serviceWorker' in navigator) {
   const newLocation = `${path}/legacy.html`;
   if (pathname !== newLocation) location.assign(`${newLocation}${location.hash}`);
 }
+
+mapboxgl.setRTLTextPlugin(constants.RTL_TEXT_PLUGIN);
 
 store.subscribe(refresh);
 

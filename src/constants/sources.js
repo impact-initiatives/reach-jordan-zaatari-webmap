@@ -9,6 +9,7 @@ const sourceIds = {
   FLOOD_POINTS: 'flood-points',
   FLOOD_POINTS_UNICEF: 'flood-points-unicef',
   FLOOD_WATER_PATH: 'flood-water-path-',
+  HOUSEHOLDS: 'households',
   GEOLOCATION: 'geolocation',
   PIPES: 'pipes',
   SEPTIC_TANKS: 'septic-tanks',

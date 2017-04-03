@@ -9,8 +9,8 @@ export default ({ donorLogo }) => (
     styles.media.hiddenMobile,
   ].join(' ')}>
     <img alt="donor-logo"
-       className={styles.menu.toolbarLogo}
-       src={donorLogo} />
+         className={styles.menu.toolbarLogo}
+         src={donorLogo} />
     <div className={styles.flex.itemSpace} />
     <img alt="reach-logo"
          className={styles.menu.toolbarLogo}

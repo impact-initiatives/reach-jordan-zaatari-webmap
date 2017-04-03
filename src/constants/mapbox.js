@@ -19,6 +19,7 @@ const mapbox = {
   MIN_ZOOM: 0,
   MAX_ZOOM: 22,
   NUM_HOUSES: 20,
+  RTL_TEXT_PLUGIN: './node_modules/@mapbox/mapbox-gl-rtl-text/mapbox-gl-rtl-text.js.min',
 };
 
 export default mapbox;

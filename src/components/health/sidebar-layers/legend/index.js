@@ -5,15 +5,17 @@ import COLORS from '../../../../constants/colors.js';
 import LegendItem from '../../../common/legend/legend-item.js';
 
 export default ({ state }) => (
-  <div className={styles.flex.verticalLeft}>
-    <div className={styles.component.legendTitle}>
-      {messages.legend.title[state.lang]}
+  <div>
+    <div className={styles.flex.verticalLeft}>
+      <div className={styles.component.legendTitle}>
+        {messages.legend.title[state.lang]}
+      </div>
+      <LegendItem color={COLORS.LIGHT_RED_100}
+                  name={messages.legend.healthcare[state.lang]} />
+      <LegendItem color={COLORS.MEDIUM_BLUE}
+                  name={messages.legend.campHealth[state.lang]} />
+      <LegendItem color={COLORS.DARK_GREY_50}
+                  name={messages.legend.camp[state.lang]} />
     </div>
-    <LegendItem color={COLORS.LIGHT_RED_100}
-                name={messages.legend.healthcare[state.lang]} />
-    <LegendItem color={COLORS.MEDIUM_BLUE}
-                name={messages.legend.campHealth[state.lang]} />
-    <LegendItem color={COLORS.DARK_GREY_50}
-                name={messages.legend.camp[state.lang]} />
   </div>
 );

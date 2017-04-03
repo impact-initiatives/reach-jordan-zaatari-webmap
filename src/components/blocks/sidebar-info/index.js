@@ -11,8 +11,10 @@ export default ({ state }) => (
     state.lang === language.AR ? styles.menu.sidebarRightArabic : styles.menu.sidebarRightEnglish,
     state.sidebarInfo.open ? styles.menu.sidebarOpen : styles.menu.sidebarClosed,
   ].join(' ')}>
-    <Language state={state} />
-    <About messages={messages.info}
-           state={state} />
+    <div>
+      <Language state={state} />
+      <About messages={messages.info}
+             state={state} />
+    </div>
   </div>
 );

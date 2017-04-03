@@ -7,11 +7,11 @@ const pkg = require('./package.json');
 
 const CSS_LOADERS = 'css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader';
 const CSS_DEV = `style-loader!${CSS_LOADERS}`;
-const CSS_EXTRACT = { loader: CSS_LOADERS };
-const CSS_PROD = ExtractTextPlugin.extract(CSS_EXTRACT);
+const CSS_PROD = ExtractTextPlugin.extract({ use: CSS_LOADERS });
 const DEBUG = !process.argv.includes('-p');
-const ENTRY = { index: './src/index.js' };
-const PACKAGE_NAMES = Object.keys(pkg.dependencies).reverse();
+
+const entry = { index: './src/index.js' };
+const packageNames = Object.keys(pkg.dependencies).reverse();
 
 function reduceDependencies(prevObj, key) {
   const obj = prevObj;
@@ -21,7 +21,7 @@ function reduceDependencies(prevObj, key) {
 
 module.exports = {
   context: path.resolve(__dirname),
-  entry: Object.keys(pkg.dependencies).reduce(reduceDependencies, ENTRY),
+  entry: Object.keys(pkg.dependencies).reduce(reduceDependencies, entry),
   module: {
     rules: [{
       test: /\.js$/,
@@ -37,8 +37,8 @@ module.exports = {
   },
   performance: { hints: DEBUG ? false : 'warning' },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ names: PACKAGE_NAMES }),
+    new webpack.optimize.CommonsChunkPlugin({ names: packageNames }),
     new HtmlWebpackPlugin({ template: './index.html' }),
-    new ExtractTextPlugin('index.css'),
+    new ExtractTextPlugin({ filename: 'index.css' }),
   ],
 };

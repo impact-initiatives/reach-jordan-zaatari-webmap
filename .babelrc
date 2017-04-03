@@ -1,6 +1,9 @@
 {
   "presets": [
-    ["latest", { "es2015": { "modules": false } }],
+    ["env", {
+      "modules": false,
+      "useBuiltIns": true
+    }],
     "react"
   ],
   "plugins": ["transform-object-rest-spread"]

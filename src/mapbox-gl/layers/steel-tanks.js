@@ -30,7 +30,13 @@ function getLayer() {
         ],
         type: 'categorical',
       },
-      'circle-radius': 10,
+      'circle-radius': {
+        stops: [
+          [0, 2],
+          [20, 100],
+        ],
+        base: 2,
+      },
       'circle-opacity': 0.8,
     },
     source: sources.STEEL_TANKS,

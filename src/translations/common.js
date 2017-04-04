@@ -10,8 +10,8 @@ const commonMessages = {
     [language.AR]: 'مخيم الزعتري',
   },
   more: {
-    [language.EN]: 'More from REACH',
-    [language.AR]: ' المزيد من ريتش',
+    [language.EN]: 'Data Portal',
+    [language.AR]: 'بوابة البيانات',
   },
   districts: {
     [language.EN]: 'District Boundaries',

@@ -4,7 +4,7 @@ import language from '../../../constants/languages';
 import messages from '../../../translations/waste-water.js';
 import Language from '../../common/info/language.js';
 import About from '../../common/info/about.js';
-import Download from './download.js';
+// import Download from './download.js';
 
 export default ({ state }) => (
   <div className={[
@@ -14,7 +14,7 @@ export default ({ state }) => (
   ].join(' ')}>
     <div>
       <Language state={state} />
-      <Download state={state} />
+      {/* <Download state={state} /> */}
       <About messages={messages.info}
              state={state} />
     </div>

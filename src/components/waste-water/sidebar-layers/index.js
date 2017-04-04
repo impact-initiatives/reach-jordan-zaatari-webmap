@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../../../styles/index.js';
 import language from '../../../constants/languages';
 import Legend from './legend/index.js';
-import Search from './search/index.js';
+// import Search from './search/index.js';
 import Filter from './filter/index.js';
 
 export default ({ state }) => (
@@ -13,8 +13,8 @@ export default ({ state }) => (
   ].join(' ')}>
     <Legend state={state} />
     <div className={styles.component.separator} />
-    <Search state={state} />
-    <div className={styles.component.separator} />
+    {/* <Search state={state} />
+    <div className={styles.component.separator} /> */}
     <Filter state={state} />
   </div>
 );

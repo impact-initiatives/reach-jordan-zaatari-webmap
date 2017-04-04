@@ -1,7 +1,6 @@
 import store from '../../store/index.js';
 import mapbox from '../../constants/mapbox.js';
-import septicKeys from '../../constants/keys/septic-tanks.js';
-import steelKeys from '../../constants/keys/steel-tanks.js';
+import columns from '../../constants/columns/index.js';
 import wasteWaterFilters from '../../constants/filters/waste-water.js';
 
 const { mapboxgl } = window;
@@ -60,15 +59,31 @@ function addSourceToMap({ features, map, sourceId }) {
 function modifySteelLayer({ map, layerId }) {
   const state = store.getState();
   if (state.filters.wasteWater[wasteWaterFilters.STEEL_TANKS]) {
-    map.setFilter(layerId, ['has', steelKeys.ID]);
+    map.setFilter(layerId, ['has', columns.septicColumns.id.KEY]);
   } else {
     const filters = state.filters.wasteWater;
     const filtersActive = Object.values(filters).includes(true);
     const searchActive = state.search.wasteWater;
     if (filtersActive || searchActive) {
-      map.setFilter(layerId, ['!has', steelKeys.ID]);
+      map.setFilter(layerId, ['!has', columns.septicColumns.id.KEY]);
     } else {
-      map.setFilter(layerId, ['has', steelKeys.ID]);
+      map.setFilter(layerId, ['has', columns.septicColumns.id.KEY]);
+    }
+  }
+}
+
+function modifyHouseholdsLayer({ map, layerId }) {
+  const state = store.getState();
+  if (state.filters.wasteWater[wasteWaterFilters.HOUSEHOLDS]) {
+    map.setFilter(layerId, ['has', columns.householdColumns.id.KEY]);
+  } else {
+    const filters = state.filters.wasteWater;
+    const filtersActive = Object.values(filters).includes(true);
+    const searchActive = state.search.wasteWater;
+    if (filtersActive || searchActive) {
+      map.setFilter(layerId, ['!has', columns.householdColumns.id.KEY]);
+    } else {
+      map.setFilter(layerId, ['has', columns.householdColumns.id.KEY]);
     }
   }
 }
@@ -96,12 +111,20 @@ function filterSepticByType({ map, state, layerId }) {
   const mapFilter = Object.entries(storeFilter)
     .filter(([, value]) => value)
     .map(([key]) => {
-      if (key.includes('8')) return ['==', septicKeys.VOLUME, 8];
-      else if (key.includes('4')) return ['==', septicKeys.VOLUME, 4];
-      else if (key.includes('2')) return ['==', septicKeys.VOLUME, 2];
-      return ['!has', septicKeys.VOLUME];
+      if (key.includes('8')) {
+        return ['==', columns.septicColumns.volume.KEY, 8];
+      } else if (key.includes('4')) {
+        return ['==', columns.septicColumns.volume.KEY, 4];
+      } else if (key.includes('2')) {
+        return [
+          'any',
+          ['==', columns.septicColumns.volume.KEY, 2],
+          ['==', columns.septicColumns.volume.KEY, 2.5],
+        ];
+      }
+      return ['!has', columns.septicColumns.volume.KEY];
     });
-  if (!mapFilter.length) mapFilter.push(['has', septicKeys.VOLUME]);
+  if (!mapFilter.length) mapFilter.push(['has', columns.septicColumns.volume.KEY]);
   map.setFilter(layerId, ['any', ...mapFilter]);
 }
 
@@ -109,6 +132,7 @@ const mapUtils = {
   addSourceToMap,
   createMap,
   modifySteelLayer,
+  modifyHouseholdsLayer,
   modifySepticLayer,
 };
 

@@ -6,7 +6,7 @@ general:
       - develop
 machine:
   node:
-    version: 7.2.0
+    version: stable
 dependencies:
   pre:
     - pip install awscli

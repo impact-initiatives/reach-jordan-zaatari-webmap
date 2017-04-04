@@ -95,9 +95,13 @@ const wasteWaterMessages = {
       [language.EN]: 'Steel Tanks',
       [language.AR]: 'خزانات الصلب',
     },
-    pipes: {
-      [language.EN]: 'Pipes',
-      [language.AR]: 'أنابيب',
+    pipesSeptic: {
+      [language.EN]: 'Septic Pipes',
+      [language.AR]: 'خزان صرف صحي أنابيب',
+    },
+    pipesSolidFree: {
+      [language.EN]: 'Solid Free Pipes',
+      [language.AR]: 'خزانات الصلب أنابيب',
     },
   },
 };

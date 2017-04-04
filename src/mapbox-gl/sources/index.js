@@ -5,7 +5,9 @@ import floodLines from './flood-lines.js';
 import floodPoints from './flood-points.js';
 import floodPointsUnicef from './flood-points-unicef.js';
 import floodWaterPath from './flood-water-path.js';
-import pipes from './pipes.js';
+import households from './households.js';
+import pipesSeptic from './pipes-septic.js';
+import pipesSolidFree from './pipes-solid-free.js';
 import septicTanks from './septic-tanks.js';
 import steelTanks from './steel-tanks.js';
 
@@ -17,7 +19,9 @@ const sourcesIndex = {
   floodPoints,
   floodPointsUnicef,
   floodWaterPath,
-  pipes,
+  households,
+  pipesSeptic,
+  pipesSolidFree,
   septicTanks,
   steelTanks,
 };

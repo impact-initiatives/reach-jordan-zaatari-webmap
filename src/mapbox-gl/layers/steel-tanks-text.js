@@ -20,6 +20,7 @@ function getLayer() {
       'text-field': `{${columns.idShort.KEY}}`,
       'text-font': ['open-sans-regular'],
       'text-offset': [0.25, -0.25],
+      'text-size': 18,
     },
     minzoom: mapbox.LABEL_ZOOM_BREAK,
     paint: {

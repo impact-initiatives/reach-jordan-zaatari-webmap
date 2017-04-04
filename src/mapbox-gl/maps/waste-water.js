@@ -1,7 +1,10 @@
 import utils from '../utils/index.js';
 import initGeolocation from '../interactions/geolocation.js';
 import layers from '../layers/index.js';
+import layerNames from '../../constants/layers.js';
 import sources from '../sources/index.js';
+import * as steelColumns from '../../constants/columns/steel.js';
+import * as septicColumns from '../../constants/columns/septic.js';
 
 function wasteWaterMap() {
   const map = utils.createMap();
@@ -11,6 +14,7 @@ function wasteWaterMap() {
 function loadStyles({ map }) {
   initGeolocation({ map });
   addSources({ map });
+  map.on('mousemove', ({ point }) => onMouseMove({ point, map }));
 }
 
 function addSources({ map }) {
@@ -45,6 +49,17 @@ function addSources({ map }) {
   Promise.all(set6).then(() => layers.districtBoundariesText({ map, maxzoom: true }));
   Promise.all(set7).then(() => layers.pipesSolidFree({ map }));
   Promise.all(set8).then(() => layers.pipesSeptic({ map }));
+}
+
+function onMouseMove({ point, map }) {
+  const features = map.queryRenderedFeatures(point, {
+    layers: [layerNames.SEPTIC_TANKS, layerNames.STEEL_TANKS],
+  });
+  const canvas = map.getCanvas();
+  canvas.style.cursor = features.length && (
+    features[0].properties[septicColumns.volume.KEY] ||
+    features[0].properties[steelColumns.id.KEY]
+  ) ? 'pointer' : '';
 }
 
 export default wasteWaterMap;

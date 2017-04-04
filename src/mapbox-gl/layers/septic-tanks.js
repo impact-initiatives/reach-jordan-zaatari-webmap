@@ -10,7 +10,7 @@ const { mapboxgl } = window;
 function septicTankSize({ map }) {
   store.subscribe(() => modifyLayer({ map }));
   map.addLayer(getLayer());
-  addPopup({ map });
+  map.on('click', ({ point }) => onClick({ point, map }));
   modifyLayer({ map });
 }
 
@@ -39,16 +39,10 @@ function getLayer() {
   };
 }
 
-function addPopup({ map }) {
-  map.on('click', ({ point }) => onClick({ point, map }));
-  map.on('mousemove', ({ point }) => onMouseMove({ point, map }));
-}
-
 function onClick({ point, map }) {
   const features = map.queryRenderedFeatures(point, { layers: [layers.SEPTIC_TANKS] });
   if (features.length && features[0].properties[columns.volume.KEY] !== 'null') {
     const feature = features[0];
-    const steelTank = `<div>${feature.properties[columns.steelId.KEY] || 'N/A'}</div>`;
     const ventilation1 = feature.properties[columns.ventilation1.KEY];
     const ventilation2 = feature.properties[columns.ventilation2.KEY];
     const ventilationArray = [ventilation1, ventilation2].filter(Boolean).join(', ') || 'N/A';
@@ -59,7 +53,7 @@ function onClick({ point, map }) {
       '<div><b>Ventilation Pipe Length (cm)</b></div>',
       ventilationText,
       '<div><b>Connected Steel Tank</b></div>',
-      steelTank,
+      `<div>${feature.properties[columns.steelId.KEY] || 'N/A'}</div>`,
       '<div><b>Connected Households</b></div>',
       ...households,
     ].join('');
@@ -68,13 +62,6 @@ function onClick({ point, map }) {
       .setHTML(popupText)
       .addTo(map);
   }
-}
-
-function onMouseMove({ point, map }) {
-  const features = map.queryRenderedFeatures(point, { layers: [layers.SEPTIC_TANKS] });
-  const canvas = map.getCanvas();
-  canvas.style.cursor = (
-    features.length && features[0].properties[columns.volume.KEY] !== 'null') ? 'pointer' : '';
 }
 
 export default septicTankSize;

@@ -14,7 +14,6 @@ function wasteWaterMap() {
 function loadStyles({ map }) {
   initGeolocation({ map });
   addSources({ map });
-  map.on('mousemove', ({ point }) => onMouseMove({ point, map }));
 }
 
 function addSources({ map }) {
@@ -49,6 +48,10 @@ function addSources({ map }) {
   Promise.all(set6).then(() => layers.districtBoundariesText({ map, maxzoom: true }));
   Promise.all(set7).then(() => layers.pipesSolidFree({ map }));
   Promise.all(set8).then(() => layers.pipesSeptic({ map }));
+
+  Promise.all(set8).then(() => {
+    map.on('mousemove', ({ point }) => onMouseMove({ point, map }));
+  });
 }
 
 function onMouseMove({ point, map }) {

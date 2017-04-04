@@ -22,7 +22,14 @@ function getLayer() {
   return {
     id: layers.STEEL_TANKS,
     paint: {
-      'circle-color': colors.DARK_GREY_100,
+      'circle-color': {
+        property: columns.connected.KEY,
+        stops: [
+          [true, colors.DARK_GREY_100],
+          [false, colors.DARK_GREY_50],
+        ],
+        type: 'categorical',
+      },
       'circle-radius': 10,
       'circle-opacity': 0.8,
     },

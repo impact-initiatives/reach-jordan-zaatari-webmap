@@ -48,8 +48,12 @@ const wasteWaterMessages = {
       [language.AR]: '2m³ خزانات الصرف الصحي حجم',
     },
     steelTanks: {
-      [language.EN]: 'Steel Tank',
-      [language.AR]: 'خزان الفولاذ',
+      [language.EN]: 'Connected Steel Tank',
+      [language.AR]: 'خزان الفولاذمتصل متصل',
+    },
+    steelTanksUnconnected: {
+      [language.EN]: 'Unconnected Steel Tank',
+      [language.AR]: 'خزان الفولاذ غير متصل',
     },
     pipes: {
       [language.EN]: 'Pipe',

@@ -6,3 +6,4 @@ export const capacity = { COL: 8, KEY: 'steelCapacity' };
 export const septicCount = { COL: 10, KEY: 'septicCount' };
 export const houseCount = { COL: 11, KEY: 'houseCount' };
 export const septicList = { COL: 12, KEY: 'septicList' };
+export const connected = { KEY: 'connected' };

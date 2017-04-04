@@ -19,6 +19,8 @@ export default ({ state }) => (
                   name={messages.legend.two[state.lang]} />
       <LegendItem color={COLORS.DARK_GREY_100}
                   name={messages.legend.steelTanks[state.lang]} />
+      <LegendItem color={COLORS.DARK_GREY_50}
+                  name={messages.legend.steelTanksUnconnected[state.lang]} />
       <LegendItemLine color={COLORS.DARK_GREY_100}
                       name={messages.legend.pipes[state.lang]} />
     </div>

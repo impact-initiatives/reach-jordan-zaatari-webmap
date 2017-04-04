@@ -19,7 +19,7 @@ function getLayer() {
     id: layers.STEEL_TANKS,
     paint: {
       'circle-color': colors.DARK_GREY_100,
-      'circle-radius': 6.5,
+      'circle-radius': 10,
       'circle-opacity': 0.8,
     },
     source: sources.STEEL_TANKS,

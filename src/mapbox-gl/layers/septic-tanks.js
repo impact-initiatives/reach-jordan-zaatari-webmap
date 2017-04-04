@@ -32,7 +32,7 @@ function getLayer() {
         type: 'categorical',
       },
       'circle-opacity': 0.8,
-      'circle-radius': 10,
+      'circle-radius': 7.5,
     },
     source: sources.SEPTIC_TANKS,
     type: 'circle',

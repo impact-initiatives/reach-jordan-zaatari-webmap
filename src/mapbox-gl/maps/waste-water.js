@@ -42,10 +42,10 @@ function addSources({ map }) {
   Promise.all(set4).then(() => layers.steelTanks({ map }));
   Promise.all(set5).then(() => layers.septicTanks({ map }));
   Promise.all(set6).then(() => layers.households({ map }));
-  Promise.all(set6).then(() => layers.householdsText({ map }));
   Promise.all(set6).then(() => layers.campFacilitiesText({ map }));
-  Promise.all(set6).then(() => layers.steelTanksText({ map }));
+  Promise.all(set6).then(() => layers.householdsText({ map }));
   Promise.all(set6).then(() => layers.septicTanksText({ map }));
+  Promise.all(set6).then(() => layers.steelTanksText({ map }));
   Promise.all(set6).then(() => layers.districtBoundariesText({ map, maxzoom: true }));
   Promise.all(set7).then(() => layers.pipesSolidFree({ map }));
   Promise.all(set8).then(() => layers.pipesSeptic({ map }));

@@ -16,6 +16,7 @@ fi
 aws s3 rm s3://$BUCKET --recursive
 
 aws s3 cp --recursive ./dist/ s3://$BUCKET/
+aws s3 cp ./dist/cache.manifest s3://$BUCKET/cache.manifest --content-type text/cache-manifest
 
 aws configure set preview.cloudfront true
 aws cloudfront create-invalidation \

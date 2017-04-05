@@ -4,7 +4,7 @@ rm -rf ./dist/
 
 webpack -p
 
-mkdir -p ./dist/node_modules/mapbox-gl/svg/
+mkdir -p ./dist/node_modules/mapbox-gl/dist/svg/
 mkdir -p ./dist/node_modules/normalize.css/
 
 cp ./manifest.json ./dist/manifest.json

@@ -20,6 +20,7 @@ appcache-manifest-fixer ./dist/index.html \
 
 appcache-manifest \
   ./dist/*.* \
+  ./dist/@turf/*.* \
   ./dist/resources/*.* \
   ./dist/**/**/*.* \
   ./dist/**/**/**/*.* \

@@ -19,9 +19,9 @@ appcache-manifest \
   ./dist/**/**/**/*.* \
   ./dist/**/**/**/**/*.* \
   --network-star \
-  -o ./dist/index.appcache
+  -o ./dist/cache.manifest
 appcache-manifest-fixer ./dist/index.html \
-  -m ./dist/index.appcache \
+  -m ./dist/cache.manifest \
   -o ./dist/legacy.html
 node ./node_modules/.bin/sw-precache \
   --root=dist \

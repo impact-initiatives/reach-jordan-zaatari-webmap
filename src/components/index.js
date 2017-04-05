@@ -22,6 +22,6 @@ export default ({ state }) => {
   if (hash === '#/flood') {
     return <Flood state={state} />;
   }
-  location.assign('#/districts');
+  location.assign('#/waste-water');
   return <Health state={state} />;
 };

@@ -12,6 +12,10 @@ cp -a ./resources/. ./dist/resources/
 cp -a ./node_modules/normalize.css/. ./dist/node_modules/normalize.css/
 cp -a ./node_modules/mapbox-gl/dist/. ./dist/node_modules/mapbox-gl/dist/
 
+appcache-manifest-fixer ./dist/index.html \
+  -m ./cache.manifest \
+  -o ./dist/legacy.html
+
 appcache-manifest \
   ./dist/*.* \
   ./dist/resources/*.* \
@@ -20,9 +24,7 @@ appcache-manifest \
   ./dist/**/**/**/**/*.* \
   --network-star \
   -o ./dist/cache.manifest
-appcache-manifest-fixer ./dist/index.html \
-  -m ./dist/cache.manifest \
-  -o ./dist/legacy.html
+
 node ./node_modules/.bin/sw-precache \
   --root=dist \
   --maximumFileSizeToCacheInBytes=10485760

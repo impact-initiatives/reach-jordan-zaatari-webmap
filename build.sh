@@ -13,7 +13,7 @@ cp -a ./node_modules/normalize.css/. ./dist/node_modules/normalize.css/
 cp -a ./node_modules/mapbox-gl/dist/. ./dist/node_modules/mapbox-gl/dist/
 
 appcache-manifest-fixer ./dist/index.html \
-  -m ./index.appcache \
+  -m ./cache.manifest \
   -o ./dist/legacy.html
 
 appcache-manifest \
@@ -23,7 +23,7 @@ appcache-manifest \
   ./dist/**/**/**/*.* \
   ./dist/**/**/**/**/*.* \
   --network-star \
-  -o ./dist/index.appcache
+  -o ./dist/cache.manifest
 
 node ./node_modules/.bin/sw-precache \
   --root=dist \

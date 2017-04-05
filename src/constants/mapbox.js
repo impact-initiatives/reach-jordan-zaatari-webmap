@@ -21,7 +21,9 @@ const mapbox = {
   HOUSEHOLD_TEXT_ZOOM_BREAK: 19,
   MIN_ZOOM: 0,
   MAX_ZOOM: 22,
-  NUM_HOUSES: 20,
+  MIN_TANK_SIZE: 2,
+  MAX_STEEL_SIZE: 400,
+  MAX_SEPTIC_SIZE: 200,
   RTL_TEXT_PLUGIN: './node_modules/@mapbox/mapbox-gl-rtl-text/mapbox-gl-rtl-text.js.min',
 };
 

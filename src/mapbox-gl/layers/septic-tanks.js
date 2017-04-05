@@ -2,6 +2,7 @@ import store from '../../store/index.js';
 import colors from '../../constants/colors.js';
 import layers from '../../constants/layers.js';
 import sources from '../../constants/sources.js';
+import mapbox from '../../constants/mapbox.js';
 import * as columns from '../../constants/columns/septic.js';
 import utils from '../utils/index.js';
 
@@ -34,8 +35,8 @@ function getLayer() {
       'circle-opacity': 0.8,
       'circle-radius': {
         stops: [
-          [0, 2],
-          [20, 50],
+          [mapbox.MIN_ZOOM, mapbox.MIN_TANK_SIZE],
+          [mapbox.MAX_ZOOM, mapbox.MAX_SEPTIC_SIZE],
         ],
         base: 2,
       },

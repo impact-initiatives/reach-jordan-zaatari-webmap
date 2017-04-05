@@ -2,6 +2,7 @@ import store from '../../store/index.js';
 import colors from '../../constants/colors.js';
 import layers from '../../constants/layers.js';
 import sources from '../../constants/sources.js';
+import mapbox from '../../constants/mapbox.js';
 import * as columns from '../../constants/columns/steel.js';
 import utils from '../utils/index.js';
 
@@ -32,8 +33,8 @@ function getLayer() {
       },
       'circle-radius': {
         stops: [
-          [0, 2],
-          [20, 100],
+          [mapbox.MIN_ZOOM, mapbox.MIN_TANK_SIZE],
+          [mapbox.MAX_ZOOM, mapbox.MAX_STEEL_SIZE],
         ],
         base: 2,
       },

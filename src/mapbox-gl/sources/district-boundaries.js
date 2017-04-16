@@ -1,4 +1,5 @@
 import turfCenter from '@turf/center';
+import * as topojson from 'topojson-client';
 import reach from '../../constants/reach.js';
 import keys from '../../constants/keys/district-boundaries.js';
 import sources from '../../constants/sources.js';
@@ -7,7 +8,9 @@ import utils from '../utils/index.js';
 function sourceDistrictBoundariesPoint({ map }) {
   return fetch(reach.DISTRICT_BOUNDARIES)
     .then((response) => response.json())
-    .then(({ features }) => {
+    .then((topo) => {
+      const layerName = Object.keys(topo.objects)[0];
+      const { features } = topojson.feature(topo, topo.objects[layerName]);
       const points = features.map(modifyFeatures);
       utils.addSourceToMap({ features, map, sourceId: sources.DISTRICT_BOUNDARIES });
       utils.addSourceToMap({ features: points, map, sourceId: sources.DISTRICT_BOUNDARIES_POINT });

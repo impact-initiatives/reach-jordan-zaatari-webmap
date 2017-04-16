@@ -1,4 +1,5 @@
 import turfCenter from '@turf/center';
+import * as topojson from 'topojson-client';
 import reach from '../../constants/reach.js';
 import utils from '../utils/index.js';
 import sources from '../../constants/sources.js';
@@ -7,7 +8,9 @@ import keys from '../../constants/keys/camp-facilities.js';
 function sourceCampFacilities({ map }) {
   return fetch(reach.CAMP_FACILITIES)
     .then((response) => response.json())
-    .then(({ features }) => {
+    .then((topo) => {
+      const layerName = Object.keys(topo.objects)[0];
+      const { features } = topojson.feature(topo, topo.objects[layerName]);
       const points = features.map(modifyFeatures);
       utils.addSourceToMap({ features, map, sourceId: sources.CAMP_FACILITIES });
       utils.addSourceToMap({ features: points, map, sourceId: sources.CAMP_FACILITIES_POINT });

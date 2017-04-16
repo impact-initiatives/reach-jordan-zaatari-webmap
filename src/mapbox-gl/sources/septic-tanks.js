@@ -25,7 +25,6 @@ function csvToPoints(row) {
   if (!longitude || !latitude) return null;
   return turfHelpers.point([longitude, latitude], {
     [columns.id.KEY]: row[columns.id.COL],
-    [columns.idShort.KEY]: row[columns.idShort.COL],
     [columns.volume.KEY]: Math.floor(Number(row[columns.volume.COL])),
     [columns.ventilation1.KEY]: Number(row[columns.ventilation1.COL]),
     [columns.ventilation2.KEY]: Number(row[columns.ventilation2.COL]),

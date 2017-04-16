@@ -24,11 +24,8 @@ function csvToPoints(row) {
   const latitude = Number(row[columns.latitude.COL]);
   return turfHelpers.point([longitude, latitude], {
     [columns.id.KEY]: row[columns.id.COL],
-    [columns.idShort.KEY]: row[columns.idShort.COL],
     [columns.connected.KEY]: Boolean(row[columns.id.COL]),
     [columns.capacity.KEY]: row[columns.capacity.COL],
-    [columns.septicCount.KEY]: row[columns.septicCount.COL],
-    [columns.houseCount.KEY]: row[columns.houseCount.COL],
     [columns.septicList.KEY]: row[columns.septicList.COL],
   });
 }

@@ -17,7 +17,7 @@ function getLayer() {
     id: layers.STEEL_TANKS_TEXT,
     layout: {
       'text-anchor': 'bottom-left',
-      'text-field': `{${columns.idShort.KEY}}`,
+      'text-field': `{${columns.id.KEY}}`,
       'text-font': ['open-sans-regular'],
       'text-offset': [0.25, -0.25],
       'text-size': 18,

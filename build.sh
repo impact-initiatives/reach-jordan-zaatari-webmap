@@ -13,7 +13,6 @@ cp -a ./node_modules/normalize.css/normalize.css ./dist/node_modules/normalize.c
 cp -a ./node_modules/mapbox-gl/dist/svg/. ./dist/node_modules/mapbox-gl/dist/svg/
 cp ./node_modules/mapbox-gl/dist/mapbox-gl.css ./dist/node_modules/mapbox-gl/dist/mapbox-gl.css
 cp ./node_modules/mapbox-gl/dist/mapbox-gl.js ./dist/node_modules/mapbox-gl/dist/mapbox-gl.js
-cp ./node_modules/mapbox-gl/dist/mapbox-gl.js.map ./dist/node_modules/mapbox-gl/dist/mapbox-gl.js.map
 
 appcache-manifest-fixer ./dist/index.html \
   -m ./cache.manifest \

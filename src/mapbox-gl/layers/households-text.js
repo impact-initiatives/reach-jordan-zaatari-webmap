@@ -21,7 +21,7 @@ function getLayer() {
     id: layers.HOUSEHOLDS_TEXT,
     layout: {
       'text-anchor': 'bottom-left',
-      'text-field': `{${columns.idShort.KEY}}`,
+      'text-field': `{${columns.id.KEY}}`,
       'text-font': ['open-sans-regular'],
       'text-size': 14,
       'text-offset': [0.25, -0.25],

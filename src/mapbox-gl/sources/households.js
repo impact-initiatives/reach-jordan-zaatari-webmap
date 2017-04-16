@@ -24,7 +24,6 @@ function csvToPoints(row) {
   const latitude = Number(row[columns.latitude.COL]);
   return turfHelpers.point([longitude, latitude], {
     [columns.id.KEY]: row[columns.id.COL],
-    [columns.idShort.KEY]: row[columns.idShort.COL],
   });
 }
 

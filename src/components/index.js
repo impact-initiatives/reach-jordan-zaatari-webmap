@@ -3,7 +3,6 @@ import Districts from './districts/index.js';
 import Blocks from './blocks/index.js';
 import Health from './health/index.js';
 import WasteWater from './waste-water/index.js';
-import Flood from './flood/index.js';
 
 export default ({ state }) => {
   const hash = location.hash.split('?')[0];
@@ -18,9 +17,6 @@ export default ({ state }) => {
   }
   if (hash === '#/waste-water') {
     return <WasteWater state={state} />;
-  }
-  if (hash === '#/flood') {
-    return <Flood state={state} />;
   }
   location.assign('#/waste-water');
   return <Health state={state} />;

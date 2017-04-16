@@ -29,10 +29,6 @@ const commonMessages = {
     [language.EN]: 'Waste Water',
     [language.AR]: 'المياه العادمة',
   },
-  flood: {
-    [language.EN]: 'Flood',
-    [language.AR]: 'Flood',
-  },
   info: {
     language: {
       [language.EN]: 'Language',

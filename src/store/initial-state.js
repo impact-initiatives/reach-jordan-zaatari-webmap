@@ -21,7 +21,6 @@ export default () => ({
     id: '',
   },
   filters: {
-    flood: {},
     health: {},
     wasteWater: {},
   },

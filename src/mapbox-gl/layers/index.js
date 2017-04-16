@@ -6,10 +6,6 @@ import campFacilitiesText from './camp-facilities-text.js';
 import districtBoundaries from './district-boundaries.js';
 import districtBoundariesOperator from './district-boundaries-operator.js';
 import districtBoundariesText from './district-boundaries-text.js';
-import floodLines from './flood-lines.js';
-import floodPoints from './flood-points.js';
-import floodPointsUnicef from './flood-points-unicef.js';
-import floodWaterPath from './flood-water-path.js';
 import households from './households.js';
 import householdsText from './households-text.js';
 import pipesSeptic from './pipes-septic.js';
@@ -28,10 +24,6 @@ const layersIndex = {
   districtBoundaries,
   districtBoundariesOperator,
   districtBoundariesText,
-  floodLines,
-  floodPoints,
-  floodPointsUnicef,
-  floodWaterPath,
   households,
   householdsText,
   pipesSeptic,

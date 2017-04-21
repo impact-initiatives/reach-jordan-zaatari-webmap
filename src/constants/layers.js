@@ -11,6 +11,8 @@ const layerIds = {
   DISTRICT_BOUNDARIES_TEXT: 'district-boundaries-text',
   ROADS: 'roads',
   ROADS_TEXT: 'roads-text',
+  MOSQUES: 'mosques',
+  MOSQUES_TEXT: 'mosques-text',
   HOUSEHOLDS: 'households',
   HOUSEHOLDS_TEXT: 'households-text',
   GEOLOCATION: 'geolocation',

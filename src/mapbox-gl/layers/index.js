@@ -9,6 +9,8 @@ import districtBoundariesOperator from './district-boundaries-operator.js';
 import districtBoundariesText from './district-boundaries-text.js';
 import roads from './roads.js';
 import roadsText from './roads-text.js';
+import mosques from './mosques.js';
+import mosquesText from './mosques-text.js';
 import households from './households.js';
 import householdsText from './households-text.js';
 import pipesSeptic from './pipes-septic.js';
@@ -30,6 +32,8 @@ const layersIndex = {
   districtBoundariesText,
   roads,
   roadsText,
+  mosques,
+  mosquesText,
   households,
   householdsText,
   pipesSeptic,

@@ -6,6 +6,8 @@ const sourceIds = {
   DISTRICT_BOUNDARIES: 'district-boundaries',
   DISTRICT_BOUNDARIES_POINT: 'district-boundaries-point',
   HOUSEHOLDS: 'households',
+  MOSQUE_IMAGE: 'mosque-image',
+  MOSQUES: 'mosques',
   GEOLOCATION: 'geolocation',
   ROADS: 'roads',
   PIPES_SEPTIC: 'pipes-septic',

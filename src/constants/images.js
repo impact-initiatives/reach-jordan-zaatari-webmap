@@ -9,6 +9,7 @@ const img = {
   LOCAL_DRINK: `${urls.RESOURCES}/icons/ic_local_drink_white_24px.svg`,
   LOCAL_HOSPITAL: `${urls.RESOURCES}/icons/ic_local_hospital_white_24px.svg`,
   MENU: `${urls.RESOURCES}/icons/ic_menu_white_24px.svg`,
+  MOSQUE: `${urls.RESOURCES}/icons/infrastructure_mosque_100px_greenbox.png`,
   LOGO_REACH: `${urls.RESOURCES}/logos/reach.svg`,
   LOGO_UNHCR: `${urls.RESOURCES}/logos/unhcr.svg`,
   LOGO_UNICEF: `${urls.RESOURCES}/logos/unicef.svg`,

@@ -2,13 +2,9 @@ import images from '../../constants/images.js';
 import sources from '../../constants/sources.js';
 
 function sourceMosqueImage({ map }) {
-  return fetch(images.MOSQUE)
-    .then((response) => response.blob())
-    .then((blob) => {
-      const img = document.createElement('img');
-      img.src = URL.createObjectURL(blob);
-      setTimeout(() => addSource({ image: img, map }), 0);
-    });
+  map.loadImage(images.MOSQUE, (error, image) => {
+    addSource({ image, map });
+  });
 }
 
 function addSource({ image, map }) {

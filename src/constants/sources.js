@@ -7,6 +7,7 @@ const sourceIds = {
   DISTRICT_BOUNDARIES_POINT: 'district-boundaries-point',
   HOUSEHOLDS: 'households',
   GEOLOCATION: 'geolocation',
+  ROADS: 'roads',
   PIPES_SEPTIC: 'pipes-septic',
   PIPES_SOLID_FREE: 'pipes-solid-free',
   SEPTIC_TANKS: 'septic-tanks',

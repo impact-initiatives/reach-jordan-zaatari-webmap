@@ -6,10 +6,9 @@ import SidebarHome from '../common/home/index.js';
 import MapboxGL from '../common/mapbox-gl/index.js';
 import SidebarLayers from './sidebar-layers/index.js';
 import SidebarInfo from './sidebar-info/index.js';
-import language from '../../constants/languages.js';
+import * as language from '../../constants/languages.js';
 import img from '../../constants/images.js';
 import messages from '../../translations/waste-water.js';
-import initMap from '../../mapbox-gl/maps/waste-water.js';
 
 export default ({ state }) => (
   <div className={`${styles.flex.verticalNormal} ${styles.inline.fontDefault}`}
@@ -20,7 +19,7 @@ export default ({ state }) => (
       <SidebarHome state={state} />
       <SidebarInfo state={state} />
       <SidebarLayers state={state} />
-      <MapboxGL initMap={initMap} />
+      <MapboxGL />
     </div>
     <Footer donorLogo={img.LOGO_UNICEF} />
   </div>

@@ -22,7 +22,8 @@ function addSources({ map }) {
 
   Promise.all(set1).then(() => layers.districtBoundaries({ map }));
   Promise.all(set2).then(() => layers.blockBoundaries({ map }));
-  Promise.all(set2).then(() => layers.blockBoundariesText({ map, maxzoom: true }));
+  Promise.all(set2).then(() => layers.blockBoundariesText({ map }));
+  Promise.all(set2).then(() => layers.districtBoundariesText({ map, maxzoom: true }));
 }
 
 export default blockMap;

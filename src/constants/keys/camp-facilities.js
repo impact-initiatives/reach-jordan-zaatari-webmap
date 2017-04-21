@@ -1,4 +1,4 @@
-import languages from '../languages.js';
+import * as languages from '../languages.js';
 
 const NAME_EN = 'NAME_EN';
 const NAME_AR = 'NAME_AR';
@@ -24,6 +24,7 @@ const campFacilities = {
   NAME_AR,
   HEALTH_TYPE: 'HEALTH_TYP',
   HEALTH_SERVICES_EN: 'HEALTH_EN',
+  TYPE: 'TYPE',
 };
 
 export default campFacilities;

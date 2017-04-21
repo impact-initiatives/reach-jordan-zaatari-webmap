@@ -1,5 +1,5 @@
 const blockBoundaries = {
-  NAME_EN: 'BLOCK_CODE',
+  NAME_EN: 'NAME_EN',
   NAME_AR: 'NAME_AR',
 };
 

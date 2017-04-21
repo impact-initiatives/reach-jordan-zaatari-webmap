@@ -1,8 +1,9 @@
 import React from 'react';
 import messages from '../../../translations/common.js';
 import store from '../../../store/index.js';
-import language from '../../../constants/languages.js';
+import * as language from '../../../constants/languages.js';
 import styles from '../../../styles/index.js';
+import initMap from '../../../mapbox-gl/index.js';
 
 function onClickLanguage({ target }) {
   const { lang } = target.dataset;
@@ -10,6 +11,7 @@ function onClickLanguage({ target }) {
     ...state,
     lang,
   }) });
+  initMap();
 }
 
 export default ({ state }) => (

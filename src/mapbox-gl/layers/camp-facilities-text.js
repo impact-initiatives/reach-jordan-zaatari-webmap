@@ -1,4 +1,6 @@
-import colors from '../../constants/colors.js';
+import * as colors from '../../constants/colors.js';
+import store from '../../store/index.js';
+import { AR } from '../../constants/languages.js';
 import mapbox from '../../constants/mapbox.js';
 import layers from '../../constants/layers.js';
 import sources from '../../constants/sources.js';
@@ -9,10 +11,11 @@ function addLayer({ map }) {
 }
 
 function getLayerOptions() {
+  const language = store.getState().lang === AR ? keys.NAME_AR : keys.NAME_EN;
   return {
     id: layers.CAMP_FACILITIES_TEXT,
     layout: {
-      'text-field': `{${keys.NAME_EN}}`,
+      'text-field': `{${keys[language]}}`,
       'text-font': ['open-sans-regular'],
     },
     minzoom: mapbox.LABEL_ZOOM_BREAK,

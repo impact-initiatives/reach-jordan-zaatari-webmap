@@ -24,7 +24,7 @@ const mapbox = {
   MIN_TANK_SIZE: 2,
   MAX_STEEL_SIZE: 400,
   MAX_SEPTIC_SIZE: 200,
-  RTL_TEXT_PLUGIN: './node_modules/@mapbox/mapbox-gl-rtl-text/mapbox-gl-rtl-text.js.min',
+  RTL_TEXT_PLUGIN: './resources/mapbox/plugins/mapbox-gl-rtl-text.js',
 };
 
 export default mapbox;

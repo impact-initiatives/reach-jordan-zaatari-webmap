@@ -7,6 +7,7 @@ const reach = {
   HOUSEHOLDS: `${urls.RESOURCES}/reach/Households_2017_04.csv`,
   PIPES_SEPTIC: `${urls.RESOURCES}/reach/Pipes_Septic_2017_03.topojson`,
   PIPES_SOLID_FREE: `${urls.RESOURCES}/reach/Pipes_SolidFree_2017_03.topojson`,
+  ROADS: `${urls.RESOURCES}/reach/Roads_2016_12.topojson`,
   SEPTIC_TANKS: `${urls.RESOURCES}/reach/SepticTanks_2017_04.csv`,
   STEEL_TANKS: `${urls.RESOURCES}/reach/SteelTanks_2017_04.csv`,
   WWN_CAMP: `${urls.RESOURCE_CENTRE}/reach_jor_map_zaatari_ccm_wwn_progress_jun2016_a1.pdf`,

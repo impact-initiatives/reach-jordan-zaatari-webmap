@@ -1,5 +1,5 @@
 import store from '../../store/index.js';
-import colors from '../../constants/colors.js';
+import * as colors from '../../constants/colors.js';
 import mapbox from '../../constants/mapbox.js';
 import layers from '../../constants/layers.js';
 import sources from '../../constants/sources.js';

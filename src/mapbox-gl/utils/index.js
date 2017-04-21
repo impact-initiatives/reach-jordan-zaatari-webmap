@@ -5,6 +5,8 @@ import wasteWaterFilters from '../../constants/filters/waste-water.js';
 
 const { mapboxgl } = window;
 
+mapboxgl.setRTLTextPlugin(mapbox.RTL_TEXT_PLUGIN);
+
 const options = {
   attributionControl: false,
   container: mapbox.CONTAINER,

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import styles from '../../../styles/index.js';
 import mapbox from '../../../constants/mapbox.js';
+import initMap from '../../../mapbox-gl/index.js';
 
 export default class extends Component {
   componentDidMount() {
-    this.props.initMap();
+    initMap();
   }
   render() {
     return (

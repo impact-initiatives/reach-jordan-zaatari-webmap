@@ -1,4 +1,4 @@
-import colors from '../../constants/colors.js';
+import * as colors from '../../constants/colors.js';
 import layers from '../../constants/layers.js';
 import sources from '../../constants/sources.js';
 import keys from '../../constants/keys/district-boundaries.js';

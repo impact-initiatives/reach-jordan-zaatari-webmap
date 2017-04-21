@@ -1,24 +1,20 @@
-const colors = {
-  DARK_GREY_100: '#56585A',
-  DARK_GREY_50: '#A8A9AD',
-  DARK_GREY_30: '#C9CACC',
-  LIGHT_GREY_100: '#C7C8CA',
-  LIGHT_GREY_50: '#E3E4E5',
-  LIGHT_GREY_30: '#EEEFEF',
-  LIGHT_RED_100: '#EE5759',
-  LIGHT_RED_50: '#F7ACAC',
-  LIGHT_RED_30: '#FACDCD',
-  BEIGE_100: '#D2CBB8',
-  BEIGE_50: '#E6E3D8',
-  BEIGE_30: '#F0EFE8',
-  YELLOW: '#FFF46E',
-  ORANGE: '#F89D58',
-  GREEN: '#A5C89F',
-  LIGHT_BLUE: '#4DB3CF',
-  MEDIUM_BLUE: '#0167AA',
-  BLUE_GREY: '#94A0A9',
-  BLACK: '#000000',
-  WHITE: '#FFFFFF',
-};
-
-export default colors;
+export const DARK_GREY_100 = '#56585A';
+export const DARK_GREY_50 = '#A8A9AD';
+export const DARK_GREY_30 = '#C9CACC';
+export const LIGHT_GREY_100 = '#C7C8CA';
+export const LIGHT_GREY_50 = '#E3E4E5';
+export const LIGHT_GREY_30 = '#EEEFEF';
+export const LIGHT_RED_100 = '#EE5759';
+export const LIGHT_RED_50 = '#F7ACAC';
+export const LIGHT_RED_30 = '#FACDCD';
+export const BEIGE_100 = '#D2CBB8';
+export const BEIGE_50 = '#E6E3D8';
+export const BEIGE_30 = '#F0EFE8';
+export const YELLOW = '#FFF46E';
+export const ORANGE = '#F89D58';
+export const GREEN = '#A5C89F';
+export const LIGHT_BLUE = '#4DB3CF';
+export const MEDIUM_BLUE = '#0167AA';
+export const BLUE_GREY = '#94A0A9';
+export const BLACK = '#000000';
+export const WHITE = '#FFFFFF';

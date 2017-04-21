@@ -1,6 +1,7 @@
 import React from 'react';
 import Districts from './districts/index.js';
 import Blocks from './blocks/index.js';
+import General from './general/index.js';
 import Health from './health/index.js';
 import WasteWater from './waste-water/index.js';
 
@@ -11,6 +12,9 @@ export default ({ state }) => {
   }
   if (hash === '#/blocks') {
     return <Blocks state={state} />;
+  }
+  if (hash === '#/general') {
+    return <General state={state} />;
   }
   if (hash === '#/health') {
     return <Health state={state} />;

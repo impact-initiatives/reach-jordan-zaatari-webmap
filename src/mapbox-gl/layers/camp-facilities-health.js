@@ -1,6 +1,6 @@
 import store from '../../store/index.js';
 import messages from '../../translations/health.js';
-import colors from '../../constants/colors.js';
+import * as colors from '../../constants/colors.js';
 import layers from '../../constants/layers.js';
 import sources from '../../constants/sources.js';
 import keys from '../../constants/keys/camp-facilities.js';

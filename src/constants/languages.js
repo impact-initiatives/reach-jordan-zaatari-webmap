@@ -1,6 +1,2 @@
-const language = {
-  EN: 'en-GB',
-  AR: 'ar-JO',
-};
-
-export default language;
+export const EN = 'en-GB';
+export const AR = 'ar-JO';

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/index.js';
-import language from '../../../constants/languages';
+import * as language from '../../../constants/languages';
 import Legend from './legend/index.js';
 
 export default ({ state }) => (
